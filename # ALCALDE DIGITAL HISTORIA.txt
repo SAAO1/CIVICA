@@ -1,0 +1,1440 @@
+# ALCALDE DIGITAL
+
+## LOS ÚLTIMOS TRES DÍAS
+
+---
+
+# PRÓLOGO
+
+### [PANTALLA NEGRA]
+
+**Texto:**
+
+> Ciudad Nova.
+>
+> Faltan tres días para las elecciones municipales.
+>
+> Durante meses, cuatro candidatos han recorrido barrios, colegios, plazas y parques hablando con los ciudadanos.
+>
+> Pero esta campaña tiene un nuevo escenario.
+>
+> **Civitas.**
+>
+> Una red social donde los ciudadanos pueden publicar noticias, compartir información, seguir a otras personas y denunciar contenido.
+>
+> Una publicación puede tardar meses en ser investigada.
+>
+> En Civitas puede tardar segundos en llegar a miles de personas.
+
+### [SONIDO DE NOTIFICACIÓN]
+
+**CIVITAS**
+
+> 🔔 Tienes 12 nuevas notificaciones.
+
+### [CAMBIO DE ESCENA]
+
+Se muestra una vista panorámica de Ciudad Nova.
+
+La plaza central está llena de pantallas digitales.
+
+En cuatro de ellas aparecen los candidatos.
+
+---
+
+# LOS CUATRO CANDIDATOS
+
+### Candidata 1 — Valeria Torres
+
+Propuesta principal:
+
+> Mejorar los espacios públicos y ampliar los programas culturales.
+
+### Candidato 2 — Mateo Ríos
+
+Propuesta principal:
+
+> Modernizar los servicios digitales de la ciudad.
+
+### Candidata 3 — Elena Vargas
+
+Propuesta principal:
+
+> Fortalecer los programas educativos y comunitarios.
+
+### Candidato 4 — Samuel Ortega
+
+Propuesta principal:
+
+> Mejorar la movilidad y la infraestructura urbana.
+
+Todos tienen seguidores.
+
+Todos tienen propuestas.
+
+Todos tienen personas que los apoyan.
+
+Y todos están empezando a recibir rumores en Civitas.
+
+---
+
+# ESCENA 1
+
+## «La primera publicación»
+
+### [FONDO: HABITACIÓN DEL JUGADOR]
+
+El personaje del jugador mira su teléfono.
+
+**CIVITAS**
+
+> @UsuarioNova ha publicado:
+>
+> **«URGENTE: El Colegio Central será cerrado después de las elecciones.»**
+
+Debajo aparecen cientos de comentarios.
+
+> «¿Es verdad?»
+
+> «Mi primo estudia ahí.»
+
+> «Compartan esto.»
+
+> «No puede ser.»
+
+> «¡Alguien confirme!»
+
+El número de compartidos aumenta:
+
+```text
+Compartidos: 127
+```
+
+Después:
+
+```text
+Compartidos: 184
+```
+
+Después:
+
+```text
+Compartidos: 239
+```
+
+### OPCIONES
+
+**[COMPARTIR]**
+
+**[VERIFICAR]**
+
+**[IGNORAR]**
+
+**[REPORTAR]**
+
+---
+
+## OPCIÓN: COMPARTIR
+
+El jugador comparte la publicación.
+
+### [NOTIFICACIÓN]
+
+> Tu publicación ha sido compartida por 6 personas.
+
+El número aumenta rápidamente.
+
+```text
+Desinformación +4
+Confianza -2
+Participación +1
+```
+
+### DIÁLOGO
+
+**Personaje:**
+
+> Quizá debería haber comprobado primero...
+
+### [CIVITAS]
+
+> La publicación está llegando a más ciudadanos.
+
+---
+
+## OPCIÓN: IGNORAR
+
+El jugador continúa navegando.
+
+Cinco minutos después:
+
+> Compartidos: 1.420
+
+**Personaje:**
+
+> Ya es demasiado tarde para fingir que no existe.
+
+```text
+Participación 0
+Desinformación +1
+```
+
+---
+
+## OPCIÓN: REPORTAR
+
+El jugador reporta la publicación.
+
+### [MENSAJE]
+
+> Motivo del reporte:
+>
+> Información posiblemente falsa o engañosa.
+
+> Publicación enviada a revisión.
+
+```text
+Desinformación -2
+Confianza +1
+```
+
+Pero aparece un mensaje:
+
+> «La revisión puede tardar algunos minutos.»
+
+---
+
+## OPCIÓN: VERIFICAR
+
+Aparece una pequeña ventana.
+
+> **FUENTES DISPONIBLES**
+>
+> • Página oficial del Colegio Central
+> • Comunicados municipales
+> • Publicaciones de periodistas locales
+
+El jugador encuentra un comunicado.
+
+> **COMUNICADO DEL COLEGIO CENTRAL**
+>
+> «No existe ninguna decisión oficial relacionada con el cierre del Colegio Central.»
+
+### [NOTIFICACIÓN]
+
+> Información verificada.
+
+```text
+Información verificada +5
+Confianza +3
+Desinformación -3
+```
+
+El jugador puede ahora publicar:
+
+> «La información sobre el cierre del Colegio Central no está respaldada por un comunicado oficial.»
+
+La publicación comienza a circular.
+
+---
+
+# ESCENA 2
+
+## «El periodista»
+
+### [FONDO: CAFETERÍA]
+
+Un personaje llamado **Lucía**, periodista local, se acerca.
+
+**Lucía:**
+
+> Fuiste una de las primeras personas en reaccionar a la publicación del colegio.
+
+**Jugador:**
+
+> ¿Cómo lo sabes?
+
+**Lucía:**
+
+> Civitas registra cómo se mueve la información.
+
+**Lucía:**
+
+> Y eso me preocupa.
+
+**Jugador:**
+
+> ¿Por qué?
+
+**Lucía:**
+
+> Porque las próximas publicaciones pueden ser mucho más difíciles de comprobar.
+
+Lucía muestra su teléfono.
+
+Hay tres publicaciones.
+
+### PUBLICACIÓN A
+
+> «El candidato Mateo eliminará los servicios presenciales.»
+
+### PUBLICACIÓN B
+
+> «Valeria recibió dinero de una empresa para financiar su campaña.»
+
+### PUBLICACIÓN C
+
+> «El parque central será cerrado mañana.»
+
+**Lucía:**
+
+> Una es falsa.
+
+> Una es una opinión presentada como si fuera una noticia.
+
+> Y una contiene información parcialmente cierta.
+
+> Necesitamos averiguar cuál es cuál.
+
+---
+
+# ESCENA 3
+
+## «Tres publicaciones»
+
+El jugador puede investigar una.
+
+### PUBLICACIÓN A
+
+El jugador encuentra:
+
+> El candidato Mateo ha propuesto digitalizar determinados servicios.
+
+Pero no existe ninguna propuesta oficial para eliminar todos los servicios presenciales.
+
+**Resultado:**
+
+> **Información engañosa.**
+
+---
+
+### PUBLICACIÓN B
+
+No aparecen documentos suficientes para confirmar la acusación.
+
+**Resultado:**
+
+> **Información no verificada.**
+
+---
+
+### PUBLICACIÓN C
+
+El gobierno municipal publicó:
+
+> «El parque central permanecerá cerrado mañana entre las 8:00 y las 14:00 debido a trabajos de mantenimiento.»
+
+**Resultado:**
+
+> **Información verdadera, pero incompleta.**
+
+---
+
+Lucía sonríe.
+
+**Lucía:**
+
+> Esto es exactamente lo que pasa en una red social.
+
+**Lucía:**
+
+> No todo es simplemente verdadero o falso.
+
+---
+
+# ESCENA 4
+
+## «El debate»
+
+### [FONDO: PLAZA CENTRAL]
+
+Los cuatro candidatos participan en un debate público.
+
+Hay cientos de ciudadanos.
+
+El moderador anuncia:
+
+> «Cada candidato tendrá dos minutos para responder a las preguntas de la ciudadanía.»
+
+El debate comienza.
+
+### Valeria
+
+> «Quiero recuperar espacios donde las personas puedan encontrarse y participar.»
+
+### Mateo
+
+> «Una ciudad moderna necesita servicios digitales que sean rápidos y accesibles.»
+
+### Elena
+
+> «La tecnología también debe servir para mejorar las oportunidades educativas.»
+
+### Samuel
+
+> «Una ciudad eficiente necesita infraestructura que funcione para todos.»
+
+El debate termina.
+
+---
+
+### [CIVITAS]
+
+Aparece una nueva publicación.
+
+> **«ENCUESTA DEFINITIVA: Ya sabemos quién va a ganar.»**
+
+El número de reacciones aumenta rápidamente.
+
+El jugador puede:
+
+**[COMPARTIR]**
+
+**[VERIFICAR]**
+
+**[IGNORAR]**
+
+**[REPORTAR]**
+
+Si el jugador verifica, descubre:
+
+> La publicación no corresponde a una encuesta oficial y no explica su metodología.
+
+El jugador tiene la posibilidad de publicar:
+
+> «No hay información suficiente para presentar esta publicación como una encuesta definitiva.»
+
+---
+
+# ESCENA 5
+
+## «El mensaje anónimo»
+
+Esa noche aparece una notificación.
+
+### MENSAJE PRIVADO
+
+> «Tengo información sobre uno de los candidatos.»
+
+> «Si la publicas ahora, todo el mundo la verá.»
+
+> «No preguntes quién soy.»
+
+El mensaje contiene un archivo.
+
+### [ARCHIVO ADJUNTO]
+
+**Documento_CiudadNova.pdf**
+
+El jugador tiene tres opciones:
+
+**[PUBLICAR INMEDIATAMENTE]**
+
+**[INVESTIGAR]**
+
+**[DESCARTAR]**
+
+---
+
+# RUTA A
+
+## PUBLICAR INMEDIATAMENTE
+
+La pantalla muestra:
+
+> **PUBLICACIÓN ENVIADA**
+
+En menos de 30 segundos:
+
+```text
+Compartidos: 4.200
+```
+
+Después:
+
+```text
+8.700
+```
+
+Después:
+
+```text
+16.000
+```
+
+Civitas comienza a llenarse de comentarios.
+
+> «¡Esto demuestra todo!»
+
+> «¡Qué escándalo!»
+
+> «¿Alguien puede confirmar?»
+
+Un periodista responde:
+
+> «El documento parece incompleto.»
+
+Otro usuario publica:
+
+> «La fecha del documento no coincide con el evento mencionado.»
+
+El jugador comienza a comprender que publicó algo sin verificar.
+
+---
+
+# RUTA B
+
+## INVESTIGAR
+
+El jugador revisa el documento.
+
+Encuentra tres problemas:
+
+1. Falta una página.
+2. La fecha es antigua.
+3. La persona que supuestamente firmó el documento no aparece en los registros públicos disponibles.
+
+El jugador decide no publicarlo.
+
+### [CIVITAS]
+
+> «Una publicación puede parecer convincente y aun así no ser suficiente para demostrar una afirmación.»
+
+```text
+Confianza +2
+Información verificada +2
+```
+
+---
+
+# RUTA C
+
+## DESCARTAR
+
+El jugador elimina el archivo.
+
+Nada ocurre inmediatamente.
+
+Pero al día siguiente aparece una noticia:
+
+> «Documento anónimo circula en Civitas.»
+
+Ahora el jugador se pregunta qué habría ocurrido si lo hubiera compartido.
+
+---
+
+# ESCENA 6
+
+## «La publicación viral»
+
+### [11:34 PM]
+
+### NOTIFICACIÓN
+
+> ⚠ CONTENIDO VIRAL
+
+> «Mañana habrá disturbios en la plaza central.»
+
+La publicación lleva solamente tres minutos en línea.
+
+Pero ya tiene:
+
+```text
+12.000 visualizaciones
+```
+
+### [TEMPORIZADOR]
+
+**10**
+
+**9**
+
+**8**
+
+**7**
+
+**6**
+
+**5**
+
+El jugador debe decidir.
+
+---
+
+### COMPARTIR
+
+La publicación alcanza a miles de usuarios.
+
+El día siguiente, muchas personas cancelan sus actividades por miedo.
+
+No ocurre ningún disturbio.
+
+```text
+Desinformación +8
+Confianza -5
+Conflictos +5
+```
+
+---
+
+### VERIFICAR
+
+No existen comunicados ni fuentes oficiales que indiquen que habrá disturbios.
+
+El jugador publica una corrección.
+
+```text
+Información verificada +4
+Confianza +3
+Desinformación -4
+```
+
+---
+
+### IGNORAR
+
+La publicación continúa circulando.
+
+```text
+Desinformación +3
+```
+
+---
+
+### REPORTAR
+
+La plataforma recibe numerosos reportes.
+
+La publicación queda temporalmente limitada.
+
+```text
+Desinformación -3
+Confianza +2
+```
+
+---
+
+# ESCENA 7
+
+## «La ciudad responde»
+
+### [MAÑANA]
+
+El jugador sale a la calle.
+
+Dependiendo de las decisiones tomadas, Ciudad Nova se verá diferente.
+
+### Si la desinformación es alta:
+
+Hay discusiones.
+
+Las pantallas muestran mensajes contradictorios.
+
+Los ciudadanos desconfían.
+
+### Si la información verificada es alta:
+
+Los ciudadanos consultan fuentes.
+
+Los periodistas corrigen rumores.
+
+Las pantallas muestran avisos de verificación.
+
+### Si existe un equilibrio:
+
+Algunos ciudadanos confían y otros siguen desconfiando.
+
+La ciudad no es completamente positiva ni completamente negativa.
+
+---
+
+# ESCENA 8
+
+## «Los seguidores»
+
+El jugador descubre que las relaciones de los ciudadanos también afectan la información.
+
+Por ejemplo:
+
+```text
+Ana
+├── Luis
+├── Pedro
+└── María
+```
+
+Ana comparte una publicación.
+
+Luis la comparte.
+
+Pedro la ignora.
+
+María la verifica.
+
+La misma publicación tiene consecuencias diferentes dependiendo de quién la reciba.
+
+---
+
+# ESCENA 9
+
+## «La última noche»
+
+Son las 10:00 PM.
+
+Faltan pocas horas para la elección.
+
+Los candidatos realizan sus últimos mensajes.
+
+### VALERIA
+
+> «Mañana será una decisión de toda la ciudad.»
+
+### MATEO
+
+> «La información también construye confianza.»
+
+### ELENA
+
+> «Nuestras diferencias pueden discutirse sin convertirnos en enemigos.»
+
+### SAMUEL
+
+> «La participación ciudadana no termina después de votar.»
+
+---
+
+De repente...
+
+### [SONIDO DE NOTIFICACIÓN]
+
+> ⚠ ALERTA CIVITAS
+
+> Se han detectado cientos de publicaciones con el mismo mensaje.
+
+> «NO CONFÍES EN NINGÚN CANDIDATO.»
+
+El jugador debe decidir qué hacer.
+
+---
+
+# ESCENA 10
+
+## «El mensaje coordinado»
+
+El jugador puede investigar.
+
+Si lo hace, descubre que muchas cuentas comenzaron a publicar mensajes similares a pocos minutos de diferencia.
+
+No se sabe quién inició la campaña.
+
+### OPCIONES
+
+**[ALERTAR A LOS CIUDADANOS]**
+
+**[NO HACER NADA]**
+
+**[PUBLICAR UNA ACUSACIÓN]**
+
+---
+
+### ALERTAR
+
+El jugador publica:
+
+> «Hay múltiples cuentas difundiendo mensajes similares. No sabemos quién está detrás. Revisemos la información antes de compartirla.»
+
+Los ciudadanos comienzan a discutir.
+
+Sin embargo, algunos usuarios responden:
+
+> «Eso tampoco demuestra quién es responsable.»
+
+El jugador reconoce la incertidumbre.
+
+---
+
+### NO HACER NADA
+
+El mensaje continúa creciendo.
+
+---
+
+### PUBLICAR UNA ACUSACIÓN
+
+El jugador acusa públicamente a uno de los candidatos.
+
+La publicación se vuelve viral.
+
+Pero no existen pruebas suficientes.
+
+Eso provoca una reacción en cadena.
+
+---
+
+# ESCENA 11
+
+## «La última decisión»
+
+### [6:00 AM]
+
+Día de elecciones.
+
+El jugador recibe una última publicación.
+
+> **«URGENTE: Se encontraron pruebas de fraude electoral.»**
+
+No hay documentos.
+
+No hay fuente clara.
+
+No hay comunicado oficial.
+
+Pero la publicación tiene:
+
+```text
+37.000 compartidos
+```
+
+El jugador tiene que tomar la última decisión de la partida.
+
+### [VERIFICAR]
+
+### [REPORTAR]
+
+### [COMPARTIR]
+
+### [IGNORAR]
+
+La elección termina.
+
+---
+
+# FINAL 1
+
+## «Ciudad Nova informada»
+
+**Condición aproximada:**
+
+```text
+Información verificada alta
+Desinformación baja
+Confianza alta
+```
+
+### [FONDO: PLAZA CENTRAL]
+
+Las pantallas muestran:
+
+> «RESULTADOS ELECTORALES»
+
+Los ciudadanos observan.
+
+El candidato con mayor apoyo obtiene la alcaldía.
+
+No se presenta como consecuencia de que el juego considere que determinado candidato sea «el mejor», sino del resultado acumulado de la participación y del apoyo generado durante la simulación.
+
+Lucía aparece junto al jugador.
+
+**Lucía:**
+
+> «No controlamos lo que las personas piensan.»
+
+**Jugador:**
+
+> «Pero sí podemos decidir qué hacemos con la información que recibimos.»
+
+Lucía asiente.
+
+### MENSAJE FINAL
+
+> **Ciudad Nova terminó el proceso electoral con altos niveles de información verificada y participación responsable.**
+
+### [PANTALLA]
+
+```text
+Información verificada: ██████████
+Confianza:              █████████
+Convivencia:            █████████
+Desinformación:         ██
+Conflictos:             ██
+```
+
+### FIN
+
+---
+
+# FINAL 2
+
+## «La ciudad dividida»
+
+**Condición aproximada:**
+
+```text
+Confianza media
+Conflictos altos
+Información verificada media
+```
+
+La plaza está llena.
+
+Algunos ciudadanos celebran.
+
+Otros discuten.
+
+Las pantallas muestran diferentes interpretaciones de los resultados.
+
+Un periodista dice:
+
+> «La elección terminó, pero las discusiones apenas comienzan.»
+
+El jugador mira Civitas.
+
+Hay cientos de comentarios.
+
+Algunos agradecen las verificaciones.
+
+Otros cuestionan las decisiones del jugador.
+
+### MENSAJE FINAL
+
+> **Ciudad Nova logró completar el proceso electoral, pero la desconfianza y los conflictos continúan.**
+
+### FIN
+
+---
+
+# FINAL 3
+
+## «La avalancha»
+
+**Condición aproximada:**
+
+```text
+Desinformación muy alta
+Información verificada baja
+```
+
+### [PANTALLA NEGRA]
+
+Se escuchan notificaciones.
+
+Una.
+
+Dos.
+
+Diez.
+
+Cien.
+
+Mil.
+
+### [CIVITAS]
+
+> 97.000 publicaciones nuevas.
+
+> 31.000 rumores.
+
+> 14.000 publicaciones sin fuente.
+
+> 8.000 correcciones.
+
+Pero las correcciones tienen muchas menos visualizaciones.
+
+El jugador mira la pantalla.
+
+**Jugador:**
+
+> «La información falsa ya no necesita convencer a todos.»
+
+> «Solo necesita llegar primero.»
+
+### MENSAJE FINAL
+
+> **La desinformación alcanzó un nivel crítico y afectó la convivencia digital de Ciudad Nova.**
+
+### FIN
+
+---
+
+# FINAL 4
+
+## «Silencio»
+
+**Condición aproximada:**
+
+```text
+Muchas decisiones IGNORAR
+Participación baja
+```
+
+La elección termina.
+
+El jugador mira su teléfono.
+
+Civitas está llena de publicaciones.
+
+Pero casi nadie verificó nada.
+
+El resultado electoral aparece.
+
+La ciudad sigue funcionando.
+
+Sin embargo, muchas personas no participaron activamente en las conversaciones.
+
+### Lucía:
+
+> «No compartir algo falso puede ser responsable.»
+
+> «Pero ignorar toda la información tampoco ayuda a una comunidad.»
+
+### MENSAJE FINAL
+
+> **La ciudad evitó parte de la desinformación, pero tuvo una baja participación responsable.**
+
+### FIN
+
+---
+
+# FINAL 5
+
+## «El efecto dominó»
+
+**Condición aproximada:**
+
+```text
+El jugador comparte varias publicaciones falsas
+```
+
+### [FLASHES DE PANTALLA]
+
+```text
+Compartido por Ana
+↓
+Compartido por Luis
+↓
+Compartido por Carlos
+↓
+Compartido por María
+↓
+Compartido por 500 personas
+↓
+Compartido por 5.000 personas
+```
+
+Una publicación falsa desencadena otras.
+
+Luego aparecen correcciones.
+
+Después discusiones.
+
+Después nuevos rumores.
+
+### Lucía:
+
+> «Mira cuántas personas tocaron esta información.»
+
+**Jugador:**
+
+> «Yo solo la compartí una vez.»
+
+**Lucía:**
+
+> «Una vez puede ser suficiente para cambiar su recorrido.»
+
+### MENSAJE FINAL
+
+> **Tus decisiones tuvieron un fuerte efecto sobre la propagación de información en Ciudad Nova.**
+
+### FIN
+
+---
+
+# FINAL 6
+
+## «La investigación»
+
+**Condición aproximada:**
+
+```text
+Muchas publicaciones verificadas
+Muchas investigaciones
+Alta reputación del jugador
+```
+
+La elección termina.
+
+Lucía llega con una carpeta.
+
+**Lucía:**
+
+> «Encontramos el origen de varias publicaciones falsas.»
+
+**Jugador:**
+
+> «¿Quién las creó?»
+
+**Lucía:**
+
+> «Todavía estamos investigándolo.»
+
+**Jugador:**
+
+> «Entonces no podemos afirmarlo.»
+
+Lucía sonríe.
+
+**Lucía:**
+
+> «Exactamente.»
+
+### MENSAJE FINAL
+
+> **No todas las historias terminan con una respuesta inmediata. Investigar también significa reconocer lo que todavía no sabemos.**
+
+### FIN
+
+---
+
+# FINAL 7
+
+## «La red»
+
+**Condición aproximada:**
+
+```text
+Uso intensivo del sistema de relaciones
+Muchas publicaciones propagadas
+Alta actividad entre ciudadanos
+```
+
+La pantalla muestra el grafo social.
+
+```text
+             ANA
+          /   |   \
+       LUIS PEDRO MARÍA
+        |          |
+      CARLOS ---- SOFÍA
+```
+
+La publicación inicial comenzó con una sola cuenta.
+
+Terminó llegando a cientos.
+
+El jugador observa las conexiones.
+
+### MENSAJE FINAL
+
+> **En una red social, cada conexión puede convertirse en un camino para la información.**
+
+> **Una decisión individual puede transformarse en un fenómeno colectivo.**
+
+### FIN
+
+---
+
+# FINAL 8
+
+## «Una ciudad que aprendió»
+
+**Condición aproximada:**
+
+```text
+Información verificada alta
+Confianza alta
+Convivencia alta
+Participación alta
+Desinformación controlada
+```
+
+La mañana después de la elección, aparecen nuevas funciones en Civitas.
+
+### CIVITAS
+
+> ✅ Fuente verificada
+
+> ✅ Corrección visible
+
+> ✅ Contexto adicional
+
+> ✅ Reporte ciudadano
+
+Los usuarios comienzan a compartir información de manera más responsable.
+
+El jugador recibe una última notificación.
+
+> **«Gracias por participar en Civitas.»**
+
+Debajo aparece:
+
+> «Ciudad Nova no depende de que todos piensen igual.»
+
+> «Depende de que todos puedan tomar decisiones con información suficiente.»
+
+La cámara se aleja.
+
+Se observa Ciudad Nova.
+
+La ciudad continúa.
+
+### MENSAJE FINAL
+
+> **FIN DE LA HISTORIA**
+>
+> El proceso electoral terminó.
+>
+> Pero la responsabilidad digital continúa.
+
+---
+
+# EPÍLOGO ESPECIAL
+
+Después de cualquiera de los finales aparece una pantalla adicional:
+
+## TU CAMPAÑA
+
+```text
+┌─────────────────────────────┐
+│ RESULTADO DE LA PARTIDA     │
+├─────────────────────────────┤
+│ Publicaciones verificadas   │
+│ ████████░░                  │
+│                             │
+│ Confianza ciudadana         │
+│ ███████░░░                  │
+│                             │
+│ Convivencia                 │
+│ █████████░                  │
+│                             │
+│ Participación               │
+│ ████████░░                  │
+│                             │
+│ Desinformación              │
+│ ███░░░░░░░                  │
+│                             │
+│ Conflictos                  │
+│ ██░░░░░░░░                  │
+└─────────────────────────────┘
+```
+
+Luego:
+
+> **PUBLICACIONES GESTIONADAS**
+
+```text
+Publicaciones recibidas: 18
+Verificadas: 7
+Compartidas: 5
+Ignoradas: 3
+Reportadas: 3
+```
+
+Finalmente:
+
+> **TU IMPACTO EN CIUDAD NOVA**
+
+El juego muestra qué consecuencias tuvieron las decisiones del jugador.
+
+---
+
+# ESTRUCTURA DE LAS DECISIONES
+
+La historia completa puede representarse de forma simplificada así:
+
+```text
+                 INICIO
+                    │
+            Primera publicación
+                    │
+       ┌────────────┼────────────┐
+       │            │            │
+   Compartir     Verificar     Reportar
+       │            │            │
+       └────────────┼────────────┘
+                    │
+                 Debate
+                    │
+             Tres publicaciones
+                    │
+             ┌──────┼──────┐
+             │      │      │
+           A      B      C
+             │      │      │
+             └──────┼──────┘
+                    │
+             Mensaje anónimo
+                    │
+        ┌───────────┼───────────┐
+        │           │           │
+      Publicar   Investigar   Descartar
+        │           │           │
+        └───────────┼───────────┘
+                    │
+             Publicación viral
+                    │
+            Mensaje coordinado
+                    │
+             Última publicación
+                    │
+                 ELECCIÓN
+                    │
+          ┌─────────┼─────────┐
+          │         │         │
+       FINAL 1   FINAL 2   FINAL 3...
+```
+
+# VARIABLES DE LA HISTORIA
+
+Para programarlo, cada decisión puede modificar variables.
+
+```text
+confianza
+informacion_verificada
+convivencia
+bienestar
+participacion
+desinformacion
+conflictos
+reputacion
+```
+
+Por ejemplo:
+
+```text
+VERIFICAR
+→ informacion_verificada + 5
+→ confianza + 3
+→ desinformacion - 3
+```
+
+y:
+
+```text
+COMPARTIR_FAKE_NEWS
+→ desinformacion + 5
+→ confianza - 3
+→ conflictos + 2
+```
+
+Esto hace que **la historia no tenga una respuesta única**.
+
+La misma escena puede terminar de forma diferente dependiendo de lo que haya ocurrido anteriormente.
+
+# VARIABLES OCULTAS
+
+También podemos tener variables que el jugador no vea directamente:
+
+```text
+reputacion_jugador
+credibilidad_periodista
+influencia
+numero_de_seguidores
+publicaciones_verificadas
+publicaciones_compartidas
+rumores_generados
+relaciones_afectadas
+```
+
+Estas variables serán especialmente útiles cuando implementemos los distintos roles.
+
+# ADAPTACIÓN A LOS CUATRO ROLES
+
+La misma historia puede variar dependiendo del personaje.
+
+### CIUDADANO
+
+Tiene decisiones centradas en:
+
+> compartir, verificar, ignorar y reportar.
+
+### PERIODISTA
+
+Obtiene escenas adicionales de investigación.
+
+### INFLUENCER
+
+Sus publicaciones tienen mayor propagación.
+
+### CANDIDATO
+
+Recibe escenas relacionadas con reputación, propuestas y comunicación pública.
+
+Los cuatro roles están contemplados por el laboratorio.
+
+# CONEXIÓN CON EL BST
+
+Cada publicación importante de la historia se convierte en un objeto:
+
+```text
+Publicacion
+│
+├── id
+├── texto
+├── veracidad
+├── tipo
+├── impacto
+├── autor
+├── compartidos
+├── reportes
+└── estado
+```
+
+Por ejemplo:
+
+```text
+ID 105
+Texto:
+"El Colegio Central será cerrado después
+de las elecciones."
+
+Veracidad:
+Falsa
+
+Tipo:
+Rumor
+
+Impacto:
+8
+
+Estado:
+Activa
+```
+
+Ese objeto se inserta en el BST.
+
+Así, cuando el jugador selecciona **VERIFICAR**, el juego puede buscar la publicación mediante su ID; cuando selecciona **REPORTAR**, puede localizarla y retirarla; y el recorrido del árbol puede utilizarse para mostrar el historial de publicaciones. El laboratorio exige precisamente justificar el problema resuelto por el árbol, su variante, inserción, eliminación y recorrido.
+
+# CONEXIÓN FUTURA CON EL GRAFO
+
+Después, cada publicación podrá recorrer una red como:
+
+```text
+Ana
+├── Luis
+│   └── Carlos
+├── Pedro
+│   └── María
+└── Sofía
+```
+
+Por eso una misma decisión tendrá consecuencias diferentes dependiendo de las relaciones existentes entre ciudadanos.
+
+El laboratorio plantea precisamente utilizar el grafo social para representar estas relaciones y determinar cómo se propaga una publicación.
+
+# FRASE FINAL DEL JUEGO
+
+La última pantalla puede mostrar:
+
+> **«En Civitas, compartir es una decisión. Verificar también.»**
+
+## FIN
