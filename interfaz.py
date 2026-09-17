@@ -6,41 +6,1379 @@ from PyQt6.QtWidgets import (
     QWidget,
     QLabel,
     QPushButton,
+    QStackedWidget,
     QVBoxLayout,
     QHBoxLayout,
+    QGridLayout,
     QFrame,
 )
-from PyQt6.QtGui import QFont
-from PyQt6.QtCore import Qt
+from PyQt6.QtGui import (
+    QPixmap,
+    QFont,
+    QFontDatabase,
+)
+from PyQt6.QtCore import (
+    Qt,
+    QTimer,
+    QRect,
+    QPropertyAnimation,
+    QParallelAnimationGroup,
+    QEasingCurve,
+    pyqtSignal,
+)
 
 from models.publicacion import Publicacion
 from estructuras.bst import ArbolPublicaciones
+from visualizador_bst import VisualizadorBST
 
 
+class EscenaInicio(QWidget):
+    continuar = pyqtSignal()
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+
+        self.fondo = QLabel(self)
+        self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.fondo.setScaledContents(False)
+
+        self.boton_inicio = QPushButton(self)
+        self.boton_inicio.setStyleSheet(
+            """
+            QPushButton {
+                background: transparent;
+                border: none;
+            }
+            QPushButton:hover {
+                background: rgba(255, 255, 255, 12);
+            }
+            """
+        )
+        self.boton_inicio.clicked.connect(self.iniciar)
+
+        self.setFocusPolicy(
+            Qt.FocusPolicy.StrongFocus
+        )
+
+    def resizeEvent(self, event):
+        self.actualizar_fondo()
+        self.actualizar_boton()
+        super().resizeEvent(event)
+
+    def actualizar_fondo(self):
+        pixmap = QPixmap(
+            "assets/fondos/fondo escena portada.jfif"
+        )
+
+        if pixmap.isNull():
+            self.fondo.setText(
+                "ALCALDE DIGITAL"
+            )
+            self.fondo.setStyleSheet(
+                "color: white; background: black; font-size: 40px;"
+            )
+            self.fondo.setGeometry(
+                self.rect()
+            )
+            return
+
+        pixmap_escalado = pixmap.scaled(
+            self.size(),
+            Qt.AspectRatioMode.KeepAspectRatioByExpanding,
+            Qt.TransformationMode.SmoothTransformation,
+        )
+
+        self.fondo.setPixmap(
+            pixmap_escalado
+        )
+
+        self.fondo.setGeometry(
+            self.rect()
+        )
+
+    def actualizar_boton(self):
+        ancho = self.width()
+        alto = self.height()
+
+        x = int(ancho * 0.296)
+        y = int(alto * 0.829)
+        w = int(ancho * 0.438)
+        h = int(alto * 0.110)
+
+        self.boton_inicio.setGeometry(
+            x,
+            y,
+            w,
+            h
+        )
+
+    def iniciar(self):
+        self.continuar.emit()
+        self.setFocus()
+
+    def keyPressEvent(self, event):
+        if event.key() in (
+            Qt.Key.Key_Space,
+            Qt.Key.Key_Return,
+            Qt.Key.Key_Enter,
+        ):
+            self.iniciar()
+            event.accept()
+            return
+
+        super().keyPressEvent(event)
 
 
-class AlcaldeDigitalApp(QMainWindow):
+class EscenaCinematica(QFrame):
+
+    dialogo_terminado = pyqtSignal()
+
+    VELOCIDAD_TEXTO = 38
+    DURACION_FRANJAS = 550
+    PAUSA_CINEMATICA = 180
+    TIEMPO_ANTES_DE_HABLAR = 1000
+
+    def __init__(self, fondo, parent=None):
+        super().__init__(parent)
+
+        self.fondo = fondo
+
+        self.texto_completo = ""
+        self.posicion_texto = 0
+
+        self.escribiendo = False
+        self.animando = False
+
+        self.altura_franja = 0
+        self.animacion = None
+
+        self.fondo_label = QLabel(self)
+        self.fondo_label.setAlignment(
+            Qt.AlignmentFlag.AlignCenter
+        )
+
+        self.franja_superior = QFrame(self)
+        self.franja_superior.setStyleSheet(
+            """
+            QFrame {
+                background-color: #000000;
+                border: none;
+            }
+            """
+        )
+
+        self.franja_inferior = QFrame(self)
+        self.franja_inferior.setStyleSheet(
+            """
+            QFrame {
+                background-color: #000000;
+                border: none;
+            }
+            """
+        )
+
+        self.nombre_label = QLabel(self)
+        self.nombre_label.setStyleSheet(
+            """
+            QLabel {
+                color: white;
+                background: transparent;
+            }
+            """
+        )
+
+        self.nombre_label.setAlignment(
+            Qt.AlignmentFlag.AlignLeft |
+            Qt.AlignmentFlag.AlignVCenter
+        )
+
+        self.texto_label = QLabel(self)
+        self.texto_label.setStyleSheet(
+            """
+            QLabel {
+                color: white;
+                background: transparent;
+            }
+            """
+        )
+
+        self.texto_label.setWordWrap(True)
+
+        self.texto_label.setAlignment(
+            Qt.AlignmentFlag.AlignLeft |
+            Qt.AlignmentFlag.AlignTop
+        )
+
+        self.timer_texto = QTimer(self)
+
+        self.timer_texto.timeout.connect(
+            self.escribir_siguiente_letra
+        )
+
+        self.cargar_fuente()
+
+        self.setFocusPolicy(
+            Qt.FocusPolicy.StrongFocus
+        )
+
+    def cargar_fuente(self):
+        ruta_fuente = (
+            "assets/Fuente Letra/Anton.ttf"
+        )
+
+        fuente_id = (
+            QFontDatabase.addApplicationFont(
+                ruta_fuente
+            )
+        )
+
+        if fuente_id != -1:
+
+            familias = (
+                QFontDatabase.applicationFontFamilies(
+                    fuente_id
+                )
+            )
+
+            if familias:
+                familia = familias[0]
+            else:
+                familia = "Arial"
+
+        else:
+            familia = "Arial"
+
+        self.fuente_nombre = QFont(
+            familia
+        )
+
+        self.fuente_nombre.setPointSize(
+            20
+        )
+
+        self.fuente_nombre.setBold(
+            True
+        )
+
+        self.fuente_dialogo = QFont(
+            familia
+        )
+
+        self.fuente_dialogo.setPointSize(
+            25
+        )
+
+        self.fuente_dialogo.setBold(
+            False
+        )
+
+        self.nombre_label.setFont(
+            self.fuente_nombre
+        )
+
+        self.texto_label.setFont(
+            self.fuente_dialogo
+        )
+
+    def resizeEvent(self, event):
+
+        self.actualizar_geometria()
+        self.actualizar_fondo()
+
+        super().resizeEvent(event)
+
+    def actualizar_fondo(self):
+
+        pixmap = QPixmap(
+            self.fondo
+        )
+
+        if pixmap.isNull():
+
+            self.fondo_label.clear()
+
+            self.fondo_label.setStyleSheet(
+                """
+                QLabel {
+                    background-color: #111111;
+                    color: white;
+                }
+                """
+            )
+
+            return
+
+        pixmap_escalado = pixmap.scaled(
+            self.size(),
+            Qt.AspectRatioMode.KeepAspectRatioByExpanding,
+            Qt.TransformationMode.SmoothTransformation,
+        )
+
+        self.fondo_label.setPixmap(
+            pixmap_escalado
+        )
+
+        self.fondo_label.setGeometry(
+            self.rect()
+        )
+
+        self.fondo_label.lower()
+
+    def actualizar_geometria(self):
+
+        ancho = self.width()
+        alto = self.height()
+
+        if ancho <= 0 or alto <= 0:
+            return
+
+        self.altura_franja = max(
+            95,
+            int(alto * 0.16)
+        )
+
+        margen = int(
+            ancho * 0.09
+        )
+
+        self.franja_superior.setGeometry(
+            0,
+            -self.altura_franja,
+            ancho,
+            self.altura_franja
+        )
+
+        self.franja_inferior.setGeometry(
+            0,
+            alto,
+            ancho,
+            self.altura_franja
+        )
+
+        self.nombre_label.setGeometry(
+            margen,
+            alto - self.altura_franja + 18,
+            ancho - margen * 2,
+            30
+        )
+
+        self.texto_label.setGeometry(
+            margen,
+            alto - self.altura_franja + 53,
+            ancho - margen * 2,
+            self.altura_franja - 65
+        )
+
+    def mostrar_fondo(self):
+
+        self.actualizar_fondo()
+        self.actualizar_geometria()
+
+    def comenzar_escena(self):
+
+        self.timer_texto.stop()
+
+        if self.animacion is not None:
+            self.animacion.stop()
+
+        self.escribiendo = False
+        self.animando = False
+
+        self.texto_completo = ""
+        self.posicion_texto = 0
+
+        self.nombre_label.setText("")
+        self.texto_label.setText("")
+
+        self.nombre_label.hide()
+        self.texto_label.hide()
+
+        self.mostrar_fondo()
+
+        self.franja_superior.raise_()
+        self.franja_inferior.raise_()
+        self.nombre_label.raise_()
+        self.texto_label.raise_()
+
+        ancho = self.width()
+        alto = self.height()
+
+        self.franja_superior.setGeometry(
+            0,
+            -self.altura_franja,
+            ancho,
+            self.altura_franja
+        )
+
+        self.franja_inferior.setGeometry(
+            0,
+            alto,
+            ancho,
+            self.altura_franja
+        )
+
+        QTimer.singleShot(
+            self.TIEMPO_ANTES_DE_HABLAR,
+            self.preparar_dialogo
+        )
+
+        self.setFocus()
+
+    def preparar_dialogo(self):
+
+        self.iniciar_dialogo(
+            self.texto_inicial,
+            self.nombre_inicial
+        )
+
+    def iniciar_dialogo(
+        self,
+        texto,
+        nombre=""
+    ):
+
+        self.timer_texto.stop()
+
+        if self.animacion is not None:
+            self.animacion.stop()
+
+        self.texto_completo = texto
+        self.posicion_texto = 0
+
+        self.escribiendo = False
+        self.animando = True
+
+        self.nombre_label.setText(
+            nombre
+        )
+
+        self.texto_label.setText("")
+
+        if nombre:
+            self.nombre_label.show()
+        else:
+            self.nombre_label.hide()
+
+        self.texto_label.hide()
+
+        self.actualizar_geometria()
+
+        self.franja_superior.raise_()
+        self.franja_inferior.raise_()
+        self.nombre_label.raise_()
+        self.texto_label.raise_()
+
+        ancho = self.width()
+        alto = self.height()
+
+        inicio_superior = QRect(
+            0,
+            -self.altura_franja,
+            ancho,
+            self.altura_franja
+        )
+
+        final_superior = QRect(
+            0,
+            0,
+            ancho,
+            self.altura_franja
+        )
+
+        inicio_inferior = QRect(
+            0,
+            alto,
+            ancho,
+            self.altura_franja
+        )
+
+        final_inferior = QRect(
+            0,
+            alto - self.altura_franja,
+            ancho,
+            self.altura_franja
+        )
+
+        self.franja_superior.setGeometry(
+            inicio_superior
+        )
+
+        self.franja_inferior.setGeometry(
+            inicio_inferior
+        )
+
+        animacion_superior = QPropertyAnimation(
+            self.franja_superior,
+            b"geometry"
+        )
+
+        animacion_superior.setDuration(
+            self.DURACION_FRANJAS
+        )
+
+        animacion_superior.setStartValue(
+            inicio_superior
+        )
+
+        animacion_superior.setEndValue(
+            final_superior
+        )
+
+        animacion_superior.setEasingCurve(
+            QEasingCurve.Type.OutCubic
+        )
+
+        animacion_inferior = QPropertyAnimation(
+            self.franja_inferior,
+            b"geometry"
+        )
+
+        animacion_inferior.setDuration(
+            self.DURACION_FRANJAS
+        )
+
+        animacion_inferior.setStartValue(
+            inicio_inferior
+        )
+
+        animacion_inferior.setEndValue(
+            final_inferior
+        )
+
+        animacion_inferior.setEasingCurve(
+            QEasingCurve.Type.OutCubic
+        )
+
+        self.animacion = (
+            QParallelAnimationGroup(self)
+        )
+
+        self.animacion.addAnimation(
+            animacion_superior
+        )
+
+        self.animacion.addAnimation(
+            animacion_inferior
+        )
+
+        self.animacion.finished.connect(
+            self.comenzar_escritura
+        )
+
+        self.animacion.start()
+
+    def comenzar_escritura(self):
+
+        self.animando = False
+
+        QTimer.singleShot(
+            self.PAUSA_CINEMATICA,
+            self.iniciar_escritura
+        )
+
+    def iniciar_escritura(self):
+
+        if not self.texto_completo:
+
+            self.escribiendo = False
+            return
+
+        self.posicion_texto = 0
+        self.escribiendo = True
+
+        self.texto_label.setText("")
+        self.texto_label.show()
+
+        self.texto_label.raise_()
+
+        self.timer_texto.start(
+            self.VELOCIDAD_TEXTO
+        )
+
+    def escribir_siguiente_letra(self):
+
+        if (
+            self.posicion_texto
+            >= len(self.texto_completo)
+        ):
+
+            self.timer_texto.stop()
+            self.escribiendo = False
+
+            return
+
+        self.posicion_texto += 1
+
+        self.texto_label.setText(
+            self.texto_completo[
+                :self.posicion_texto
+            ]
+        )
+
+    def avanzar(self):
+
+        if self.animando:
+            return
+
+        if self.escribiendo:
+
+            self.timer_texto.stop()
+
+            self.posicion_texto = len(
+                self.texto_completo
+            )
+
+            self.texto_label.setText(
+                self.texto_completo
+            )
+
+            self.escribiendo = False
+            return
+
+        self.dialogo_terminado.emit()
+
+    def mousePressEvent(self, event):
+
+        if (
+            event.button()
+            == Qt.MouseButton.LeftButton
+        ):
+
+            self.avanzar()
+
+            event.accept()
+            return
+
+        super().mousePressEvent(event)
+
+    def keyPressEvent(self, event):
+
+        if event.key() in (
+            Qt.Key.Key_Space,
+            Qt.Key.Key_Return,
+            Qt.Key.Key_Enter,
+        ):
+
+            self.avanzar()
+
+            event.accept()
+            return
+
+        super().keyPressEvent(event)
+
+
+class EscenaNarracion(EscenaCinematica):
+
+    def __init__(
+        self,
+        fondo,
+        texto,
+        siguiente,
+        parent=None
+    ):
+
+        super().__init__(
+            fondo,
+            parent
+        )
+
+        self.texto_inicial = texto
+        self.nombre_inicial = ""
+
+        self.siguiente = siguiente
+
+        self.dialogo_terminado.connect(
+            self.terminar_escena
+        )
+
+    def terminar_escena(self):
+
+        ventana = self.window()
+
+        if hasattr(
+            ventana,
+            "mostrar_escena"
+        ):
+
+            ventana.mostrar_escena(
+                self.siguiente
+            )
+
+
+class EscenaDialogo(EscenaCinematica):
+
+    def __init__(self, parent=None):
+
+        super().__init__(
+            "assets/fondos/Escena 2 Telefono.jfif",
+            parent
+        )
+
+        self.dialogos = [
+            (
+                "LAURA",
+                "Espera un momento, Daniel. Estoy revisando una publicación de Civitas que me parece sospechosa."
+            ),
+            (
+                "DANIEL",
+                "¿La del Colegio Central? Ya la vi. Tiene cientos de compartidos."
+            ),
+        ]
+
+        self.dialogo_actual = 0
+
+        self.dialogo_terminado.connect(
+            self.siguiente_dialogo
+        )
+
+    def comenzar_escena(self):
+
+        self.dialogo_actual = 0
+
+        self.mostrar_fondo()
+
+        self.timer_texto.stop()
+
+        if self.animacion is not None:
+            self.animacion.stop()
+
+        self.escribiendo = False
+        self.animando = False
+
+        self.texto_label.setText("")
+        self.nombre_label.setText("")
+
+        self.nombre_label.hide()
+        self.texto_label.hide()
+
+        self.actualizar_geometria()
+
+        ancho = self.width()
+        alto = self.height()
+
+        self.franja_superior.setGeometry(
+            0,
+            -self.altura_franja,
+            ancho,
+            self.altura_franja
+        )
+
+        self.franja_inferior.setGeometry(
+            0,
+            alto,
+            ancho,
+            self.altura_franja
+        )
+
+        QTimer.singleShot(
+            self.TIEMPO_ANTES_DE_HABLAR,
+            self.mostrar_dialogo_actual
+        )
+
+        self.setFocus()
+
+    def mostrar_dialogo_actual(self):
+
+        if (
+            self.dialogo_actual
+            >= len(self.dialogos)
+        ):
+
+            self.terminar_escena()
+            return
+
+        nombre, texto = self.dialogos[
+            self.dialogo_actual
+        ]
+
+        self.iniciar_dialogo(
+            texto,
+            nombre
+        )
+
+    def siguiente_dialogo(self):
+
+        self.dialogo_actual += 1
+
+        if (
+            self.dialogo_actual
+            >= len(self.dialogos)
+        ):
+
+            self.terminar_escena()
+            return
+
+        self.ocultar_franjas(
+            self.mostrar_dialogo_actual
+        )
+
+    def ocultar_franjas(
+        self,
+        siguiente
+    ):
+
+        ancho = self.width()
+        alto = self.height()
+
+        animacion_superior = QPropertyAnimation(
+            self.franja_superior,
+            b"geometry"
+        )
+
+        animacion_superior.setDuration(
+            350
+        )
+
+        animacion_superior.setStartValue(
+            QRect(
+                0,
+                0,
+                ancho,
+                self.altura_franja
+            )
+        )
+
+        animacion_superior.setEndValue(
+            QRect(
+                0,
+                -self.altura_franja,
+                ancho,
+                self.altura_franja
+            )
+        )
+
+        animacion_inferior = QPropertyAnimation(
+            self.franja_inferior,
+            b"geometry"
+        )
+
+        animacion_inferior.setDuration(
+            350
+        )
+
+        animacion_inferior.setStartValue(
+            QRect(
+                0,
+                alto - self.altura_franja,
+                ancho,
+                self.altura_franja
+            )
+        )
+
+        animacion_inferior.setEndValue(
+            QRect(
+                0,
+                alto,
+                ancho,
+                self.altura_franja
+            )
+        )
+
+        grupo = QParallelAnimationGroup(
+            self
+        )
+
+        grupo.addAnimation(
+            animacion_superior
+        )
+
+        grupo.addAnimation(
+            animacion_inferior
+        )
+
+        grupo.finished.connect(
+            siguiente
+        )
+
+        grupo.start()
+
+        self.animacion = grupo
+
+    def terminar_escena(self):
+
+        ventana = self.window()
+
+        if hasattr(
+            ventana,
+            "mostrar_escena"
+        ):
+
+            ventana.mostrar_escena(
+                ventana.ESCENA_ACCION
+            )
+
+
+class EscenaAccion(QWidget):
+
+    def __init__(self, juego, parent=None):
+
+        super().__init__(parent)
+
+        self.juego = juego
+
+        self.setStyleSheet(
+            """
+            QWidget {
+                background-color: #101827;
+            }
+
+            QLabel {
+                color: white;
+            }
+
+            QPushButton {
+                background-color: #1D2B42;
+                color: white;
+                border: 2px solid #40546F;
+                border-radius: 12px;
+                padding: 16px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            QPushButton:hover {
+                background-color: #2B405F;
+            }
+
+            QPushButton:pressed {
+                background-color: #172236;
+            }
+            """
+        )
+
+        self.titulo = QLabel()
+
+        self.titulo.setAlignment(
+            Qt.AlignmentFlag.AlignCenter
+        )
+
+        self.titulo.setFont(
+            QFont(
+                "Arial",
+                25,
+                QFont.Weight.Bold
+            )
+        )
+
+        self.publicacion = QLabel()
+
+        self.publicacion.setAlignment(
+            Qt.AlignmentFlag.AlignCenter
+        )
+
+        self.publicacion.setWordWrap(True)
+
+        self.publicacion.setMinimumHeight(
+            150
+        )
+
+        self.publicacion.setMaximumWidth(
+            1000
+        )
+
+        self.publicacion.setFont(
+            QFont(
+                "Arial",
+                22
+            )
+        )
+
+        self.info = QLabel()
+
+        self.info.setAlignment(
+            Qt.AlignmentFlag.AlignCenter
+        )
+
+        self.info.setFont(
+            QFont(
+                "Arial",
+                16
+            )
+        )
+
+        self.boton_compartir = QPushButton(
+            "COMPARTIR"
+        )
+
+        self.boton_verificar = QPushButton(
+            "VERIFICAR"
+        )
+
+        self.boton_ignorar = QPushButton(
+            "IGNORAR"
+        )
+
+        self.boton_reportar = QPushButton(
+            "REPORTAR"
+        )
+
+        self.boton_compartir.clicked.connect(
+            lambda: self.ejecutar_accion(
+                "compartir"
+            )
+        )
+
+        self.boton_verificar.clicked.connect(
+            lambda: self.ejecutar_accion(
+                "verificar"
+            )
+        )
+
+        self.boton_ignorar.clicked.connect(
+            lambda: self.ejecutar_accion(
+                "ignorar"
+            )
+        )
+
+        self.boton_reportar.clicked.connect(
+            lambda: self.ejecutar_accion(
+                "reportar"
+            )
+        )
+
+        layout_principal = QVBoxLayout(
+            self
+        )
+
+        layout_principal.setContentsMargins(
+            70,
+            45,
+            70,
+            45
+        )
+
+        layout_principal.setSpacing(
+            25
+        )
+
+        layout_principal.addWidget(
+            self.titulo
+        )
+
+        layout_principal.addWidget(
+            self.publicacion
+        )
+
+        layout_principal.addWidget(
+            self.info
+        )
+
+        botones = QGridLayout()
+
+        botones.setSpacing(18)
+
+        botones.addWidget(
+            self.boton_compartir,
+            0,
+            0
+        )
+
+        botones.addWidget(
+            self.boton_verificar,
+            0,
+            1
+        )
+
+        botones.addWidget(
+            self.boton_ignorar,
+            1,
+            0
+        )
+
+        botones.addWidget(
+            self.boton_reportar,
+            1,
+            1
+        )
+
+        layout_principal.addLayout(
+            botones
+        )
+
+    def mostrar(self):
+
+        publicacion = (
+            self.juego.obtener_publicacion_actual()
+        )
+
+        if publicacion is None:
+
+            self.titulo.setText(
+                "No hay publicaciones disponibles"
+            )
+
+            self.publicacion.setText("")
+            self.info.setText("")
+
+            return
+
+        self.titulo.setText(
+            "PUBLICACIÓN DE CIVITAS"
+        )
+
+        self.publicacion.setText(
+            f'"{publicacion.texto}"'
+        )
+
+        self.info.setText(
+            f"ID: #{publicacion.id}    "
+            f"Impacto: {publicacion.impacto}"
+        )
+
+    def ejecutar_accion(
+        self,
+        accion
+    ):
+
+        self.juego.ejecutar_accion(
+            accion
+        )
+
+        self.window().mostrar_escena(
+            self.window().ESCENA_ARBOL
+        )
+
+
+class EscenaArbol(QWidget):
+
+    def __init__(self, juego, parent=None):
+
+        super().__init__(parent)
+
+        self.juego = juego
+
+        self.setStyleSheet(
+            """
+            QWidget {
+                background-color: #101827;
+            }
+
+            QLabel {
+                color: white;
+            }
+
+            QPushButton {
+                background-color: #1D2B42;
+                color: white;
+                border: 2px solid #40546F;
+                border-radius: 10px;
+                padding: 12px 20px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            QPushButton:hover {
+                background-color: #2B405F;
+            }
+            """
+        )
+
+        titulo = QLabel(
+            "ÁRBOL BINARIO DE BÚSQUEDA"
+        )
+
+        titulo.setAlignment(
+            Qt.AlignmentFlag.AlignCenter
+        )
+
+        titulo.setFont(
+            QFont(
+                "Arial",
+                25,
+                QFont.Weight.Bold
+            )
+        )
+
+        self.visualizador = VisualizadorBST(
+            self.juego.arbol
+        )
+
+        self.boton_inorden = QPushButton(
+            "INORDEN"
+        )
+
+        self.boton_preorden = QPushButton(
+            "PREORDEN"
+        )
+
+        self.boton_postorden = QPushButton(
+            "POSTORDEN"
+        )
+
+        self.boton_continuar = QPushButton(
+            "CONTINUAR"
+        )
+
+        self.resultado = QLabel()
+
+        self.resultado.setAlignment(
+            Qt.AlignmentFlag.AlignCenter
+        )
+
+        self.resultado.setFont(
+            QFont(
+                "Arial",
+                15
+            )
+        )
+
+        self.boton_inorden.clicked.connect(
+            self.mostrar_inorden
+        )
+
+        self.boton_preorden.clicked.connect(
+            self.mostrar_preorden
+        )
+
+        self.boton_postorden.clicked.connect(
+            self.mostrar_postorden
+        )
+
+        self.boton_continuar.clicked.connect(
+            self.continuar
+        )
+
+        botones = QHBoxLayout()
+
+        botones.setSpacing(15)
+
+        botones.addWidget(
+            self.boton_inorden
+        )
+
+        botones.addWidget(
+            self.boton_preorden
+        )
+
+        botones.addWidget(
+            self.boton_postorden
+        )
+
+        layout = QVBoxLayout(self)
+
+        layout.setContentsMargins(
+            40,
+            25,
+            40,
+            25
+        )
+
+        layout.setSpacing(
+            15
+        )
+
+        layout.addWidget(
+            titulo
+        )
+
+        layout.addWidget(
+            self.visualizador,
+            1
+        )
+
+        layout.addLayout(
+            botones
+        )
+
+        layout.addWidget(
+            self.resultado
+        )
+
+        layout.addWidget(
+            self.boton_continuar
+        )
+
+    def mostrar(self):
+
+        self.visualizador.actualizar()
+
+        self.resultado.setText(
+            ""
+        )
+
+        self.setFocus()
+
+    def convertir_texto(
+        self,
+        publicaciones
+    ):
+
+        if not publicaciones:
+            return "Árbol vacío"
+
+        return "  →  ".join(
+            f"#{p.id}"
+            for p in publicaciones
+        )
+
+    def mostrar_inorden(self):
+
+        resultado = (
+            self.juego.arbol.inorden()
+        )
+
+        self.resultado.setText(
+            "INORDEN: "
+            + self.convertir_texto(
+                resultado
+            )
+        )
+
+    def mostrar_preorden(self):
+
+        resultado = (
+            self.juego.arbol.preorden()
+        )
+
+        self.resultado.setText(
+            "PREORDEN: "
+            + self.convertir_texto(
+                resultado
+            )
+        )
+
+    def mostrar_postorden(self):
+
+        resultado = (
+            self.juego.arbol.postorden()
+        )
+
+        self.resultado.setText(
+            "POSTORDEN: "
+            + self.convertir_texto(
+                resultado
+            )
+        )
+
+    def continuar(self):
+
+        self.juego.avanzar_publicacion()
+
+        self.window().continuar_desde_arbol()
+
+
+class Juego:
 
     def __init__(self):
-        super().__init__()
-
-     
-
-        self.setWindowTitle("Alcalde Digital")
-
-        
-        self.setMinimumSize(1280, 720)
-        self.showMaximized()
-
-       
-        self.estado_juego = "dialogo"
-
-      
 
         self.arbol = ArbolPublicaciones()
 
-        self.publicaciones = [
+        self.indice_publicacion = 0
 
+        self.publicaciones_eliminadas = []
+
+        self.info_verificada = 0
+        self.confianza = 0
+        self.desinformacion = 0
+        self.conviencia = 0
+        self.bienestar_digital = 0
+        self.conflictos = 0
+
+        self.crear_publicaciones()
+
+    def crear_publicaciones(self):
+
+        publicaciones = [
             Publicacion(
                 50,
                 "El Colegio Central será cerrado mañana.",
@@ -84,1050 +1422,335 @@ class AlcaldeDigitalApp(QMainWindow):
             ),
         ]
 
-        # Insertamos las publicaciones en el BST.
-        for publicacion in self.publicaciones:
-            self.arbol.insertar(publicacion)
+        for publicacion in publicaciones:
 
+            self.arbol.insertar(
+                publicacion
+            )
 
-        self.indice_publicacion = 0
-
-        self.publicacion_actual = (
-            self.publicaciones[
-                self.indice_publicacion
-            ]
-        )
-
-
-        self.confianza = 50
-        self.desinformacion = 20
-        self.informacion_verificada = 50
-        self.convivencia = 50
-
-        self.dialogos = [
-
-            [
-                (
-                    "Laura",
-                    "Espera un momento, Daniel. Estoy revisando "
-                    "una publicación de Civitas que me parece sospechosa."
-                ),
-                (
-                    "Daniel",
-                    "¿La del Colegio Central? Ya la vi. "
-                    "Tiene cientos de compartidos."
-                ),
-            ],
-
-            [
-                (
-                    "Laura",
-                    "La cantidad de compartidos no demuestra "
-                    "que una publicación sea verdadera."
-                ),
-                (
-                    "Daniel",
-                    "Entonces tenemos que decidir qué hacer "
-                    "antes de que siga circulando."
-                ),
-            ],
-
-            [
-                (
-                    "Laura",
-                    "Esta publicación necesita ser revisada "
-                    "antes de sacar conclusiones."
-                ),
-                (
-                    "Daniel",
-                    "Entiendo. Revisemos la información primero."
-                ),
-            ],
-
-            [
-                (
-                    "Daniel",
-                    "Cada vez aparecen más publicaciones sobre "
-                    "la campaña."
-                ),
-                (
-                    "Laura",
-                    "Y cada una puede cambiar la forma en que "
-                    "los ciudadanos perciben la información."
-                ),
-            ],
-
-            [
-                (
-                    "Laura",
-                    "Este rumor está empezando a crecer rápidamente."
-                ),
-                (
-                    "Daniel",
-                    "Entonces debemos actuar antes de que llegue "
-                    "a más personas."
-                ),
-            ],
-
-            [
-                (
-                    "Daniel",
-                    "Esta encuesta está circulando por toda Civitas."
-                ),
-                (
-                    "Laura",
-                    "Primero tenemos que saber de dónde salió."
-                ),
-            ],
-        ]
-
-        self.indice_dialogo = 0
-
-        self.crear_interfaz()
-
-        self.mostrar_dialogo()
-
-    def crear_interfaz(self):
-
-
-        contenedor = QWidget()
-
-        self.setCentralWidget(
-            contenedor
-        )
-
-        self.layout_principal = QVBoxLayout()
-
-        self.layout_principal.setContentsMargins(
-            0,
-            0,
-            0,
-            0
-        )
-
-        self.layout_principal.setSpacing(
-            0
-        )
-
-        contenedor.setLayout(
-            self.layout_principal
-        )
-
-
-        self.panel_escena = QFrame()
-
-        self.panel_escena.setStyleSheet(
-            """
-            QFrame {
-                background-color: #18243A;
-            }
-            """
-        )
-
-        self.layout_escena = QVBoxLayout()
-
-        self.layout_escena.setContentsMargins(
-            40,
-            25,
-            40,
-            25
-        )
-
-        self.panel_escena.setLayout(
-            self.layout_escena
-        )
-
-        self.layout_principal.addWidget(
-            self.panel_escena,
-            stretch=1
-        )
-
-
-        self.titulo = QLabel(
-            "ALCALDE DIGITAL"
-        )
-
-        self.titulo.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        self.titulo.setStyleSheet(
-            """
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-            """
-        )
-
-        self.layout_escena.addWidget(
-            self.titulo
-        )
-
-
-        self.civitas = QLabel(
-            "CIVITAS"
-        )
-
-        self.civitas.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        self.civitas.setStyleSheet(
-            """
-            color: #8EA8FF;
-            font-size: 24px;
-            font-weight: bold;
-            """
-        )
-
-        self.layout_escena.addWidget(
-            self.civitas
-        )
-
-
-        self.personajes = QLabel(
-            " DANIEL                                                                                          LAURA"
-        )
-
-        self.personajes.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        self.personajes.setStyleSheet(
-            """
-            color: white;
-            font-size: 40px;
-            padding: 30px;
-            """
-        )
-
-        self.layout_escena.addWidget(
-            self.personajes,
-            stretch=1
-        )
-
-        self.publicacion_label = QLabel()
-
-        self.publicacion_label.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        self.publicacion_label.setWordWrap(
-            True
-        )
-
-        self.publicacion_label.setStyleSheet(
-            """
-            color: white;
-            background-color: rgba(10, 20, 40, 180);
-            border: 2px solid #6179B6;
-            border-radius: 18px;
-            padding: 20px;
-            font-size: 24px;
-            """
-        )
-
-        self.layout_escena.addWidget(
-            self.publicacion_label
-        )
-
-        self.panel_inferior = QFrame()
-
-        self.panel_inferior.setMinimumHeight(
-            300
-        )
-
-        self.panel_inferior.setMaximumHeight(
-            360
-        )
-
-        self.panel_inferior.setStyleSheet(
-            """
-            QFrame {
-                background-color: #0D1628;
-                border-top: 2px solid #536A9A;
-            }
-            """
-        )
-
-        self.layout_inferior = QVBoxLayout()
-
-        self.layout_inferior.setContentsMargins(
-            35,
-            15,
-            35,
-            15
-        )
-
-        self.layout_inferior.setSpacing(
-            8
-        )
-
-        self.panel_inferior.setLayout(
-            self.layout_inferior
-        )
-
-        self.layout_principal.addWidget(
-            self.panel_inferior
-        )
-
-
-        self.panel_dialogo = QWidget()
-
-        self.layout_dialogo = QVBoxLayout()
-
-        self.layout_dialogo.setContentsMargins(
-            0,
-            0,
-            0,
-            0
-        )
-
-        self.panel_dialogo.setLayout(
-            self.layout_dialogo
-        )
-
-        self.layout_inferior.addWidget(
-            self.panel_dialogo
-        )
-
-
-        self.nombre_personaje = QLabel()
-
-        self.nombre_personaje.setStyleSheet(
-            """
-            color: #8EA8FF;
-            font-size: 23px;
-            font-weight: bold;
-            """
-        )
-
-        self.layout_dialogo.addWidget(
-            self.nombre_personaje
-        )
-
-        self.texto_dialogo = QLabel()
-
-        self.texto_dialogo.setWordWrap(
-            True
-        )
-
-        self.texto_dialogo.setMaximumHeight(
-            75
-        )
-
-        self.texto_dialogo.setStyleSheet(
-            """
-            color: white;
-            font-size: 22px;
-            padding-top: 5px;
-            """
-        )
-
-        self.layout_dialogo.addWidget(
-            self.texto_dialogo
-        )
-
-
-        self.indicacion = QLabel(
-            "CLICK o ESPACIO para continuar"
-        )
-
-        self.indicacion.setAlignment(
-            Qt.AlignmentFlag.AlignRight
-        )
-
-        self.indicacion.setStyleSheet(
-            """
-            color: #AAB6D1;
-            font-size: 16px;
-            """
-        )
-
-        self.layout_dialogo.addWidget(
-            self.indicacion
-        )
-
-
-        self.panel_opciones = QWidget()
-
-        self.layout_opciones = QHBoxLayout()
-
-        self.layout_opciones.setContentsMargins(
-            0,
-            0,
-            0,
-            0
-        )
-
-        self.layout_opciones.setSpacing(
-            15
-        )
-
-        self.panel_opciones.setLayout(
-            self.layout_opciones
-        )
-
-        self.layout_inferior.addWidget(
-            self.panel_opciones
-        )
-
-
-        self.panel_resultado = QWidget()
-
-        self.layout_resultado = QVBoxLayout()
-
-        self.layout_resultado.setContentsMargins(
-            0,
-            0,
-            0,
-            0
-        )
-
-        self.layout_resultado.setSpacing(
-            5
-        )
-
-        self.panel_resultado.setLayout(
-            self.layout_resultado
-        )
-
-        self.layout_inferior.addWidget(
-            self.panel_resultado
-        )
-
-
-        self.boton_continuar = QPushButton(
-            "CONTINUAR"
-        )
-
-        self.boton_continuar.setFixedHeight(
-            50
-        )
-
-        self.boton_continuar.setStyleSheet(
-            """
-            QPushButton {
-                background-color: #5865F2;
-                color: white;
-                border: none;
-                border-radius: 15px;
-                font-size: 20px;
-                font-weight: bold;
-            }
-
-            QPushButton:hover {
-                background-color: #7280FF;
-            }
-            """
-        )
-
-        self.boton_continuar.clicked.connect(
-            self.continuar
-        )
-
-        self.layout_inferior.addWidget(
-            self.boton_continuar
-        )
-
-
-        self.panel_opciones.hide()
-        self.panel_resultado.hide()
-        self.boton_continuar.hide()
-
-    def actualizar_publicacion_visual(
+    def obtener_publicaciones_activas(
         self
     ):
 
-        publicacion = (
-            self.publicacion_actual
+        publicaciones = (
+            self.arbol.inorden()
         )
 
-        self.publicacion_label.setText(
-            f"""
-<b>PUBLICACIÓN #{publicacion.id}</b>
-
-"{publicacion.texto}"
-
-Impacto: {publicacion.impacto}
-Compartidos: {publicacion.compartidos}
-Verificaciones: {publicacion.verificaciones}
-Reportes: {publicacion.reportes}
-Estado: {publicacion.estado}
-"""
-        )
-
-
-
-    def mostrar_dialogo(self):
-
-        self.estado_juego = "dialogo"
-
-        self.panel_dialogo.show()
-        self.panel_opciones.hide()
-        self.panel_resultado.hide()
-        self.boton_continuar.hide()
-
-        self.actualizar_publicacion_visual()
-
-        escena = self.dialogos[
-            self.indice_publicacion
+        return [
+            p
+            for p in publicaciones
+            if p.id
+            not in self.publicaciones_eliminadas
         ]
 
-        personaje, texto = escena[
-            self.indice_dialogo
-        ]
-
-        self.nombre_personaje.setText(
-            personaje
-        )
-
-        self.texto_dialogo.setText(
-            texto
-        )
-
-        self.indicacion.setText(
-            "CLICK o ESPACIO para continuar"
-        )
-
-    def mostrar_opciones(self):
-
-        self.estado_juego = "opciones"
-
-        self.panel_dialogo.hide()
-        self.panel_resultado.hide()
-        self.boton_continuar.hide()
-
-        self.panel_opciones.show()
-
-        self.borrar_botones()
-
-        opciones = [
-
-            (
-                "COMPARTIR",
-                self.accion_compartir
-            ),
-
-            (
-                "VERIFICAR",
-                self.accion_verificar
-            ),
-
-            (
-                "IGNORAR",
-                self.accion_ignorar
-            ),
-
-            (
-                "REPORTAR",
-                self.accion_reportar
-            ),
-        ]
-
-        for texto, funcion in opciones:
-
-            boton = QPushButton(
-                texto
-            )
-
-            boton.setFixedHeight(
-                55
-            )
-
-            boton.setStyleSheet(
-                """
-                QPushButton {
-                    background-color: #25385D;
-                    color: white;
-                    border: 2px solid #657FB8;
-                    border-radius: 14px;
-                    font-size: 18px;
-                    font-weight: bold;
-                }
-
-                QPushButton:hover {
-                    background-color: #3E5A91;
-                }
-
-                QPushButton:pressed {
-                    background-color: #5865F2;
-                }
-                """
-            )
-
-            boton.clicked.connect(
-                funcion
-            )
-
-            self.layout_opciones.addWidget(
-                boton
-            )
-
-
-    def borrar_botones(self):
-
-        while self.layout_opciones.count():
-
-            item = (
-                self.layout_opciones.takeAt(
-                    0
-                )
-            )
-
-            widget = item.widget()
-
-            if widget is not None:
-
-                widget.deleteLater()
-
-
-    def guardar_estado(
-        self,
-        publicacion
+    def obtener_publicacion_actual(
+        self
     ):
 
-        return {
-
-            "impacto":
-                publicacion.impacto,
-
-            "compartidos":
-                publicacion.compartidos,
-
-            "verificaciones":
-                publicacion.verificaciones,
-
-            "reportes":
-                publicacion.reportes,
-
-            "estado":
-                publicacion.estado
-        }
-
-    def mostrar_resultado(
-        self,
-        accion,
-        antes
-    ):
-
-        self.estado_juego = "resultado"
-
-        self.panel_dialogo.hide()
-        self.panel_opciones.hide()
-
-        self.panel_resultado.show()
-        self.boton_continuar.show()
-
-        self.limpiar_resultado()
-
-      
-
-        despues = self.arbol.buscar(
-            self.publicacion_actual.id
+        activas = (
+            self.obtener_publicaciones_activas()
         )
-
-        if despues is None:
-
-            texto_despues = (
-                "La publicación fue eliminada "
-                "del Árbol Binario de Búsqueda."
-            )
-
-        else:
-
-            texto_despues = (
-                f"Impacto: {despues.impacto}\n"
-                f"Compartidos: {despues.compartidos}\n"
-                f"Verificaciones: "
-                f"{despues.verificaciones}\n"
-                f"Reportes: {despues.reportes}\n"
-                f"Estado: {despues.estado}"
-            )
-
-        resultado = QLabel()
-
-        resultado.setWordWrap(
-            True
-        )
-
-        resultado.setStyleSheet(
-            """
-            color: white;
-            font-size: 15px;
-            """
-        )
-
-        resultado.setText(
-            f"""
-<b>ACCIÓN REALIZADA: {accion}</b>
-
-PUBLICACIÓN #{self.publicacion_actual.id}
-
-ANTES
-Impacto: {antes["impacto"]} |
-Compartidos: {antes["compartidos"]} |
-Verificaciones: {antes["verificaciones"]} |
-Reportes: {antes["reportes"]} |
-Estado: {antes["estado"]}
-
-DESPUÉS
-{texto_despues}
-"""
-        )
-
-        self.layout_resultado.addWidget(
-            resultado
-        )
-
-
-        titulo_bst = QLabel(
-            "ÁRBOL BINARIO DE BÚSQUEDA — ESTADO ACTUAL"
-        )
-
-        titulo_bst.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        titulo_bst.setStyleSheet(
-            """
-            color: #8EA8FF;
-            font-size: 17px;
-            font-weight: bold;
-            """
-        )
-
-        self.layout_resultado.addWidget(
-            titulo_bst
-        )
-
-        arbol = QLabel(
-            self.generar_arbol_texto()
-        )
-
-        arbol.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        arbol.setStyleSheet(
-            """
-            color: white;
-            background-color: #111B2E;
-            border: 2px solid #536A9A;
-            border-radius: 12px;
-            padding: 8px;
-            font-family: Consolas;
-            font-size: 14px;
-            """
-        )
-
-        self.layout_resultado.addWidget(
-            arbol
-        )
-
-
-    def generar_arbol_texto(self):
-
-        if self.arbol.raiz is None:
-
-            return "ÁRBOL VACÍO"
-
-        resultado = []
-
-        self._generar_arbol(
-            self.arbol.raiz,
-            "",
-            "",
-            resultado
-        )
-
-        return "\n".join(
-            resultado
-        )
-
-    def _generar_arbol(
-        self,
-        nodo,
-        prefijo,
-        rama,
-        resultado
-    ):
-
-        if nodo is None:
-            return
-
-        resultado.append(
-            f"{prefijo}{rama}"
-            f"[#{nodo.publicacion.id}] "
-            f"Impacto={nodo.publicacion.impacto} "
-            f"Estado={nodo.publicacion.estado}"
-        )
-
-        if nodo.izquierda is not None:
-
-            self._generar_arbol(
-                nodo.izquierda,
-                prefijo + "    ",
-                "├── IZQ ",
-                resultado
-            )
-
-        if nodo.derecha is not None:
-
-            self._generar_arbol(
-                nodo.derecha,
-                prefijo + "    ",
-                "└── DER ",
-                resultado
-            )
-
-
-    def accion_compartir(self):
-
-        publicacion = self.arbol.buscar(
-            self.publicacion_actual.id
-        )
-
-        if publicacion is None:
-            return
-
-        antes = self.guardar_estado(
-            publicacion
-        )
-
-        publicacion.compartidos += 1
-        publicacion.impacto += 1
-
-        publicacion.estado = (
-            "COMPARTIDA"
-        )
-
-        self.desinformacion += 2
-
-        self.mostrar_resultado(
-            "COMPARTIR",
-            antes
-        )
-
-
-    def accion_verificar(self):
-
-        publicacion = self.arbol.buscar(
-            self.publicacion_actual.id
-        )
-
-        if publicacion is None:
-            return
-
-        antes = self.guardar_estado(
-            publicacion
-        )
-
-        publicacion.verificaciones += 1
-
-        self.informacion_verificada += 5
-        self.confianza += 3
-
-        self.desinformacion = max(
-            0,
-            self.desinformacion - 3
-        )
-
-        if publicacion.verdadera:
-
-            publicacion.estado = (
-                "VERIFICADA"
-            )
-
-        else:
-
-            publicacion.estado = (
-                "FALSA VERIFICADA"
-            )
-
-        self.mostrar_resultado(
-            "VERIFICAR",
-            antes
-        )
-
-
-    def accion_ignorar(self):
-
-        publicacion = self.arbol.buscar(
-            self.publicacion_actual.id
-        )
-
-        if publicacion is None:
-            return
-
-        antes = self.guardar_estado(
-            publicacion
-        )
-
-        publicacion.estado = (
-            "IGNORADA"
-        )
-
-        self.mostrar_resultado(
-            "IGNORAR",
-            antes
-        )
-
-
-    def accion_reportar(self):
-
-        publicacion = self.arbol.buscar(
-            self.publicacion_actual.id
-        )
-
-        if publicacion is None:
-            return
-
-        antes = self.guardar_estado(
-            publicacion
-        )
-
-        publicacion.reportes += 1
-
-        self.confianza += 2
-
-        self.desinformacion = max(
-            0,
-            self.desinformacion - 2
-        )
-
-        # Eliminamos la publicación
-        # del BST.
-        self.arbol.eliminar(
-            publicacion.id
-        )
-
-        self.mostrar_resultado(
-            "REPORTAR",
-            antes
-        )
-
-
-    def continuar(self):
-
-        if self.estado_juego != "resultado":
-            return
-
-        self.indice_publicacion += 1
 
         if (
             self.indice_publicacion
-            >= len(self.publicaciones)
+            >= len(activas)
         ):
+            return None
 
-            self.indice_publicacion = 0
+        return activas[
+            self.indice_publicacion
+        ]
 
-        self.indice_dialogo = 0
-
-        self.publicacion_actual = (
-            self.publicaciones[
-                self.indice_publicacion
-            ]
-        )
-
-        self.mostrar_dialogo()
-
-
-    def limpiar_resultado(self):
-
-        while self.layout_resultado.count():
-
-            item = (
-                self.layout_resultado.takeAt(
-                    0
-                )
-            )
-
-            widget = item.widget()
-
-            if widget is not None:
-
-                widget.deleteLater()
-
-
-    def mousePressEvent(
+    def ejecutar_accion(
         self,
-        event
+        accion
     ):
 
-        if event.button() != (
-            Qt.MouseButton.LeftButton
-        ):
+        publicacion = (
+            self.obtener_publicacion_actual()
+        )
+
+        if publicacion is None:
             return
 
-        if self.estado_juego == "dialogo":
+        if accion == "compartir":
 
-            escena = self.dialogos[
-                self.indice_publicacion
-            ]
+            publicacion.compartidos += 1
+            publicacion.impacto += 1
+            publicacion.estado = (
+                "COMPARTIDA"
+            )
 
-            # Todavía quedan diálogos
-            if (
-                self.indice_dialogo
-                < len(escena) - 1
-            ):
+            self.desinformacion += 2
 
-                self.indice_dialogo += 1
+        elif accion == "verificar":
 
-                self.mostrar_dialogo()
+            publicacion.verificaciones += 1
+
+            self.info_verificada += 5
+            self.confianza += 3
+
+            self.desinformacion = max(
+                0,
+                self.desinformacion - 3
+            )
+
+            if publicacion.verdadera:
+
+                publicacion.estado = (
+                    "VERIFICADA"
+                )
 
             else:
 
-                self.mostrar_opciones()
+                publicacion.estado = (
+                    "FALSA VERIFICADA"
+                )
 
-        elif self.estado_juego == "resultado":
+        elif accion == "ignorar":
 
-            self.continuar()
+            publicacion.estado = (
+                "IGNORADA"
+            )
+
+        elif accion == "reportar":
+
+            publicacion.reportes += 1
+
+            self.confianza += 2
+
+            self.desinformacion = max(
+                0,
+                self.desinformacion - 2
+            )
+
+            self.publicaciones_eliminadas.append(
+                publicacion.id
+            )
+
+            self.arbol.eliminar(
+                publicacion.id
+            )
+
+    def avanzar_publicacion(self):
+
+        self.indice_publicacion += 1
+
+    def hay_publicaciones(self):
+
+        return (
+            self.obtener_publicacion_actual()
+            is not None
+        )
+
+
+class VentanaPrincipal(QMainWindow):
+
+    ESCENA_INICIO = 0
+    ESCENA_NARRACION_1 = 1
+    ESCENA_NARRACION_2 = 2
+    ESCENA_NARRACION_3 = 3
+    ESCENA_DIALOGO = 4
+    ESCENA_ACCION = 5
+    ESCENA_ARBOL = 6
+
+    def __init__(self):
+
+        super().__init__()
+
+        self.setWindowTitle(
+            "Alcalde Digital"
+        )
+
+        self.setMinimumSize(
+            1000,
+            700
+        )
+
+        self.pantalla_completa = False
+
+        self.juego = Juego()
+
+        self.escenas = QStackedWidget()
+
+        self.escena_inicio = (
+            EscenaInicio()
+        )
+
+        self.escena_narracion_1 = (
+            EscenaNarracion(
+                "assets/fondos/Fondo escena 1.jfif",
+                "Faltan pocos días para las elecciones.",
+                self.ESCENA_NARRACION_2
+            )
+        )
+
+        self.escena_narracion_2 = (
+            EscenaNarracion(
+                "assets/fondos/Fondo escena 2.png",
+                "En Civitas comienzan a aparecer publicaciones polémicas.",
+                self.ESCENA_NARRACION_3
+            )
+        )
+
+        self.escena_narracion_3 = (
+            EscenaNarracion(
+                "assets/fondos/Escena 2 Telefono.jfif",
+                "El candidato Juan quiere cerrar el colegio.",
+                self.ESCENA_DIALOGO
+            )
+        )
+
+        self.escena_dialogo = (
+            EscenaDialogo()
+        )
+
+        self.escena_accion = (
+            EscenaAccion(
+                self.juego
+            )
+        )
+
+        self.escena_arbol = (
+            EscenaArbol(
+                self.juego
+            )
+        )
+
+        self.escenas.addWidget(
+            self.escena_inicio
+        )
+
+        self.escenas.addWidget(
+            self.escena_narracion_1
+        )
+
+        self.escenas.addWidget(
+            self.escena_narracion_2
+        )
+
+        self.escenas.addWidget(
+            self.escena_narracion_3
+        )
+
+        self.escenas.addWidget(
+            self.escena_dialogo
+        )
+
+        self.escenas.addWidget(
+            self.escena_accion
+        )
+
+        self.escenas.addWidget(
+            self.escena_arbol
+        )
+
+        self.setCentralWidget(
+            self.escenas
+        )
+
+        self.escena_inicio.continuar.connect(
+            self.comenzar_juego
+        )
+
+        self.mostrar_escena(
+            self.ESCENA_INICIO
+        )
+
+    def comenzar_juego(self):
+
+        self.mostrar_escena(
+            self.ESCENA_NARRACION_1
+        )
+
+    def mostrar_escena(
+        self,
+        indice
+    ):
+
+        self.escenas.setCurrentIndex(
+            indice
+        )
+
+        escena = (
+            self.escenas.currentWidget()
+        )
+
+        if hasattr(
+            escena,
+            "comenzar_escena"
+        ):
+
+            escena.comenzar_escena()
+
+        elif hasattr(
+            escena,
+            "mostrar"
+        ):
+
+            escena.mostrar()
+
+        escena.setFocus()
+
+    def continuar_desde_arbol(
+        self
+    ):
+
+        if self.juego.hay_publicaciones():
+
+            self.mostrar_escena(
+                self.ESCENA_DIALOGO
+            )
+
+        else:
+
+            self.mostrar_escena(
+                self.ESCENA_NARRACION_1
+            )
 
     def keyPressEvent(
         self,
         event
     ):
 
-        if event.key() != (
-            Qt.Key.Key_Space
-        ):
+        if event.key() == Qt.Key.Key_F11:
+
+            self.alternar_pantalla_completa()
+
+            event.accept()
             return
 
-        if self.estado_juego == "dialogo":
+        super().keyPressEvent(event)
 
-            escena = self.dialogos[
-                self.indice_publicacion
-            ]
+    def alternar_pantalla_completa(
+        self
+    ):
 
-            if (
-                self.indice_dialogo
-                < len(escena) - 1
-            ):
+        if self.pantalla_completa:
 
-                self.indice_dialogo += 1
+            self.showMaximized()
 
-                self.mostrar_dialogo()
+            self.pantalla_completa = False
 
-            else:
+        else:
 
-                self.mostrar_opciones()
+            self.showFullScreen()
 
-        elif self.estado_juego == "resultado":
-
-            self.continuar()
+            self.pantalla_completa = True
 
 
+def main():
 
-if __name__ == "__main__":
+    app = QApplication(sys.argv)
 
-    app = QApplication(
-        sys.argv
-    )
+    ventana = VentanaPrincipal()
 
-    ventana = AlcaldeDigitalApp()
-
-    ventana.show()
+    ventana.showMaximized()
 
     sys.exit(
         app.exec()
     )
+
+
+if __name__ == "__main__":
+    main()

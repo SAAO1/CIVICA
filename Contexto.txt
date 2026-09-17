@@ -1,0 +1,1007 @@
+ayer 11:18 p.m.
+LABORATORIO 1 202630.pdf
+PDF
+Markdown(1).md pegado
+Archivo
+
+Sí. Y antes de programar, yo también empezaría por diseñar la historia y la arquitectura del juego. Si empezamos directamente haciendo el BST o la interfaz, corremos el riesgo de construir algo que después no encaje con la novela visual.
+
+Además, el laboratorio deja claro que el árbol y el grafo no pueden estar puestos solamente para cumplir el requisito: tienen que resolver problemas reales dentro de la lógica del videojuego.
+
+Y hay algo importante: la primera entrega es esta semana (14–18 de septiembre) y vale 10%; se evalúan específicamente árboles, pertinencia, operaciones/recorridos, interfaz preliminar y relación del árbol con la lógica del juego.
+
+🎮 PLAN COMPLETO PARA «ALCALDE DIGITAL»
+
+Nuestra idea será hacer una novela visual interactiva en Python + PyQt, con una historia electoral en Ciudad Nova, decisiones, consecuencias, personajes, imágenes, música/sonidos y posteriormente multijugador.
+
+La arquitectura general podría quedar así:
+
+                    ALCALDE DIGITAL
+                          │
+             ┌────────────┴────────────┐
+             │                         │
+          HISTORIA                  JUGADORES
+             │                         │
+      ┌──────┴──────┐          ┌───────┴───────┐
+      │             │          │               │
+   Escenas      Decisiones   Roles          Conexión
+      │             │          │               │
+      └──────┬──────┘          └───────┬───────┘
+             │                         │
+             └──────────┬──────────────┘
+                        │
+                 ESTADO DE CIUDAD
+                        │
+          ┌─────────────┼─────────────┐
+          │             │             │
+        Árbol         Grafo       Puntuación
+          │             │             │
+    Publicaciones   Relaciones     Consecuencias
+
+La clave será diseñar primero el juego en papel, y después convertir ese diseño en código.
+
+1. PRIMERA ETAPA — DISEÑAR LA HISTORIA
+
+Primero vamos a definir exactamente qué ocurre en Ciudad Nova.
+
+El documento establece que hay cuatro candidatos y que durante la campaña aparecen publicaciones verdaderas, opiniones y noticias falsas. El jugador debe decidir qué hacer con ellas.
+
+Por tanto, nuestra historia puede comenzar así:
+
+Ciudad Nova
+
+Faltan pocos días para las elecciones.
+
+En Civitas comienzan a aparecer publicaciones polémicas.
+
+Por ejemplo:
+
+«El candidato Juan quiere cerrar el colegio.»
+
+El jugador recibe la publicación.
+
+Tiene cuatro opciones:
+
+┌──────────────────────────────────┐
+│ CIVITAS                           │
+│                                  │
+│ "El candidato Juan quiere        │
+│ cerrar el colegio."               │
+│                                  │
+│ ┌───────────┐ ┌───────────────┐  │
+│ │ COMPARTIR │ │  VERIFICAR    │  │
+│ └───────────┘ └───────────────┘  │
+│                                  │
+│ ┌───────────┐ ┌───────────────┐  │
+│ │ IGNORAR   │ │ REPORTAR      │  │
+│ └───────────┘ └───────────────┘  │
+└──────────────────────────────────┘
+
+Dependiendo de la decisión:
+
+VERIFICAR
+    ↓
+descubres información
+    ↓
+la ciudad obtiene confianza
+
+Pero:
+
+COMPARTIR
+    ↓
+la publicación se propaga
+    ↓
+aumenta la desinformación
+
+Eso coincide directamente con el concepto del laboratorio: las acciones deben modificar el estado de Ciudad Nova.
+
+2. CREAR LOS PERSONAJES
+
+Después definimos los personajes.
+
+El laboratorio exige cuatro roles:
+
+Ciudadano
+Periodista
+Influencer
+Candidato a alcalde
+
+Podemos convertirlos en protagonistas jugables.
+
+👤 Ciudadano
+
+Características:
+
+Investigación: 2
+Influencia: 2
+Confianza: 3
+Velocidad: 3
+
+Su función sería tomar decisiones responsables.
+
+📰 Periodista
+Investigación: 5
+Influencia: 2
+Confianza: 4
+Velocidad: 2
+
+Puede verificar publicaciones con mayor facilidad.
+
+📱 Influencer
+Investigación: 2
+Influencia: 5
+Confianza: 3
+Velocidad: 5
+
+Sus publicaciones se propagan muchísimo más.
+
+Esto conecta directamente con el requisito de que el influencer tenga mayor capacidad para hacer llegar una publicación a otros ciudadanos.
+
+🗳️ Candidato
+Investigación: 3
+Influencia: 4
+Confianza: 5
+Velocidad: 2
+
+Su objetivo será mantener su reputación y conseguir apoyo.
+
+3. DISEÑAR LOS CUATRO CANDIDATOS
+
+Aquí podemos hacer algo bastante interesante.
+
+Por ejemplo:
+
+Candidato A — Juan
+Candidato B — Laura
+Candidato C — Andrés
+Candidato D — Camila
+
+Pero no vamos a hacer que uno sea simplemente "el bueno" y otro "el malo".
+
+Cada uno tendrá:
+
+propuestas
+fortalezas
+debilidades
+seguidores
+reputación
+publicaciones relacionadas
+rumores
+
+Así las decisiones del jugador realmente afectan la elección.
+
+El documento dice que el resultado final debe estar relacionado con el comportamiento durante la partida.
+
+4. DISEÑAR LA HISTORIA COMO ESCENAS
+
+Aquí comienza realmente la novela visual.
+
+Podemos estructurarla:
+
+INTRO
+ │
+ ├── Escena 1: Ciudad Nova
+ │
+ ├── Escena 2: Inicio de campaña
+ │
+ ├── Escena 3: Primera publicación
+ │
+ ├── Escena 4: Primer rumor
+ │
+ ├── Escena 5: Debate electoral
+ │
+ ├── Escena 6: Crisis de desinformación
+ │
+ ├── Escena 7: Último día
+ │
+ └── ELECCIONES
+
+Pero cada escena tendrá decisiones.
+
+Por ejemplo:
+
+ESCENA 3
+│
+└── Aparece publicación
+       │
+       ├── Compartir
+       │
+       ├── Verificar
+       │
+       ├── Ignorar
+       │
+       └── Reportar
+
+Y cada opción puede llevar a diferentes situaciones.
+
+5. HACER EL ÁRBOL DE DECISIONES
+
+Aquí hay una distinción MUY importante.
+
+La historia puede tener un árbol narrativo, pero para la asignatura nosotros necesitamos justificar específicamente nuestro Árbol Binario de Búsqueda (BST).
+
+No conviene decir:
+
+"Usamos BST porque la historia tiene decisiones."
+
+Eso sería una mala justificación.
+
+Un BST funciona por una clave de ordenamiento.
+
+Por eso vamos a separar:
+
+Árbol narrativo
+
+Representa:
+
+Escena
+ ├── decisión A
+ │    ├── consecuencia
+ │    └── consecuencia
+ │
+ └── decisión B
+      ├── consecuencia
+      └── consecuencia
+BST
+
+Representa información de Civitas.
+
+Por ejemplo:
+
+                 ID 50
+                /     \
+             ID 25     ID 80
+             /  \      /  \
+           10   35    65   90
+
+Cada nodo será una publicación.
+
+6. NUESTRO BST
+
+Yo lo diseñaría así:
+
+class Publicacion:
+    id
+    texto
+    verdadera
+    tipo
+    impacto
+    reportada
+
+Y:
+
+class Nodo:
+    publicacion
+    izquierda
+    derecha
+
+Luego:
+
+class ArbolPublicaciones:
+    raiz
+
+    insertar()
+    buscar()
+    eliminar()
+    recorrido_inorden()
+
+La clave podría ser:
+
+ID de publicación
+
+Entonces:
+
+PUBLICACIÓN #50
+
+             50
+            /  \
+          20    80
+         / \    / \
+       10 30  60 90
+7. ¿PARA QUÉ SIRVE REALMENTE EL BST?
+
+Esta es probablemente una de las preguntas que les harán en sustentación.
+
+Podemos plantearlo así:
+
+Cuando aparece una publicación
+Nueva publicación
+       ↓
+BST.insertar()
+Cuando el jugador verifica
+Jugador pulsa VERIFICAR
+          ↓
+      buscar(ID)
+          ↓
+   encuentra publicación
+          ↓
+ muestra información
+Cuando se reporta
+REPORTAR
+   ↓
+buscar(ID)
+   ↓
+eliminar(ID)
+Cuando queremos mostrar publicaciones
+recorrido_inorden()
+       ↓
+publicaciones ordenadas
+
+Eso cumple exactamente con lo que la guía pide respecto a inserción, eliminación y recorrido.
+
+8. DISEÑAR EL ESTADO DE LA CIUDAD
+
+Vamos a tener una clase:
+
+EstadoCiudad
+
+con:
+
+informacion_verificada
+confianza
+convivencia
+bienestar
+participacion
+desinformacion
+conflictos
+
+Por ejemplo:
+
+Información verificada: 82
+Confianza:              74
+Convivencia:            88
+Bienestar:              79
+Desinformación:         21
+Conflictos:             14
+
+Estos indicadores están inspirados directamente en los que plantea el laboratorio.
+
+9. CREAR UN SISTEMA DE CONSECUENCIAS
+
+Esto va a ser fundamental para que la novela visual sea interesante.
+
+Por ejemplo:
+
+VERIFICAR
++5 información verificada
++3 confianza
+-2 desinformación
+COMPARTIR información verdadera
++2 información verificada
++1 participación
+COMPARTIR información falsa
++5 desinformación
+-3 confianza
++2 conflictos
+REPORTAR información falsa
++3 convivencia
+-4 desinformación
++2 confianza
+IGNORAR
+sin cambios importantes
+
+Estos valores serían parte de nuestro diseño del juego, no algo impuesto literalmente por el PDF.
+
+10. Y AQUÍ ENTRA EL GRAFO
+
+El grafo lo dejamos para la segunda entrega, pero debemos diseñar desde ahora el juego pensando en él.
+
+El documento indica que el grafo social puede representar las relaciones entre ciudadanos y utilizarse para determinar cómo se propaga una publicación.
+
+Por ejemplo:
+
+             ANA
+            /   \
+          LUIS  PEDRO
+           |      |
+        CARLOS -- MARÍA
+
+Si Ana comparte:
+
+ANA
+ ↓
+LUIS
+ ↓
+CARLOS
+
+y:
+
+ANA
+ ↓
+PEDRO
+ ↓
+MARÍA
+
+la publicación se propaga.
+
+11. EL GRAFO TAMBIÉN PUEDE AFECTAR LA HISTORIA
+
+Aquí podemos hacer algo bastante bueno.
+
+Supongamos:
+
+Influencer
+    ↓
+Comparte fake news
+    ↓
+       GRAFO
+      /  |  \
+     /   |   \
+   Ana Luis Pedro
+       ↓
+    reciben
+       ↓
+  más ciudadanos
+
+Entonces la decisión del jugador no solamente cambia un número.
+
+Cambia la historia.
+
+Por ejemplo:
+
+DESINFORMACIÓN > 70
+          ↓
+Ciudad Nova entra en crisis
+          ↓
+aparece una escena especial
+
+Mientras:
+
+CONFIANZA > 80
+       ↓
+campaña de convivencia
+       ↓
+escena diferente
+12. MULTIJUGADOR
+
+Esto lo debemos diseñar desde temprano aunque lo implementemos después.
+
+El laboratorio exige de 2 a 4 jugadores y una arquitectura cliente-servidor, preferiblemente usando sockets.
+
+La arquitectura:
+
+                    SERVIDOR
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+     CLIENTE 1      CLIENTE 2      CLIENTE 3
+        │              │              │
+    Ciudadano       Periodista      Influencer
+                       │
+                   CLIENTE 4
+                       │
+                   Candidato
+
+El servidor será quien tenga el estado principal:
+
+EstadoCiudad
+Jugadores
+Publicaciones
+BST
+Grafo
+Eventos
+Puntuaciones
+Turnos
+13. ¿CÓMO FUNCIONARÁ LA NOVELA VISUAL MULTIJUGADOR?
+
+Aquí tenemos que decidir algo antes de programar.
+
+Yo recomiendo que todos los jugadores estén viviendo la misma campaña, pero cada uno tenga su propia perspectiva.
+
+Ejemplo:
+
+            SERVIDOR
+               │
+       Publicación #23
+               │
+      ┌────────┼────────┐
+      ↓        ↓        ↓
+  Ciudadano Periodista Influencer
+      │        │        │
+   Ignorar  Verificar Compartir
+      │        │        │
+      └────────┼────────┘
+               ↓
+        servidor calcula
+         consecuencias
+               ↓
+         nueva escena
+
+Así el multijugador tiene sentido.
+
+14. EVENTOS ALEATORIOS
+
+También necesitamos un sistema de eventos.
+
+El laboratorio exige que existan eventos cuyo resultado pueda variar entre partidas.
+
+Podríamos tener:
+
+EventoAleatorio
+│
+├── Fake news
+├── Publicación viral
+├── Rumor
+├── Discusión
+├── Noticia verdadera
+├── Campaña de convivencia
+└── Reporte ciudadano
+
+Por ejemplo:
+
+random()
+   ↓
+0–20   noticia verdadera
+21–40  rumor
+41–60  fake news
+61–80  publicación viral
+81–90  discusión
+91–100 campaña positiva
+15. SISTEMA DE TIEMPO
+
+El laboratorio también pide situaciones en las que el jugador tenga tiempo limitado para actuar.
+
+Podemos hacer:
+
+┌──────────────────────────────┐
+│ ⚠ INFORMACIÓN VIRAL          │
+│                              │
+│ "Mañana cerrarán los parques"│
+│                              │
+│ Tiempo: ███████░░░ 08 s      │
+│                              │
+│ [VERIFICAR]                  │
+│ [COMPARTIR]                  │
+│ [IGNORAR]                    │
+│ [REPORTAR]                   │
+└──────────────────────────────┘
+
+Esto además hace que el juego se sienta más como videojuego y menos como una presentación.
+
+16. DISEÑAR LA INTERFAZ
+
+Con PyQt podemos separar la pantalla:
+
+┌─────────────────────────────────────────────┐
+│             ALCALDE DIGITAL                 │
+├─────────────────────────────────────────────┤
+│                                             │
+│               IMAGEN / FONDO                │
+│                                             │
+│           PERSONAJE HABLANDO               │
+│                                             │
+├─────────────────────────────────────────────┤
+│ NOMBRE                                      │
+│                                             │
+│ "La información comienza a circular..."     │
+│                                             │
+├─────────────────────────────────────────────┤
+│ [ COMPARTIR ] [ VERIFICAR ]                 │
+│ [ IGNORAR   ] [ REPORTAR  ]                 │
+├─────────────────────────────────────────────┤
+│ Confianza ████████░░                        │
+│ Desinformación ███░░░░░░                   │
+└─────────────────────────────────────────────┘
+
+La guía exige que el funcionamiento se muestre gráficamente y que se puedan visualizar, entre otras cosas, ciudad, personaje, publicaciones, opciones, estado, puntuación e indicadores.
+
+17. ASSETS
+
+Después de tener la historia, hacemos una lista de assets.
+
+Fondos
+ciudad_nova.png
+alcaldia.png
+colegio.png
+parque.png
+plaza.png
+barrio.png
+Personajes
+juan.png
+laura.png
+andres.png
+camila.png
+periodista.png
+ciudadano.png
+influencer.png
+UI
+boton_compartir.png
+boton_verificar.png
+boton_ignorar.png
+boton_reportar.png
+panel_dialogo.png
+icono_confianza.png
+icono_desinformacion.png
+Audio
+musica_menu.mp3
+musica_ciudad.mp3
+click.wav
+notificacion.wav
+error.wav
+decision.wav
+18. ESTRUCTURA DEL PROYECTO
+
+Yo NO metería todo en main.py.
+
+Lo organizaría así:
+
+AlcaldeDigital/
+│
+├── main.py
+│
+├── juego/
+│   ├── partida.py
+│   ├── jugador.py
+│   ├── ciudad.py
+│   ├── historia.py
+│   └── decisiones.py
+│
+├── estructuras/
+│   ├── nodo.py
+│   ├── arbol_bst.py
+│   ├── grafo.py
+│   └── nodo_grafo.py
+│
+├── publicaciones/
+│   ├── publicacion.py
+│   └── datos.py
+│
+├── red/
+│   ├── servidor.py
+│   ├── cliente.py
+│   └── protocolo.py
+│
+├── interfaz/
+│   ├── menu.py
+│   ├── ventana_juego.py
+│   ├── dialogo.py
+│   ├── seleccion_personaje.py
+│   └── resultados.py
+│
+├── assets/
+│   ├── fondos/
+│   ├── personajes/
+│   ├── botones/
+│   ├── sonidos/
+│   └── musica/
+│
+└── README.md
+
+Eso nos permitirá desarrollar por partes sin destruir todo el proyecto.
+
+19. GIT DESDE EL PRIMER DÍA
+
+Esto es importantísimo porque el profesor exige que el repositorio muestre el historial de commits de cada integrante.
+
+Podemos trabajar:
+
+main
+│
+├── feature/historia
+├── feature/bst
+├── feature/interfaz
+├── feature/grafo
+└── feature/multijugador
+
+Y commits como:
+
+feat: crear clase Publicacion
+feat: implementar nodo BST
+feat: implementar insercion BST
+feat: implementar busqueda BST
+feat: crear ventana principal PyQt
+feat: agregar sistema de dialogos
+20. LO MÁS IMPORTANTE: PRIMERA ENTREGA
+
+Como estamos 15 de septiembre, prácticamente estamos dentro de la primera entrega.
+
+Por lo tanto, NO intentaría hacer todo el juego ahora.
+
+El PDF dice que la primera entrega evalúa:
+
+Árbol
+   ↓
+Pertinencia
+   ↓
+Operaciones
+   ↓
+Recorridos
+   ↓
+Interfaz preliminar
+   ↓
+Integración con la lógica
+
+Por eso nuestro objetivo inmediato debería ser:
+
+ESTA SEMANA
+1. Diseñar historia básica
+        ↓
+2. Diseñar publicaciones
+        ↓
+3. Diseñar BST
+        ↓
+4. Programar BST
+        ↓
+5. Probar insertar
+        ↓
+6. Probar buscar
+        ↓
+7. Probar eliminar
+        ↓
+8. Probar recorrido
+        ↓
+9. Conectar BST con el juego
+        ↓
+10. Crear interfaz PyQt
+        ↓
+11. Mostrar publicaciones
+        ↓
+12. Botones de decisión
+        ↓
+13. Git + README
+        ↓
+14. Preparar sustentación
+21. Y DESPUÉS DE LA PRIMERA ENTREGA
+
+Nuestro cronograma completo quedaría:
+
+Fase	Qué hacemos
+Fase 1 — ahora	Historia + BST + PyQt
+Fase 2	Mejorar novela visual + escenas
+Fase 3	Grafo social
+Fase 4	Propagación de publicaciones
+Fase 5	Multijugador + sockets
+Fase 6	Eventos aleatorios
+Fase 7	Sistema de puntuación
+Fase 8	Elección del alcalde
+Fase 9	Assets + animaciones + sonido
+Fase 10	Inclusividad + ayuda
+Fase 11	Pruebas
+Fase 12	Sustentación
+
+La entrega final exige que estén integrados árboles, grafos, interfaz, aleatoriedad, componente inclusivo, ayuda, elementos motivadores, multijugador, comunicación cliente-servidor y funcionamiento estable.
+
+🧠 CÓMO LO VAMOS A HACER JUNTOS
+
+Yo lo haría paso por paso, no te soltaría de una vez 2.000 líneas de código.
+
+Nuestro orden sería:
+
+PASO 1
+↓
+Diseñar Ciudad Nova
+
+PASO 2
+↓
+Crear personajes y candidatos
+
+PASO 3
+↓
+Escribir la historia
+
+PASO 4
+↓
+Diseñar las escenas y decisiones
+
+PASO 5
+↓
+Diseñar las publicaciones
+
+PASO 6
+↓
+Diseñar exactamente qué almacenará
+cada nodo del BST
+
+PASO 7
+↓
+Aprender/implementar BST desde cero
+
+PASO 8
+↓
+Conectar BST con las decisiones
+
+PASO 9
+↓
+Crear ventana PyQt
+
+PASO 10
+↓
+Convertirla en novela visual
+
+PASO 11
+↓
+Agregar assets
+
+PASO 12
+↓
+Diseñar el grafo
+
+PASO 13
+↓
+Crear propagación
+
+PASO 14
+↓
+Crear servidor y clientes
+
+PASO 15
+↓
+Integrar TODO
+
+Y no vamos a programar el multijugador todavía. Primero necesitamos que exista una partida para un jugador que funcione correctamente; después convertimos esa partida en cliente-servidor.
+
+Además, durante la sustentación cualquier integrante puede ser interrogado sobre cualquier parte del proyecto, incluyendo código, árboles, grafos, interfaz, arquitectura y decisiones tomadas. Por eso conviene que la arquitectura sea sencilla y que entiendas cada parte.
+
+Primer objetivo concreto
+
+Ahora mismo yo empezaría por el documento de diseño de la historia de Alcalde Digital.
+
+Antes de tocar PyQt, vamos a dejar definido:
+
+🌆 Ciudad Nova
+👥 4 roles
+🗳️ 4 candidatos
+📱 Civitas
+📰 tipos de publicaciones
+🎬 escenas
+🌳 dónde entra el BST
+🔀 decisiones
+📊 consecuencias
+🏆 condición de victoria
+
+Después de eso pasamos al diseño exacto del BST, y ahí sí empezamos a programar desde cero en Python + PyQt.
+
+me imagino que asi no quedara si no que es temporal debo colocarle los botones como debe ser las imagenes y todo eso. por cierto yo creo que por cada accion se vea el cambio en el arbol y despues pasa a la siguiente escena y asi por cada accion que se vaya haciendo pienso yo 
+Editar
+no lo quiero asi, lo quiero asi y que despues de presionar click o espacio en el teclado pueda salir las 4 opciones pero quiero que se vea de ese estilo y despues que le des a la opcion la accion que haga se vea el arbol como va cambiando y sigue la siguiente escena y asi 
+Editar
+
+Exactamente. Esa es la dirección que debemos tomar.
+
+La interfaz final no será como la captura anterior de paneles tipo aplicación administrativa. Será una novela visual estilo anime, como la referencia que me mostraste.
+
+La secuencia de juego quedaría:
+
+ESCENA
+  ↓
+DIÁLOGO
+  ↓
+CLICK / ESPACIO
+  ↓
+APARECEN LAS OPCIONES
+  ↓
+EL JUGADOR ELIGE
+  ↓
+SE PROCESA LA ACCIÓN
+  ↓
+SE ACTUALIZA EL BST
+  ↓
+SE MUESTRA EL CAMBIO
+  ↓
+CLICK / ESPACIO
+  ↓
+DIÁLOGO DE CONSECUENCIA
+  ↓
+CLICK / ESPACIO
+  ↓
+SIGUIENTE ESCENA
+
+Y esto se repetirá durante toda la partida.
+
+Por ejemplo:
+
+Escena
+
+Daniel y Laura están hablando:
+
+LAURA: «Espera, Daniel. Estoy revisando esta publicación.»
+
+El jugador pulsa ESPACIO.
+
+Aparecen las acciones correspondientes al personaje.
+
+Para el Ciudadano:
+
+┌──────────────────────────┐
+│ ¿Qué quieres hacer?      │
+│                          │
+│ [ COMPARTIR ]            │
+│ [ IGNORAR ]              │
+│ [ REPORTAR ]             │
+│ [ ESPERAR ]              │
+└──────────────────────────┘
+
+Para el Periodista:
+
+┌──────────────────────────┐
+│ ¿Qué quieres hacer?      │
+│                          │
+│ [ INVESTIGAR ]           │
+│ [ BUSCAR FUENTE ]        │
+│ [ ADVERTIR ]             │
+│ [ IGNORAR ]              │
+└──────────────────────────┘
+
+Y cada jugador únicamente verá las opciones de su rol, como tú dijiste.
+
+Después de que ambos decidan:
+
+Daniel → COMPARTIR
+Laura  → INVESTIGAR
+
+aparece durante unos segundos:
+
+┌────────────────────────────────┐
+│       RESULTADO DE ACCIONES    │
+│                                │
+│ Publicación #014               │
+│                                │
+│ Impacto       7 → 8             │
+│ Compartidos  86 → 87            │
+│ Verificaciones 0 → 1            │
+│ Estado       ACTIVA             │
+│              ↓                 │
+│           EN INVESTIGACIÓN      │
+│                                │
+│            BST                 │
+│                                │
+│                #014             │
+│               /    \            │
+│            #008    #021         │
+│             /                    │
+│           #003                   │
+│                                │
+│          [ CONTINUAR ]          │
+└────────────────────────────────┘
+
+Eso es mucho mejor para la sustentación, porque literalmente podremos demostrar:
+
+«La acción del jugador provoca una operación sobre la estructura de datos y el cambio se refleja inmediatamente en el árbol.»
+
+El laboratorio exige justamente que la estructura esté integrada con la lógica del videojuego y que puedan explicar cómo afecta las decisiones del jugador.
+
+La imagen que te generé es una referencia visual de hacia dónde quiero llevarlo, pero no vamos a intentar programar todo ese diseño de una vez.
+
+Nuestro desarrollo será:
+
+AHORA
+↓
+BST funcionando
+↓
+Acciones funcionando
+↓
+Actualizar BST
+↓
+Pantalla "Resultado de acción"
+↓
+Sistema de diálogo
+↓
+Click / ESPACIO
+↓
+Escenas
+↓
+Selección de rol
+↓
+Interfaz diferente para cada jugador
+↓
+Multijugador
+
+Y para la primera entrega, nos quedamos solamente con:
+
+✅ BST
+✅ insertar
+✅ buscar
+✅ eliminar
+✅ recorridos
+✅ publicación integrada
+✅ interfaz PyQt
+✅ botón → acción → BST
+✅ mostrar cambio
+✅ interfaz preliminar
+
+Eso cubre los aspectos que el laboratorio evalúa en la primera entrega.
+
+El siguiente paso que haría ahora mismo es modificar interfaz.py para que, al pulsar un botón, aparezca una pantalla de “Resultado de la acción” y podamos ver el cambio del BST antes de continuar. Esa será la primera pieza de la interfaz estilo novela visual que queremos.
+
+mira los sizes haz todo 1920 x 1080 por cierto y mira que no estas siguiendo como va primero sale la imagen los personajes y sale dialogo le presionas space o click  y salen los botones le presionas a cualquier boton y hay aparece  el cuadro de resultado de la accion y sale el boton abajo continuar y sale el siguiente dialogo y asi por cada accion. 
+no me deja ver los botones abajo como podemos arreglar eso, y despues de arreglar lo que te acabod e decir seguimos haciendo los otros punto de  ⬜ Hacer que los recorridos se puedan demostrar ⬜ Mejorar visualmente la ventana ⬜ Agregar una pantalla de explicación del BST  
