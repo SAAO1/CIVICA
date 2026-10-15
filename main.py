@@ -12,277 +12,273 @@ def mostrar_lista(nombre, lista):
     )
 
 
-def main():
-    print("=" * 50)
-    print("PRUEBA DEL ÁRBOL BINARIO DE BÚSQUEDA")
-    print("=" * 50)
+print("=" * 50)
+print("PRUEBA DEL ÁRBOL BINARIO DE BÚSQUEDA")
+print("=" * 50)
 
 
-    # ============================================================
-    # 1. CREAR ÁRBOL
-    # ============================================================
+# ============================================================
+# 1. CREAR ÁRBOL
+# ============================================================
 
-    arbol = ArbolPublicaciones()
-
-
-    # ============================================================
-    # 2. CREAR PUBLICACIONES
-    # ============================================================
-
-    publicaciones = [
-
-        Publicacion(
-            50,
-            "Publicación principal",
-            True,
-            5
-        ),
-
-        Publicacion(
-            30,
-            "Publicación izquierda",
-            True,
-            4
-        ),
-
-        Publicacion(
-            70,
-            "Publicación derecha",
-            False,
-            6
-        ),
-
-        Publicacion(
-            20,
-            "Publicación izquierda izquierda",
-            True,
-            2
-        ),
-
-        Publicacion(
-            40,
-            "Publicación izquierda derecha",
-            True,
-            3
-        ),
-
-        Publicacion(
-            60,
-            "Publicación derecha izquierda",
-            False,
-            7
-        ),
-
-        Publicacion(
-            80,
-            "Publicación derecha derecha",
-            False,
-            8
-        ),
-    ]
+arbol = ArbolPublicaciones()
 
 
-    # ============================================================
-    # 3. INSERTAR
-    # ============================================================
+# ============================================================
+# 2. CREAR PUBLICACIONES
+# ============================================================
 
-    print("\n[1] INSERTANDO PUBLICACIONES...")
+publicaciones = [
 
-    for publicacion in publicaciones:
+    Publicacion(
+        50,
+        "Publicación principal",
+        True,
+        5
+    ),
 
-        arbol.insertar(
-            publicacion
-        )
+    Publicacion(
+        30,
+        "Publicación izquierda",
+        True,
+        4
+    ),
 
-    print("Publicaciones insertadas correctamente.")
+    Publicacion(
+        70,
+        "Publicación derecha",
+        False,
+        6
+    ),
+
+    Publicacion(
+        20,
+        "Publicación izquierda izquierda",
+        True,
+        2
+    ),
+
+    Publicacion(
+        40,
+        "Publicación izquierda derecha",
+        True,
+        3
+    ),
+
+    Publicacion(
+        60,
+        "Publicación derecha izquierda",
+        False,
+        7
+    ),
+
+    Publicacion(
+        80,
+        "Publicación derecha derecha",
+        False,
+        8
+    ),
+]
 
 
-    # ============================================================
-    # 4. MOSTRAR RECORRIDOS
-    # ============================================================
+# ============================================================
+# 3. INSERTAR
+# ============================================================
 
-    print("\n[2] RECORRIDOS INICIALES")
+print("\n[1] INSERTANDO PUBLICACIONES...")
 
-    mostrar_lista(
-        "Inorden",
-        arbol.inorden()
+for publicacion in publicaciones:
+
+    arbol.insertar(
+        publicacion
     )
 
-    mostrar_lista(
-        "Preorden",
-        arbol.preorden()
+print("Publicaciones insertadas correctamente.")
+
+
+# ============================================================
+# 4. MOSTRAR RECORRIDOS
+# ============================================================
+
+print("\n[2] RECORRIDOS INICIALES")
+
+mostrar_lista(
+    "Inorden",
+    arbol.inorden()
+)
+
+mostrar_lista(
+    "Preorden",
+    arbol.preorden()
+)
+
+mostrar_lista(
+    "Postorden",
+    arbol.postorden()
+)
+
+
+# ============================================================
+# 5. BUSCAR
+# ============================================================
+
+print("\n[3] PRUEBA DE BÚSQUEDA")
+
+buscada = arbol.buscar(40)
+
+if buscada is not None:
+
+    print(
+        f"Encontrada publicación #{buscada.id}:"
     )
 
-    mostrar_lista(
-        "Postorden",
-        arbol.postorden()
+    print(
+        f"Texto: {buscada.texto}"
+    )
+
+else:
+
+    print(
+        "ERROR: no se encontró la publicación #40"
     )
 
 
-    # ============================================================
-    # 5. BUSCAR
-    # ============================================================
+buscada = arbol.buscar(999)
 
-    print("\n[3] PRUEBA DE BÚSQUEDA")
+if buscada is None:
 
-    buscada = arbol.buscar(40)
+    print(
+        "Correcto: la publicación #999 no existe."
+    )
 
-    if buscada is not None:
+else:
+
+    print(
+        "ERROR: se encontró una publicación que no existe."
+    )
+
+
+# ============================================================
+# 6. ELIMINAR HOJA
+# ============================================================
+
+print("\n[4] ELIMINAR NODO HOJA")
+
+print("Eliminando #20...")
+
+arbol.eliminar(20)
+
+mostrar_lista(
+    "Inorden después de eliminar #20",
+    arbol.inorden()
+)
+
+
+# ============================================================
+# 7. ELIMINAR NODO CON UN HIJO
+# ============================================================
+
+print("\n[5] ELIMINAR NODO CON UN HIJO")
+
+print("Primero eliminaremos #60 para preparar el ejemplo.")
+
+arbol.eliminar(60)
+
+print("Ahora #70 queda con un solo hijo (#80).")
+
+print("Eliminando #70...")
+
+arbol.eliminar(70)
+
+mostrar_lista(
+    "Inorden después de eliminar #70",
+    arbol.inorden()
+)
+
+
+# ============================================================
+# 8. ELIMINAR NODO CON DOS HIJOS
+# ============================================================
+
+print("\n[6] ELIMINAR NODO CON DOS HIJOS")
+
+print("Eliminando #30...")
+
+arbol.eliminar(30)
+
+mostrar_lista(
+    "Inorden después de eliminar #30",
+    arbol.inorden()
+)
+
+
+# ============================================================
+# 9. MOSTRAR RECORRIDOS FINALES
+# ============================================================
+
+print("\n[7] RECORRIDOS FINALES")
+
+mostrar_lista(
+    "Inorden",
+    arbol.inorden()
+)
+
+mostrar_lista(
+    "Preorden",
+    arbol.preorden()
+)
+
+mostrar_lista(
+    "Postorden",
+    arbol.postorden()
+)
+
+
+# ============================================================
+# 10. MOSTRAR ÁRBOL FINAL
+# ============================================================
+
+print("\n[8] ESTRUCTURA FINAL")
+
+if arbol.raiz is not None:
+
+    print(
+        f"Raíz: #{arbol.raiz.publicacion.id}"
+    )
+
+    if arbol.raiz.izquierda is not None:
 
         print(
-            f"Encontrada publicación #{buscada.id}:"
-        )
-
-        print(
-            f"Texto: {buscada.texto}"
+            f"Izquierda: "
+            f"#{arbol.raiz.izquierda.publicacion.id}"
         )
 
     else:
 
         print(
-            "ERROR: no se encontró la publicación #40"
+            "Izquierda: VACÍO"
         )
 
-
-    buscada = arbol.buscar(999)
-
-    if buscada is None:
+    if arbol.raiz.derecha is not None:
 
         print(
-            "Correcto: la publicación #999 no existe."
+            f"Derecha: "
+            f"#{arbol.raiz.derecha.publicacion.id}"
         )
 
     else:
 
         print(
-            "ERROR: se encontró una publicación que no existe."
+            "Derecha: VACÍO"
         )
 
+else:
 
-    # ============================================================
-    # 6. ELIMINAR HOJA
-    # ============================================================
-
-    print("\n[4] ELIMINAR NODO HOJA")
-
-    print("Eliminando #20...")
-
-    arbol.eliminar(20)
-
-    mostrar_lista(
-        "Inorden después de eliminar #20",
-        arbol.inorden()
+    print(
+        "El árbol está vacío."
     )
 
 
-    # ============================================================
-    # 7. ELIMINAR NODO CON UN HIJO
-    # ============================================================
-
-    print("\n[5] ELIMINAR NODO CON UN HIJO")
-
-    print("Primero eliminaremos #60 para preparar el ejemplo.")
-
-    arbol.eliminar(60)
-
-    print("Ahora #70 queda con un solo hijo (#80).")
-
-    print("Eliminando #70...")
-
-    arbol.eliminar(70)
-
-    mostrar_lista(
-        "Inorden después de eliminar #70",
-        arbol.inorden()
-    )
-
-
-    # ============================================================
-    # 8. ELIMINAR NODO CON DOS HIJOS
-    # ============================================================
-
-    print("\n[6] ELIMINAR NODO CON DOS HIJOS")
-
-    print("Eliminando #50 (raíz con dos hijos)...")
-
-    arbol.eliminar(50)
-
-    mostrar_lista(
-        "Inorden después de eliminar #50",
-        arbol.inorden()
-    )
-
-
-    # ============================================================
-    # 9. MOSTRAR RECORRIDOS FINALES
-    # ============================================================
-
-    print("\n[7] RECORRIDOS FINALES")
-
-    mostrar_lista(
-        "Inorden",
-        arbol.inorden()
-    )
-
-    mostrar_lista(
-        "Preorden",
-        arbol.preorden()
-    )
-
-    mostrar_lista(
-        "Postorden",
-        arbol.postorden()
-    )
-
-
-    # ============================================================
-    # 10. MOSTRAR ÁRBOL FINAL
-    # ============================================================
-
-    print("\n[8] ESTRUCTURA FINAL")
-
-    if arbol.raiz is not None:
-
-        print(
-            f"Raíz: #{arbol.raiz.publicacion.id}"
-        )
-
-        if arbol.raiz.izquierda is not None:
-
-            print(
-                f"Izquierda: "
-                f"#{arbol.raiz.izquierda.publicacion.id}"
-            )
-
-        else:
-
-            print(
-                "Izquierda: VACÍO"
-            )
-
-        if arbol.raiz.derecha is not None:
-
-            print(
-                f"Derecha: "
-                f"#{arbol.raiz.derecha.publicacion.id}"
-            )
-
-        else:
-
-            print(
-                "Derecha: VACÍO"
-            )
-
-    else:
-
-        print(
-            "El árbol está vacío."
-        )
-
-
-    print("\n" + "=" * 50)
-    print("PRUEBA TERMINADA")
-    print("=" * 50)
-
-if __name__ == "__main__":
-    main()
+print("\n" + "=" * 50)
+print("PRUEBA TERMINADA")
+print("=" * 50)
