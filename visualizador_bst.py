@@ -165,7 +165,7 @@ class VisualizadorBST(QWidget):
 
             painter.setFont(
                 QFont(
-                    "Arial",
+                    "Atkinson Hyperlegible",
                     17,
                     QFont.Weight.Bold
                 )
@@ -436,7 +436,7 @@ class VisualizadorBST(QWidget):
 
             painter.setFont(
                 QFont(
-                    "Arial",
+                    "Atkinson Hyperlegible",
                     11,
                     QFont.Weight.Bold
                 )
@@ -457,7 +457,7 @@ class VisualizadorBST(QWidget):
 
             painter.setFont(
                 QFont(
-                    "Arial",
+                    "Atkinson Hyperlegible",
                     8,
                     QFont.Weight.Bold
                 )

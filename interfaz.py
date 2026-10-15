@@ -1,4 +1,7 @@
 import sys
+import math
+import time
+from pathlib import Path
 
 from PyQt6.QtWidgets import (
     QApplication,
@@ -12,6 +15,13 @@ from PyQt6.QtWidgets import (
     QGridLayout,
     QFrame,
     QGraphicsOpacityEffect,
+    QToolBar,
+    QFileDialog,
+    QMessageBox,
+    QScrollArea,
+    QToolButton,
+    QMenu,
+    QSizePolicy,
 )
 from PyQt6.QtGui import (
     QPixmap,
@@ -22,11 +32,14 @@ from PyQt6.QtGui import (
     QPen,
     QBrush,
     QColor,
+    QFontMetrics,
 )
 from PyQt6.QtCore import (
     Qt,
     QTimer,
+    QSize,
     QRect,
+    QRectF,
     QPoint,
     QPropertyAnimation,
     QParallelAnimationGroup,
@@ -37,6 +50,18 @@ from PyQt6.QtCore import (
 from models.publicacion import Publicacion
 from estructuras.bst import ArbolPublicaciones
 from visualizador_bst import VisualizadorBST
+from recursos import ruta_recurso, pixmap_recurso, RAIZ
+from arte import PanelIlustrado, BotonIlustrado, aplicar_estilo, decorar_botones, pixmap_arte, dibujar_fondo, icono_arte, cargar_tipografias, avatar_arte, miniatura_publicacion, FUENTE_UI, FUENTE_DIALOGO, geometria_dialogo
+from accesibilidad import paleta, MODOS_DALTONISMO
+from publicaciones_ui import TarjetaPublicacion
+from paneles import EscenaRed, DialogoRol, DialogoRed, mostrar_ayuda, mostrar_configuracion
+from juego.historia import contenido_resultado, dialogos_publicacion
+from juego.finales import epilogo
+from audio.gestor_audio import GestorAudio
+from hud import HudCiudad
+from final_ui import EscenaFin
+
+_PIXMAPS_OSCUROS = {}
 
 
 class EscenaInicio(QWidget):
@@ -44,28 +69,29 @@ class EscenaInicio(QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-
         self.fondo = QLabel(self)
         self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.fondo.setScaledContents(False)
-
-        self.boton_inicio = QPushButton(self)
-        self.boton_inicio.setStyleSheet(
-            """
-            QPushButton {
-                background: transparent;
-                border: none;
-            }
-            QPushButton:hover {
-                background: rgba(255, 255, 255, 12);
-            }
-            """
-        )
+        self.cartela = PanelIlustrado(self)
+        self.logo = QLabel(self.cartela)
+        self.logo.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.leyenda = QLabel("UNA CIUDAD. CADA DECISIÓN CUENTA.", self.cartela)
+        self.leyenda.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.leyenda.setWordWrap(True)
+        self.leyenda.setStyleSheet("color:#e4c59a; font:11pt 'Atkinson Hyperlegible'; background:transparent;")
+        self.descripcion = QLabel("Lee entre líneas. Contrasta las fuentes.\nCuida los vínculos de Ciudad Nova.", self.cartela)
+        self.descripcion.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.descripcion.setStyleSheet("color:#f6e8cd; font:12pt 'Atkinson Hyperlegible'; background:transparent;")
+        self.boton_inicio = BotonIlustrado("Comenzar historia", self.cartela)
+        self.boton_inicio.setAccessibleName("Comenzar historia")
         self.boton_inicio.clicked.connect(self.iniciar)
-
-        self.setFocusPolicy(
-            Qt.FocusPolicy.StrongFocus
-        )
+        self.boton_cargar = BotonIlustrado("Continuar partida", self.cartela)
+        self.boton_cargar.clicked.connect(lambda: self.window().cargar_partida())
+        self.boton_multijugador = BotonIlustrado("Multijugador", self.cartela)
+        self.boton_multijugador.clicked.connect(lambda: self.window().abrir_multijugador())
+        self.credito = QLabel("Universidad del Norte · Estructura de Datos II", self.cartela)
+        self.credito.setStyleSheet("color:#bdc5c7; font:9pt 'Atkinson Hyperlegible'; background:transparent;")
+        self.credito.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
 
     def resizeEvent(self, event):
         self.actualizar_fondo()
@@ -73,66 +99,39 @@ class EscenaInicio(QWidget):
         super().resizeEvent(event)
 
     def actualizar_fondo(self):
-        pixmap = QPixmap(
-            "assets/fondos/fondo escena portada.jfif"
-        )
-
-        if pixmap.isNull():
-            self.fondo.setText(
-                "ALCALDE DIGITAL"
-            )
-            self.fondo.setStyleSheet(
-                "color: white; background: black; font-size: 40px;"
-            )
-            self.fondo.setGeometry(
-                self.rect()
-            )
-            return
-
-        pixmap_escalado = pixmap.scaled(
-            self.size(),
-            Qt.AspectRatioMode.KeepAspectRatioByExpanding,
-            Qt.TransformationMode.SmoothTransformation,
-        )
-
-        self.fondo.setPixmap(
-            pixmap_escalado
-        )
-
-        self.fondo.setGeometry(
-            self.rect()
-        )
+        pixmap = pixmap_recurso("assets/fondos/fondo escena portada.jfif")
+        self.fondo.setGeometry(self.rect())
+        if not pixmap.isNull():
+            self.fondo.setPixmap(pixmap.scaled(self.size(), Qt.AspectRatioMode.KeepAspectRatioByExpanding, Qt.TransformationMode.SmoothTransformation))
+        self.fondo.lower()
 
     def actualizar_boton(self):
-        ancho = self.width()
-        alto = self.height()
-
-        x = int(ancho * 0.296)
-        y = int(alto * 0.829)
-        w = int(ancho * 0.438)
-        h = int(alto * 0.110)
-
-        self.boton_inicio.setGeometry(
-            x,
-            y,
-            w,
-            h
-        )
+        ancho = min(510, max(370, int(self.width() * 0.36)))
+        alto = min(650, int(self.height() * 0.83))
+        self.cartela.setGeometry(int(self.width() * 0.06), (self.height()-alto)//2, ancho, alto)
+        marca = pixmap_arte("ui/logo.png")
+        self.logo.setGeometry(45, int(alto*.09), ancho-90, int(alto*.34))
+        if marca.isNull():
+            self.logo.setText("CIVICA\nAlcalde Digital")
+            self.logo.setStyleSheet("color:#f6e8cd; font:30pt 'Atkinson Hyperlegible'; background:transparent;")
+        else:
+            self.logo.setPixmap(marca.scaled(self.logo.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+        self.leyenda.setGeometry(35, int(alto*.43), ancho-70, 50)
+        self.descripcion.setGeometry(35, int(alto*.53), ancho-70, 65)
+        self.boton_inicio.setGeometry(35, int(alto*.68), ancho-70, 57)
+        self.boton_cargar.setGeometry(35, int(alto*.81), (ancho-80)//2, 48)
+        self.boton_multijugador.setGeometry(45+(ancho-80)//2, int(alto*.81), (ancho-80)//2, 48)
+        self.credito.setGeometry(25, alto-57, ancho-50, 26)
 
     def iniciar(self):
         self.continuar.emit()
         self.setFocus()
 
     def keyPressEvent(self, event):
-        if event.key() in (
-            Qt.Key.Key_Space,
-            Qt.Key.Key_Return,
-            Qt.Key.Key_Enter,
-        ):
+        if not event.isAutoRepeat() and event.key() in (Qt.Key.Key_Space, Qt.Key.Key_Return, Qt.Key.Key_Enter):
             self.iniciar()
             event.accept()
             return
-
         super().keyPressEvent(event)
 
 
@@ -179,7 +178,7 @@ class PersonajeVisual(QWidget):
         self.cargar_imagen()
 
     def cargar_imagen(self):
-        pixmap = QPixmap(self.ruta_imagen)
+        pixmap = pixmap_recurso(self.ruta_imagen)
 
         if pixmap.isNull():
             self.imagen.setText(
@@ -199,6 +198,9 @@ class PersonajeVisual(QWidget):
         self.actualizar_imagenes()
 
     def crear_pixmap_oscuro(self, pixmap, factor):
+        clave = (pixmap.cacheKey(), factor)
+        if clave in _PIXMAPS_OSCUROS:
+            return _PIXMAPS_OSCUROS[clave]
         oscuro = QPixmap(pixmap.size())
         oscuro.fill(Qt.GlobalColor.transparent)
 
@@ -228,7 +230,9 @@ class PersonajeVisual(QWidget):
         )
 
         painter.end()
-
+        if len(_PIXMAPS_OSCUROS) >= 12:
+            _PIXMAPS_OSCUROS.clear()
+        _PIXMAPS_OSCUROS[clave] = oscuro
         return oscuro
 
     def actualizar_imagenes(self):
@@ -265,6 +269,8 @@ class PersonajeVisual(QWidget):
         super().resizeEvent(event)
 
     def aparecer(self, duracion=850):
+        if getattr(self, "reducir_movimiento", False):
+            duracion = 1
         self.show()
         self.raise_()
 
@@ -315,6 +321,8 @@ class PersonajeVisual(QWidget):
         self.animacion_entrada.start()
 
     def desaparecer(self, duracion=650):
+        if getattr(self, "reducir_movimiento", False):
+            duracion = 1
         if not self.isVisible():
             return
 
@@ -368,6 +376,8 @@ class PersonajeVisual(QWidget):
         self.efecto_dimming.setOpacity(0.0)
 
     def enfocar(self, duracion=350):
+        if getattr(self, "reducir_movimiento", False):
+            duracion = 1
         if not self.isVisible():
             return
 
@@ -390,6 +400,8 @@ class PersonajeVisual(QWidget):
         self.animacion_dim.start()
 
     def oscurecer(self, duracion=350, intensidad=0.58):
+        if getattr(self, "reducir_movimiento", False):
+            duracion = 1
         if not self.isVisible():
             return
 
@@ -456,13 +468,11 @@ class EscenaCinematica(QFrame):
 
         self.franja_superior = QFrame(self)
         self.franja_superior.setStyleSheet(
-            "QFrame { background-color: #000000; border: none; }"
+            "QFrame { background: transparent; border: none; }"
         )
 
-        self.franja_inferior = QFrame(self)
-        self.franja_inferior.setStyleSheet(
-            "QFrame { background-color: #000000; border: none; }"
-        )
+        self.franja_inferior = PanelIlustrado(self, recurso="ui/dialogo.png")
+        self.franja_inferior.setStyleSheet("background:transparent;border:none;")
 
         self.nombre_label.setStyleSheet(
             """
@@ -474,7 +484,7 @@ class EscenaCinematica(QFrame):
             """
         )
         self.nombre_label.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
+            Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
         )
 
         self.texto_label.setStyleSheet(
@@ -487,14 +497,31 @@ class EscenaCinematica(QFrame):
         )
         self.texto_label.setWordWrap(True)
         self.texto_label.setAlignment(
-            Qt.AlignmentFlag.AlignCenter |
+            Qt.AlignmentFlag.AlignLeft |
             Qt.AlignmentFlag.AlignVCenter
         )
+        self.pista_continuar = QLabel("ESPACIO · revelar / continuar", self)
+        self.pista_continuar.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.pista_continuar.setStyleSheet(f"color:#d3dfdf; font:14px '{FUENTE_UI}'; background:transparent;")
+        self.pista_continuar.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        self.pista_continuar.hide()
+        self.publicacion_telefono = None
+        if self.fondo.endswith("Escena 3.png") and not pixmap_arte("fondos/telefono.png").isNull():
+            self.publicacion_telefono = TarjetaPublicacion(self, telefono=True)
 
         self.texto_completo = ""
         self.nombre_inicial = ""
         self.escribiendo = False
         self.animando = False
+
+        self.estado_escena = "inactiva"
+        self.timer_inicio = QTimer(self)
+        self.timer_inicio.setSingleShot(True)
+        self.timer_inicio.timeout.connect(self.preparar_dialogo)
+        self.timer_texto = QTimer(self)
+        self.timer_texto.setInterval(34)
+        self.timer_texto.timeout.connect(self.escribir_caracter)
+        self.indice_texto = 0
 
         self.cargar_fuente()
 
@@ -503,28 +530,13 @@ class EscenaCinematica(QFrame):
         )
 
     def cargar_fuente(self):
-        ruta_fuente = "assets/Fuente Letra/Anton.ttf"
-
-        fuente_id = QFontDatabase.addApplicationFont(
-            ruta_fuente
-        )
-
-        if fuente_id != -1:
-            familias = QFontDatabase.applicationFontFamilies(
-                fuente_id
-            )
-            familia = familias[0] if familias else "Arial"
-        else:
-            familia = "Arial"
-
-        self.fuente_nombre = QFont(familia)
-        self.fuente_nombre.setPointSize(19)
+        cargar_tipografias()
+        self.fuente_nombre = QFont(FUENTE_UI)
+        self.fuente_nombre.setPixelSize(23)
         self.fuente_nombre.setBold(True)
-
-        self.fuente_dialogo = QFont(familia)
-        self.fuente_dialogo.setPointSize(23)
+        self.fuente_dialogo = QFont(FUENTE_DIALOGO)
+        self.fuente_dialogo.setPixelSize(26)
         self.fuente_dialogo.setBold(False)
-
         self.nombre_label.setFont(self.fuente_nombre)
         self.texto_label.setFont(self.fuente_dialogo)
 
@@ -534,7 +546,7 @@ class EscenaCinematica(QFrame):
         super().resizeEvent(event)
 
     def actualizar_fondo(self):
-        pixmap = QPixmap(self.fondo)
+        pixmap = pixmap_recurso(self.fondo)
 
         if pixmap.isNull():
             self.fondo_label.setStyleSheet(
@@ -560,42 +572,57 @@ class EscenaCinematica(QFrame):
         if ancho <= 0 or alto <= 0:
             return
 
-        altura_franja = max(105, int(alto * 0.18))
-        margen = int(ancho * 0.08)
+        tam_texto = 24 if ancho < 1200 else 25 if ancho < 1600 else 28
+        tam_nombre = 22 if ancho < 1200 else 23 if ancho < 1600 else 25
+        self.fuente_dialogo.setPixelSize(tam_texto)
+        self.texto_label.setFont(self.fuente_dialogo)
+        self.franja_inferior.alto_contraste = getattr(self.window(), "alto_contraste", False)
+        self.franja_inferior.update()
+        self.texto_label.setStyleSheet(f"color:#fff7e8; background:transparent; font:{tam_texto}px '{FUENTE_DIALOGO}';")
+        self.nombre_label.setStyleSheet(f"color:#ffe5bb; background:transparent; font:700 {tam_nombre}px '{FUENTE_UI}';")
+        caja_texto, _, _ = geometria_dialogo(QRectF(0, 0, ancho, 176))
+        rect_texto = QFontMetrics(self.fuente_dialogo).boundingRect(
+            QRect(0, 0, round(caja_texto.width()), 2000), Qt.TextFlag.TextWordWrap,
+            self.texto_completo or "Ciudad Nova")
+        altura_franja = max(176, rect_texto.height()+132)
 
         self.altura_franja = altura_franja
 
         self.franja_superior.setGeometry(
             0,
-            -altura_franja,
+            0 if self.estado_escena in ("dialogo", "esperando") else -altura_franja,
             ancho,
             altura_franja
         )
 
         self.franja_inferior.setGeometry(
             0,
-            alto,
+            alto - altura_franja if self.estado_escena in ("dialogo", "esperando") else alto,
             ancho,
             altura_franja
         )
 
-        self.nombre_label.setGeometry(
-            margen,
-            alto - altura_franja + 14,
-            ancho - margen * 2,
-            32
-        )
+        texto, nombre, pista = geometria_dialogo(QRectF(0, alto-altura_franja, ancho, altura_franja))
+        self.nombre_label.setGeometry(nombre.toAlignedRect())
+        self.nombre_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.texto_label.setGeometry(
-            margen,
-            alto - altura_franja + 49,
-            ancho - margen * 2,
-            altura_franja - 58
-        )
+        self.texto_label.setGeometry(texto.toAlignedRect())
+        self.pista_continuar.setGeometry(pista.toAlignedRect())
+        if self.publicacion_telefono is not None:
+            imagen = pixmap_arte("fondos/telefono.png")
+            factor = max(ancho/imagen.width(), alto/imagen.height())
+            desfase_x = (ancho-imagen.width()*factor)/2
+            desfase_y = (alto-imagen.height()*factor)/2
+            x = int(desfase_x+imagen.width()*.578*factor)
+            y = int(desfase_y+imagen.height()*.132*factor) + int(alto*.06)
+            ancho_post = int(imagen.width()*.157*factor)
+            alto_post = max(225, alto-altura_franja-y-7)
+            self.publicacion_telefono.setGeometry(x, y, ancho_post, alto_post)
+            self.publicacion_telefono.raise_()
 
         ancho_personaje = int(ancho * 0.40)
-        alto_personaje = int(alto * 0.72)
-        y_personaje = int(alto * 0.10)
+        alto_personaje = int(alto * 0.85)
+        y_personaje = int(alto * 0.01)
         separacion = int(ancho * 0.02)
 
         self.personajes["CIUDADANO"].setGeometry(
@@ -636,6 +663,22 @@ class EscenaCinematica(QFrame):
         presentes=None
     ):
         nombre = nombre.upper().strip()
+        juego = getattr(self.window(), "juego", None)
+        if juego is not None:
+            preocupacion = juego.evento_actual.urgente or juego.conflictos >= 8
+            expresiones = {"CIUDADANO": "ciudadano_preocupado" if preocupacion else "ciudadano_neutral",
+                           "PERIODISTA": "periodista_pensativa" if nombre == "PERIODISTA" else "periodista_neutral"}
+            for id_personaje, expresion in expresiones.items():
+                ruta = f"assets/rediseno/personajes/{expresion}.png"
+                personaje = self.personajes[id_personaje]
+                if (RAIZ/ruta).is_file() and personaje.ruta_imagen != ruta:
+                    personaje.ruta_imagen = ruta
+                    personaje.cargar_imagen()
+        compuesto = self.fondo.rsplit("/", 1)[-1] in {"Escena 4.png", "Escena 6.png", "Escena 7.png", "Escena 8.png"}
+        if compuesto and pixmap_arte("fondos/cafe_interior.png").isNull() and not getattr(self.window(), "sprites_sobre_ilustracion", False):
+            self.ocultar_personajes()
+            self.hablante_actual = nombre
+            return
 
         if nombre in ("", "NARRADOR"):
             self.ocultar_personajes()
@@ -705,6 +748,7 @@ class EscenaCinematica(QFrame):
             personaje.desaparecer(350)
 
     def comenzar_escena(self):
+        self.timer_inicio.stop()
         if self.animacion is not None:
             self.animacion.stop()
 
@@ -722,7 +766,8 @@ class EscenaCinematica(QFrame):
 
         self.texto_completo = ""
         self.escribiendo = False
-        self.animando = False
+        self.animando = True
+        self.estado_escena = "preparando"
         self.hablante_actual = ""
 
         self.ocultar_personajes()
@@ -758,10 +803,9 @@ class EscenaCinematica(QFrame):
             self.altura_franja
         )
 
-        QTimer.singleShot(
-            self.TIEMPO_ANTES_DE_HABLAR,
-            self.preparar_dialogo
-        )
+        if self.publicacion_telefono is not None and hasattr(self.window(), "juego"):
+            self.publicacion_telefono.mostrar(self.window().juego.obtener_publicacion_actual(), self.window().juego.grafo)
+        self.timer_inicio.start(self.TIEMPO_ANTES_DE_HABLAR)
 
         self.setFocus()
 
@@ -777,8 +821,14 @@ class EscenaCinematica(QFrame):
         nombre="",
         presentes=None
     ):
+        if hasattr(self.window(), "audio"):
+            self.window().audio.detener_voz()
         if self.animacion is not None:
             self.animacion.stop()
+
+        self.timer_texto.stop()
+        self.timer_texto.setInterval(34)
+        self.estado_escena = "entrando"
 
         self.texto_completo = texto
         self.escribiendo = False
@@ -786,24 +836,20 @@ class EscenaCinematica(QFrame):
 
         nombre_normalizado = nombre.upper().strip()
 
-        if nombre_normalizado in ("", "NARRADOR"):
-            self.nombre_label.clear()
-            self.nombre_label.hide()
-        else:
-            self.nombre_label.setText(
-                nombre_normalizado
-            )
-            self.nombre_label.show()
+        self.nombre_label.setText(nombre_normalizado or "NARRADOR")
+        self.nombre_label.show()
 
-        self.texto_label.setText(texto)
+        self.texto_label.clear()
+        self.indice_texto = 0
         self.texto_label.show()
+        self.pista_continuar.show()
+        self.pista_continuar.raise_()
 
+        self.actualizar_geometria()
         self.configurar_personajes_para_hablante(
             nombre_normalizado,
             presentes
         )
-
-        self.actualizar_geometria()
 
         self.franja_superior.raise_()
         self.franja_inferior.raise_()
@@ -889,12 +935,62 @@ class EscenaCinematica(QFrame):
         self.animacion.start()
 
     def finalizar_animacion_dialogo(self):
+        if self.estado_escena == "inactiva":
+            return
         self.animando = False
+        self.estado_escena = "dialogo"
+        self.escribiendo = True
+        self.hablante_actual = self.nombre_label.text() or "NARRADOR"
+        if hasattr(self.window(), "audio"):
+            self.window().audio.narrar(self.texto_completo, self.hablante_actual)
+        self.pista_continuar.raise_()
+        self.timer_texto.start()
+
+    def escribir_caracter(self):
+        self.indice_texto = min(len(self.texto_completo), self.indice_texto + 1)
+        self.texto_label.setText(self.texto_completo[:self.indice_texto])
+        if self.indice_texto >= len(self.texto_completo):
+            self.timer_texto.stop()
+            self.escribiendo = False
+            self.estado_escena = "esperando"
+        else:
+            ultimo = self.texto_completo[self.indice_texto-1]
+            self.timer_texto.setInterval(190 if ultimo in ".!?" else 95 if ultimo in ",;:" else 34)
+
+    def finalizar_escena(self):
+        self.estado_escena = "inactiva"
+        self.animando = True
+        self.timer_inicio.stop()
+        self.timer_texto.stop()
+        if hasattr(self.window(), "audio"):
+            self.window().audio.detener_voz()
+        self.pista_continuar.hide()
+        if self.animacion is not None:
+            self.animacion.stop()
+        for personaje in self.personajes.values():
+            for animacion in (personaje.animacion_fade, personaje.animacion_dim,
+                              personaje.animacion_entrada, personaje.animacion_salida):
+                if animacion is not None:
+                    animacion.stop()
+
+    def hideEvent(self, event):
+        self.finalizar_escena()
+        super().hideEvent(event)
 
     def avanzar(self):
         if self.animando:
             return
 
+        if self.estado_escena not in ("dialogo", "esperando"):
+            return
+        if self.escribiendo:
+            self.timer_texto.stop()
+            self.texto_label.setText(self.texto_completo)
+            self.escribiendo = False
+            self.estado_escena = "esperando"
+            return
+
+        self.animando = True
         self.dialogo_terminado.emit()
 
     def mousePressEvent(self, event):
@@ -906,6 +1002,9 @@ class EscenaCinematica(QFrame):
         super().mousePressEvent(event)
 
     def keyPressEvent(self, event):
+        if event.isAutoRepeat():
+            event.accept()
+            return
         if event.key() in (
             Qt.Key.Key_Space,
             Qt.Key.Key_Return,
@@ -996,20 +1095,7 @@ class EscenaDialogo(EscenaCinematica):
                 f'"{publicacion.texto}"'
             )
 
-        self.dialogos = [
-            (
-                "CIUDADANO",
-                f"Mira esto. {texto_publicacion}"
-            ),
-            (
-                "PERIODISTA",
-                "No deberíamos compartirla todavía. Primero tenemos que comprobar si la información es cierta."
-            ),
-            (
-                "CIUDADANO",
-                "Entonces tenemos que decidir qué hacer antes de que más personas la vean."
-            )
-        ]
+        self.dialogos = dialogos_publicacion(ventana.juego)
 
         self.presentes_dialogo = {
             nombre.upper()
@@ -1019,12 +1105,15 @@ class EscenaDialogo(EscenaCinematica):
 
     def comenzar_escena(self):
         self.preparar_dialogos()
+        self.timer_inicio.stop()
+        self.timer_texto.stop()
         self.dialogo_actual = 0
 
         if self.animacion is not None:
             self.animacion.stop()
 
-        self.animando = False
+        self.animando = True
+        self.estado_escena = "preparando"
         self.escribiendo = False
 
         self.ocultar_personajes()
@@ -1056,12 +1145,12 @@ class EscenaDialogo(EscenaCinematica):
             self.altura_franja
         )
 
-        QTimer.singleShot(
-            self.TIEMPO_ANTES_DE_HABLAR,
-            self.mostrar_dialogo_actual
-        )
+        self.timer_inicio.start(self.TIEMPO_ANTES_DE_HABLAR)
 
         self.setFocus()
+
+    def preparar_dialogo(self):
+        self.mostrar_dialogo_actual()
 
     def mostrar_dialogo_actual(self):
         if self.dialogo_actual >= len(self.dialogos):
@@ -1091,6 +1180,10 @@ class EscenaDialogo(EscenaCinematica):
         )
 
     def ocultar_franjas(self, siguiente):
+        self.animando = True
+        self.estado_escena = "saliendo"
+        if self.animacion is not None:
+            self.animacion.stop()
         ancho = self.width()
         alto = self.height()
 
@@ -1099,7 +1192,7 @@ class EscenaDialogo(EscenaCinematica):
             b"geometry",
             self
         )
-        animacion_superior.setDuration(300)
+        animacion_superior.setDuration(1 if getattr(self.window(), "reducir_movimiento", False) else 300)
         animacion_superior.setStartValue(
             QRect(
                 0,
@@ -1125,7 +1218,7 @@ class EscenaDialogo(EscenaCinematica):
             b"geometry",
             self
         )
-        animacion_inferior.setDuration(300)
+        animacion_inferior.setDuration(1 if getattr(self.window(), "reducir_movimiento", False) else 300)
         animacion_inferior.setStartValue(
             QRect(
                 0,
@@ -1175,7 +1268,7 @@ class EscenaAccion(QWidget):
         self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.fondo.lower()
 
-        self.panel = QFrame(self)
+        self.panel = PanelIlustrado(self)
         self.panel.setStyleSheet("""
             QFrame#panelAccion {
                 background-color: rgba(20, 29, 48, 228);
@@ -1286,33 +1379,76 @@ class EscenaAccion(QWidget):
         botones.addWidget(self.boton_reportar, 1, 1)
 
         layout = QVBoxLayout(self.panel)
-        layout.setContentsMargins(38, 28, 38, 32)
-        layout.setSpacing(15)
-        layout.addWidget(self.titulo)
-        layout.addWidget(self.publicacion)
-        layout.addWidget(self.info)
+        layout.setContentsMargins(25, 23, 25, 33)
+        layout.setSpacing(9)
+        self.avatar = QLabel()
+        self.avatar.setFixedSize(44, 44)
+        self.avatar.setPixmap(pixmap_recurso("assets/UI/avatar_unknown.png").scaled(44, 44, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+        self.miniatura = QLabel()
+        self.miniatura.setFixedSize(104, 76)
+        self.miniatura.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        # El mismo componente muestra una publicación completa en ambas escenas.
+        self.tarjeta_publicacion = TarjetaPublicacion(self.panel)
+        layout.addWidget(self.tarjeta_publicacion, 1)
+        for dato in (self.avatar, self.titulo, self.miniatura, self.publicacion, self.info):
+            dato.hide()
         layout.addWidget(self.turno)
         layout.addLayout(botones)
+        self.aviso = QLabel()
+        self.aviso.setWordWrap(True)
+        layout.addWidget(self.aviso)
+        self.timer_decision = QTimer(self)
+        self.timer_decision.setInterval(1000)
+        self.timer_decision.timeout.connect(self.cuenta_regresiva)
+        self.segundos_restantes = 0
+        self.plazo_red = None
+        self.efecto_panel = QGraphicsOpacityEffect(self.panel)
+        self.panel.setGraphicsEffect(self.efecto_panel)
+        self.animacion_panel = QPropertyAnimation(self.efecto_panel, b"opacity", self)
+        self.animacion_panel.setStartValue(0.0)
+        self.animacion_panel.setEndValue(1.0)
+        self.animacion_panel.setEasingCurve(QEasingCurve.Type.OutCubic)
+        self.panel.setStyleSheet(f"QFrame#panelAccion {{background:transparent; border:0;}} QLabel {{color:#f6e8cd; background:transparent; border:0; font-family:'{FUENTE_UI}';}} QPushButton {{font:600 17px '{FUENTE_UI}'; min-height:34px; padding:7px;}}")
+        self.titulo.setStyleSheet("color:#d7b98b; font:600 17px 'Atkinson Hyperlegible'; letter-spacing:2px;")
+        self.publicacion.setStyleSheet("color:#fff3dc; font:24px 'Atkinson Hyperlegible';")
+        self.info.setStyleSheet("color:#b6c9ca; font:13px 'Atkinson Hyperlegible';")
+        self.info.setWordWrap(True)
+        self.turno.setStyleSheet(f"color:#e6cca6; font:600 16px '{FUENTE_UI}';")
+        self.turno.setWordWrap(True)
+        self.aviso.setStyleSheet(f"color:#dce7e3; font:15px '{FUENTE_UI}';")
+        self.aviso.setContentsMargins(12, 0, 12, 4)
+        self.retrato_protagonista = QLabel(self)
+        self.retrato_protagonista.setAlignment(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignHCenter)
+        self.retrato_protagonista.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        self.leyenda_personaje = QLabel("Tu decisión deja huella.", self)
+        self.leyenda_personaje.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.leyenda_personaje.setStyleSheet("color:#fff3dc; background:rgba(20,35,47,165); border-radius:10px; padding:12px; font:17px 'Atkinson Hyperlegible';")
+        for nombre, boton in (("compartir", self.boton_compartir), ("verificar", self.boton_verificar), ("ignorar", self.boton_ignorar), ("reportar", self.boton_reportar)):
+            boton.setIcon(icono_arte(nombre))
+            boton.setIconSize(QSize(27, 27))
+        decorar_botones(self.panel)
+
+    def actualizar_personaje(self):
+        rol = "periodista" if self.juego.jugador.rol == "periodista" else "ciudadano"
+        imagen = pixmap_arte(f"personajes/{rol}_neutral.png")
+        self.retrato_protagonista.setGeometry(int(self.width()*.01), int(self.height()*.02), int(self.width()*.38), int(self.height()*.91))
+        if not imagen.isNull():
+            self.retrato_protagonista.setPixmap(imagen.scaled(self.retrato_protagonista.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+        self.leyenda_personaje.setGeometry(int(self.width()*.035), int(self.height()*.86), int(self.width()*.32), 48)
+        self.retrato_protagonista.raise_()
+        self.leyenda_personaje.raise_()
+        self.panel.raise_()
 
     def resizeEvent(self, event):
         self.actualizar_fondo()
 
-        margen_x = int(self.width() * 0.12)
-        ancho_panel = self.width() - margen_x * 2
-
-        self.panel.setGeometry(
-            margen_x,
-            int(self.height() * 0.10),
-            ancho_panel,
-            int(self.height() * 0.80)
-        )
+        self.panel.setGeometry(int(self.width()*.40), 14, int(self.width()*.575), self.height()-28)
+        self.actualizar_personaje()
 
         super().resizeEvent(event)
 
     def actualizar_fondo(self):
-        pixmap = QPixmap(
-            "assets/fondos/Escena 5.png"
-        )
+        pixmap = pixmap_recurso("assets/fondos/Escena 5.png")
 
         if pixmap.isNull():
             self.fondo.setStyleSheet(
@@ -1332,6 +1468,7 @@ class EscenaAccion(QWidget):
         self.fondo.lower()
 
     def mostrar(self):
+        self.actualizar_personaje()
         publicacion = (
             self.juego.obtener_publicacion_actual()
         )
@@ -1365,26 +1502,103 @@ class EscenaAccion(QWidget):
         self.titulo.setText(
             "PUBLICACIÓN DE CIVITAS"
         )
+        self.tarjeta_publicacion.mostrar(publicacion, self.juego.grafo)
+        retrato = avatar_arte(publicacion.emisor_id)
+        if not retrato.isNull():
+            self.avatar.setPixmap(retrato.scaled(44, 44, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+        miniatura = miniatura_publicacion(publicacion.id)
+        if not miniatura.isNull():
+            self.miniatura.setPixmap(miniatura.scaled(self.miniatura.size(), Qt.AspectRatioMode.KeepAspectRatioByExpanding, Qt.TransformationMode.SmoothTransformation))
+        else:
+            self.miniatura.clear()
+        self.animacion_panel.stop()
+        self.animacion_panel.setDuration(1 if getattr(self.window(), "reducir_movimiento", False) else 350)
+        self.animacion_panel.start()
 
         self.publicacion.setText(
             f'"{publicacion.texto}"'
         )
 
         self.info.setText(
-            f"ID #{publicacion.id}   •   Impacto {publicacion.impacto}"
+            f"Civitas · {self.juego.grafo.nodos.get(publicacion.emisor_id).nombre if publicacion.emisor_id in self.juego.grafo.nodos else 'Comunidad'} · ID #{publicacion.id} · {publicacion.estado}\n"
+            f"Impacto {publicacion.impacto} · Compartidos {publicacion.compartidos} · Verificaciones {publicacion.verificaciones} · Alcance {publicacion.alcance}"
         )
 
         self.turno.setText(
-            "DECISIÓN DEL CIUDADANO"
+            f"TURNO DE {self.juego.jugador.nombre.upper()} · {self.juego.jugador.rol.upper()} · Puntos {self.juego.jugador.puntos}"
         )
 
+        evento = self.juego.evento_actual
+        self.segundos_restantes = evento.segundos
+        self.aviso.setText(evento.texto)
+        self.timer_decision.stop()
+        if self.juego.decision_aplicada:
+            for boton in (self.boton_compartir, self.boton_verificar, self.boton_ignorar, self.boton_reportar):
+                boton.setEnabled(False)
+            return
+        if evento.urgente and not getattr(self.window(), "sin_limite", False):
+            self.timer_decision.start()
+            self.aviso.setText(f"{evento.texto} · {self.segundos_restantes} s")
+        if getattr(self.window(), "cliente_red", None) is not None:
+            mi_turno = self.juego.jugador.id == self.window().mi_id
+            self.timer_decision.stop()  # El servidor decide el timeout oficial.
+            self.plazo_red = None
+            for boton in (self.boton_compartir, self.boton_verificar, self.boton_ignorar, self.boton_reportar):
+                boton.setEnabled(mi_turno and not self.juego.decision_aplicada)
+            if not mi_turno:
+                self.aviso.setText("Esperando la decisión del jugador de turno…")
+            else:
+                self.window().cliente_red.enviar({"tipo": "decision_lista", "publicacion_id": publicacion.id})
+
+    def cuenta_regresiva(self):
+        if getattr(self.window(), "cliente_red", None) is not None:
+            if self.plazo_red is None:
+                return
+            segundos = max(0, math.ceil(self.plazo_red-time.monotonic()))
+            self.aviso.setText(f"{self.juego.evento_actual.texto} · {segundos} s · turno de {self.juego.jugador.nombre}")
+            if segundos == 0:
+                self.timer_decision.stop()
+                self.aviso.setText("Tiempo agotado. Esperando el resultado del servidor…")
+            return
+        self.segundos_restantes -= 1
+        if 0 < self.segundos_restantes <= 3 and hasattr(self.window(), "audio"):
+            self.window().audio.reproducir_efecto("cuenta_regresiva")
+        self.aviso.setText(f"{self.juego.evento_actual.texto} · {self.segundos_restantes} s")
+        if self.segundos_restantes <= 0:
+            self.ejecutar_accion("ignorar")
+
+    def actualizar_plazo_red(self, segundos):
+        if segundos is None:
+            self.plazo_red = None
+            self.timer_decision.stop()
+            return
+        self.plazo_red = time.monotonic() + segundos
+        self.timer_decision.start()
+        self.cuenta_regresiva()
+
+    def finalizar_escena(self):
+        self.timer_decision.stop()
+        self.animacion_panel.stop()
+        self.efecto_panel.setOpacity(1.0)
+
+    def hideEvent(self, event):
+        self.finalizar_escena()
+        super().hideEvent(event)
+
     def ejecutar_accion(self, accion):
+        self.timer_decision.stop()
+        if getattr(self.window(), "cliente_red", None) is not None:
+            self.window().enviar_accion(accion)
+            return
         resultado = self.juego.ejecutar_accion(
             accion
         )
 
         if resultado is False:
             return
+
+        for boton in (self.boton_compartir, self.boton_verificar, self.boton_ignorar, self.boton_reportar):
+            boton.setEnabled(False)
 
         self.window().mostrar_escena(
             self.window().ESCENA_RESULTADO_1
@@ -1397,7 +1611,9 @@ class VisualizadorBSTBonito(QWidget):
         super().__init__(parent)
 
         self.arbol = arbol
-        self.setMinimumHeight(380)
+        self.posiciones = {}
+        self.radio_nodo = 36
+        self.setMinimumHeight(210)
         self.setStyleSheet("background: transparent;")
 
     def actualizar(self):
@@ -1441,19 +1657,20 @@ class VisualizadorBSTBonito(QWidget):
         )
 
     def color_estado(self, estado):
+        colores = paleta(getattr(self.window(), "modo_daltonismo", "normal"))
         if estado == "FALSA VERIFICADA":
-            return QColor("#D97F7F")
+            return QColor(colores["falsa"])
 
         if estado == "VERIFICADA":
-            return QColor("#73A89A")
+            return QColor(colores["verdadera"])
 
         if estado == "COMPARTIDA":
-            return QColor("#D5A45F")
+            return QColor(colores["exploracion"])
 
         if estado == "IGNORADA":
-            return QColor("#78899A")
+            return QColor(colores["neutro"])
 
-        return QColor("#6F88A3")
+        return QColor(colores["correccion"])
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -1462,10 +1679,11 @@ class VisualizadorBSTBonito(QWidget):
         )
 
         if self.arbol.raiz is None:
+            self.posiciones = {}
             painter.setPen(QColor("#F8EEE7"))
             painter.setFont(
                 QFont(
-                    "Arial",
+                    "Atkinson Hyperlegible",
                     22,
                     QFont.Weight.Bold
                 )
@@ -1512,10 +1730,16 @@ class VisualizadorBSTBonito(QWidget):
             len(ordenados)
         )
 
-        ancho_util = self.width() - 120
+        escala = max(.95, min(1.3, self.window().width()/1366))
+        radio = round(36*escala)
+        self.radio_nodo = radio
+        paso_x = min(200*escala, (self.width()-2*radio-32)/cantidad_total)
+        paso_y = min(126*escala, (self.height()-2*radio-46)/max(1, len(niveles)-1))
+        alto_grupo = (len(niveles)-1)*paso_y
+        y_inicial = (self.height()-alto_grupo-24)/2
 
         for nivel, nodos in enumerate(niveles):
-            y = 68 + nivel * 108
+            y = y_inicial + nivel*paso_y
 
             for nodo in nodos:
                 indice = indice_inorden.get(
@@ -1523,22 +1747,18 @@ class VisualizadorBSTBonito(QWidget):
                     0
                 )
 
-                x = (
-                    60
-                    + ancho_util *
-                    (indice + 0.5) /
-                    cantidad_total
-                )
+                x = self.width()/2 + (indice-(cantidad_total-1)/2)*paso_x
 
                 posiciones[id(nodo)] = (
                     int(x),
                     int(y)
                 )
+        self.posiciones = {nodo.publicacion.id: QPoint(*posiciones[id(nodo)]) for nodo in todos}
 
         painter.setPen(
             QPen(
                 QColor("#F1DDCE"),
-                5,
+                3,
                 Qt.PenStyle.SolidLine,
                 Qt.PenCapStyle.RoundCap,
                 Qt.PenJoinStyle.RoundJoin
@@ -1569,8 +1789,6 @@ class VisualizadorBSTBonito(QWidget):
                     x2,
                     y2
                 )
-
-        radio = 35
 
         for nodo in todos:
             x, y = posiciones[id(nodo)]
@@ -1614,26 +1832,36 @@ class VisualizadorBSTBonito(QWidget):
                 radio * 2
             )
 
+            medallon = pixmap_arte("ui/nodo.png")
+            if not medallon.isNull():
+                painter.drawPixmap(QRect(x-radio-4, y-radio-4, (radio+4)*2, (radio+4)*2), medallon)
+                painter.setBrush(Qt.BrushStyle.NoBrush)
+                painter.setPen(QPen(color, 3))
+                painter.drawEllipse(x-radio+4, y-radio+4, (radio-4)*2, (radio-4)*2)
+
             painter.setPen(
                 QColor("#FFFFFF")
             )
 
-            painter.setFont(
-                QFont(
-                    "Arial",
-                    13,
-                    QFont.Weight.Bold
-                )
-            )
+            fuente = QFont(FUENTE_UI)
+            fuente.setPixelSize(round(23*escala))
+            fuente.setBold(True)
+            painter.setFont(fuente)
 
             painter.drawText(
                 x - radio,
-                y - 12,
+                y - radio,
                 radio * 2,
-                24,
+                radio * 2,
                 Qt.AlignmentFlag.AlignCenter,
                 f"#{publicacion.id}"
             )
+            fuente.setPixelSize(round(14*escala))
+            fuente.setBold(False)
+            painter.setFont(fuente)
+            painter.setPen(QColor("#e5ded1"))
+            painter.drawText(QRect(x-95, y+radio+9, 190, 25), Qt.AlignmentFlag.AlignCenter,
+                             publicacion.estado.replace("FALSA VERIFICADA", "Falsa · verificada").capitalize())
 
         painter.end()
 
@@ -1650,72 +1878,15 @@ class EscenaArbol(QWidget):
         self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.fondo.lower()
 
-        self.panel = QFrame(self)
-        self.panel.setStyleSheet("""
-            QFrame#panelArbol {
-                background-color: rgba(19, 31, 43, 210);
-                border: 1px solid rgba(242, 207, 191, 145);
-                border-radius: 24px;
-            }
-
-            QLabel {
-                color: #FFF8F3;
-                background: transparent;
-                border: none;
-            }
-
-            QLabel#tituloArbol {
-                color: #F4C7B5;
-                font-size: 26px;
-                font-weight: bold;
-            }
-
-            QLabel#operacion {
-                color: #E6D8CF;
-                font-size: 14px;
-                font-weight: bold;
-            }
-
-            QPushButton {
-                background-color: rgba(91, 107, 124, 245);
-                color: white;
-                border: 2px solid #E7C8B8;
-                border-radius: 13px;
-                padding: 11px 18px;
-                font-size: 15px;
-                font-weight: bold;
-            }
-
-            QPushButton:hover {
-                background-color: rgba(117, 136, 156, 255);
-                border-color: #FFF2E9;
-            }
-
-            QPushButton:pressed {
-                background-color: rgba(63, 78, 93, 255);
-            }
-
-            QPushButton#continuar {
-                background-color: rgba(185, 111, 103, 250);
-                border-color: #F5D4C5;
-            }
-
-            QPushButton#continuar:hover {
-                background-color: rgba(210, 127, 115, 255);
-            }
-
-            QFrame#acciones {
-                background-color: rgba(15, 24, 35, 170);
-                border-radius: 18px;
-                border: 1px solid rgba(245, 222, 210, 70);
-            }
-        """)
+        self.panel = PanelIlustrado(self)
+        self.panel.setStyleSheet("QFrame#panelArbol {background:transparent;border:0;} QLabel {color:#f6e8cd;background:transparent;font:14px 'Atkinson Hyperlegible';} QLabel#tituloArbol {color:#e7c496;font:23px 'Atkinson Hyperlegible';} QFrame#acciones {background:transparent;border:0;}")
         self.panel.setObjectName("panelArbol")
 
-        titulo = QLabel(
+        self.titulo = titulo = QLabel(
             "ÁRBOL BINARIO DE BÚSQUEDA"
         )
         titulo.setObjectName("tituloArbol")
+        titulo.setWordWrap(True)
         titulo.setAlignment(
             Qt.AlignmentFlag.AlignCenter
         )
@@ -1731,22 +1902,22 @@ class EscenaArbol(QWidget):
             self.juego.arbol
         )
 
-        acciones = QFrame()
+        self.acciones = acciones = QFrame()
         acciones.setObjectName("acciones")
 
-        self.boton_inorden = QPushButton(
+        self.boton_inorden = BotonIlustrado(
             "INORDEN"
         )
 
-        self.boton_preorden = QPushButton(
+        self.boton_preorden = BotonIlustrado(
             "PREORDEN"
         )
 
-        self.boton_postorden = QPushButton(
+        self.boton_postorden = BotonIlustrado(
             "POSTORDEN"
         )
 
-        self.boton_continuar = QPushButton(
+        self.boton_continuar = BotonIlustrado(
             "CONTINUAR"
         )
         self.boton_continuar.setObjectName(
@@ -1758,6 +1929,7 @@ class EscenaArbol(QWidget):
             Qt.AlignmentFlag.AlignCenter
         )
         self.resultado.setWordWrap(True)
+        self.resultado.hide()
 
         self.boton_inorden.clicked.connect(
             self.mostrar_inorden
@@ -1773,13 +1945,9 @@ class EscenaArbol(QWidget):
         )
 
         botones = QHBoxLayout(acciones)
-        botones.setContentsMargins(
-            12,
-            10,
-            12,
-            10
-        )
-        botones.setSpacing(12)
+        botones.setContentsMargins(0, 2, 0, 2)
+        botones.setSpacing(16)
+        botones.addStretch()
         botones.addWidget(
             self.boton_inorden
         )
@@ -1789,26 +1957,24 @@ class EscenaArbol(QWidget):
         botones.addWidget(
             self.boton_postorden
         )
+        botones.addStretch()
 
-        layout = QVBoxLayout(self.panel)
-        layout.setContentsMargins(
-            25,
-            18,
-            25,
-            20
-        )
-        layout.setSpacing(10)
+        self.layout_panel = layout = QVBoxLayout(self.panel)
+        layout.setContentsMargins(42, 44, 42, 36)
+        layout.setSpacing(14)
         layout.addWidget(titulo)
         layout.addWidget(self.operacion)
         layout.addWidget(self.visualizador, 1)
         layout.addWidget(acciones)
         layout.addWidget(self.resultado)
-        layout.addWidget(self.boton_continuar)
+        pie = QHBoxLayout()
+        pie.addStretch()
+        pie.addWidget(self.boton_continuar)
+        layout.addLayout(pie)
+        decorar_botones(self.panel)
 
     def resizeEvent(self, event):
-        pixmap = QPixmap(
-            "assets/fondos/Escena Arbol.jfif"
-        )
+        pixmap = pixmap_recurso("assets/fondos/Escena Arbol.jfif")
 
         if not pixmap.isNull():
             pixmap_escalado = pixmap.scaled(
@@ -1829,12 +1995,33 @@ class EscenaArbol(QWidget):
         )
         self.fondo.lower()
 
-        self.panel.setGeometry(
-            int(self.width() * 0.06),
-            int(self.height() * 0.04),
-            int(self.width() * 0.88),
-            int(self.height() * 0.92)
-        )
+        ancho_panel = min(1540, self.width()-64)
+        alto_panel = min(770, self.height()-40)
+        self.panel.setGeometry((self.width()-ancho_panel)//2, (self.height()-alto_panel)//2,
+                               ancho_panel, alto_panel)
+        escala = max(.95, min(1.25, self.width()/1366))
+        compacta = self.height() < 650
+        margenes = self.panel.margenes_seguros()
+        self.layout_panel.setContentsMargins(32 if compacta else max(38, margenes.left()),
+                                            32 if compacta else max(40, margenes.top()),
+                                            32 if compacta else max(38, margenes.right()),
+                                            32 if compacta else max(34, margenes.bottom()))
+        self.layout_panel.setSpacing(8 if compacta else 14)
+        self.visualizador.setMinimumHeight(145 if compacta else 210)
+        self.titulo.setStyleSheet(f"color:#e7c496; font:700 {round(25*escala)}px '{FUENTE_UI}';")
+        self.operacion.setStyleSheet(f"font:{round(16*escala)}px '{FUENTE_UI}'; color:#e5e3d8;")
+        self.resultado.setStyleSheet(f"font:{round(17*escala)}px '{FUENTE_UI}'; color:#ffe4b8;")
+        for boton in (self.boton_inorden, self.boton_preorden, self.boton_postorden):
+            ancho_boton, alto_boton = round(220*escala), round(54*escala)
+            boton.setStyleSheet(f"font:700 {round(17*escala)}px '{FUENTE_UI}'; padding:0; border:0; "
+                                f"min-width:{ancho_boton}px; max-width:{ancho_boton}px; "
+                                f"min-height:{alto_boton}px; max-height:{alto_boton}px;")
+            boton.setFixedSize(ancho_boton, alto_boton)
+        ancho_boton, alto_boton = round(238*escala), round(56*escala)
+        self.boton_continuar.setStyleSheet(f"font:700 {round(17*escala)}px '{FUENTE_UI}'; padding:0; border:0; "
+                                         f"min-width:{ancho_boton}px; max-width:{ancho_boton}px; "
+                                         f"min-height:{alto_boton}px; max-height:{alto_boton}px;")
+        self.boton_continuar.setFixedSize(ancho_boton, alto_boton)
 
         super().resizeEvent(event)
 
@@ -1846,6 +2033,7 @@ class EscenaArbol(QWidget):
         )
 
         self.resultado.setText("")
+        self.resultado.hide()
 
         self.setFocus()
 
@@ -1862,6 +2050,7 @@ class EscenaArbol(QWidget):
         )
 
     def mostrar_inorden(self):
+        self.resultado.show()
         resultado = (
             self.juego.arbol.inorden()
         )
@@ -1874,6 +2063,7 @@ class EscenaArbol(QWidget):
         )
 
     def mostrar_preorden(self):
+        self.resultado.show()
         resultado = (
             self.juego.arbol.preorden()
         )
@@ -1886,6 +2076,7 @@ class EscenaArbol(QWidget):
         )
 
     def mostrar_postorden(self):
+        self.resultado.show()
         resultado = (
             self.juego.arbol.postorden()
         )
@@ -1898,7 +2089,7 @@ class EscenaArbol(QWidget):
         )
 
     def continuar(self):
-        self.window().continuar_desde_arbol()
+        self.window().mostrar_escena(self.window().ESCENA_GRAFO)
 
 
 class EscenaResultado(EscenaCinematica):
@@ -1915,91 +2106,7 @@ class EscenaResultado(EscenaCinematica):
         )
 
     def obtener_contenido(self):
-        ventana = self.window()
-
-        if not hasattr(ventana, "juego"):
-            return "", ""
-
-        juego = ventana.juego
-        publicacion = juego.obtener_publicacion_actual()
-        accion = juego.ultima_accion
-
-        publicacion_id = (
-            publicacion.id
-            if publicacion is not None
-            else juego.ultima_publicacion_id
-        )
-
-        publicacion_verdadera = (
-            publicacion.verdadera
-            if publicacion is not None
-            else juego.ultima_publicacion_verdadera
-        )
-
-        if publicacion_id is None:
-            return (
-                "No hay una publicación disponible para mostrar.",
-                ""
-            )
-
-        if self.tipo == 1:
-            if accion == "compartir":
-                return (
-                    "La publicación comenzó a circular con mayor fuerza. La periodista decide comprobar la información antes de que el rumor siga creciendo.",
-                    "PERIODISTA"
-                )
-
-            if accion == "verificar":
-                return (
-                    "La periodista contrasta la publicación con fuentes oficiales para determinar si la afirmación tiene fundamento.",
-                    "PERIODISTA"
-                )
-
-            if accion == "reportar":
-                return (
-                    "El reporte fue enviado. La periodista revisa la publicación para confirmar que la información debía ser retirada.",
-                    "PERIODISTA"
-                )
-
-            return (
-                "La publicación permanece en Civitas mientras la periodista decide comprobar qué hay detrás del mensaje.",
-                "PERIODISTA"
-            )
-
-        if self.tipo == 2:
-            if publicacion_verdadera:
-                return (
-                    f"La publicación #{publicacion_id} corresponde con la información disponible. La verificación ayudó a separar una noticia real de un simple rumor.",
-                    "PERIODISTA"
-                )
-
-            return (
-                f"La publicación #{publicacion_id} no coincide con la información oficial. El rumor es falso y ya fue identificado.",
-                "PERIODISTA"
-            )
-
-        if accion == "compartir":
-            return (
-                "La publicación obtuvo mayor alcance. La desinformación aumentó y ahora los dos jugadores deberán prestar más atención a las próximas publicaciones.",
-                ""
-            )
-
-        if accion == "verificar":
-            return (
-                "La verificación ayudó a aumentar la información confiable y a reducir parte de la desinformación que circulaba por Civitas.",
-                ""
-            )
-
-        if accion == "reportar":
-            return (
-                "La publicación fue retirada del Árbol Binario de Búsqueda. La siguiente información que aparezca será incorporada al árbol cuando avance la partida.",
-                ""
-            )
-
-        return (
-            "La publicación permanece en Civitas. El árbol conserva el nodo porque la información todavía no ha sido retirada.",
-            ""
-        )
+        return contenido_resultado(self.window().juego, self.tipo)
 
     def comenzar_escena(self):
         self.texto_inicial, self.nombre_inicial = (
@@ -2017,375 +2124,12 @@ class EscenaResultado(EscenaCinematica):
             )
 
 
-class Juego:
-
-    def __init__(self):
-
-        self.arbol = ArbolPublicaciones()
-
-        self.indice_proxima_publicacion = 0
-        self.publicacion_actual_id = None
-
-        self.publicaciones_eliminadas = []
-
-        self.info_verificada = 0
-        self.confianza = 0
-        self.desinformacion = 0
-        self.convivencia = 0
-        self.bienestar_digital = 0
-        self.conflictos = 0
-
-        self.ultima_accion = None
-        self.ultima_publicacion_id = None
-        self.ultima_publicacion_texto = ""
-        self.ultima_publicacion_verdadera = None
-        self.ultimo_resultado = (
-            "El árbol comenzará vacío."
-        )
-
-        self.publicaciones_planificadas = (
-            self.crear_publicaciones()
-        )
-
-    def crear_publicaciones(self):
-
-        return [
-            Publicacion(
-                50,
-                "El candidato Juan quiere cerrar el colegio.",
-                False,
-                7
-            ),
-
-            Publicacion(
-                70,
-                "El parque central tendrá mantenimiento.",
-                True,
-                3
-            ),
-
-            Publicacion(
-                30,
-                "Adrián Morales presentó una nueva propuesta.",
-                True,
-                4
-            ),
-
-            Publicacion(
-                20,
-                "La ciudad construirá una nueva biblioteca.",
-                True,
-                2
-            ),
-
-            Publicacion(
-                60,
-                "Circula un rumor sobre uno de los candidatos.",
-                False,
-                8
-            ),
-
-            Publicacion(
-                80,
-                "Una encuesta afirma conocer al próximo alcalde.",
-                False,
-                6
-            ),
-        ]
-
-    def agregar_publicacion(self, publicacion):
-
-        if publicacion is None:
-            return False
-
-        if self.arbol.buscar(publicacion.id) is not None:
-            self.publicacion_actual_id = publicacion.id
-            self.ultimo_resultado = (
-                f"La publicación #{publicacion.id} ya existe en el ABB."
-            )
-            return False
-
-        self.arbol.insertar(publicacion)
-        self.publicacion_actual_id = publicacion.id
-
-        self.ultimo_resultado = (
-            f"INSERTAR: publicación #{publicacion.id} "
-            "agregada al ABB."
-        )
-
-        return True
-
-    def agregar_siguiente_publicacion(self):
-
-        if (
-            self.indice_proxima_publicacion
-            >= len(self.publicaciones_planificadas)
-        ):
-            self.publicacion_actual_id = None
-
-            self.ultimo_resultado = (
-                "No quedan más publicaciones por insertar."
-            )
-
-            return False
-
-        publicacion = self.publicaciones_planificadas[
-            self.indice_proxima_publicacion
-        ]
-
-        self.indice_proxima_publicacion += 1
-
-        return self.agregar_publicacion(publicacion)
-
-    def iniciar_primera_publicacion(self):
-
-        if self.publicacion_actual_id is not None:
-            return True
-
-        return self.agregar_siguiente_publicacion()
-
-    def obtener_publicaciones_activas(self):
-
-        return self.arbol.inorden()
-
-    def obtener_publicacion_actual(self):
-
-        if self.publicacion_actual_id is None:
-            return None
-
-        publicacion = self.arbol.buscar(
-            self.publicacion_actual_id
-        )
-
-        return publicacion
-
-    def ejecutar_accion(self, accion):
-
-        publicacion_actual = (
-            self.obtener_publicacion_actual()
-        )
-
-        if publicacion_actual is None:
-            return False
-
-        publicacion = self.arbol.buscar(
-            publicacion_actual.id
-        )
-
-        if publicacion is None:
-            return False
-
-        self.ultima_accion = accion
-        self.ultima_publicacion_id = publicacion.id
-        self.ultima_publicacion_texto = publicacion.texto
-        self.ultima_publicacion_verdadera = publicacion.verdadera
-
-        if accion == "compartir":
-
-            publicacion.compartidos += 1
-            publicacion.impacto += 1
-
-            publicacion.estado = (
-                "COMPARTIDA"
-            )
-
-            self.desinformacion += 2
-
-            self.ultimo_resultado = (
-                f"COMPARTIR: publicación #{publicacion.id} "
-                "encontrada con buscar() y actualizada."
-            )
-
-        elif accion == "verificar":
-
-            publicacion.verificaciones += 1
-
-            self.info_verificada += 5
-            self.confianza += 3
-
-            self.desinformacion = max(
-                0,
-                self.desinformacion - 3
-            )
-
-            if publicacion.verdadera:
-
-                publicacion.estado = (
-                    "VERIFICADA"
-                )
-
-                self.ultimo_resultado = (
-                    f"VERIFICAR: publicación #{publicacion.id} "
-                    "encontrada con buscar(); es verdadera."
-                )
-
-            else:
-
-                publicacion.estado = (
-                    "FALSA VERIFICADA"
-                )
-
-                self.ultimo_resultado = (
-                    f"VERIFICAR: publicación #{publicacion.id} "
-                    "encontrada con buscar(); es falsa."
-                )
-
-        elif accion == "ignorar":
-
-            publicacion.estado = (
-                "IGNORADA"
-            )
-
-            self.ultimo_resultado = (
-                f"IGNORAR: publicación #{publicacion.id} "
-                "encontrada con buscar(); permanece en el ABB."
-            )
-
-        elif accion == "reportar":
-
-            publicacion.reportes += 1
-
-            self.confianza += 2
-
-            self.desinformacion = max(
-                0,
-                self.desinformacion - 2
-            )
-
-            self.publicaciones_eliminadas.append(
-                publicacion.id
-            )
-
-            id_eliminado = publicacion.id
-
-            self.arbol.eliminar(
-                id_eliminado
-            )
-
-            if self.arbol.buscar(
-                id_eliminado
-            ) is None:
-
-                self.ultimo_resultado = (
-                    f"REPORTAR: publicación #{id_eliminado} "
-                    "encontrada y eliminada del ABB con eliminar()."
-                )
-
-            else:
-
-                self.ultimo_resultado = (
-                    f"REPORTAR: no se pudo eliminar "
-                    f"la publicación #{id_eliminado}."
-                )
-
-            self.publicacion_actual_id = None
-
-        return True
-
-    def avanzar_publicacion(self):
-
-        if self.publicacion_actual_id is not None:
-
-            publicacion = (
-                self.obtener_publicacion_actual()
-            )
-
-            if publicacion is not None:
-                publicacion.estado = (
-                    publicacion.estado
-                )
-
-        return self.agregar_siguiente_publicacion()
-
-    def hay_publicaciones(self):
-
-        return (
-            self.publicacion_actual_id
-            is not None
-        )
-
-
-class EscenaFin(QWidget):
-
-    def __init__(self, parent=None):
-        super().__init__(parent)
-
-        self.setStyleSheet(
-            """
-            QWidget {
-                background-color: #101827;
-            }
-
-            QLabel {
-                color: white;
-            }
-            """
-        )
-
-        titulo = QLabel(
-            "FIN DE LA DEMOSTRACIÓN"
-        )
-
-        titulo.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        titulo.setFont(
-            QFont(
-                "Arial",
-                30,
-                QFont.Weight.Bold
-            )
-        )
-
-        texto = QLabel(
-            "Las publicaciones de Civitas fueron "
-            "procesadas mediante el Árbol Binario de Búsqueda."
-        )
-
-        texto.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
-
-        texto.setWordWrap(True)
-
-        texto.setFont(
-            QFont(
-                "Arial",
-                20
-            )
-        )
-
-        layout = QVBoxLayout(self)
-
-        layout.setContentsMargins(
-            80,
-            80,
-            80,
-            80
-        )
-
-        layout.setSpacing(30)
-
-        layout.addStretch()
-
-        layout.addWidget(
-            titulo
-        )
-
-        layout.addWidget(
-            texto
-        )
-
-        layout.addStretch()
-
-        self.setLayout(layout)
-
-    def mostrar(self):
-        self.setFocus()
+from juego.partida import Juego
 
 
 class VentanaPrincipal(QMainWindow):
+
+    mensaje_red = pyqtSignal(dict)
 
     ESCENA_INICIO = 0
     ESCENA_NARRACION_1 = 1
@@ -2398,12 +2142,14 @@ class VentanaPrincipal(QMainWindow):
     ESCENA_RESULTADO_3 = 8
     ESCENA_ARBOL = 9
     ESCENA_FIN = 10
+    ESCENA_GRAFO = 11
 
     def __init__(self):
         super().__init__()
+        cargar_tipografias()
 
         self.setWindowTitle(
-            "Alcalde Digital"
+            "CIVICA — Alcalde Digital"
         )
 
         self.setMinimumSize(
@@ -2412,6 +2158,36 @@ class VentanaPrincipal(QMainWindow):
         )
 
         self.pantalla_completa = False
+        self.sin_limite = False
+        self.reducir_movimiento = False
+        self.cliente_red = None
+        self.mi_id = None
+        self.token_red = None
+        self.datos_conexion = None
+        self.recuperada_red = False
+        self.sesion_red = 0
+        self.servidor_red = None
+        self.revision_red = -1
+        self.fase_red = None
+        self.alto_contraste = False
+        self.sprites_sobre_ilustracion = False
+        self.modo_daltonismo = "normal"
+        self.voces_activadas = True
+        self.dialogo_red = None
+        self.mensaje_red.connect(self.recibir_mensaje)
+        self.audio = GestorAudio(self)
+        from configuracion import cargar
+        preferencias = cargar()
+        for categoria, valor in preferencias.get("volumenes", {}).items():
+            if categoria in self.audio.volumenes and isinstance(valor, (int, float)):
+                self.audio.configurar(categoria, valor)
+        self.audio.silenciar(preferencias.get("silenciado", False))
+        for nombre in ("sin_limite", "reducir_movimiento", "alto_contraste", "sprites_sobre_ilustracion"):
+            setattr(self, nombre, bool(preferencias.get(nombre, False)))
+        modo = preferencias.get("modo_daltonismo", "normal")
+        self.modo_daltonismo = modo if modo in MODOS_DALTONISMO else "normal"
+        self.voces_activadas = bool(preferencias.get("voces_activadas", True))
+        self.audio.configurar_voces(self.voces_activadas)
 
         self.juego = Juego()
 
@@ -2469,6 +2245,8 @@ class VentanaPrincipal(QMainWindow):
         )
 
         self.escena_fin = EscenaFin()
+        self.escena_red = EscenaRed(self.juego)
+        self.escena_red.continuar.connect(self.continuar_desde_arbol)
 
         for escena in (
             self.escena_inicio,
@@ -2481,13 +2259,76 @@ class VentanaPrincipal(QMainWindow):
             self.escena_resultado_2,
             self.escena_resultado_3,
             self.escena_arbol,
-            self.escena_fin
+            self.escena_fin,
+            self.escena_red
         ):
             self.escenas.addWidget(escena)
 
         self.setCentralWidget(
             self.escenas
         )
+
+        barra = QToolBar("CIVICA")
+        self.barra = barra
+        barra.setIconSize(QSize(21, 21))
+        barra.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
+        barra.setMovable(False)
+        barra.setStyleSheet(f"QToolBar {{background:#142637; spacing:8px; padding:5px 14px; border-bottom:1px solid #9a744d;}} QToolButton {{color:#f6e8cd; font:16px '{FUENTE_UI}'; padding:6px 15px; min-height:28px; border:0;}}")
+        marca = QLabel("CIVICA   /   Ciudad Nova")
+        marca.setStyleSheet(f"color:#e5c797; font:700 16px '{FUENTE_UI}'; padding:0 12px;")
+        barra.addWidget(marca)
+        self.menu_partida = QToolButton()
+        self.menu_partida.setText("Partida")
+        self.menu_partida.setMinimumWidth(120)
+        self.menu_partida.setPopupMode(QToolButton.ToolButtonPopupMode.InstantPopup)
+        menu = QMenu(self.menu_partida)
+        self.acciones_partida = {}
+        for texto, clave, funcion in (("Guardar partida", "guardar", self.guardar_partida),
+                                      ("Cargar partida", "cargar", self.cargar_partida),
+                                      ("Reconectar sala", "reconectar", self.reconectar_red),
+                                      ("Volver a la portada", "portada", self.volver_portada)):
+            accion = menu.addAction(icono_arte(clave), texto, funcion)
+            self.acciones_partida[clave] = accion
+        self.menu_partida.setMenu(menu)
+        self.accion_menu_partida = barra.addWidget(self.menu_partida)
+        espacio = QWidget()
+        espacio.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
+        barra.addWidget(espacio)
+        self.boton_configuracion = QToolButton()
+        self.boton_configuracion.setText("Configuración")
+        self.boton_configuracion.setMinimumWidth(215)
+        self.boton_configuracion.setAccessibleName("Configuración y accesibilidad")
+        self.boton_configuracion.setIcon(icono_arte("ajustes"))
+        self.boton_configuracion.setIconSize(QSize(26, 26))
+        self.boton_configuracion.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
+        self.boton_configuracion.clicked.connect(lambda: mostrar_configuracion(self))
+        barra.addWidget(self.boton_configuracion)
+
+        self.addToolBar(barra)
+        self.statusBar().setStyleSheet("background:#142537;color:#fff4e9;")
+        self.indicadores = QLabel()
+        self.indicadores.setStyleSheet("color:#fff4e9; padding:3px;")
+        self.indicadores.hide()
+        self.hud = HudCiudad(self)
+        self.statusBar().addPermanentWidget(self.hud, 1)
+        self.statusBar().setSizeGripEnabled(False)
+        self.audio.aviso.connect(lambda texto: self.statusBar().showMessage("Civitas · " + texto, 2200))
+        aplicar_estilo(self)
+        menu.setStyleSheet(f"QMenu {{background:#193548; color:#fff2dc; padding:8px; font:17px '{FUENTE_UI}'; border:1px solid #bd8855;}} QMenu::item {{padding:12px 24px;}} QMenu::item:selected {{background:#365e70;}}")
+        self.aplicar_accesibilidad()
+        self.velo_transicion = QFrame(self.escenas)
+        self.velo_transicion.setStyleSheet("background:#02060b;border:0;")
+        self.velo_transicion.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        self.efecto_transicion = QGraphicsOpacityEffect(self.velo_transicion)
+        self.velo_transicion.setGraphicsEffect(self.efecto_transicion)
+        self.animacion_transicion = QPropertyAnimation(self.efecto_transicion, b"opacity", self)
+        self.animacion_transicion.setEasingCurve(QEasingCurve.Type.OutCubic)
+        self.animacion_transicion.valueChanged.connect(
+            lambda _: self.velo_transicion.setGeometry(self.escenas.rect()))
+        self.animacion_transicion.finished.connect(self.velo_transicion.hide)
+        self.velo_transicion.hide()
+        for boton in self.findChildren(QPushButton):
+            boton.clicked.connect(lambda: self.audio.reproducir_efecto("clic"))
 
         self.escena_inicio.continuar.connect(
             self.comenzar_juego
@@ -2498,14 +2339,35 @@ class VentanaPrincipal(QMainWindow):
         )
 
     def comenzar_juego(self):
+        self.cerrar_red()
+        if self.juego.indice_proxima_publicacion:
+            self.establecer_juego(Juego())
+        dialogo = DialogoRol(self)
+        if not dialogo.exec():
+            return
+        self.juego.seleccionar_rol(dialogo.roles.currentData())
         self.mostrar_escena(
             self.ESCENA_NARRACION_1
         )
 
+    def showEvent(self, event):
+        super().showEvent(event)
+        # QToolBar puede crear sus botones al mostrarse por primera vez.
+        decorar_botones(self.barra)
+
     def mostrar_escena(self, indice):
+        anterior = self.escenas.currentWidget()
+        if hasattr(anterior, "finalizar_escena"):
+            anterior.finalizar_escena()
         self.escenas.setCurrentIndex(
             indice
         )
+        en_partida = indice != self.ESCENA_INICIO
+        self.accion_menu_partida.setVisible(en_partida)
+        self.statusBar().setVisible(en_partida)
+        self.acciones_partida["reconectar"].setVisible(self.datos_conexion is not None)
+        for clave in ("guardar", "cargar"):
+            self.acciones_partida[clave].setEnabled(self.cliente_red is None)
 
         escena = (
             self.escenas.currentWidget()
@@ -2524,9 +2386,44 @@ class VentanaPrincipal(QMainWindow):
             escena.mostrar()
 
         escena.setFocus()
+        if hasattr(self, "audio"):
+            pista = "eleccion" if indice == self.ESCENA_FIN else "investigacion" if indice in (self.ESCENA_DIALOGO, self.ESCENA_GRAFO) else "ciudad"
+            self.audio.cambiar_pista(pista)
+            ambiente = "cafe" if indice in (self.ESCENA_DIALOGO, self.ESCENA_ACCION) else "oficina" if indice in (self.ESCENA_RESULTADO_1, self.ESCENA_RESULTADO_2) else "plaza"
+            self.audio.cambiar_pista(ambiente, "ambiente")
+            if indice == self.ESCENA_ACCION:
+                self.audio.reproducir_efecto("notificacion")
+            elif indice == self.ESCENA_RESULTADO_1:
+                self.audio.reproducir_efecto(self.juego.ultima_accion or "resultado")
+            elif indice == self.ESCENA_FIN:
+                self.audio.reproducir_efecto("recompensa")
+            self.actualizar_estado()
+        self.animacion_transicion.stop()
+        if en_partida and not self.reducir_movimiento:
+            self.velo_transicion.setGeometry(self.escenas.rect())
+            self.velo_transicion.show()
+            self.velo_transicion.raise_()
+            self.animacion_transicion.setDuration(1500 if indice == self.ESCENA_NARRACION_1 else 700)
+            self.animacion_transicion.setStartValue(1.0)
+            self.animacion_transicion.setEndValue(0.0)
+            self.animacion_transicion.start()
+        else:
+            self.velo_transicion.hide()
+
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        if hasattr(self, "velo_transicion"):
+            self.velo_transicion.setGeometry(self.escenas.rect())
 
     def continuar_desde_arbol(self):
-        if self.juego.agregar_siguiente_publicacion():
+        if self.escenas.currentWidget() is not self.escena_red:
+            return
+        if self.cliente_red is not None:
+            self.cliente_red.enviar({"tipo": "continuar", "revision": self.revision_red})
+            self.escena_red.boton_continuar.setEnabled(False)
+            self.escena_red.detalle.setText("Esperando que los demás participantes terminen de revisar el resultado…")
+            return
+        if self.juego.avanzar_publicacion():
             self.mostrar_escena(
                 self.ESCENA_DIALOGO
             )
@@ -2536,12 +2433,196 @@ class VentanaPrincipal(QMainWindow):
             )
 
     def keyPressEvent(self, event):
+        if event.key() == Qt.Key.Key_F1:
+            mostrar_ayuda(self)
+            event.accept()
+            return
         if event.key() == Qt.Key.Key_F11:
             self.alternar_pantalla_completa()
             event.accept()
             return
 
         super().keyPressEvent(event)
+
+    def establecer_juego(self, juego):
+        self.juego = juego
+        self.escena_accion.juego = juego
+        self.escena_arbol.juego = juego
+        self.escena_arbol.visualizador.arbol = juego.arbol
+        self.escena_red.juego = juego
+        self.escena_red.visualizador.grafo = juego.grafo
+        self.escena_narracion_3.accion_al_comenzar = juego.iniciar_primera_publicacion
+        self.actualizar_estado()
+
+    def actualizar_estado(self):
+        if hasattr(self, "hud"):
+            self.hud.actualizar(self.juego)
+        if hasattr(self, "indicadores"):
+            self.indicadores.setText(f"Ciudad Nova · Confianza {self.juego.confianza} · Convivencia {self.juego.convivencia} · Bienestar {self.juego.bienestar_digital} · Información verificada {self.juego.info_verificada} · Desinformación {self.juego.desinformacion} · Conflictos {self.juego.conflictos}")
+
+    def aplicar_accesibilidad(self):
+        for escena in self.escenas.findChildren(EscenaCinematica):
+            escena.DURACION_FRANJAS = 1 if self.reducir_movimiento else 450
+            escena.TIEMPO_ANTES_DE_HABLAR = 1 if self.reducir_movimiento else 650
+            for personaje in escena.personajes.values():
+                personaje.reducir_movimiento = self.reducir_movimiento
+            escena.actualizar_geometria()
+        self.audio.configurar_voces(self.voces_activadas)
+        if hasattr(self, "hud"):
+            self.hud.actualizar(self.juego)
+        self.escena_red.visualizador.update()
+        self.escena_arbol.visualizador.update()
+        if self.reducir_movimiento:
+            self.escena_red.completar()
+            if hasattr(self, "animacion_transicion"):
+                self.animacion_transicion.stop()
+                self.velo_transicion.hide()
+        if self.sin_limite:
+            self.escena_accion.timer_decision.stop()
+
+    def guardar_partida(self):
+        if self.cliente_red is not None:
+            self.statusBar().showMessage("En multijugador el servidor conserva el estado oficial.")
+            return
+        ruta, _ = QFileDialog.getSaveFileName(self, "Guardar partida", ruta_recurso('saves/partida.json'), "Partidas (*.json)")
+        if ruta:
+            try:
+                self.juego.guardar(ruta)
+                self.statusBar().showMessage("Partida guardada.")
+            except (OSError, ValueError) as error:
+                QMessageBox.warning(self, "Guardado", str(error))
+
+    def cargar_partida(self):
+        if self.cliente_red is not None:
+            return
+        ruta, _ = QFileDialog.getOpenFileName(self, "Cargar partida", ruta_recurso('saves'), "Partidas (*.json)")
+        if ruta:
+            try:
+                juego = Juego.cargar(ruta)
+                self.establecer_juego(juego)
+                indice = self.ESCENA_GRAFO if juego.decision_aplicada else self.ESCENA_DIALOGO
+                if juego.indice_proxima_publicacion == 0:
+                    indice = self.ESCENA_INICIO
+                if juego.finalizada:
+                    indice = self.ESCENA_FIN
+                self.mostrar_escena(indice)
+            except (OSError, ValueError, KeyError, TypeError) as error:
+                QMessageBox.warning(self, "Partida incompatible", str(error))
+
+    def volver_portada(self):
+        self.cerrar_red()
+        self.mostrar_escena(self.ESCENA_INICIO)
+
+    def abrir_multijugador(self):
+        self.dialogo_red = DialogoRed(self)
+        if not self.dialogo_red.exec():
+            self.cerrar_red()
+
+    def conectar_red(self, crear, host, puerto, nombre, rol):
+        from red.servidor import Servidor
+        from red.cliente import Cliente
+        self.cerrar_red()
+        self.revision_red, self.fase_red = -1, None
+        if crear:
+            self.servidor_red = Servidor(puerto=puerto, sin_limite=self.sin_limite)
+            self.servidor_red.iniciar()
+            puerto = self.servidor_red.puerto
+            host = "127.0.0.1"
+        sesion = self.sesion_red
+        self.cliente_red = Cliente(lambda mensaje: self.mensaje_red.emit(dict(mensaje, sesion=sesion)))
+        self.cliente_red.conectar(host, puerto, nombre, rol)
+        self.datos_conexion = (host, puerto, nombre, rol)
+
+    def reconectar_red(self):
+        from red.cliente import Cliente
+        if not self.token_red or not self.datos_conexion:
+            self.statusBar().showMessage("Primero únete a una sala de CIVICA.")
+            return
+        if self.cliente_red is not None and not self.cliente_red.cerrado.is_set():
+            self.statusBar().showMessage("La conexión sigue activa.")
+            return
+        self.sesion_red += 1
+        sesion = self.sesion_red
+        self.revision_red = -1
+        self.cliente_red = Cliente(lambda mensaje: self.mensaje_red.emit(dict(mensaje, sesion=sesion)))
+        self.cliente_red.conectar(*self.datos_conexion, token=self.token_red)
+        self.statusBar().showMessage("Recuperando tu lugar en la campaña…")
+
+    def enviar_accion(self, accion):
+        if self.cliente_red is None or self.juego.jugador.id != self.mi_id:
+            return
+        if self.cliente_red.enviar({"tipo": "accion", "accion": accion, "publicacion_id": self.juego.publicacion_actual_id}):
+            for boton in (self.escena_accion.boton_compartir, self.escena_accion.boton_verificar, self.escena_accion.boton_ignorar, self.escena_accion.boton_reportar):
+                boton.setEnabled(False)
+
+    def recibir_mensaje(self, mensaje):
+        if mensaje.get("sesion", self.sesion_red) != self.sesion_red:
+            return
+        tipo = mensaje["tipo"]
+        if tipo == "bienvenida":
+            self.mi_id = mensaje["id"]
+            self.token_red = mensaje.get("token")
+            self.recuperada_red = mensaje.get("recuperada", False)
+        elif tipo == "sala":
+            if self.dialogo_red:
+                self.dialogo_red.estado.setText("\n".join(f"{j['nombre']} · {j['rol']}" for j in mensaje["jugadores"]))
+        elif tipo == "estado":
+            if mensaje["revision"] == self.revision_red:
+                if self.escenas.currentWidget() is self.escena_accion and mensaje["fase"] == "jugando":
+                    self.escena_accion.actualizar_plazo_red(mensaje.get("plazo_segundos"))
+                return
+            if mensaje["revision"] <= self.revision_red:
+                return
+            primero = self.revision_red < 0
+            reanudando = self.fase_red == "interrumpida" or self.recuperada_red
+            self.revision_red = mensaje["revision"]
+            self.fase_red = mensaje["fase"]
+            self.establecer_juego(Juego.desde_datos(mensaje["datos"]))
+            self.escena_red.boton_continuar.setEnabled(True)
+            if self.dialogo_red:
+                self.dialogo_red.accept()
+            if self.fase_red == "jugando":
+                self.mostrar_escena(self.ESCENA_ACCION if reanudando else self.ESCENA_NARRACION_1 if primero else self.ESCENA_DIALOGO)
+                if reanudando:
+                    self.escena_accion.actualizar_plazo_red(mensaje.get("plazo_segundos"))
+                self.recuperada_red = False
+            elif self.fase_red == "resultado":
+                self.mostrar_escena(self.ESCENA_RESULTADO_1)
+            elif self.fase_red == "final":
+                self.mostrar_escena(self.ESCENA_FIN)
+            else:
+                self.escena_accion.timer_decision.stop()
+                ausentes = ", ".join(mensaje.get("desconectados", []))
+                self.statusBar().showMessage(f"Campaña pausada. Esperando reconexión de {ausentes}.")
+                self.escena_red.boton_continuar.setEnabled(False)
+                for boton in (self.escena_accion.boton_compartir, self.escena_accion.boton_verificar, self.escena_accion.boton_ignorar, self.escena_accion.boton_reportar):
+                    boton.setEnabled(False)
+            self.recuperada_red = False
+        elif tipo in ("error", "desconexion"):
+            self.audio.reproducir_efecto("error")
+            self.statusBar().showMessage(mensaje.get("texto", "Error de red"))
+            if self.dialogo_red and self.dialogo_red.isVisible():
+                self.dialogo_red.estado.setText(mensaje.get("texto", "Sin conexión"))
+
+    def cerrar_red(self):
+        self.sesion_red += 1
+        if self.cliente_red is not None:
+            self.cliente_red.cerrar()
+            self.cliente_red = None
+        if self.servidor_red is not None:
+            self.servidor_red.cerrar()
+            self.servidor_red = None
+        self.token_red = None
+        self.datos_conexion = None
+
+    def closeEvent(self, event):
+        self.cerrar_red()
+        self.audio.detener()
+        for indice in range(self.escenas.count()):
+            escena = self.escenas.widget(indice)
+            if hasattr(escena, "finalizar_escena"):
+                escena.finalizar_escena()
+        super().closeEvent(event)
 
     def alternar_pantalla_completa(self):
         if self.pantalla_completa:
@@ -2553,10 +2634,20 @@ class VentanaPrincipal(QMainWindow):
 
 
 def main():
-
+    import argparse
+    parser = argparse.ArgumentParser(description="CIVICA — Alcalde Digital")
+    parser.add_argument("--semilla", type=int)
+    parser.add_argument("--sin-eventos", action="store_true")
+    parser.add_argument("--sin-audio", action="store_true")
+    parser.add_argument("--sin-limite", action="store_true")
+    args = parser.parse_args()
     app = QApplication(sys.argv)
 
     ventana = VentanaPrincipal()
+    ventana.establecer_juego(Juego(args.semilla, eventos=not args.sin_eventos))
+    ventana.sin_limite = ventana.sin_limite or args.sin_limite
+    if args.sin_audio:
+        ventana.audio.silenciar()
 
     ventana.showMaximized()
 
@@ -2567,6 +2658,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-

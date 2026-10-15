@@ -1,0 +1,152 @@
+{
+  "proyecto": "CIVICA — Alcalde Digital",
+  "fecha": "2026-10-14",
+  "herramienta": "image_gen__imagegen (built-in); sin CLI ni API externa",
+  "autor": "Generado por IA para el proyecto",
+  "originales_modificados": false,
+  "estilo": "Anime semirrealista cálido, novela visual premium, tinta marina, crema y cobre",
+  "verificacion": "Inspección visual con view_image y verificación PNG32bppArgb y muestras alpha mediante System.Drawing. Fondo genuinamente transparente; los sprites conservan halo suave de contraluz.",
+  "assets": [
+    {
+      "archivo": "assets/rediseno/personajes/ciudadano_neutral.png",
+      "dimensiones": [
+        1024,
+        1536
+      ],
+      "alpha": true,
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-57e673ee-fee6-46e0-b80b-85b870f3a3a5.png",
+      "referencias": [
+        "assets/fondos/Escena 4.png"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: production-ready transparent PNG character sprite for CIVICA — Alcalde Digital, a premium educational visual novel. Reference image is for CHARACTER IDENTITY AND ART STYLE only: preserve the young adult man on the LEFT of the cafe scene. Generate a NEW isolated three-quarter-body standing sprite, from head to upper knees, head and both hands fully inside canvas with 5% clear margins. Young Colombian/Latino adult age 22, tousled layered black hair, warm brown eyes, fair-medium warm skin, attractive but natural anime-semi-realistic face, dark navy unzipped hoodie over plain cream t-shirt, dark casual trousers. Slightly turned to viewer's right, looking gently right toward journalist, attentive neutral expression, natural relaxed shoulders, holding plain black smartphone low in one hand, other hand relaxed. No school uniform or tie. Style: precisely match reference sophisticated soft anime linework, dimensional painterly clothing, warm cinematic rim light, detailed hair strands, subtle realistic skin shading, NOT flat vector, NOT chibi, not photorealistic. Warm ivory/copper highlights with ink navy and subtle teal accents. High fidelity polished game key art. Portrait canvas, consistent normal human proportions. TRUE TRANSPARENT ALPHA background, no room, no gradient, no floor, no rectangle, no frame, no text, no shadow puddle. Keep full silhouette clean with nuanced edges and all fingers correct. Exactly one character."
+    },
+    {
+      "archivo": "assets/rediseno/personajes/periodista_neutral.png",
+      "dimensiones": [
+        1024,
+        1536
+      ],
+      "alpha": true,
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-217d7d8b-a148-4f55-8043-6e2851f32b1e.png",
+      "referencias": [
+        "assets/fondos/Escena 4.png",
+        "assets/rediseno/personajes/ciudadano_neutral.png"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: production-ready transparent PNG character sprite for CIVICA — Alcalde Digital, premium educational visual novel. Input1 is identity and style reference: preserve the young adult woman on the RIGHT in cafe. Input2 is the newly approved male sprite, for consistent rendering quality and scale only. Create a NEW isolated standing three-quarter-body journalist sprite, head to upper knees, head and both hands completely visible with clear 5% margins. Young Colombian/Latina adult age24, long dark chestnut brown hair loose with side part, warm brown eyes, fair-medium warm skin, refined natural anime-semi-realistic face. Beige tailored blazer, plain black blouse, dark trousers, navy-blue press lanyard with a small blank credential card. Slightly turned to viewer's LEFT, gaze toward citizen, calm attentive intelligent expression. Holds open small cream notebook in her left hand around waist and dark pen in right hand. Normal adult proportions and clothing. Sophisticated soft anime linework, rich painterly folds, fine hair, warm cinematic rim lighting, dimensional natural shading, same as reference. Warm ivory/copper highlights with ink navy, subtle teal accents. NOT flat vector or chibi, not a schoolgirl. Exactly one character. Portrait canvas. REAL TRANSPARENT ALPHA background, outside silhouette empty transparent including no vignette no background glow no floor no frame, no typography, logos or watermark. Crisp clean silhouette and correct hands. Subject fills 90 percent height."
+    },
+    {
+      "archivo": "assets/rediseno/personajes/ciudadano_retrato.png",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "alpha": true,
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-4b51e9c9-18cb-492d-be21-5a377001d840.png",
+      "referencias": [
+        "assets/rediseno/personajes/ciudadano_neutral.png"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: transparent PNG CHARACTER PORTRAIT for protagonist selection card in CIVICA — Alcalde Digital. Input image is exact identity and rendering reference. Create a NEW square bust portrait of this SAME young adult Latino man: tousled layered black hair, brown eyes, dark navy unzipped hoodie over plain cream t-shirt. Preserve same face, hairstyle and clothes. Frame head, shoulders and upper chest only, all head/hair entirely inside frame with 8 percent breathing room. Centered head, subtly turned viewer right but engaging attentive eyes toward viewer, gentle confident closed-mouth smile. Polished premium semi-realistic anime illustration with rich dimensional shading, fine hair strands, hand-painted fabric and warm copper rim light. Actual transparent alpha background outside body silhouette: no frame, no vignette, no background glow, no circles, no floor or setting. No text no logos no watermark. 1:1 square composition. Not chibi, not vector, not realistic photo. Clean cutout edges."
+    },
+    {
+      "archivo": "assets/rediseno/personajes/periodista_retrato.png",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "alpha": true,
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-42225d04-d183-4dbe-9860-fb55da9664b5.png",
+      "referencias": [
+        "assets/rediseno/personajes/periodista_neutral.png",
+        "assets/rediseno/personajes/ciudadano_retrato.png"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: transparent PNG CHARACTER PORTRAIT for protagonist selection card in CIVICA — Alcalde Digital. Input1 exact female identity/clothing; input2 matched male portrait for same visual quality and framing. Create NEW square bust portrait of the SAME young adult Latina journalist as Input1: long dark chestnut brown hair, warm brown eyes, beige blazer, plain black blouse, navy blue press lanyard. Preserve face and hair identity, adult age24. Frame head, shoulders and upper chest, all head/hair entirely inside frame with 6 percent clear margin. Centered head, subtly turned viewer LEFT but engaging attentive eyes toward viewer, small confident warm smile. Polished premium semi-realistic anime illustration with beautiful dimensional shading, fine hair strands, hand-painted fabric, warm copper rim light and ink navy shadows. Actual transparent alpha background outside silhouette: no frame, no vignette, no background glow, no circle, no environment. No notebook needed in bust framing. No text logos watermark. 1:1 square composition. Natural adult proportions, not chibi not vector not photo. Clean cutout edges."
+    },
+    {
+      "archivo": "assets/rediseno/avatares/ciudadanos.png",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "alpha": true,
+      "atlas": {
+        "filas": 3,
+        "columnas": 3,
+        "celda": [
+          418,
+          418
+        ],
+        "orden": [
+          "Ana",
+          "Luis",
+          "Pedro",
+          "Maria",
+          "Carlos",
+          "Sofia",
+          "Elena",
+          "Diego",
+          "Ines"
+        ]
+      },
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-aed868fa-ed47-4eec-b474-f4a76b5e0bc0.png",
+      "prompt": "Use case: illustration-story. Asset type: production sprite ATLAS for graph citizen avatars in CIVICA — Alcalde Digital. The two reference portraits establish exact sophisticated anime-semi-realistic rendering style, adult proportions, warm copper highlights and detailed hair/skin. Create one perfect square 3 by 3 atlas containing EXACTLY NINE DISTINCT head-and-shoulders citizen portraits. Each portrait has identical scale and framing, each is centered in its exact equal square cell with at least 9% transparent margin on all four sides and NEVER crosses cell boundaries. Layout ROW1 left-to-right: Ana, Latina woman age30 short auburn bob, teal blouse; Luis, Afro-Colombian man age34 short curly hair navy casual shirt; Pedro, Latino man age50 salt-and-pepper hair neat moustache brown sweater. ROW2: Maria, Latina woman age42 shoulder-length black wavy hair cream shirt; Carlos, Latino man age28 dark cropped hair light stubble olive overshirt; Sofia, Latina woman age25 dark curly shoulder-length hair round glasses copper shirt. ROW3: Elena, Latina woman age58 silver-streaked tied hair teal scarf; Diego, Afro-Colombian man age24 short natural curls cream hoodie; Ines, Latina woman age65 short silver hair delicate glasses navy cardigan. Varied realistic warm skin tones, thoughtful friendly restrained expressions, same warm cinematic premium visual-novel painted look, no flat vectors no chibi. ALL nine shown front-three-quarter head and shoulders only, head entirely visible, isolated cutout. TRUE TRANSPARENT ALPHA outside every silhouette, transparent gutters, no boxes no backgrounds no painted checkerboard no vignettes no labels no letters no text no watermark. Exactly three equal rows and three equal columns. Square 1536x1536 or higher with cell boundaries precisely at 1/3 and 2/3 dimensions."
+    },
+    {
+      "archivo": "assets/rediseno/personajes/candidatos.png",
+      "dimensiones": [
+        1254,
+        1254
+      ],
+      "alpha": true,
+      "atlas": {
+        "filas": 2,
+        "columnas": 2,
+        "celda": [
+          627,
+          627
+        ],
+        "orden": [
+          "Juan Torres",
+          "Adrián Morales",
+          "Laura Ríos",
+          "Camila Vega"
+        ]
+      },
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-67e48d94-f76d-4703-87f7-be612a1f57c4.png",
+      "referencias": [
+        "assets/personajes/Alcalde 1.jfif",
+        "assets/personajes/Alcelde 2.jfif",
+        "assets/personajes/Alcalde 3.jfif",
+        "assets/personajes/Alcalde 4.jfif",
+        "assets/rediseno/personajes/periodista_retrato.png"
+      ],
+      "nota": "Los cuatro originales son escolares masculinos. Se conservaron claves cromáticas pero se generaron adultos y candidatas coherentes con sus nombres actuales.",
+      "prompt": "Use case: illustration-story. Asset type: production transparent PNG ATLAS of four fictional adult mayoral candidate portraits for CIVICA — Alcalde Digital. References1-4 supply FOUR distinct hair/color identities only; they are old placeholder schoolboy sprites, do NOT reproduce school age or school uniforms. Reference5 supplies target sophisticated semi-realistic anime rendering quality. Create exactly FOUR professional adult civic candidate bust portraits in a precise 2x2 square grid. Every cell is exactly one quarter of canvas, equal size, head/shoulders centered, complete hair/head inside cell, at least8% transparent margins, never cross grid lines. TOPLEFT JuanTorres: Latino man age38 short deep auburn hair, refined oval glasses, warm brown eyes, beige jacket dark navy turtleneck; approachable confidence. TOPRIGHT AdrianMorales: Latino man age48 silver grey hair swept neatly, thin dark round glasses, charcoal suit with cream shirt and muted teal tie, thoughtful expression. BOTTOMLEFT LauraRios: Latina woman age40 dark black straight shoulder-length hair, navy tailored blazer cream blouse, focused confident expression. BOTTOMRIGHT CamilaVega: Latina woman age35 medium chestnut brown loose hair to shoulders, navy blazer cream blouse small copper-red scarf accent, warm determined smile. All dignified believable adults rather than students, varied warm Latin American skin tones, matching normal proportions. Rich hand painted warm semi-realistic anime style, dimensional painterly clothing, polished delicate linework, copper rim light, subtle dramatic ink shadows, premium visual-novel game art. TRUE TRANSPARENT ALPHA background with fully transparent gutters, NO checkerboard, no rooms, no white rectangles, no frames, no circles, no labels, no lettering, no symbols, no logos, no watermark. Four individual cutout busts, exactly2 rows2columns. Square output 1536x1536 or higher."
+    },
+    {
+      "archivo": "assets/rediseno/personajes/ciudadano_preocupado.png",
+      "dimensiones": [
+        1024,
+        1536
+      ],
+      "alpha": true,
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-9f64dcf1-9625-4309-87ef-6bfc186e6f7f.png",
+      "referencias": [
+        "assets/rediseno/personajes/ciudadano_neutral.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: transparent PNG character EXPRESSION VARIANT for CIVICA — Alcalde Digital. Edit the reference sprite. Preserve exact same young Latino adult man's face identity, hair, navy hoodie, cream shirt, smartphone, body pose, hands, head-to-knees crop and proportions, same position, same canvas dimensions, same polished semi-realistic anime rendering and warm rim light. Change ONLY facial expression and subtle head/gaze: he now looks worried and reflective about a doubtful social-media post, slightly furrowed brows, eyes focused down toward his smartphone, lips closed and small hint of concern. No tears, no melodrama, no new props. Preserve actual transparent alpha background around the silhouette. Do not add scenery, text, frames or graphic elements. Single character only, clean cutout. EXACT SAME framing and standing silhouette as reference; do not zoom or crop."
+    },
+    {
+      "archivo": "assets/rediseno/personajes/periodista_pensativa.png",
+      "dimensiones": [
+        1024,
+        1536
+      ],
+      "alpha": true,
+      "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-94bf919e-1529-4133-be09-30524fe337e7.png",
+      "referencias": [
+        "assets/rediseno/personajes/periodista_neutral.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: transparent PNG character EXPRESSION VARIANT for CIVICA — Alcalde Digital. Edit reference sprite. Preserve EXACT same adult Latina journalist's face identity, long chestnut hair, beige blazer black blouse navy lanyard, notebook pen, hands, body pose, proportions, same head-to-knees crop, exact1024x1536 dimensions and position, same premium semi-realistic anime rendering and warm rim light. Change ONLY expression and very slight gaze: she is now thoughtfully reviewing a claim, gently knit brows and focused thoughtful eyes looking slightly down toward notebook, closed mouth with restrained determination, no smile. No tears or melodrama, no new props or pose. Actual transparent alpha background around silhouette maintained; no room no scenery no text no borders. Same standing silhouette, do not zoom or crop. Correct clean hands and cutout edges. Single character."
+    }
+  ]
+}
