@@ -1,0 +1,192 @@
+{
+  "fecha": "2026-10-14",
+  "metodo": "image_gen.imagegen integrado; no CLI",
+  "cantidad": 23,
+  "bytes": 49388514,
+  "recursos": [
+    {
+      "archivo": "fondos/cafe_exterior.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 3012628,
+      "rgba": false,
+      "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+    },
+    {
+      "archivo": "fondos/cafe_interior.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 2462988,
+      "rgba": false,
+      "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+    },
+    {
+      "archivo": "fondos/ciudad.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 3099474,
+      "rgba": false,
+      "sha256": "23c22382301fb0f45e5a3f897dad5f4fc4659f6247116104c23a02a193e27b33"
+    },
+    {
+      "archivo": "fondos/investigacion.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 2357464,
+      "rgba": false,
+      "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+    },
+    {
+      "archivo": "fondos/observatorio.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 2132232,
+      "rgba": false,
+      "sha256": "6208f857cddd17fdc63914ab754ca246fc744f1b3f0f8d191231fcacb2a30b24"
+    },
+    {
+      "archivo": "fondos/portada_ciudad.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 2902267,
+      "rgba": false,
+      "sha256": "e3635aa23d80331bb607732052f8a1789cd98ce7655ebfab3e7cb64c95836c91"
+    },
+    {
+      "archivo": "fondos/telefono.png",
+      "ancho": 1672,
+      "alto": 941,
+      "bytes": 2129975,
+      "rgba": false,
+      "sha256": "61c81fe10906fc1956871105ae18ba4d2877092f91b1bcd98e76e7f9477c216f"
+    },
+    {
+      "archivo": "personajes/candidatos.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 2301319,
+      "rgba": true,
+      "sha256": "77139b6fe9db9e8479de6e291fc4b2e29a5504359e352a431dbb83b833009833"
+    },
+    {
+      "archivo": "personajes/ciudadano_neutral.png",
+      "ancho": 1024,
+      "alto": 1536,
+      "bytes": 1778495,
+      "rgba": true,
+      "sha256": "7a453ae092fa511f7041c31389d25fb9e2834ee7150a3e6b87efabb55a27ba2c"
+    },
+    {
+      "archivo": "personajes/ciudadano_preocupado.png",
+      "ancho": 1024,
+      "alto": 1536,
+      "bytes": 1749502,
+      "rgba": true,
+      "sha256": "25ed69484b2efb1d3c40b9b29098d2d224f49c9cfdad0d5ceb46abda69859379"
+    },
+    {
+      "archivo": "personajes/ciudadano_retrato.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 1645343,
+      "rgba": true,
+      "sha256": "42346650d76a00e2ce7f9ca7c0b1ee911694d3aaf2eb0a1efc83fc26c66e16da"
+    },
+    {
+      "archivo": "personajes/periodista_neutral.png",
+      "ancho": 1024,
+      "alto": 1536,
+      "bytes": 1879968,
+      "rgba": true,
+      "sha256": "0f519b51f74890b627eff4da289e3765099c2216ff2fba6da8d808524cdfe6a3"
+    },
+    {
+      "archivo": "personajes/periodista_pensativa.png",
+      "ancho": 1024,
+      "alto": 1536,
+      "bytes": 1825452,
+      "rgba": true,
+      "sha256": "e839200d1e3e646a5e3d6f9d4d1502ac6d7a4dda7c8ed98c3976a445b0a09084"
+    },
+    {
+      "archivo": "personajes/periodista_retrato.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 2013142,
+      "rgba": true,
+      "sha256": "b79b1ba60246980fe39195e7cad4b6b0de8a3103db71b27aab5a1732b2a65a47"
+    },
+    {
+      "archivo": "avatares/ciudadanos.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 2390771,
+      "rgba": true,
+      "sha256": "e0b639611e8839132b8945a09aa0a62086e5188e51f584cf4b200a62e1149375"
+    },
+    {
+      "archivo": "ui/boton.png",
+      "ancho": 2172,
+      "alto": 724,
+      "bytes": 1728542,
+      "rgba": true,
+      "sha256": "de50769938fb5dd4a73e2cbade04b6216794886eba4fbe86d16567326dd38e7d"
+    },
+    {
+      "archivo": "ui/check.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 709108,
+      "rgba": true,
+      "sha256": "eaec705ec90f8293cf94aa1c73d8f172844d4f1ba7a36d9fe6c810e880fbe317"
+    },
+    {
+      "archivo": "ui/dialogo.png",
+      "ancho": 2172,
+      "alto": 724,
+      "bytes": 1848784,
+      "rgba": true,
+      "sha256": "8860263c06ef843b511d0e618d68f34414ca35e03bc2d36d580f8f0bd8fe26c0"
+    },
+    {
+      "archivo": "ui/iconos.png",
+      "ancho": 1536,
+      "alto": 1024,
+      "bytes": 2347597,
+      "rgba": true,
+      "sha256": "17e6c62ff6cce9fc54e3554107a1744dcca84c3def5c74cd9375e11e0efd6875"
+    },
+    {
+      "archivo": "ui/logo.png",
+      "ancho": 1536,
+      "alto": 1024,
+      "bytes": 2172023,
+      "rgba": true,
+      "sha256": "124561494954e08906f2e8912bfb59d45559d0f4e9b721d172cc1550a687b845"
+    },
+    {
+      "archivo": "ui/nodo.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 1957473,
+      "rgba": true,
+      "sha256": "c365d4d435eb786cbe77634a7c081cd502d22f3b30a04b11e0df1b022e043254"
+    },
+    {
+      "archivo": "ui/panel.png",
+      "ancho": 1536,
+      "alto": 1024,
+      "bytes": 1673721,
+      "rgba": true,
+      "sha256": "da562f940aaf268786e140855591eb82b5d78608c06fb156bfafdbf09b0462af"
+    },
+    {
+      "archivo": "publicaciones/noticias.png",
+      "ancho": 1774,
+      "alto": 887,
+      "bytes": 3270246,
+      "rgba": false,
+      "sha256": "4edfcbef88b50bd212c5aabb5a83ef972d4c7d98e54aaafb951e5a8e83992bbe"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "proyecto": "CIVICA — Alcalde Digital",
+  "fecha": "2026-10-14",
+  "herramienta": "image_gen__imagegen integrado",
+  "tipo": "Biblioteca editorial de seis miniaturas, un solo atlas",
+  "archivo": "assets/rediseno/publicaciones/noticias.png",
+  "dimensiones": [
+    1774,
+    887
+  ],
+  "aspecto": "2:1",
+  "transparencia": false,
+  "formato": "PNG RGB24 opaco",
+  "atlas": {
+    "filas": 2,
+    "columnas": 3,
+    "recorte": "Calcular límites redondeando columna*ancho/3 y fila*alto/2; el tamaño generado no es divisible exactamente por las filas/columnas. Separadores crema finos en los límites.",
+    "orden": [
+      {
+        "publicacion_id": 50,
+        "columna": 0,
+        "fila": 0,
+        "tema": "Fachada de colegio"
+      },
+      {
+        "publicacion_id": 30,
+        "columna": 1,
+        "fila": 0,
+        "tema": "Propuesta urbana con comunidad"
+      },
+      {
+        "publicacion_id": 70,
+        "columna": 2,
+        "fila": 0,
+        "tema": "Parque central"
+      },
+      {
+        "publicacion_id": 20,
+        "columna": 0,
+        "fila": 1,
+        "tema": "Biblioteca"
+      },
+      {
+        "publicacion_id": 60,
+        "columna": 1,
+        "fila": 1,
+        "tema": "Conversación y rumor cívico"
+      },
+      {
+        "publicacion_id": 80,
+        "columna": 2,
+        "fila": 1,
+        "tema": "Encuesta y urna con gráfico abstracto"
+      }
+    ]
+  },
+  "fuente": "C:/Users/USER/.codex/generated_images/01a13cbe-c0e3-7102-b72d-05011ae36a34/exec-a2e129c6-eb09-4ea0-8007-d84459f8026a.png",
+  "referencias": [
+    "assets/rediseno/fondos/ciudad.png",
+    "assets/rediseno/fondos/cafe_exterior.png"
+  ],
+  "verificacion": "Inspección visual de seis celdas en orden; sin texto, sin etiquetas, sin números, sin personajes reales. Proporción total2:1 verificada mediante System.Drawing.",
+  "prompt": "Use case: illustration-story. Asset type: ONE editorial THUMBNAIL ATLAS/library for fictional social-media news in CIVICA — Alcalde Digital. References establish exact world architecture and polished warm hand-painted premium anime visual-novel style: cream civic stone buildings, teal details, blue skies, copper afternoon sun, detailed yet readable scenes. Generate ONE landscape canvas at exactly 2:1 aspect ratio, 2048x1024 if possible, composed of a PRECISE GRID with3 equal columns and2 equal rows. Each of the SIX cells is its own finished separate landscape4:3 illustration. Equal cell bounds at1/3,2/3 of width and1/2height. NO margins or frames except razor-thin discrete ivory separation at grid boundaries. Each image reaches its cell edges. No overlapping cells, no text, no labels, no newspaper mastheads, no numbers, no watermarks, no logos, no captions, no UI elements. TOPROW LEFT: charming modern secondary school facade with cream brick, glass doorway, flowering trees, empty safe courtyard, no text signs. TOPROW CENTER: urban community improvement proposal, small diverse fictional adult neighbors seen at a respectful distance collaborating over a blank architectural plan on a table in sunny civic square, new greenery and accessible pathways. TOPROW RIGHT: beautiful central public park with curving path, leafy trees, fountain and empty benches in golden sunlight. BOTTOMROW LEFT: welcoming public library interior, warm wood shelving full of books, reading tables, tall arched windows, afternoon rays, no readable writing. BOTTOMROW CENTER: subtle civic rumor/conversation, two unidentifiable fictional adult townspeople in conversation with smartphones at outdoor cafe, thoughtful mildly concerned body language, no accusations, no politicians, no readable screens, no speech bubbles. BOTTOMROW RIGHT: symbolic civic survey/election participation, close view of a clean cream ballot box with narrow slot, one hand holding a blank ballot ready to insert, tasteful abstract teal/copper bars on background board with absolutely no numerals or letters. Every cell composition simple and uncluttered for small thumbnail readability, coherent same fictional city, lovely dimensional light and painterly textures, not flat vector, not photoreal. OPAQUE finished art in every cell. Exactly6different images in3x2layout."
+}

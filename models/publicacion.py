@@ -4,7 +4,11 @@ class Publicacion:
         id,
         texto,
         verdadera,
-        impacto
+        impacto,
+        tipo="noticia",
+        emisor_id="ana",
+        candidato_id=None,
+        danina=False
     ):
         self.id = id
         self.texto = texto
@@ -16,3 +20,11 @@ class Publicacion:
         self.reportes = 0
 
         self.estado = "ACTIVA"
+        self.tipo = tipo
+        self.emisor_id = emisor_id
+        self.candidato_id = candidato_id
+        self.danina = danina
+        self.alcance = 0
+
+    def datos(self):
+        return dict(vars(self))
