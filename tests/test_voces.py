@@ -71,7 +71,7 @@ class PruebasVoces(unittest.TestCase):
     def test_musica_baja_mientras_se_oye_la_voz_y_se_recupera(self):
         volumen = self.audio.volumen("musica")
         self.audio._estado_voz(SimpleNamespace(name="Speaking"))
-        self.assertAlmostEqual(self.audio.volumen("musica"), volumen * 0.4)
+        self.assertAlmostEqual(self.audio.volumen("musica"), volumen * 0.12)
         self.audio._estado_voz(SimpleNamespace(name="Ready"))
         self.assertAlmostEqual(self.audio.volumen("musica"), volumen)
 
@@ -82,6 +82,18 @@ class PruebasVoces(unittest.TestCase):
         self.assertFalse(self.audio.hablando)
         self.assertEqual(self.audio.hablante_actual, "")
         self.assertEqual(self.motor.stop.call_count, 2)
+
+    def test_ambiente_y_efectos_dejan_espacio_al_dialogo_y_recuperan_su_nivel(self):
+        for categoria in ("general", "voces", "ambiente", "efectos", "musica"):
+            self.audio.configurar(categoria, 1)
+        niveles = {c: self.audio.volumen(c) for c in ("ambiente", "efectos", "musica")}
+        self.audio._estado_voz(SimpleNamespace(name="Speaking"))
+        self.assertEqual(self.audio.volumen("voces"), 1)
+        for categoria in niveles:
+            self.assertLessEqual(self.audio.volumen(categoria), self.audio.volumen("voces") * .3)
+        self.audio._estado_voz(SimpleNamespace(name="Ready"))
+        for categoria, nivel in niveles.items():
+            self.assertEqual(self.audio.volumen(categoria), nivel)
 
     def test_falta_de_motor_y_texto_vacio_no_impiden_jugar(self):
         self.audio.voces_disponibles = False

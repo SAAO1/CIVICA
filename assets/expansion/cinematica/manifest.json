@@ -1,0 +1,633 @@
+{
+  "version": 2,
+  "tecnica": "Animación cinematográfica compuesta, sin audio incrustado; voces de narrador y personajes y ambientes separados en el juego.",
+  "autoria": "CIVICA: ilustraciones del paquete y nuevas pinturas generadas con OpenAI ImageGen; animación original QPainter.",
+  "tipografia": {
+    "familia": "Atkinson Hyperlegible",
+    "licencia": "SIL Open Font License 1.1",
+    "archivo": "assets/fuentes/OFL.txt"
+  },
+  "criterios": "Representaciones del contexto del guion; los rumores se rotulan como mensajes sin fuente, sin afirmar su contenido.",
+  "clips": [
+    {
+      "clave": "ciudad_48h",
+      "titulo": "Cuarenta y ocho horas",
+      "video": "ciudad_48h.mp4",
+      "poster": "ciudad_48h.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2616779,
+      "sha256": "d24a215553c0b78f077d9918aae62415240fe2f44c581a79f0f03dabee99735d",
+      "poster_sha256": "87e2e496f993826f7fb84e505ef40d41d117bd23808e28dfefe86d5a4894395c",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/portada_ciudad.png",
+          "sha256": "e3635aa23d80331bb607732052f8a1789cd98ce7655ebfab3e7cb64c95836c91"
+        }
+      ],
+      "inicio": "ciudad_48h_inicio.png",
+      "inicio_sha256": "0651599525a8ac9fbb774efb52bf6c240f668cb4e686c399c0a863964547169d"
+    },
+    {
+      "clave": "mensaje_barrio",
+      "titulo": "Un mensaje recorre el barrio",
+      "video": "mensaje_barrio.mp4",
+      "poster": "mensaje_barrio.jpg",
+      "inicio": "mensaje_barrio_inicio.png",
+      "inicio_sha256": "79f9699500c9c07ed41dc9f9eda60dc23d81f253f896cadfa39c3691a4156738",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1646395,
+      "sha256": "31124c15f49ec5157739f5a310ec33996ee4261eae1ad66cd42b30304ad9860c",
+      "poster_sha256": "f449dbbeeb8b59e9a6781d4eff777bbc2a0a5d7a0bc538c3d80ecad72c0e3c62",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/telefono.png",
+          "sha256": "61c81fe10906fc1956871105ae18ba4d2877092f91b1bcd98e76e7f9477c216f"
+        }
+      ]
+    },
+    {
+      "clave": "rumor_colegio",
+      "titulo": "El rumor del colegio",
+      "video": "rumor_colegio.mp4",
+      "poster": "rumor_colegio.jpg",
+      "inicio": "rumor_colegio_inicio.png",
+      "inicio_sha256": "c0380d22b5fb40858568b212fb40637cc8c81239b8ea728d6dba2be1f0ecfcdd",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2622995,
+      "sha256": "751b24a8994c7ec33125d561a770a157fe0919e7fba27f7baad9977d511a1a92",
+      "poster_sha256": "c98b9f4cf4108f4a026b85f0137baa59269b1e3464c1cdc31bc274d2842960f7",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/telefono.png",
+          "sha256": "61c81fe10906fc1956871105ae18ba4d2877092f91b1bcd98e76e7f9477c216f"
+        }
+      ]
+    },
+    {
+      "clave": "cafe_alerta",
+      "titulo": "La primera alerta",
+      "video": "cafe_alerta.mp4",
+      "poster": "cafe_alerta.jpg",
+      "inicio": "cafe_alerta_inicio.png",
+      "inicio_sha256": "6b6c1b8003af23c8b77c9ae4ac1f66a9e8a270bb54327495f0d3bda772e9eb2d",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 3260277,
+      "sha256": "a2e1ea03982c2e92d47e0a213995e337facef9568dc0472d144680d1d8dc354d",
+      "poster_sha256": "5118240b44290833178fac6e1ec6ebc788540b9d7f9ae26e64565c048724cb57",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        }
+      ]
+    },
+    {
+      "clave": "libreta_cultura",
+      "titulo": "Las preguntas de la periodista",
+      "video": "libreta_cultura.mp4",
+      "poster": "libreta_cultura.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1580743,
+      "sha256": "474f9a5fa05dace8e25c7d4e5948962827d4d86af50900777885bc279ab0b3c4",
+      "poster_sha256": "d4dcb23e8eac79bff00633863046a1d9adbafd75d7db95c7dd10e5d1f2d1cd24",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        }
+      ],
+      "inicio": "libreta_cultura_inicio.png",
+      "inicio_sha256": "0b5e71db1177348eec06b66fe5ac272dc9a9e80b45dc425d21c548a1d541ec3b"
+    },
+    {
+      "clave": "mapa_parque",
+      "titulo": "El camino del parque",
+      "video": "mapa_parque.mp4",
+      "poster": "mapa_parque.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2059291,
+      "sha256": "ff905bb8ec5457162e9487cb2b63999f5e2fe838f8bca9e447b4450021869c68",
+      "poster_sha256": "bee597cdfec7be5cbab7519508124c76624f509a012a06c0d1b8c3aec0b686a8",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        }
+      ],
+      "inicio": "mapa_parque_inicio.png",
+      "inicio_sha256": "7367bbb97e1817b0fc79193b2c01d58c1563101969bb53a4c0156e0f8504453d"
+    },
+    {
+      "clave": "libro_biblioteca",
+      "titulo": "La memoria de un libro",
+      "video": "libro_biblioteca.mp4",
+      "poster": "libro_biblioteca.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1647857,
+      "sha256": "a2438ac5d18ec84086a0b35ebc73d181c7631f1502537767f0835349a409a8b6",
+      "poster_sha256": "ae223f9a42d3aa27709d963963574c2bea7f6033e37ce776b1ffacd4ae0ab2ce",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        }
+      ],
+      "inicio": "libro_biblioteca_inicio.png",
+      "inicio_sha256": "5d49a5396e41cfb1bdc63b93039f0f3532c9bbaf7b11e8907c9862eb34838754"
+    },
+    {
+      "clave": "acusacion_lluvia",
+      "titulo": "Una acusación bajo la lluvia",
+      "video": "acusacion_lluvia.mp4",
+      "poster": "acusacion_lluvia.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2063826,
+      "sha256": "f551c9c873147fb46d4f2a627948655f7e87de9031016891968d9a0d99799df2",
+      "poster_sha256": "5055aa366c070fbc55dfb658422d875c8c7a3c8d2ad12622502bc2a3ba27581e",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        }
+      ],
+      "inicio": "acusacion_lluvia_inicio.png",
+      "inicio_sha256": "807dab3c6101ea87493bd14b50e2e07f67f15147e1c728dc446a208fa39bda4e"
+    },
+    {
+      "clave": "noche_electoral",
+      "titulo": "La decisión sigue en las urnas",
+      "video": "noche_electoral.mp4",
+      "poster": "noche_electoral.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2361653,
+      "sha256": "e6ca747dc0aebe18687f543f87ca0e802d43d6b36fb0c686f747417a782938be",
+      "poster_sha256": "aeab47515206f9ae8174a068f72aa54640f2483689fffd97de526d10d0f2b7b5",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        }
+      ],
+      "inicio": "noche_electoral_inicio.png",
+      "inicio_sha256": "8fbdf7bc684bc26f5b61d900ee8127df854c14f17af4897c0c458dd14a13e13d"
+    },
+    {
+      "clave": "person_colegio_c",
+      "titulo": "Mi hermana y el colegio",
+      "video": "person_colegio_c.mp4",
+      "poster": "person_colegio_c.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2360516,
+      "sha256": "1e50afd1e6c00a6649e0072a75d49276f5c9212e6873cb7a2426792bd8bf0f94",
+      "poster_sha256": "d9c0b6608c7ac0a8a80bcd305b97d2cb70ad8cef5a486db7b84a8a4cd6afe20d",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/hermana_parque.jpg",
+          "sha256": "6dbcca283c4c65405c785bee742420037304e2b4a87122d26ddf00e769027f35"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        }
+      ],
+      "inicio": "person_colegio_c_inicio.png",
+      "inicio_sha256": "ed294bbea34271075ad77deef133b55815d27e4603fa435974b77355f46ba528"
+    },
+    {
+      "clave": "person_colegio_p",
+      "titulo": "Buscar el comunicado completo",
+      "video": "person_colegio_p.mp4",
+      "poster": "person_colegio_p.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2171998,
+      "sha256": "a9072ded8f593461ca1b5a790e83fe0f0f7d63b11f3fe42c622ad372bc113a40",
+      "poster_sha256": "6dcfd8d7485983ace7106729db3dfcab404a6c27129c3b1d14955273c3fcc5f4",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/periodista_calle.jpg",
+          "sha256": "b8fc59f9ad01159b79dbf1d6a84713ad425b77ba1d799657b12be8a39a101f88"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        }
+      ],
+      "inicio": "person_colegio_p_inicio.png",
+      "inicio_sha256": "898b980e08598f7bdce72693fb6fdc7039e55bd80e25ef074ff6d4ea477b3cad"
+    },
+    {
+      "clave": "person_cultura_c",
+      "titulo": "Un lugar para leer",
+      "video": "person_cultura_c.mp4",
+      "poster": "person_cultura_c.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1609230,
+      "sha256": "e7c7632a357f19d5fef4153315567b41bc5f92d1c2d15b26fa82391fa37f267b",
+      "poster_sha256": "ba8030b121160a82a8c7059eb075073543178683f1a08bd029433dbc9d4a6369",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/familia.jpg",
+          "sha256": "64d2573f6a89e5f10361ee435a630f7ccdb576b8a91f00dc44291c7a66c0478b"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        }
+      ],
+      "inicio": "person_cultura_c_inicio.png",
+      "inicio_sha256": "12c0eb89fc10cb69f1cf71e7475aef0cc52c64c880406f3d58fbd82852777901"
+    },
+    {
+      "clave": "person_cultura_p",
+      "titulo": "Preguntas para una propuesta",
+      "video": "person_cultura_p.mp4",
+      "poster": "person_cultura_p.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1768121,
+      "sha256": "f6adc13c493a816daf38235674dbd365fa0385be2a6428cdbb387ee447ba9fc2",
+      "poster_sha256": "8813b1577b9a21a0c3fcd9f26f08dca1336986a9f545606b3a95f73a3f66d9c9",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/periodista_calle.jpg",
+          "sha256": "b8fc59f9ad01159b79dbf1d6a84713ad425b77ba1d799657b12be8a39a101f88"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        }
+      ],
+      "inicio": "person_cultura_p_inicio.png",
+      "inicio_sha256": "88b21a072a60a182afe554ad38caa4a74739a7d49fff23505e717885adc596fe"
+    },
+    {
+      "clave": "person_parque_c",
+      "titulo": "El camino al colegio",
+      "video": "person_parque_c.mp4",
+      "poster": "person_parque_c.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2565554,
+      "sha256": "841dc4882aab82ba05b7c374b3e698267e7a7177539a04889c2e60ce13e772aa",
+      "poster_sha256": "f2401fd8f1768f424a30251578722eac5e16d69dd4ae66f584a792bbc7a60191",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/hermana_parque.jpg",
+          "sha256": "6dbcca283c4c65405c785bee742420037304e2b4a87122d26ddf00e769027f35"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        }
+      ],
+      "inicio": "person_parque_c_inicio.png",
+      "inicio_sha256": "ed294bbea34271075ad77deef133b55815d27e4603fa435974b77355f46ba528"
+    },
+    {
+      "clave": "person_parque_p",
+      "titulo": "Fechas y zonas del aviso",
+      "video": "person_parque_p.mp4",
+      "poster": "person_parque_p.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2577536,
+      "sha256": "d517a033f09f94edd202c6b72799950a7157abbaaa4efcbd87b927f6867ff74f",
+      "poster_sha256": "f2401fd8f1768f424a30251578722eac5e16d69dd4ae66f584a792bbc7a60191",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/periodista_calle.jpg",
+          "sha256": "b8fc59f9ad01159b79dbf1d6a84713ad425b77ba1d799657b12be8a39a101f88"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        }
+      ],
+      "inicio": "person_parque_p_inicio.png",
+      "inicio_sha256": "898b980e08598f7bdce72693fb6fdc7039e55bd80e25ef074ff6d4ea477b3cad"
+    },
+    {
+      "clave": "person_biblioteca_c",
+      "titulo": "El libro de mi abuelo",
+      "video": "person_biblioteca_c.mp4",
+      "poster": "person_biblioteca_c.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1721927,
+      "sha256": "5bddefa8df8322f5c21a0340cc5085133ce1fe7ac160a883a9e3dd7b3afd26d9",
+      "poster_sha256": "ba8030b121160a82a8c7059eb075073543178683f1a08bd029433dbc9d4a6369",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/familia.jpg",
+          "sha256": "64d2573f6a89e5f10361ee435a630f7ccdb576b8a91f00dc44291c7a66c0478b"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        }
+      ],
+      "inicio": "person_biblioteca_c_inicio.png",
+      "inicio_sha256": "12c0eb89fc10cb69f1cf71e7475aef0cc52c64c880406f3d58fbd82852777901"
+    },
+    {
+      "clave": "person_biblioteca_p",
+      "titulo": "De un anuncio a una obra",
+      "video": "person_biblioteca_p.mp4",
+      "poster": "person_biblioteca_p.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1684845,
+      "sha256": "197bb03bb981783a50fb6f6fc509d7e116b75f2670e8f6d6402b2e726181620d",
+      "poster_sha256": "ba8030b121160a82a8c7059eb075073543178683f1a08bd029433dbc9d4a6369",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/periodista_calle.jpg",
+          "sha256": "b8fc59f9ad01159b79dbf1d6a84713ad425b77ba1d799657b12be8a39a101f88"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        }
+      ],
+      "inicio": "person_biblioteca_p_inicio.png",
+      "inicio_sha256": "672e99106d4a5b37d71bc92bd39a375947e4b2dadd897e9edf937d2e08a09f50"
+    },
+    {
+      "clave": "person_acusacion_c",
+      "titulo": "Todo el mundo lo dice",
+      "video": "person_acusacion_c.mp4",
+      "poster": "person_acusacion_c.jpg",
+      "inicio": "person_acusacion_c_inicio.png",
+      "inicio_sha256": "fc00117d464fd865c7fdd1c791bfb1fc6ac53d925f21c4b5d8fc1ac5614bdd5f",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1866932,
+      "sha256": "f811992a926b9aa8afb061d7619d8a03d249fe89f1cb29ce191bf83644004218",
+      "poster_sha256": "4453de5f05c68c0fb4857c6c5a1c3a509514ed8d168805586e3d5ebfee3d82ee",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/telefono.png",
+          "sha256": "61c81fe10906fc1956871105ae18ba4d2877092f91b1bcd98e76e7f9477c216f"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        }
+      ]
+    },
+    {
+      "clave": "person_acusacion_p",
+      "titulo": "La prisa no es una fuente",
+      "video": "person_acusacion_p.mp4",
+      "poster": "person_acusacion_p.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1911898,
+      "sha256": "ea9c512af3c35e39788926853ccca3c4c9214cf6829b6c013e45b2029e64a845",
+      "poster_sha256": "4453de5f05c68c0fb4857c6c5a1c3a509514ed8d168805586e3d5ebfee3d82ee",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/periodista_calle.jpg",
+          "sha256": "b8fc59f9ad01159b79dbf1d6a84713ad425b77ba1d799657b12be8a39a101f88"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        }
+      ],
+      "inicio": "person_acusacion_p_inicio.png",
+      "inicio_sha256": "680d6d9a8e34cca5370790044851247f5b3dfa08a48be8532345577a0883c3b1"
+    },
+    {
+      "clave": "person_voto_c",
+      "titulo": "Conversar antes de votar",
+      "video": "person_voto_c.mp4",
+      "poster": "person_voto_c.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2191412,
+      "sha256": "a5a48a59c792e66093b894ae82a4ec88df200ef15c557d822c733ff2ec604a74",
+      "poster_sha256": "3e9197cbc5911f4331ebd3d2a0f6e23d34288c53ad2710c72f3862aaad4b583e",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/familia.jpg",
+          "sha256": "64d2573f6a89e5f10361ee435a630f7ccdb576b8a91f00dc44291c7a66c0478b"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        }
+      ],
+      "inicio": "person_voto_c_inicio.png",
+      "inicio_sha256": "b0a2e11b58dc61712704bf3af79fc5b9a4c0aa6cae92ff2e90b86f0217d9c77c"
+    },
+    {
+      "clave": "person_voto_p",
+      "titulo": "Las piezas de una encuesta",
+      "video": "person_voto_p.mp4",
+      "poster": "person_voto_p.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1913922,
+      "sha256": "20db88241d249c47159c3db2f8ed76b130bd3e095257d485db42d238481ac6f3",
+      "poster_sha256": "577365e12ab3f7f2b3f1803ecf3e6b22151a4a05bfaaf10c5729ff0aaf66969d",
+      "decodificacion_completa": true,
+      "tecnica": "Ilustración pintada + objetos animados con QPainter + cámara y disoluciones; H.264 local",
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/periodista_calle.jpg",
+          "sha256": "b8fc59f9ad01159b79dbf1d6a84713ad425b77ba1d799657b12be8a39a101f88"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        }
+      ],
+      "inicio": "person_voto_p_inicio.png",
+      "inicio_sha256": "63e35879722f198aa4be89a96685f71e66558c563ee9d032f10c6888b5d76e02"
+    }
+  ]
+}

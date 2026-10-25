@@ -5,6 +5,7 @@ import queue
 import secrets
 
 from juego.partida import Juego
+from juego.acciones import accion_permitida, accion_por_defecto
 from models.jugador import Jugador, ROLES_JUGABLES
 from red.protocolo import codificar, recibir
 
@@ -12,9 +13,10 @@ from red.protocolo import codificar, recibir
 class Servidor:
     """Servidor autoritativo local. Una decisión por publicación y barrera de lectura."""
 
-    def __init__(self, host="127.0.0.1", puerto=8765, semilla=None, eventos=True, sin_limite=False):
+    def __init__(self, host="127.0.0.1", puerto=8765, semilla=None, eventos=True, sin_limite=False,
+                 campana="clasica"):
         self.host, self.puerto = host, puerto
-        self.juego = Juego(semilla, eventos)
+        self.juego = Juego(semilla, eventos, campana=campana)
         self.juego.jugadores = []
         self.sin_limite = sin_limite
         self.conexiones = {}
@@ -101,7 +103,7 @@ class Servidor:
 
     def _timeout(self):
         if self.fase == "jugando" and self.deadline is not None and time.monotonic() >= self.deadline:
-            self.juego.ejecutar_accion("ignorar", self.juego.jugador.id)
+            self.juego.ejecutar_accion(accion_por_defecto(self.juego.jugador.rol), self.juego.jugador.id)
             self.deadline = None
             self.fase = "resultado"
             self.revision += 1
@@ -197,6 +199,8 @@ class Servidor:
         elif tipo == "accion":
             if self.fase != "jugando" or mensaje.get("publicacion_id") != self.juego.publicacion_actual_id:
                 raise ValueError("La publicación o la fase ya cambió")
+            if not accion_permitida(mensaje.get("accion"), self.juego.jugador.rol):
+                raise ValueError("Esa decisión no pertenece al oficio del participante de turno")
             if not self.juego.ejecutar_accion(mensaje.get("accion"), id):
                 raise ValueError("Acción inválida, repetida o fuera de turno")
             self.deadline = None
@@ -237,8 +241,9 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Servidor local de CIVICA")
     parser.add_argument("--puerto", type=int, default=8765)
+    parser.add_argument("--campana", choices=Juego.CAMPANAS, default="clasica")
     args = parser.parse_args()
-    servidor = Servidor(puerto=args.puerto)
+    servidor = Servidor(puerto=args.puerto, campana=args.campana)
     servidor.iniciar()
     print(f"Sala CIVICA en 127.0.0.1:{servidor.puerto}")
     try:

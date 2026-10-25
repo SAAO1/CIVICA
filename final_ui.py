@@ -2,7 +2,7 @@
 from PyQt6.QtCore import QRectF, Qt
 from PyQt6.QtGui import QColor, QFont, QLinearGradient, QPainter, QPainterPath, QPen, QPixmap
 from PyQt6.QtWidgets import (
-    QFrame, QHBoxLayout, QLabel, QScrollArea, QSizePolicy, QVBoxLayout, QWidget,
+    QDialog, QFrame, QHBoxLayout, QLabel, QScrollArea, QSizePolicy, QVBoxLayout, QWidget,
 )
 
 from arte import (
@@ -11,6 +11,10 @@ from arte import (
 )
 from juego.finales import epilogo
 from recursos import RAIZ
+from audiovisual_ui import FondoEscena
+from efectos_narrativos import CapaEfectos
+from cinematica_narrativa import CapaCinematica
+from juego.cinematica_final import CINEMATICAS_FINALES, clave_final
 
 
 IDS_CANDIDATOS = ("juan", "adrian", "laura", "camila")
@@ -59,6 +63,16 @@ class _ImagenFinal(QWidget):
         self.retrato_electo = retrato_electo
         self.update()
 
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        for hijo in self.children():
+            if isinstance(hijo, CapaEfectos):
+                hijo.setGeometry(self.rect())
+            elif isinstance(hijo, CapaCinematica):
+                alto = min(self.height(), round(self.width()*9/16))
+                ancho = min(self.width(), round(alto*16/9))
+                hijo.setGeometry((self.width()-ancho)//2, (self.height()-alto)//2, ancho, alto)
+
     def paintEvent(self, event):
         pintor = QPainter(self)
         pintor.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
@@ -72,10 +86,13 @@ class _ImagenFinal(QWidget):
         gradiente.setColorAt(.55, QColor("#1b3348"))
         gradiente.setColorAt(1, QColor("#102230"))
         pintor.fillRect(marco, gradiente)
-        cantidad = len(self.imagenes)
+        cine_visible = any(isinstance(h, CapaCinematica) and h.activa for h in self.children())
+        cantidad = 0 if cine_visible else len(self.imagenes)
+        if cine_visible:
+            pintor.fillRect(marco, QColor("#081925"))
         columnas = 1 if cantidad <= 1 else 2
         filas = 2 if cantidad > 2 else 1
-        for indice, imagen in enumerate(self.imagenes):
+        for indice, imagen in enumerate(self.imagenes if not cine_visible else []):
             if imagen.isNull():
                 continue
             celda = QRectF(
@@ -155,7 +172,11 @@ class EscenaFin(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.eleccion = None
+        self.ambiente_vivo = FondoEscena(self)
+        self.ambiente_vivo.oscuridad = 105
+        self.ambiente_vivo.establecer_escena("assets/expansion/fondos/plaza_noche.png", "noche")
         self.ganador_id = None
+        self.dialogo_video = None
         self.exterior = QVBoxLayout(self)
         self.exterior.setContentsMargins(24, 18, 24, 18)
         self.panel = PanelIlustrado()
@@ -185,7 +206,15 @@ class EscenaFin(QWidget):
         self.fila_hero.setSpacing(7)
         self.imagen_ganador = _ImagenFinal()
         self.imagen_ganador.setAccessibleName("Retrato de la candidatura electa")
+        # Esta zona sólo contiene arte: las luces y los papeles quedan lejos
+        # de porcentajes, epílogo y controles, incluso al reducir la ventana.
+        self.efectos_final = CapaEfectos(self.imagen_ganador)
+        self.cine_final = CapaCinematica(self.imagen_ganador, catalogo=CINEMATICAS_FINALES, bucle=False)
         self.fila_hero.addWidget(self.imagen_ganador, 1)
+        self.boton_video = BotonIlustrado("Ampliar escena final")
+        self.boton_video.setMinimumHeight(38)
+        self.boton_video.clicked.connect(self.abrir_video_final)
+        self.fila_hero.addWidget(self.boton_video)
         self.estado_eleccion = QLabel("ALCALDÍA ELECTA")
         self.estado_eleccion.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.fila_hero.addWidget(self.estado_eleccion)
@@ -216,6 +245,10 @@ class EscenaFin(QWidget):
         self.balance = QLabel()
         self.balance.setWordWrap(True)
         self.relato_layout.addWidget(self.balance)
+        self.razones_eleccion = QLabel()
+        self.razones_eleccion.setWordWrap(True)
+        self.razones_eleccion.setTextInteractionFlags(Qt.TextInteractionFlag.TextSelectableByMouse)
+        self.relato_layout.addWidget(self.razones_eleccion)
         self.leyenda_jugadores = QLabel("TU HUELLA EN CIUDAD NOVA")
         self.relato_layout.addWidget(self.leyenda_jugadores)
         self.puntuaciones = QLabel()
@@ -227,10 +260,17 @@ class EscenaFin(QWidget):
         self.fila_desenlace.addWidget(self.area_resumen, 6)
         self.contenido.addLayout(self.fila_desenlace, 1)
 
+        fila_botones = QHBoxLayout()
+        self.boton_epilogo = BotonIlustrado("Escuchar el epílogo")
+        self.boton_epilogo.setFixedSize(284, 52)
+        self.boton_epilogo.clicked.connect(lambda: self.window().mostrar_desenlace())
+        fila_botones.addWidget(self.boton_epilogo)
+        fila_botones.addStretch(1)
         self.boton_volver = BotonIlustrado("Regresar a Ciudad Nova")
         self.boton_volver.setFixedSize(284, 52)
         self.boton_volver.clicked.connect(lambda: self.window().volver_portada())
-        self.contenido.addWidget(self.boton_volver, 0, Qt.AlignmentFlag.AlignRight)
+        fila_botones.addWidget(self.boton_volver)
+        self.contenido.addLayout(fila_botones)
         self.exterior.addWidget(self.panel)
         aplicar_estilo(self)
         self._ajustar_presentacion()
@@ -251,9 +291,13 @@ class EscenaFin(QWidget):
         _tipografia(self.leyenda_cierre, 13 if compacto else 15, "#d7ba8b", True)
         _tipografia(self.texto_final, 18 if compacto else 22 if grande else 20)
         _tipografia(self.balance, 16 if compacto else 18, "#b7cfd0")
+        _tipografia(self.razones_eleccion, 16 if compacto else 18, "#c7d9d4")
+        _tipografia(self.boton_video, 16, "#fff0d1", True)
+        self.boton_video.setStyleSheet(self.boton_video.styleSheet()+"padding:0; min-height:38px; border:0;")
         _tipografia(self.leyenda_jugadores, 13 if compacto else 15, "#d7ba8b", True)
         _tipografia(self.puntuaciones, 16 if compacto else 19 if grande else 17, "#e4dbc7")
         _tipografia(self.boton_volver, 18, "#fff0d1", True)
+        _tipografia(self.boton_epilogo, 18, "#fff0d1", True)
         self.boton_volver.setStyleSheet(
             self.boton_volver.styleSheet()
             + "min-height:52px; max-height:52px; padding:0; border:0;"
@@ -265,7 +309,84 @@ class EscenaFin(QWidget):
 
     def resizeEvent(self, event):
         super().resizeEvent(event)
+        self.ambiente_vivo.setGeometry(self.rect())
+        self.ambiente_vivo.lower()
+        self.efectos_final.setGeometry(self.imagen_ganador.rect())
         self._ajustar_presentacion()
+
+    def hideEvent(self, event):
+        if self.dialogo_video is not None:
+            self.dialogo_video.close()
+        self.cine_final.detener()
+        self.efectos_final.detener()
+        super().hideEvent(event)
+
+    def abrir_video_final(self):
+        if self.eleccion is None:
+            return
+        if self.dialogo_video is not None:
+            self.dialogo_video.raise_()
+            return
+        self.cine_final.pausar()
+        dialogo = QDialog(self.window())
+        dialogo.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)
+        dialogo.setWindowTitle("Ciudad Nova · investidura" if not self.eleccion["empate"] else "Ciudad Nova · recuento pendiente")
+        dialogo.resize(min(1200, max(800, self.window().width()-80)), min(760, max(500, self.window().height()-60)))
+        disposicion = QVBoxLayout(dialogo)
+        disposicion.setContentsMargins(16, 16, 16, 16)
+        lienzo = QWidget()
+        lienzo.setMinimumSize(640, 360)
+        disposicion.addWidget(lienzo, 1)
+        cine = CapaCinematica(lienzo, catalogo=CINEMATICAS_FINALES, bucle=False)
+        # El filtro conserva 16:9 sin recortar nombre, firma ni acta.
+        from PyQt6.QtCore import QObject, QEvent
+        class Ajustar(QObject):
+            def eventFilter(self, objeto, evento):
+                if evento.type() == QEvent.Type.Resize:
+                    alto = min(objeto.height(), round(objeto.width()*9/16))
+                    ancho = min(objeto.width(), round(alto*16/9))
+                    cine.setGeometry((objeto.width()-ancho)//2, (objeto.height()-alto)//2, ancho, alto)
+                return False
+        filtro = Ajustar(lienzo)
+        lienzo.installEventFilter(filtro)
+        dialogo._filtro_cine = filtro
+        dialogo.cine = cine
+        botones = QHBoxLayout()
+        repetir = BotonIlustrado("Repetir escena")
+        repetir.setFixedSize(210, 46)
+        repetir.clicked.connect(lambda: cine.iniciar(clave_final(self.window().juego, self.eleccion)))
+        cerrar = BotonIlustrado("Ver resultados / saltar")
+        cerrar.setFixedSize(270, 46)
+        cerrar.clicked.connect(dialogo.close)
+        botones.addWidget(repetir)
+        botones.addStretch(1)
+        botones.addWidget(cerrar)
+        disposicion.addLayout(botones)
+        aplicar_estilo(dialogo)
+        self.dialogo_video = dialogo
+        def terminar():
+            cine.detener()
+            self.dialogo_video = None
+            if self.isVisible():
+                self.cine_final.reanudar()
+        dialogo.finished.connect(terminar)
+        cine.configurar(reducir_movimiento=bool(getattr(self.window(), "reducir_movimiento", False)), activo=bool(getattr(self.window(), "animar_fondos", True)))
+        dialogo.show()
+        cine.iniciar(clave_final(self.window().juego, self.eleccion))
+
+    def _presentar_efectos(self):
+        ventana = self.window()
+        reducir = bool(getattr(ventana, "reducir_movimiento", False))
+        activo = bool(getattr(ventana, "animar_fondos", True))
+        self.efectos_final.detener()
+        self.ambiente_vivo.configurar(reducir_movimiento=reducir, activo=activo)
+        self.cine_final.configurar(reducir_movimiento=reducir, activo=activo)
+        self.efectos_final.configurar(reducir_movimiento=reducir, activo=activo)
+        self.efectos_final.setGeometry(self.imagen_ganador.rect())
+        if activo and not reducir:
+            tipo = "archivo" if self.eleccion["empate"] else "eleccion"
+            self.efectos_final.reproducir(tipo, duracion=8.0, intensidad=.65)
+            self.efectos_final.raise_()
 
     def paintEvent(self, event):
         pintor = QPainter(self)
@@ -274,6 +395,8 @@ class EscenaFin(QWidget):
         pintor.fillRect(self.rect(), QColor(10, 20, 34, 100))
 
     def mostrar(self):
+        self.boton_epilogo.setVisible(getattr(self.window().juego, "campana", "clasica") == "extendida"
+                                      and hasattr(self.window(), "mostrar_desenlace"))
         juego = self.window().juego
         self.eleccion = eleccion = juego.resultado_electoral()
         self.titulo_final.setText(eleccion["final"])
@@ -297,11 +420,29 @@ class EscenaFin(QWidget):
             f"{len(juego.historial)} decisiones registradas · Confianza {juego.confianza} · "
             f"Convivencia {juego.convivencia} · Desinformación {juego.desinformacion}."
         )
+        evidencias = eleccion.get("evidencia_por_candidato", {})
+        movimientos = []
+        for c in juego.candidatos:
+            detalles = evidencias.get(c.id, [])
+            delta = sum(d["cambio"] for d in detalles)
+            receptores = sum(d["alcance"] for d in detalles)
+            contactos = sum(d.get("contactos_creados", 0) for d in detalles)
+            movimientos.append(f"{c.nombre}: apoyo {delta:+.1f} · {receptores} recepciones · {contactos} contactos nuevos.")
+        self.razones_eleccion.setText("CÓMO INFLUYÓ LA CAMPAÑA\n" + "\n".join(movimientos) + "\n\n" + eleccion.get("metodo", "") + "\n" + eleccion.get("desempate", ""))
         self.puntuaciones.setText("\n\n".join(
             f"{jugador.nombre} · {jugador.puntos} puntos · Reputación {jugador.reputacion}\n"
             + (", ".join(jugador.logros) or "Nuevos aprendizajes")
             for jugador in juego.jugadores
         ))
         self._ajustar_presentacion()
+        self._presentar_efectos()
+        self.cine_final.iniciar(clave_final(juego, eleccion))
+        alto_cine = min(self.imagen_ganador.height(), round(self.imagen_ganador.width()*9/16))
+        ancho_cine = min(self.imagen_ganador.width(), round(alto_cine*16/9))
+        self.cine_final.setGeometry((self.imagen_ganador.width()-ancho_cine)//2,
+                                    (self.imagen_ganador.height()-alto_cine)//2, ancho_cine, alto_cine)
+        self.cine_final.raise_()
+        self.efectos_final.raise_()
+        self.imagen_ganador.update()
         self.area_resumen.verticalScrollBar().setValue(0)
         self.setFocus()

@@ -1,0 +1,57 @@
+{
+  "fecha": "2026-10-24",
+  "nueva_generacion_ia": false,
+  "tecnica": "Cámara y composición QPainter, dos poses faciales existentes y objetos físicos del lugar; H.264 local.",
+  "limite": "Cine ilustrado; no contiene animación corporal sintetizada ni vídeo importado.",
+  "prompts_originales_pinturas": [
+    {
+      "id": "estudio",
+      "archivo": "assets/expansion/siete_actos/ilustraciones/estudio.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-edbd5c08-d24d-4dd4-8f40-7658f4dbf32c.png",
+      "referencias": [
+        "assets/expansion/siete_actos/fondos/estudio.jpg",
+        "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+        "assets/rediseno/personajes/periodista_retrato.png"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: widescreen cinematic key art for CIVICA visual novel actIV, fictional Ciudad Nova. Input1 is exact studio location, input2 exact identity of influencer Valeria Cruz, input3 journalist identity. Create a NEW scene INSIDE this modest warm creator studio in late afternoon, keeping its architecture/light/materials. Valeria is foreground center-left sitting attentively at wooden desk, medium warm Latina skin, shoulder-length curly dark brown hair half-up bun and copper hairclip, burgundy bomber jacket, creamTshirt, dark headphones around neck. She looks worried at her upright plain phone positioned inside a luminous ring light, laptop open with indistinct screen, her fingers pause above the phone; NO shock cartoon. To her right, the journalist with long dark chestnut hair, beige blazer/blacktop/bluepresslanyard leans forward looking at the same phone and holds a plain cream notebook, respectful collaboration. A second dark phone lies on desk outside the ring light, suggesting an unanswered call. The large circular ring light clearly frames the upright phone; faces and hands above lower22percent. Composition cinematic mid-wide16:9, detailed warm semi-realistic anime painterly shading matching references, fine linework. No readable text, labels, UI, floating message graphics, slogans, logos, numbers, border or watermark. No victorious/failing verdict, no duplicate characters, exactly2adultwomen. Not photo/notvector."
+    },
+    {
+      "id": "debate",
+      "archivo": "assets/expansion/siete_actos/ilustraciones/debate.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-6f6989af-7191-4b89-98a1-3aa71b0c1322.png",
+      "referencias": [
+        "assets/expansion/siete_actos/fondos/debate.jpg",
+        "assets/rediseno/personajes/candidatos.png",
+        "assets/rediseno/personajes/ciudadano_retrato.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: cinematic debate scene keyart for CIVICA visual novel actV. Input1 is exact municipal auditorium location with four equal lecterns. Input2 is approved 2x2 candidate identity atlas: topLEFT Juan(redhair/glasses/beigeblazer/navyturtleneck); topRIGHT Adrián(silverhair/glasses/darksuit/whiteshirt/tealtie); bottomLEFT Laura(blackhair/navysuit/whiteblouse); bottomRIGHT Camila(wavychestnuthair/navysuit/whiteblouse/redneckscarf). Create NEW wide16:9 painting of the FOUR adults at the four equal wooden microphones, left-to-right Juan,Adrián,Laura,Camila. Preserve their exact faces/hairstyles/clothing, all similarly lit and sized, all heads/hands insideframe. Juan calmly explains a cream folder open on his podium, Adrián listens thoughtfully, Laura attentive with teal folder, Camila attentive with plain dark phone lowered. No one wins, no applause/celebration/sashes/party logos. View from audience, stage warm copper spotlights/teal curtain; crowd only indistinct shoulder silhouettes bottom15percent, none obscuring faces or folders. Upper75percent stage and faces, lower20percent quiet dark seats for dialogue. Refined dimensional semi-realistic anime painterly, detailed fabric/skin/architecture, coherent professional visualnovel art. No readable texts, nameplates, lettering, numerical scores, UI, text panels, border or watermark. Input3 is citizen exact identity (black tousled hair, navyhoodie/creamTshirt). Also show citizen in first audience row near foreground left, seen three-quarter from behind, holding one unfolded cream question sheet at chest height clearly above lower22percent, looking toward Juan. This is one audience figure only in addition to the four candidates; candidates remain unobstructed and equally sized."
+    },
+    {
+      "id": "redaccion",
+      "archivo": "assets/expansion/siete_actos/ilustraciones/redaccion.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-86eace2f-ba74-41bc-baa1-237d15f61266.png",
+      "referencias": [
+        "assets/expansion/siete_actos/fondos/redaccion.jpg",
+        "assets/rediseno/personajes/periodista_retrato.png",
+        "assets/rediseno/personajes/ciudadano_retrato.png",
+        "assets/expansion/siete_actos/personajes/influencer_neutral.png"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: cinematic keyart actVI CIVICA visual novel. Input1 exact small newsroom at rainy night; input2 journalist exact identity; input3 citizen exact identity; input4 Valeria exact identity. Create NEW scene inside this independent newsroom: journalist center-left with long chestnut hair beige blazer blackblouse bluepresslanyard sits at desk with dark headphones resting around her neck, one hand beside a plain dark smartphone on desk that has just played audio; all three characters are now looking intently toward this same phone. A laptop further back shows only faint abstract audio waveform shapes with NO text. Citizen besideher on left, youngadultman black tousledhair navyhoodie creamTshirt, has an opened oldschool folder and two cream documents before him, handpaused over them while looking toward the central phone. Valeria on right, adult Latina curlyhalfup darkhair burgundybomber creamTshirt and headphonesaroundneck, watches the same central phone reflectively, her hands resting still on desk. Exactly3adults, all hands/facesabovebottom22percent. Steady raindrops on largewindow beyond, coolbluecitynight and warmdesk lamps; suspense from missingcontext, not explosive horror. Mid-wide16:9 refined anime-semi-realistic painterly shading/fine linework matching references, dimensional faces/clothes, no photorealism. No readabletext/labels/brandlogos/numbers/UIpanels/captions/watermarks, no victory/defeat verdict. Audio recorder and creamfolders visible as source context."
+    },
+    {
+      "id": "urnas",
+      "archivo": "assets/expansion/siete_actos/ilustraciones/urnas.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-ad259fb7-416f-4004-acdf-e623c2aa9c5d.png",
+      "referencias": [
+        "assets/expansion/siete_actos/fondos/urnas.jpg",
+        "assets/expansion/cinematica/ilustraciones/familia.jpg"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: cinematic election morning scene CIVICA visual novel actVII. Input1 exact accessible schoolcourtyard electionlocation; input2 exact citizen+grandfather family identities. Preserve citizen youngLatino adult blacktousledhair navyunzippedhoodie overcreamTshirt; grandfather kindly Latinoelder age72 shortwavygrayhair lightivorycollaredshirt/graytrousers, no glasses, softlylinedface. NEW scene wide16:9 inside schoolcourtyard of input1 in fresh warm morning afterrain. Citizen and grandfather stand together centerleft near the clearly visible accessible ramp to votingentrance; grandfather supports himself with plain brown cane inonehand, citizen holds a cream streetmap spreadopen in bothhands to explain route, grandfather points gently at map with freehand. Both calmattentive, naturallyspeaking together; no partisan instructions. A few diverse adults queue quietly in distantbackground under tents by ordinary sealedballotboxes, facesnotprominent. Opengate, rampandstairs visible, civicarchitecture/trees same aslocation, no candidatepresent. Mainfaces/map/caneabovebottom22percent. Semi-realistic anime painterly quality matching reference; warmsun/copperlight/navyshadows, naturaladultproportions. No celebratory confetti/sashes/winnerimagery, no readabletexts/mapslabels/logos/slogans/numbers/UI/borders/watermark. Story is access and mutualcare before pollsclose, no ballotsrevealed."
+    }
+  ],
+  "prompts_personajes": "assets/expansion/siete_actos/personajes/prompts.json",
+  "prompts_poses_faciales": "assets/expansion/siete_actos/personajes/prompts_animacion.json",
+  "fuentes_poses": "assets/expansion/siete_actos/personajes/manifest_animacion.json",
+  "animacion_nueva": "cinematica_personajes_extendida_visual.py",
+  "voz": "El juego reproduce la voz neuronal exacta del guion; los MP4 no agregan otra pista."
+}

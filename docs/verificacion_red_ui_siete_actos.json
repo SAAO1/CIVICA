@@ -1,0 +1,362 @@
+{
+  "correcto": true,
+  "jugadores": 4,
+  "campana": "extendida",
+  "casos": [
+    50,
+    30,
+    70,
+    20,
+    60,
+    80,
+    90,
+    40,
+    100,
+    10,
+    110,
+    25,
+    120,
+    35
+  ],
+  "decisiones": [
+    {
+      "publicacion": 50,
+      "rol": "ciudadano",
+      "accion": "compartir"
+    },
+    {
+      "publicacion": 30,
+      "rol": "periodista",
+      "accion": "contrastar"
+    },
+    {
+      "publicacion": 70,
+      "rol": "ciudadano",
+      "accion": "conversar"
+    },
+    {
+      "publicacion": 20,
+      "rol": "periodista",
+      "accion": "entrevistar"
+    },
+    {
+      "publicacion": 60,
+      "rol": "ciudadano",
+      "accion": "convocar"
+    },
+    {
+      "publicacion": 80,
+      "rol": "periodista",
+      "accion": "desmentir"
+    },
+    {
+      "publicacion": 90,
+      "rol": "ciudadano",
+      "accion": "ignorar"
+    },
+    {
+      "publicacion": 40,
+      "rol": "periodista",
+      "accion": "reservar"
+    },
+    {
+      "publicacion": 100,
+      "rol": "ciudadano",
+      "accion": "compartir"
+    },
+    {
+      "publicacion": 10,
+      "rol": "periodista",
+      "accion": "contrastar"
+    },
+    {
+      "publicacion": 110,
+      "rol": "ciudadano",
+      "accion": "conversar"
+    },
+    {
+      "publicacion": 25,
+      "rol": "periodista",
+      "accion": "entrevistar"
+    },
+    {
+      "publicacion": 120,
+      "rol": "ciudadano",
+      "accion": "convocar"
+    },
+    {
+      "publicacion": 35,
+      "rol": "periodista",
+      "accion": "desmentir"
+    }
+  ],
+  "barreras": [
+    {
+      "publicacion": 50,
+      "revision": 2,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 30,
+      "revision": 4,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 70,
+      "revision": 6,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 20,
+      "revision": 8,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 60,
+      "revision": 10,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 80,
+      "revision": 12,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 90,
+      "revision": 14,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 40,
+      "revision": 16,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 100,
+      "revision": 18,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 10,
+      "revision": 20,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 110,
+      "revision": 22,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 25,
+      "revision": 24,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 120,
+      "revision": 26,
+      "espera_al_cuarto": true
+    },
+    {
+      "publicacion": 35,
+      "revision": 28,
+      "espera_al_cuarto": true
+    }
+  ],
+  "estados_identicos": true,
+  "epilogo_antes_del_panel": true,
+  "lineas_epilogo_por_cliente": [
+    9,
+    9,
+    9,
+    9
+  ],
+  "balances_completos_por_cliente": [
+    14,
+    14,
+    14,
+    14
+  ],
+  "resultado_electoral": {
+    "ganadores": [
+      "Adrián Morales"
+    ],
+    "empate": false,
+    "porcentajes": {
+      "juan": 20.70548983380719,
+      "adrian": 36.522955774594834,
+      "laura": 29.249217467734557,
+      "camila": 13.522336923863422
+    },
+    "apoyos": {
+      "juan": 23.086,
+      "adrian": 40.722,
+      "laura": 32.612,
+      "camila": 15.077
+    },
+    "razones": [
+      "#50 · Juan Torres · Compartir con mi grupo · 3 receptores · apoyo -5.761. La acusación falsa perjudica a la candidatura señalada entre quienes la reciben.",
+      "#30 · Adrián Morales · Contrastar las fuentes · 0 receptores · apoyo +2.400. La evidencia confirma una propuesta y refuerza su credibilidad.",
+      "#70 · Laura Ríos · Escuchar al vecindario · 0 receptores · apoyo +0.463. 1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+      "#20 · Adrián Morales · Entrevistar a una fuente · 0 receptores · apoyo +0.240. 1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+      "#60 · Camila Vega · Convocar al barrio · 14 receptores · apoyo -10.787. La acusación falsa perjudica a la candidatura señalada entre quienes la reciben.",
+      "#80 · Juan Torres · Desmentir y denunciar · 7 receptores · apoyo -2.062. La revisión deshace la expectativa creada por la encuesta falsa; no acusa de un delito a la candidatura.",
+      "#90 · Laura Ríos · Seguir sin reenviar · 0 receptores · apoyo +0.000. No se difundió evidencia nueva que cambiara el apoyo electoral.",
+      "#40 · Camila Vega · Mantener en reserva · 0 receptores · apoyo +0.000. Mantener el mensaje en reserva no añade evidencia ni respaldo electoral.",
+      "#100 · Juan Torres · Compartir con mi grupo · 19 receptores · apoyo +5.439. La propuesta verdadera gana visibilidad entre sus receptores.",
+      "#10 · Adrián Morales · Contrastar las fuentes · 0 receptores · apoyo +0.000. No se difundió evidencia nueva que cambiara el apoyo electoral.",
+      "#110 · Camila Vega · Escuchar al vecindario · 0 receptores · apoyo +0.864. 1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+      "#25 · Juan Torres · Entrevistar a una fuente · 0 receptores · apoyo +0.470. 1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+      "#120 · Laura Ríos · Convocar al barrio · 19 receptores · apoyo +7.149. La propuesta verdadera gana visibilidad entre sus receptores.",
+      "#35 · Adrián Morales · Desmentir y denunciar · 19 receptores · apoyo +13.082. Se retira la acusación falsa; una corrección difundida también llega a sus receptores."
+    ],
+    "final": "Comunidad informada",
+    "calidad": 53.0,
+    "evidencia_por_candidato": {
+      "juan": [
+        {
+          "publicacion_id": 50,
+          "accion": "Compartir con mi grupo",
+          "alcance": 3,
+          "cambio": -5.761,
+          "contactos_creados": 0,
+          "motivo": "La acusación falsa perjudica a la candidatura señalada entre quienes la reciben.",
+          "peso_agenda": 0.3043
+        },
+        {
+          "publicacion_id": 80,
+          "accion": "Desmentir y denunciar",
+          "alcance": 7,
+          "cambio": -2.062,
+          "contactos_creados": 0,
+          "motivo": "La revisión deshace la expectativa creada por la encuesta falsa; no acusa de un delito a la candidatura.",
+          "peso_agenda": 0.2609
+        },
+        {
+          "publicacion_id": 100,
+          "accion": "Compartir con mi grupo",
+          "alcance": 19,
+          "cambio": 5.439,
+          "contactos_creados": 0,
+          "motivo": "La propuesta verdadera gana visibilidad entre sus receptores.",
+          "peso_agenda": 0.2174
+        },
+        {
+          "publicacion_id": 25,
+          "accion": "Entrevistar a una fuente",
+          "alcance": 0,
+          "cambio": 0.47,
+          "contactos_creados": 1,
+          "motivo": "1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+          "peso_agenda": 0.2174
+        }
+      ],
+      "adrian": [
+        {
+          "publicacion_id": 30,
+          "accion": "Contrastar las fuentes",
+          "alcance": 0,
+          "cambio": 2.4,
+          "contactos_creados": 0,
+          "motivo": "La evidencia confirma una propuesta y refuerza su credibilidad.",
+          "peso_agenda": 0.2222
+        },
+        {
+          "publicacion_id": 20,
+          "accion": "Entrevistar a una fuente",
+          "alcance": 0,
+          "cambio": 0.24,
+          "contactos_creados": 1,
+          "motivo": "1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+          "peso_agenda": 0.1111
+        },
+        {
+          "publicacion_id": 10,
+          "accion": "Contrastar las fuentes",
+          "alcance": 0,
+          "cambio": 0.0,
+          "contactos_creados": 0,
+          "motivo": "No se difundió evidencia nueva que cambiara el apoyo electoral.",
+          "peso_agenda": 0.2222
+        },
+        {
+          "publicacion_id": 35,
+          "accion": "Desmentir y denunciar",
+          "alcance": 19,
+          "cambio": 13.082,
+          "contactos_creados": 0,
+          "motivo": "Se retira la acusación falsa; una corrección difundida también llega a sus receptores.",
+          "peso_agenda": 0.4444
+        }
+      ],
+      "laura": [
+        {
+          "publicacion_id": 70,
+          "accion": "Escuchar al vecindario",
+          "alcance": 0,
+          "cambio": 0.463,
+          "contactos_creados": 1,
+          "motivo": "1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+          "peso_agenda": 0.2143
+        },
+        {
+          "publicacion_id": 90,
+          "accion": "Seguir sin reenviar",
+          "alcance": 0,
+          "cambio": 0.0,
+          "contactos_creados": 0,
+          "motivo": "No se difundió evidencia nueva que cambiara el apoyo electoral.",
+          "peso_agenda": 0.5
+        },
+        {
+          "publicacion_id": 120,
+          "accion": "Convocar al barrio",
+          "alcance": 19,
+          "cambio": 7.149,
+          "contactos_creados": 0,
+          "motivo": "La propuesta verdadera gana visibilidad entre sus receptores.",
+          "peso_agenda": 0.2857
+        }
+      ],
+      "camila": [
+        {
+          "publicacion_id": 60,
+          "accion": "Convocar al barrio",
+          "alcance": 14,
+          "cambio": -10.787,
+          "contactos_creados": 0,
+          "motivo": "La acusación falsa perjudica a la candidatura señalada entre quienes la reciben.",
+          "peso_agenda": 0.4
+        },
+        {
+          "publicacion_id": 40,
+          "accion": "Mantener en reserva",
+          "alcance": 0,
+          "cambio": 0.0,
+          "contactos_creados": 0,
+          "motivo": "Mantener el mensaje en reserva no añade evidencia ni respaldo electoral.",
+          "peso_agenda": 0.2
+        },
+        {
+          "publicacion_id": 110,
+          "accion": "Escuchar al vecindario",
+          "alcance": 0,
+          "cambio": 0.864,
+          "contactos_creados": 1,
+          "motivo": "1 contacto(s) nuevo(s): escuchar evita el rechazo automático por un rumor y abre espacio al diálogo. No certifica el titular ni convierte un testimonio en un hecho.",
+          "peso_agenda": 0.4
+        }
+      ]
+    },
+    "metodo": "Índice de apoyo: agenda equilibrada, evidencia, escucha y receptores reales del grafo. Porcentajes redondeados en pantalla.",
+    "desempate": "Mayor índice de apoyo al cierre de la campaña."
+  },
+  "capturas": [
+    ".tmp\\capturas_siete_actos_red\\final_cuatro_1920.jpg",
+    ".tmp\\capturas_siete_actos_red\\final_cuatro_1600.jpg",
+    ".tmp\\capturas_siete_actos_red\\final_cuatro_1366.jpg"
+  ],
+  "transporte": "TCP local real; señales de audio y decodificador aislados para esta prueba",
+  "pintura": "Suspendida durante el recorrido funcional; activada para las capturas finales en tres resoluciones",
+  "reloj_balance": "Una tarjeta completa por paso; no se modifica la lógica de clic ni se omiten tarjetas",
+  "segundos": 53.974
+}

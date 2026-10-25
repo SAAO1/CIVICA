@@ -1,0 +1,380 @@
+{
+  "correcto": true,
+  "completo_ocho_botones": true,
+  "casos": [
+    {
+      "clave": "accion_90_compartir",
+      "publicacion": 90,
+      "rol": "ciudadano",
+      "accion": "compartir",
+      "texto_boton": "Compartir",
+      "alcance": 19,
+      "sha256_video": "933a328865c7e66870325150e80161cb535346d7f3a97d1c046beaf47966fb00",
+      "sha256_inicio": "3cb45378261fe38d70b6c8fb1ec536fd50d8cecacd973bb9f309e8bc46aaf85f",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 2541,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_90_compartir_5500.jpg",
+      "fotograma_capturado_ms": 5541.667,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 9.135,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_40_conversar",
+      "publicacion": 40,
+      "rol": "ciudadano",
+      "accion": "conversar",
+      "texto_boton": "Escuchar",
+      "alcance": 0,
+      "sha256_video": "382f25ce4951257c7c494884030416375a581a9f5be5c2337a4d170921b18830",
+      "sha256_inicio": "cad901e34753b2d080951ea0cb768eb5b6e5cc62718e6507ca093ad0d97ae379",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 2500,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_40_conversar_5500.jpg",
+      "fotograma_capturado_ms": 5458.333,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 9.354,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_100_convocar",
+      "publicacion": 100,
+      "rol": "ciudadano",
+      "accion": "convocar",
+      "texto_boton": "Convocar",
+      "alcance": 19,
+      "sha256_video": "87373bff35eb5edf1dbb2d7dbbbb2c3444d9747e750af506d31ce2e15561459a",
+      "sha256_inicio": "33aa1ff974043baa2208854a00f8eb9be8d9607d5d61de1f92310358190aaff0",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 3166,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_100_convocar_5500.jpg",
+      "fotograma_capturado_ms": 5833.333,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 8.682,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_10_ignorar",
+      "publicacion": 10,
+      "rol": "ciudadano",
+      "accion": "ignorar",
+      "texto_boton": "No reenviar",
+      "alcance": 0,
+      "sha256_video": "5f578456b45746c9dd38685c6d88b2c32497591e141e089693fc93b85a27b0ce",
+      "sha256_inicio": "b77ba90a6081881eabeb7513c4ab2ab10277e935e147b6c016ce3c5bc85aed56",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 2833,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_10_ignorar_5500.jpg",
+      "fotograma_capturado_ms": 5583.333,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          450,
+          1366,
+          176
+        ],
+        "nombre": [
+          60,
+          453,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          510,
+          1244,
+          49
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 9.031,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_110_contrastar",
+      "publicacion": 110,
+      "rol": "periodista",
+      "accion": "contrastar",
+      "texto_boton": "Contrastar",
+      "alcance": 19,
+      "sha256_video": "0a9131ce7b9904f58ff5135fcc6eafe9e5c14456a2bc7b04887b634165ba89f6",
+      "sha256_inicio": "e3eab63436e0e44f75e4d4446d0f187a8e305e4282ef54f6dc1e622393af8ec2",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 4166,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_110_contrastar_5500.jpg",
+      "fotograma_capturado_ms": 5916.667,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 10.886,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_25_entrevistar",
+      "publicacion": 25,
+      "rol": "periodista",
+      "accion": "entrevistar",
+      "texto_boton": "Entrevistar",
+      "alcance": 0,
+      "sha256_video": "ebf862b896ac7a7e37eda3bb6029f4853107532d04d3c26025f6498019bd55b8",
+      "sha256_inicio": "9435d490031d869d8d6a54eaa1bd5492defd7f0cef2b3c11f0ba60e1b4f8a4ee",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 2500,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_25_entrevistar_5500.jpg",
+      "fotograma_capturado_ms": 5458.333,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 8.887,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_120_desmentir_rechazado",
+      "publicacion": 120,
+      "rol": "periodista",
+      "accion": "desmentir",
+      "texto_boton": "Desmentir",
+      "alcance": 0,
+      "sha256_video": "d94f6c4a084e24a27df4acd167e700da1d9990f173800c2d9bfab9fd6e6733d0",
+      "sha256_inicio": "feddeffabd11118609967176bbd44cf5a929942b6a948170c0d6ce9d399882c9",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 2500,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_120_desmentir_rechazado_5500.jpg",
+      "fotograma_capturado_ms": 5458.333,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 8.367,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    },
+    {
+      "clave": "accion_35_reservar",
+      "publicacion": 35,
+      "rol": "periodista",
+      "accion": "reservar",
+      "texto_boton": "Reservar",
+      "alcance": 0,
+      "sha256_video": "86e74b6886c959a7b01cb278892587ee7c1cffca1f99635290273dff6078ab78",
+      "sha256_inicio": "25841478316d812cb03f4a63c419c70645a0050b6600d9792e286e0303ed3e99",
+      "video_real": true,
+      "cubierta_antes_de_panel": true,
+      "pulsaciones_bloqueadas": 100,
+      "pausa_reanuda_ms": 2500,
+      "captura": ".tmp/acciones_ui_siete_actos/accion_35_reservar_5500.jpg",
+      "fotograma_capturado_ms": 5458.333,
+      "fin_real_ms": 9000,
+      "encuadre_verificado": {
+        "panel": [
+          0,
+          432,
+          1366,
+          194
+        ],
+        "nombre": [
+          60,
+          435,
+          305,
+          34
+        ],
+        "cuerpo": [
+          61,
+          492,
+          1244,
+          67
+        ],
+        "pista": [
+          61,
+          571,
+          1244,
+          20
+        ]
+      },
+      "segundos_transcurridos": 8.641,
+      "avance_solo_despues_del_video": true,
+      "partida_sin_cambios_durante_presentacion": true
+    }
+  ],
+  "errores": [],
+  "transporte": "QMediaPlayer real y MP4 locales; EndOfMedia no simulado",
+  "audio": "GestorAudio real; voces locales a volumen reducido",
+  "valoracion_humana": false,
+  "preferencias_sin_cambios": true,
+  "guardado_config_no_invocado": true
+}

@@ -1,0 +1,235 @@
+{
+  "fecha": "2026-10-24",
+  "suite": {
+    "pruebas": 177,
+    "fallas": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": 111.761,
+    "limpieza_qt_entre_pruebas": true
+  },
+  "reproduccion_integrada": {
+    "clips": [
+      {
+        "clave": "ciudad_48h",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5250.0,
+        "movimiento_rgb": 35.1846,
+        "diferencia_widget_rgb": 0.0168,
+        "diferencia_ventana_rgb": 1.0174,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "mensaje_barrio",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5208.333,
+        "movimiento_rgb": 39.1681,
+        "diferencia_widget_rgb": 0.0094,
+        "diferencia_ventana_rgb": 0.3837,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "rumor_colegio",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5125.0,
+        "movimiento_rgb": 62.8176,
+        "diferencia_widget_rgb": 0.0263,
+        "diferencia_ventana_rgb": 0.898,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "cafe_alerta",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5000.0,
+        "movimiento_rgb": 57.865,
+        "diferencia_widget_rgb": 0.0317,
+        "diferencia_ventana_rgb": 1.4327,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "libreta_cultura",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5083.333,
+        "movimiento_rgb": 60.466,
+        "diferencia_widget_rgb": 0.0146,
+        "diferencia_ventana_rgb": 1.7428,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "mapa_parque",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5000.0,
+        "movimiento_rgb": 70.2627,
+        "diferencia_widget_rgb": 0.0224,
+        "diferencia_ventana_rgb": 1.2684,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "libro_biblioteca",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5041.667,
+        "movimiento_rgb": 48.3707,
+        "diferencia_widget_rgb": 0.0156,
+        "diferencia_ventana_rgb": 1.4706,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "acusacion_lluvia",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5583.333,
+        "movimiento_rgb": 46.2416,
+        "diferencia_widget_rgb": 0.0218,
+        "diferencia_ventana_rgb": 0.4119,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      },
+      {
+        "clave": "noche_electoral",
+        "posicion_ms": 5000,
+        "fotograma_ms": 5291.667,
+        "movimiento_rgb": 50.4857,
+        "diferencia_widget_rgb": 0.0152,
+        "diferencia_ventana_rgb": 0.412,
+        "pausa_reanudar": true,
+        "poster_reducido": true,
+        "fuente_liberada": true,
+        "actores_restaurados": true
+      }
+    ],
+    "errores": []
+  },
+  "cierres_repetidos": {
+    "ciclos": 24,
+    "cerrados_reproduciendo": 12,
+    "cerrados_cargando": 12,
+    "orden_destruccion": [
+      "player",
+      "video",
+      "sink"
+    ]
+  },
+  "videos": {
+    "clips": [
+      {
+        "clave": "ciudad_48h",
+        "fotogramas": 288,
+        "sha256": "d24a215553c0b78f077d9918aae62415240fe2f44c581a79f0f03dabee99735d",
+        "duracion": 12.0,
+        "bytes": 2616779,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "mensaje_barrio",
+        "fotogramas": 288,
+        "sha256": "9dbc5a0fd3c27fa67bbd77c0f0a6a901c811096b67e39b7764fe1d2d5a809d6b",
+        "duracion": 12.0,
+        "bytes": 1194557,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "rumor_colegio",
+        "fotogramas": 288,
+        "sha256": "00fb2b007130ffd8e87eab87d22d7823424a61f38a3740d6626ff81fcdd9368a",
+        "duracion": 12.0,
+        "bytes": 2426528,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "cafe_alerta",
+        "fotogramas": 288,
+        "sha256": "8411c3b1e267a167073fc752e2faaa3e1d9deceaab063cba6a28a992e751ecda",
+        "duracion": 12.0,
+        "bytes": 3213440,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "libreta_cultura",
+        "fotogramas": 288,
+        "sha256": "474f9a5fa05dace8e25c7d4e5948962827d4d86af50900777885bc279ab0b3c4",
+        "duracion": 12.0,
+        "bytes": 1580743,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "mapa_parque",
+        "fotogramas": 288,
+        "sha256": "ff905bb8ec5457162e9487cb2b63999f5e2fe838f8bca9e447b4450021869c68",
+        "duracion": 12.0,
+        "bytes": 2059291,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "libro_biblioteca",
+        "fotogramas": 288,
+        "sha256": "a2438ac5d18ec84086a0b35ebc73d181c7631f1502537767f0835349a409a8b6",
+        "duracion": 12.0,
+        "bytes": 1647857,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "acusacion_lluvia",
+        "fotogramas": 288,
+        "sha256": "f551c9c873147fb46d4f2a627948655f7e87de9031016891968d9a0d99799df2",
+        "duracion": 12.0,
+        "bytes": 2063826,
+        "decodificacion_completa": true
+      },
+      {
+        "clave": "noche_electoral",
+        "fotogramas": 288,
+        "sha256": "e6ca747dc0aebe18687f543f87ca0e802d43d6b36fb0c686f747417a782938be",
+        "duracion": 12.0,
+        "bytes": 2361653,
+        "decodificacion_completa": true
+      }
+    ],
+    "contacto": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\.tmp\\cinematicas_contacto_final.jpg"
+  },
+  "muestra": {
+    "archivo": "cinematicas_narradas.mp4",
+    "duracion_segundos": 108.0,
+    "fps": 24,
+    "tamano": [
+      1280,
+      720
+    ],
+    "cortes": [
+      "ciudad_48h",
+      "mensaje_barrio",
+      "rumor_colegio",
+      "cafe_alerta",
+      "libreta_cultura",
+      "mapa_parque",
+      "libro_biblioteca",
+      "acusacion_lluvia",
+      "noche_electoral"
+    ],
+    "decodificacion_completa": true,
+    "naturaleza": "Exportación offline de widgets reales y compositor de los MP4; no grabación de una sesión humana.",
+    "sonido": "Tomas locales del narrador + ambientes CC0 de cada caso + música CC0 incluida."
+  },
+  "muestra_sha256": "9240d94fc3626ab666742fb2a6619c4f015d45d94328777073d9d83bdd16086f"
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "clave": "juan",
+    "video_inline": true,
+    "ampliacion": true,
+    "salto": true,
+    "fuentes_vacias_al_cerrar": true,
+    "estado_juego_intacto": true
+  },
+  {
+    "clave": "adrian",
+    "video_inline": true,
+    "ampliacion": true,
+    "salto": true,
+    "fuentes_vacias_al_cerrar": true,
+    "estado_juego_intacto": true
+  },
+  {
+    "clave": "laura",
+    "video_inline": true,
+    "ampliacion": true,
+    "salto": true,
+    "fuentes_vacias_al_cerrar": true,
+    "estado_juego_intacto": true
+  },
+  {
+    "clave": "camila",
+    "video_inline": true,
+    "ampliacion": true,
+    "salto": true,
+    "fuentes_vacias_al_cerrar": true,
+    "estado_juego_intacto": true
+  },
+  {
+    "clave": "recuento",
+    "video_inline": true,
+    "ampliacion": true,
+    "salto": true,
+    "fuentes_vacias_al_cerrar": true,
+    "estado_juego_intacto": true
+  }
+]

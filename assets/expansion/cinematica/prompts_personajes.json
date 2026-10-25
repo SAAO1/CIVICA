@@ -1,0 +1,24 @@
+{
+  "herramienta": "image_gen incorporada",
+  "fecha": "2026-10-24",
+  "imagenes": [
+    {
+      "archivo": "ilustraciones/familia.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\personajes\\ciudadano_retrato.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 full bleed cinematic painting for Spanish visual novel CIVICA. Reference image1 is the exact identity/style of the young male citizen protagonist: preserve his black tousled hair, brown eyes, dark navy hoodie over white T shirt, young adult features. Paint him seated at a small wooden table in a modest warm Colombian-inspired home, listening thoughtfully to his grandfather, a kind elderly man with grey hair in a simple cream shirt, who holds a worn teal book. A school backpack and family photo without readable text sit at side, leafy courtyard window beyond. Close medium-wide two-person view, natural gentle expressions, conversational human body language, anatomically convincing hands. Main faces and book center-right in upper two thirds, lower quarter a softly shadowed table for UI subtitles. Golden late afternoon rays, teal shadows, tactile painterly semi-realistic anime style exactly like reference face, detailed evocative domestic setting. No text, no labels, no speech bubbles, no UI, no flags or logos. This is a quiet memory of family stakes in an election, nothing supernatural or melodramatic.",
+      "conversion": "JPEG calidad 92"
+    },
+    {
+      "archivo": "ilustraciones/periodista_calle.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\personajes\\periodista_retrato.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic painting for CIVICA visual novel. Image1 is exact identity/style reference of the journalist: preserve long brown hair with soft bangs, brown eyes, tan blazer over black shirt, blue press lanyard, young adult face. Show her working on the right side of a café terrace table in Colombian-inspired Ciudad Nova, listening to an ordinary adult woman from the neighborhood across the table. Journalist holds an open cream notebook and pen, source gestures naturally toward a document with abstract lines only. Medium-wide eye level framing, arched cafe windows and civic clocktower softly visible beyond, leafy trees, warm afternoon light, deep teal and amber cinematic painterly semi-realistic anime rendering. Natural modest investigative work, no microphones or TV glamour. Faces, hands, notebook center-right upper two thirds, leave lower quarter soft dark wood for game subtitles. No readable text, logos, UI, watermarks, fake official seals or political-party symbols. Preserve consistent facial identity, credible anatomy and detailed paper/cloth textures.",
+      "conversion": "JPEG calidad 92"
+    },
+    {
+      "archivo": "ilustraciones/hermana_parque.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\personajes\\ciudadano_retrato.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic painting for CIVICA. Image1 exact male protagonist identity/reference: black tousled hair, brown eyes, dark navy hoodie over white tee, young adult face, same painterly semi-realistic anime rendering. Depict him walking beside his younger teenage sister on a leafy neighborhood park stone path on their ordinary way to school in Colombian-inspired Ciudad Nova. Sister has dark hair in a ponytail, modest navy-and-white school clothes, small backpack, safely walking on pavement next to her brother; natural concerned but calm conversation, no danger, no protest, no closing signs. Medium-wide three-quarter view both characters uppermiddle, side-by-side moving posture captured naturally, book held to sister chest. Fountain and civic clocktower far behind, warm golden afternoon filtering through tropical leaves, rich teal shadows and amber highlights, believable layered perspective. Lower quarter softly shadowed path leaves space for game subtitles, faces and hands clearly upper two thirds. No logos, readable text, speechbubbles, UI, or watermarks. Match protagonist's likeness precisely; human sibling relationship and everyday stakes, no melodrama.",
+      "conversion": "JPEG calidad 92"
+    }
+  ]
+}

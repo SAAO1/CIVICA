@@ -1,0 +1,147 @@
+{
+  "generador": "herramientas/exportar_ambientes.py",
+  "motor": "ambiente_visual.FondoVivo",
+  "origen": "Ilustraciones locales de assets/rediseno/fondos con capas animadas Qt",
+  "recursos": [
+    {
+      "archivo": "cafe_exterior.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 10118689,
+      "sha256": "bdd84ee48fe729a38e37044d79882451fb59bf1ef9bfa0ed6f2a8f8f148bf330"
+    },
+    {
+      "archivo": "cafe.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 9494850,
+      "sha256": "60646a2d9423254c2a16435d94faa6a54339ecefdc23a56c7ba43a5c428eb383"
+    },
+    {
+      "archivo": "telefono.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 9657760,
+      "sha256": "1f07578b03af2ffa47ebbeed9f6ab5399867f1ad6be4d191a9d7762f3c5c86f7"
+    },
+    {
+      "archivo": "investigacion.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 9183108,
+      "sha256": "7dcafc872902f94062d74edf15d34081b08df577d3dfd89a4937bd876b8d63ef"
+    },
+    {
+      "archivo": "observatorio.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 8014272,
+      "sha256": "26c70e11b426f2f2d17d0e548121f3ecad6b1e21270f4ca82a2602794fb7ee5f"
+    },
+    {
+      "archivo": "lluvia.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 9050981,
+      "sha256": "2e7e7b9046a07ef5bd886a3f40e5a63c59e24a7bdd95fd68caa2413088450151"
+    },
+    {
+      "archivo": "ciudad.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 9748210,
+      "sha256": "66c45e9e30c4ace7b7b69bfc0eae88bf4c551cd86e55372125fd0c7692ef9992"
+    },
+    {
+      "archivo": "portada.gif",
+      "fotogramas": 60,
+      "fps": 10,
+      "duracion_s": 6.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 9249394,
+      "sha256": "19786c0c552b8c1e289e66f6bcff0e8a2e847410a7a6a877d2a2e4a08def98aa"
+    },
+    {
+      "archivo": "cafe_lluvia.gif",
+      "fotogramas": 80,
+      "fps": 10,
+      "duracion_s": 8.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 12767362,
+      "sha256": "60cee8ebf2277c335b24a4f1fff300670e1d47c010f5b3e1406fbcf3f9c0f894"
+    },
+    {
+      "archivo": "cafe_lluvia.mp4",
+      "fotogramas": 192,
+      "fps": 24,
+      "duracion_s": 8.0,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 1257519,
+      "sha256": "d354eb87d5dbc34e51e9a941d51d17a6c4b48735e72af9e7573123ec445cd560"
+    },
+    {
+      "archivo": "plaza_noche.gif",
+      "fotogramas": 80,
+      "fps": 10,
+      "duracion_s": 8.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 13252411,
+      "sha256": "49d170a799e7897633f1bb4ad82d96f7cf14df9843625c5323c019663d6c52e9"
+    },
+    {
+      "archivo": "plaza_noche.mp4",
+      "fotogramas": 192,
+      "fps": 24,
+      "duracion_s": 8.0,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 2149168,
+      "sha256": "0bb4c5467c31621eaefa4e40509e54244b27af03797244cbf685a87d6e61560d"
+    },
+    {
+      "archivo": "parque_tarde.gif",
+      "fotogramas": 80,
+      "fps": 10,
+      "duracion_s": 8.0,
+      "ancho": 640,
+      "alto": 360,
+      "bytes": 14337645,
+      "sha256": "906366535e88de015698b52619e6ba562bf9b6cc78bbd1365a55ad3808e94599"
+    },
+    {
+      "archivo": "parque_tarde.mp4",
+      "fotogramas": 192,
+      "fps": 24,
+      "duracion_s": 8.0,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 2700557,
+      "sha256": "efed5fc627e9089e97de0c4ece122541fd23972572ca3c5e3aff31022f19bf37"
+    }
+  ]
+}

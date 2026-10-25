@@ -33,6 +33,9 @@ class PruebasInterfaz(unittest.TestCase):
             dialogo.close()
 
     def test_seis_publicaciones_sin_saltos_ni_doble_accion(self):
+        # La ventana abre ahora catorce casos; este fixture conserva la
+        # regresión de una partida clásica cargada desde la versión anterior.
+        self.ventana.establecer_juego(Juego(7, eventos=False, campana="clasica"))
         juego = self.ventana.juego
         juego.iniciar_primera_publicacion()
         vistos = []
