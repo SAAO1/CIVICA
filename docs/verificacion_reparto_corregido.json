@@ -1,0 +1,126 @@
+{
+  "correcto": true,
+  "naturaleza": "Seis capturas de widgets Qt reales, audio y transporte aislados; entradas completadas en tiempo real, movimiento activado.",
+  "capturas": [
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "personaje": "INFLUENCER",
+      "captura": "docs/vistas/reparto_corregido/1100_influencer.jpg",
+      "actor_rect": [
+        726,
+        78,
+        352,
+        539
+      ],
+      "mirada": "izquierda",
+      "actores_visibles": [
+        "INFLUENCER"
+      ],
+      "movimiento_reducido": false,
+      "animacion_entrada_finalizada": "Stopped"
+    },
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "personaje": "CAMILA",
+      "captura": "docs/vistas/reparto_corregido/1100_camila.jpg",
+      "actor_rect": [
+        726,
+        78,
+        352,
+        539
+      ],
+      "mirada": "izquierda",
+      "actores_visibles": [
+        "CAMILA"
+      ],
+      "movimiento_reducido": false,
+      "animacion_entrada_finalizada": "Stopped"
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "personaje": "INFLUENCER",
+      "captura": "docs/vistas/reparto_corregido/1366_influencer.jpg",
+      "actor_rect": [
+        902,
+        78,
+        437,
+        607
+      ],
+      "mirada": "izquierda",
+      "actores_visibles": [
+        "INFLUENCER"
+      ],
+      "movimiento_reducido": false,
+      "animacion_entrada_finalizada": "Stopped"
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "personaje": "CAMILA",
+      "captura": "docs/vistas/reparto_corregido/1366_camila.jpg",
+      "actor_rect": [
+        902,
+        78,
+        437,
+        607
+      ],
+      "mirada": "izquierda",
+      "actores_visibles": [
+        "CAMILA"
+      ],
+      "movimiento_reducido": false,
+      "animacion_entrada_finalizada": "Stopped"
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "personaje": "INFLUENCER",
+      "captura": "docs/vistas/reparto_corregido/1920_influencer.jpg",
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        919
+      ],
+      "mirada": "izquierda",
+      "actores_visibles": [
+        "INFLUENCER"
+      ],
+      "movimiento_reducido": false,
+      "animacion_entrada_finalizada": "Stopped"
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "personaje": "CAMILA",
+      "captura": "docs/vistas/reparto_corregido/1920_camila.jpg",
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        919
+      ],
+      "mirada": "izquierda",
+      "actores_visibles": [
+        "CAMILA"
+      ],
+      "movimiento_reducido": false,
+      "animacion_entrada_finalizada": "Stopped"
+    }
+  ]
+}

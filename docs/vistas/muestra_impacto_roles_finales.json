@@ -1,0 +1,220 @@
+{
+  "archivo": "muestra_impacto_roles_finales.mp4",
+  "duracion_segundos": 68.25,
+  "fps": 24,
+  "tamano": [
+    1280,
+    720
+  ],
+  "bytes": 6299074,
+  "sha256": "cc11877755b1639e7b9026efae69c1d047086598f76718c28a7646eb1df67c84",
+  "decodificacion_completa": true,
+  "flujo_audio_verificado": true,
+  "naturaleza": "Exportación reproducible de widgets reales y de los mismos compositores que produjeron los MP4 del juego; no grabación de una sesión humana.",
+  "sonido": "Voces neuronales locales completas, música y ambiente CC0 incluidos, mezcla AAC estéreo. No se realizó evaluación auditiva humana.",
+  "balance": {
+    "accion": "contrastar",
+    "rol": "periodista",
+    "vertice_emisor": "carlos",
+    "alcance": 5,
+    "antes": {
+      "info_verificada": 0,
+      "confianza": 50,
+      "desinformacion": 9,
+      "convivencia": 50,
+      "bienestar_digital": 50,
+      "conflictos": 0,
+      "participacion": 0
+    },
+    "despues": {
+      "info_verificada": 5,
+      "confianza": 56,
+      "desinformacion": 1,
+      "convivencia": 52,
+      "bienestar_digital": 52,
+      "conflictos": 0,
+      "participacion": 0
+    }
+  },
+  "victorias_reales": {
+    "juan": [
+      "conversar",
+      "conversar",
+      "conversar",
+      "compartir",
+      "compartir",
+      "convocar"
+    ],
+    "adrian": [
+      "compartir",
+      "compartir",
+      "compartir",
+      "convocar",
+      "compartir",
+      "compartir"
+    ],
+    "laura": [
+      "compartir",
+      "compartir",
+      "compartir",
+      "compartir",
+      "compartir",
+      "compartir"
+    ],
+    "camila": [
+      "compartir",
+      "conversar",
+      "ignorar",
+      "ignorar",
+      "conversar",
+      "compartir"
+    ]
+  },
+  "cortes": [
+    {
+      "tipo": "rol",
+      "clave": "ciudadano",
+      "inicio": 0.0,
+      "duracion": 4.0,
+      "voz": null
+    },
+    {
+      "tipo": "rol",
+      "clave": "periodista",
+      "inicio": 4.0,
+      "duracion": 4.0,
+      "voz": null
+    },
+    {
+      "tipo": "cg",
+      "clave": "person_cultura_c",
+      "inicio": 8.0,
+      "duracion": 12.0,
+      "voz": {
+        "clave": "636c28af7acf87e8bd07f1cc",
+        "duracion": 6.024,
+        "texto": "Adrián habla de cultura. Mi abuelo lleva años pidiendo un lugar para leer cerca de casa.",
+        "hablante": "CIUDADANO"
+      }
+    },
+    {
+      "tipo": "cg",
+      "clave": "person_cultura_p",
+      "inicio": 20.0,
+      "duracion": 12.0,
+      "voz": {
+        "clave": "c189cf71f7006948efbd0b2c",
+        "duracion": 7.224,
+        "texto": "Una propuesta puede ilusionarnos y todavía dejar preguntas: qué ofrece, cuándo y con qué recursos.",
+        "hablante": "PERIODISTA"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "info_verificada",
+      "inicio": 32.0,
+      "duracion": 3.4166666666666665,
+      "voz": {
+        "clave": "4ab1ff8f9aea002ff14af8a7",
+        "duracion": 3.216,
+        "texto": "Información verificada +5.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "confianza",
+      "inicio": 35.416666666666664,
+      "duracion": 2.6666666666666665,
+      "voz": {
+        "clave": "abe4c0cdabc1d12857e8803d",
+        "duracion": 2.448,
+        "texto": "Confianza +6.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "desinformacion",
+      "inicio": 38.083333333333336,
+      "duracion": 2.9583333333333335,
+      "voz": {
+        "clave": "adb62b7ff86c509daaf44944",
+        "duracion": 2.76,
+        "texto": "Desinformación -8.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "convivencia",
+      "inicio": 41.041666666666664,
+      "duracion": 2.6666666666666665,
+      "voz": {
+        "clave": "d7a5b0376bfe8095f9098835",
+        "duracion": 2.472,
+        "texto": "Convivencia +2.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "bienestar_digital",
+      "inicio": 43.708333333333336,
+      "duracion": 3.125,
+      "voz": {
+        "clave": "188d6e512e0965773ac09e1e",
+        "duracion": 2.904,
+        "texto": "Bienestar digital +2.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "puntos",
+      "inicio": 46.833333333333336,
+      "duracion": 3.4166666666666665,
+      "voz": {
+        "clave": "adbe497dd7b1e3d283dd4825",
+        "duracion": 3.216,
+        "texto": "Puntuación de la acción: +9.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "resumen",
+      "clave": "todos",
+      "inicio": 50.25,
+      "duracion": 2.0,
+      "voz": null
+    },
+    {
+      "tipo": "final",
+      "clave": "juan",
+      "inicio": 52.25,
+      "duracion": 4.0,
+      "voz": null
+    },
+    {
+      "tipo": "final",
+      "clave": "adrian",
+      "inicio": 56.25,
+      "duracion": 4.0,
+      "voz": null
+    },
+    {
+      "tipo": "final",
+      "clave": "laura",
+      "inicio": 60.25,
+      "duracion": 4.0,
+      "voz": null
+    },
+    {
+      "tipo": "final",
+      "clave": "camila",
+      "inicio": 64.25,
+      "duracion": 4.0,
+      "voz": null
+    }
+  ]
+}

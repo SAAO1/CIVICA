@@ -1,0 +1,62 @@
+{
+  "herramienta": "ImageGen integrado; sin CLI/API",
+  "fecha": "2026-10-24",
+  "proceso": "Variantes faciales auténticas creadas por ImageGen; extracción y registro de ojos/boca sobre cuerpo neutral original con QImage/QPainter, sin inventar rasgos por código. Conserva pose y alpha originales; no es animación corporal generada.",
+  "assets": [
+    {
+      "id": "juan",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-0f401516-ccb5-4f47-bb49-ca7f92b10b2a.png",
+      "referencia": "assets/expansion/siete_actos/personajes/juan_neutral.png",
+      "estados": [
+        "hablando",
+        "parpadeo"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: TWO-FRAME transparent animation sheet for the supplied EXACT character sprite Juan Torres in CIVICA visual novel. This is an EDIT of the supplied neutral sprite. Create exactly TWO side-by-side equal-width cells on one square1536x1536 transparent canvas, each with the same FULL BODY character from complete hair to shoes, SAME pose, size, eye line, clothing folds, hands/props, head angle, body angle, lighting and silhouette as the reference. Copy the reference in each cell before changing ONLY the facial muscles specified. LEFT CELL: eyes open exactly as neutral, mouth slightly open in a natural speaking phoneme, visible tiny upper teeth/dark mouth interior, no huge smile, no tongue. RIGHT CELL: mouth closed exactly as neutral, BOTH eyelids naturally fully CLOSED for one calm blink; not squinting, no extra lashes or cartoon expression. Maintain exact hair/face identity, all accessories and hands. No change to shoulders, jaw, neck, torso or legs between the two frames. Natural adult face, original refined anime semi-realistic painterly dimensional rendering, warm copper rim and navy shadows. Full body stays safely inside each equal cell, empty transparent gutters and clear top/feet margins. GENUINE TRANSPARENT ALPHA background outside each silhouette, including between legs. No environment, floor, gradient, shadow puddles, labels, text, names, frames, checkerboard pattern, watermark. Two copies only, not three. Every region other than the small eye/mouth expression must match the original.",
+      "atlas": "assets/expansion/siete_actos/atlas/juan_animacion.png"
+    },
+    {
+      "id": "adrian",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-a9f11e97-650c-4b8a-a2c9-cd56f3e46776.png",
+      "referencia": "assets/expansion/siete_actos/personajes/adrian_neutral.png",
+      "estados": [
+        "hablando",
+        "parpadeo"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: TWO-FRAME transparent animation sheet for the supplied EXACT character sprite Adrián Morales in CIVICA visual novel. This is an EDIT of the supplied neutral sprite. Create exactly TWO side-by-side equal-width cells on one square1536x1536 transparent canvas, each with the same FULL BODY character from complete hair to shoes, SAME pose, size, eye line, clothing folds, hands/props, head angle, body angle, lighting and silhouette as the reference. Copy the reference in each cell before changing ONLY the facial muscles specified. LEFT CELL: eyes open exactly as neutral, mouth slightly open in a natural speaking phoneme, visible tiny upper teeth/dark mouth interior, no huge smile, no tongue. RIGHT CELL: mouth closed exactly as neutral, BOTH eyelids naturally fully CLOSED for one calm blink; not squinting, no extra lashes or cartoon expression. Maintain exact hair/face identity, all accessories and hands. No change to shoulders, jaw, neck, torso or legs between the two frames. Natural adult face, original refined anime semi-realistic painterly dimensional rendering, warm copper rim and navy shadows. Full body stays safely inside each equal cell, empty transparent gutters and clear top/feet margins. GENUINE TRANSPARENT ALPHA background outside each silhouette, including between legs. No environment, floor, gradient, shadow puddles, labels, text, names, frames, checkerboard pattern, watermark. Two copies only, not three. Every region other than the small eye/mouth expression must match the original.",
+      "atlas": "assets/expansion/siete_actos/atlas/adrian_animacion.png"
+    },
+    {
+      "id": "laura",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-c7c3a2b3-2d83-40bf-8c98-4b2d87cac596.png",
+      "referencia": "assets/expansion/siete_actos/personajes/laura_neutral.png",
+      "estados": [
+        "hablando",
+        "parpadeo"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: TWO-FRAME transparent animation sheet for the supplied EXACT character sprite Laura Ríos in CIVICA visual novel. This is an EDIT of the supplied neutral sprite. Create exactly TWO side-by-side equal-width cells on one square1536x1536 transparent canvas, each with the same FULL BODY character from complete hair to shoes, SAME pose, size, eye line, clothing folds, hands/props, head angle, body angle, lighting and silhouette as the reference. Copy the reference in each cell before changing ONLY the facial muscles specified. LEFT CELL: eyes open exactly as neutral, mouth slightly open in a natural speaking phoneme, visible tiny upper teeth/dark mouth interior, no huge smile, no tongue. RIGHT CELL: mouth closed exactly as neutral, BOTH eyelids naturally fully CLOSED for one calm blink; not squinting, no extra lashes or cartoon expression. Maintain exact hair/face identity, all accessories and hands. No change to shoulders, jaw, neck, torso or legs between the two frames. Natural adult face, original refined anime semi-realistic painterly dimensional rendering, warm copper rim and navy shadows. Full body stays safely inside each equal cell, empty transparent gutters and clear top/feet margins. GENUINE TRANSPARENT ALPHA background outside each silhouette, including between legs. No environment, floor, gradient, shadow puddles, labels, text, names, frames, checkerboard pattern, watermark. Two copies only, not three. Every region other than the small eye/mouth expression must match the original.",
+      "atlas": "assets/expansion/siete_actos/atlas/laura_animacion.png"
+    },
+    {
+      "id": "camila",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-6a4d94c3-c6df-4615-82eb-806cfed80cd8.png",
+      "referencia": "assets/expansion/siete_actos/personajes/camila_neutral.png",
+      "estados": [
+        "hablando",
+        "parpadeo"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: TWO-FRAME transparent animation sheet for the supplied EXACT character sprite Camila Vega in CIVICA visual novel. This is an EDIT of the supplied neutral sprite. Create exactly TWO side-by-side equal-width cells on one square1536x1536 transparent canvas, each with the same FULL BODY character from complete hair to shoes, SAME pose, size, eye line, clothing folds, hands/props, head angle, body angle, lighting and silhouette as the reference. Copy the reference in each cell before changing ONLY the facial muscles specified. LEFT CELL: eyes open exactly as neutral, mouth slightly open in a natural speaking phoneme, visible tiny upper teeth/dark mouth interior, no huge smile, no tongue. RIGHT CELL: mouth closed exactly as neutral, BOTH eyelids naturally fully CLOSED for one calm blink; not squinting, no extra lashes or cartoon expression. Maintain exact hair/face identity, all accessories and hands. No change to shoulders, jaw, neck, torso or legs between the two frames. Natural adult face, original refined anime semi-realistic painterly dimensional rendering, warm copper rim and navy shadows. Full body stays safely inside each equal cell, empty transparent gutters and clear top/feet margins. GENUINE TRANSPARENT ALPHA background outside each silhouette, including between legs. No environment, floor, gradient, shadow puddles, labels, text, names, frames, checkerboard pattern, watermark. Two copies only, not three. Every region other than the small eye/mouth expression must match the original.",
+      "atlas": "assets/expansion/siete_actos/atlas/camila_animacion.png"
+    },
+    {
+      "id": "influencer",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-e32077bc-1a8d-45c2-a737-550e4ce04498.png",
+      "referencia": "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+      "estados": [
+        "hablando",
+        "parpadeo"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: TWO-FRAME transparent animation sheet for the supplied EXACT character sprite Valeria Cruz in CIVICA visual novel. This is an EDIT of the supplied neutral sprite. Create exactly TWO side-by-side equal-width cells on one square1536x1536 transparent canvas, each with the same FULL BODY character from complete hair to shoes, SAME pose, size, eye line, clothing folds, hands/props, head angle, body angle, lighting and silhouette as the reference. Copy the reference in each cell before changing ONLY the facial muscles specified. LEFT CELL: eyes open exactly as neutral, mouth slightly open in a natural speaking phoneme, visible tiny upper teeth/dark mouth interior, no huge smile, no tongue. RIGHT CELL: mouth closed exactly as neutral, BOTH eyelids naturally fully CLOSED for one calm blink; not squinting, no extra lashes or cartoon expression. Maintain exact hair/face identity, all accessories and hands. No change to shoulders, jaw, neck, torso or legs between the two frames. Natural adult face, original refined anime semi-realistic painterly dimensional rendering, warm copper rim and navy shadows. Full body stays safely inside each equal cell, empty transparent gutters and clear top/feet margins. GENUINE TRANSPARENT ALPHA background outside each silhouette, including between legs. No environment, floor, gradient, shadow puddles, labels, text, names, frames, checkerboard pattern, watermark. Two copies only, not three. Every region other than the small eye/mouth expression must match the original.",
+      "atlas": "assets/expansion/siete_actos/atlas/influencer_animacion.png"
+    }
+  ]
+}

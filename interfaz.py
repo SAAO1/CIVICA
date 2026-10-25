@@ -43,6 +43,7 @@ from PyQt6.QtCore import (
     QPoint,
     QPropertyAnimation,
     QParallelAnimationGroup,
+    QAbstractAnimation,
     QEasingCurve,
     pyqtSignal,
 )
@@ -57,7 +58,30 @@ from publicaciones_ui import TarjetaPublicacion
 from paneles import EscenaRed, DialogoRol, DialogoRed, mostrar_ayuda, mostrar_configuracion
 from juego.historia import contenido_resultado, dialogos_publicacion
 from juego.finales import epilogo
+from juego.cuaderno import caso_actual, recuerdos
+from juego.lectura import BibliotecaLectura
+from novela_ui import DialogoCuaderno
+from audiovisual_ui import FondoEscena
+from ambiente_visual import FondoVivo
+from personajes_animados import SpriteExpresivo, ACTORES_NUEVOS
+from juego.puesta_escena import escenario_actual, expresion_dialogo, efecto_dialogo, efecto_visual_dialogo
+from juego.cinematica import CINEMATICAS, clave_cinematica
+from juego.cinematica_acciones import CINEMATICAS_ACCIONES, clave_accion
+from juego.cinematica_acciones_extendida import CINEMATICAS_ACCIONES_EXTENDIDAS, clave_accion_extendida
+from juego.cinematica_personajes_extendida import CINEMATICAS_PERSONAJES_EXTENDIDAS, clave_personaje_extendido
+from juego.cinematica_final import CINEMATICAS_FINALES, clave_final
+from cinematica_narrativa import CapaCinematica
+from efectos_narrativos import CapaEfectos
+from resultados_visual import BalanceAnimado
+from juego.acciones import acciones_para_rol, accion_por_defecto
+from audio.catalogo_voces import segmentos_indicadores
 from audio.gestor_audio import GestorAudio
+
+NOMBRES_PERSONAJES = {"INFLUENCER": "VALERIA CRUZ", "JUAN": "JUAN TORRES",
+                      "ADRIAN": "ADRIÁN MORALES", "LAURA": "LAURA RÍOS", "CAMILA": "CAMILA VEGA"}
+CORTES_ACCIONES = {**CINEMATICAS_ACCIONES, **CINEMATICAS_ACCIONES_EXTENDIDAS}
+CORTES_EPILOGO = {f"epilogo_{k}": {**v, "titulo": "El recuento continúa" if k == "recuento" else "El encargo de Ciudad Nova", "bucle": False}
+                  for k, v in CINEMATICAS_FINALES.items()}
 from hud import HudCiudad
 from final_ui import EscenaFin
 
@@ -69,7 +93,7 @@ class EscenaInicio(QWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.fondo = QLabel(self)
+        self.fondo = FondoEscena(self)
         self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.cartela = PanelIlustrado(self)
         self.logo = QLabel(self.cartela)
@@ -99,6 +123,7 @@ class EscenaInicio(QWidget):
         super().resizeEvent(event)
 
     def actualizar_fondo(self):
+        self.fondo.establecer_escena("assets/fondos/fondo escena portada.jfif", "portada")
         pixmap = pixmap_recurso("assets/fondos/fondo escena portada.jfif")
         self.fondo.setGeometry(self.rect())
         if not pixmap.isNull():
@@ -144,14 +169,14 @@ class PersonajeVisual(QWidget):
         self.pixmap_original = QPixmap()
         self.pixmap_oscuro = QPixmap()
 
-        self.imagen = QLabel(self)
+        self.imagen = SpriteExpresivo(self)
         self.imagen.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.imagen.setStyleSheet("background: transparent;")
         self.imagen.setAttribute(
             Qt.WidgetAttribute.WA_TransparentForMouseEvents
         )
 
-        self.imagen_oscura = QLabel(self)
+        self.imagen_oscura = SpriteExpresivo(self, sombra=True)
         self.imagen_oscura.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.imagen_oscura.setStyleSheet("background: transparent;")
         self.imagen_oscura.setAttribute(
@@ -176,6 +201,51 @@ class PersonajeVisual(QWidget):
         self.animacion_salida = None
 
         self.cargar_imagen()
+        clave = Path(ruta_imagen).stem.split("_")[0].lower()
+        rol = clave if clave in ACTORES_NUEVOS else "periodista" if "periodista" in ruta_imagen.lower() else "ciudadano"
+        self.establecer_expresion(rol, "neutral")
+
+    def establecer_expresion(self, rol, expresion):
+        for lienzo in (self.imagen, self.imagen_oscura):
+            lienzo.configurar_actor(rol, expresion)
+
+    def establecer_hablando(self, hablando, nivel=None):
+        for lienzo in (self.imagen, self.imagen_oscura):
+            lienzo.establecer_hablando(hablando, nivel)
+
+    def orientar_hacia(self, direccion):
+        for lienzo in (self.imagen, self.imagen_oscura):
+            lienzo.orientar_hacia(direccion)
+
+    def establecer_encuadre(self, x, y, ancho, alto):
+        """Actualiza también el destino de una entrada que sigue en curso."""
+        self._encuadre_objetivo = QRect(x, y, ancho, alto)
+        self.setGeometry(self._encuadre_objetivo)
+        entrada = self.animacion_entrada
+        posicion = getattr(self, "_posicion_entrada", None)
+        if (entrada is not None and posicion is not None
+                and entrada.state() == QAbstractAnimation.State.Running):
+            posicion.setStartValue(self._encuadre_objetivo.topLeft() + QPoint(0, 55))
+            posicion.setEndValue(self._encuadre_objetivo.topLeft())
+
+    def _detener_animaciones(self):
+        for animacion in (self.animacion_fade, self.animacion_dim,
+                          self.animacion_entrada, self.animacion_salida):
+            if animacion is not None:
+                animacion.stop()
+
+    def ocultar_inmediato(self):
+        """Un cambio de plano no deja fundidos ni salidas del reparto previo."""
+        self._detener_animaciones()
+        self.establecer_hablando(False)
+        self.hide()
+        self.efecto_fade.setOpacity(0.0)
+        self.efecto_dimming.setOpacity(0.0)
+
+    def _finalizar_entrada(self):
+        encuadre = getattr(self, "_encuadre_objetivo", None)
+        if encuadre is not None:
+            self.setGeometry(encuadre)
 
     def cargar_imagen(self):
         pixmap = pixmap_recurso(self.ruta_imagen)
@@ -274,14 +344,7 @@ class PersonajeVisual(QWidget):
         self.show()
         self.raise_()
 
-        if self.animacion_fade is not None:
-            self.animacion_fade.stop()
-
-        if self.animacion_dim is not None:
-            self.animacion_dim.stop()
-
-        if self.animacion_entrada is not None:
-            self.animacion_entrada.stop()
+        self._detener_animaciones()
 
         self.efecto_fade.setOpacity(0.0)
         self.efecto_dimming.setOpacity(0.0)
@@ -315,8 +378,10 @@ class PersonajeVisual(QWidget):
         )
 
         self.animacion_entrada = QParallelAnimationGroup(self)
+        self._posicion_entrada = animacion_posicion
         self.animacion_entrada.addAnimation(animacion_fade)
         self.animacion_entrada.addAnimation(animacion_posicion)
+        self.animacion_entrada.finished.connect(self._finalizar_entrada)
         self.animacion_fade = self.animacion_entrada
         self.animacion_entrada.start()
 
@@ -461,10 +526,20 @@ class EscenaCinematica(QFrame):
         self.nombre_label = QLabel(self)
         self.texto_label = QLabel(self)
 
-        self.fondo_label = QLabel(self)
+        self.fondo_label = FondoEscena(self)
         self.fondo_label.setAlignment(
             Qt.AlignmentFlag.AlignCenter
         )
+        from juego.cinematica_extension import CINEMATICAS_EXTENSION
+        self.cine_narrativo = CapaCinematica(self, catalogo={**CINEMATICAS, **CORTES_ACCIONES,
+                                                           **CINEMATICAS_EXTENSION, **CORTES_EPILOGO,
+                                                           **CINEMATICAS_PERSONAJES_EXTENDIDAS})
+        self.cine_narrativo.estado_cambiado.connect(self.estado_corte_cambiado)
+        self._clave_preparada = None
+        self.efectos_narrativos = CapaEfectos(self)
+        self._audiovisual_iniciado = False
+        self._reanudar_al_restaurar = None
+        self._balance_pausado_al_minimizar = False
 
         self.franja_superior = QFrame(self)
         self.franja_superior.setStyleSheet(
@@ -523,6 +598,42 @@ class EscenaCinematica(QFrame):
         self.timer_texto.timeout.connect(self.escribir_caracter)
         self.indice_texto = 0
 
+        self.dialogo_era_leido = False
+        self.lectura_pausada = False
+        self.timer_lectura = QTimer(self)
+        self.timer_lectura.setSingleShot(True)
+        self.timer_lectura.timeout.connect(self.paso_lectura)
+        self.contexto_escena = QLabel(self)
+        self.contexto_escena.setWordWrap(True)
+        self.contexto_escena.setStyleSheet(f"background:rgba(13,34,45,220); color:#eed2a8; border:1px solid #8c7960; border-radius:10px; padding:10px 15px; font:16px '{FUENTE_UI}';")
+        self.contexto_escena.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
+        self.controles_lectura = QFrame(self)
+        self.controles_lectura.setStyleSheet("QFrame {background:rgba(13,34,45,230); border:1px solid #667d7c; border-radius:10px;} QToolButton {border:0; padding:5px 12px; color:#f6e8cd;} QToolButton:checked {background:#487978; color:white;}")
+        controles = QHBoxLayout(self.controles_lectura)
+        controles.setContentsMargins(5, 3, 5, 3)
+        controles.setSpacing(2)
+        self.boton_historial = QToolButton()
+        self.boton_historial.setText("Historial")
+        self.boton_historial.setMinimumWidth(130)
+        self.boton_historial.clicked.connect(lambda: self.window().abrir_cuaderno(2))
+        self.boton_auto = QToolButton()
+        self.boton_auto.setText("Auto")
+        self.boton_auto.setMinimumWidth(95)
+        self.boton_auto.setCheckable(True)
+        self.boton_auto.setToolTip("Avanza los diálogos automáticamente. Se detiene al llegar a una decisión.")
+        self.boton_saltar = QToolButton()
+        self.boton_saltar.setText("Saltar leído")
+        self.boton_saltar.setMinimumWidth(170)
+        self.boton_saltar.setCheckable(True)
+        self.boton_saltar.setToolTip("Avanza sólo los diálogos que ya terminaste de leer. Se detiene ante texto nuevo.")
+        for boton in (self.boton_historial, self.boton_auto, self.boton_saltar):
+            boton.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
+            controles.addWidget(boton)
+        self.boton_auto.toggled.connect(self.programar_lectura)
+        self.boton_saltar.toggled.connect(self.programar_lectura)
+        self.contexto_escena.hide()
+        self.controles_lectura.hide()
+
         self.cargar_fuente()
 
         self.setFocusPolicy(
@@ -546,6 +657,7 @@ class EscenaCinematica(QFrame):
         super().resizeEvent(event)
 
     def actualizar_fondo(self):
+        self.fondo_label.establecer_escena(self.fondo)
         pixmap = pixmap_recurso(self.fondo)
 
         if pixmap.isNull():
@@ -571,6 +683,9 @@ class EscenaCinematica(QFrame):
 
         if ancho <= 0 or alto <= 0:
             return
+
+        self.cine_narrativo.setGeometry(self.rect())
+        self.efectos_narrativos.setGeometry(self.rect())
 
         tam_texto = 24 if ancho < 1200 else 25 if ancho < 1600 else 28
         tam_nombre = 22 if ancho < 1200 else 23 if ancho < 1600 else 25
@@ -621,23 +736,38 @@ class EscenaCinematica(QFrame):
             self.publicacion_telefono.raise_()
 
         ancho_personaje = int(ancho * 0.40)
-        alto_personaje = int(alto * 0.85)
-        y_personaje = int(alto * 0.01)
+        y_personaje = 78
+        alto_personaje = max(220, alto-y_personaje-12)
         separacion = int(ancho * 0.02)
 
-        self.personajes["CIUDADANO"].setGeometry(
+        self.personajes["CIUDADANO"].establecer_encuadre(
             separacion,
             y_personaje,
             ancho_personaje,
             alto_personaje
         )
 
-        self.personajes["PERIODISTA"].setGeometry(
+        self.personajes["PERIODISTA"].establecer_encuadre(
             ancho - ancho_personaje - separacion,
             y_personaje,
             ancho_personaje,
             alto_personaje
         )
+        self.personajes["CIUDADANO"].orientar_hacia("derecha")
+        self.personajes["PERIODISTA"].orientar_hacia("izquierda")
+        for nombre, personaje in self.personajes.items():
+            if nombre.lower() in ACTORES_NUEVOS:
+                # Plano lateral individual para la influencer y candidaturas.
+                # Deja libre el escenario y nunca ocupa el sitio de la reportera.
+                ancho_npc = round(ancho*.32)
+                personaje.establecer_encuadre(ancho-ancho_npc-separacion,
+                                               y_personaje, ancho_npc, alto_personaje)
+                personaje.orientar_hacia("izquierda")
+        if hasattr(self, "controles_lectura"):
+            self.contexto_escena.setGeometry(20, 18, min(495, ancho-485), 48)
+            self.controles_lectura.setGeometry(ancho-440, 18, 420, 48)
+            self.contexto_escena.raise_()
+            self.controles_lectura.raise_()
 
     def mostrar_fondo(self):
         self.actualizar_fondo()
@@ -663,17 +793,29 @@ class EscenaCinematica(QFrame):
         presentes=None
     ):
         nombre = nombre.upper().strip()
+        # Los personajes invitados tienen un plano lateral propio. Cuando
+        # hablan los protagonistas vuelve su pareja, sin invitados superpuestos.
+        nombres = {n.upper().strip() for n in (presentes or ())} | {nombre}
+        for clave in nombres:
+            clave = clave.upper().strip()
+            if clave.lower() in ACTORES_NUEVOS and clave not in self.personajes:
+                self.personajes[clave] = PersonajeVisual(
+                    f"assets/expansion/siete_actos/personajes/{clave.lower()}_neutral.png", self)
+                for lienzo in (self.personajes[clave].imagen, self.personajes[clave].imagen_oscura):
+                    lienzo.configurar_movimiento(getattr(self.window(), "reducir_movimiento", False),
+                                                 getattr(self.window(), "animar_personajes", True))
+                self.personajes[clave].hide()
+        if nombre.lower() in ACTORES_NUEVOS:
+            presentes = {nombre}
+        elif nombre in ("CIUDADANO", "PERIODISTA"):
+            presentes = {n for n in nombres if n in ("CIUDADANO", "PERIODISTA")}
+        elif nombre in ("", "NARRADOR"):
+            presentes = {n for n in nombres if n in ("CIUDADANO", "PERIODISTA")}
         juego = getattr(self.window(), "juego", None)
         if juego is not None:
-            preocupacion = juego.evento_actual.urgente or juego.conflictos >= 8
-            expresiones = {"CIUDADANO": "ciudadano_preocupado" if preocupacion else "ciudadano_neutral",
-                           "PERIODISTA": "periodista_pensativa" if nombre == "PERIODISTA" else "periodista_neutral"}
-            for id_personaje, expresion in expresiones.items():
-                ruta = f"assets/rediseno/personajes/{expresion}.png"
+            for id_personaje in self.personajes:
                 personaje = self.personajes[id_personaje]
-                if (RAIZ/ruta).is_file() and personaje.ruta_imagen != ruta:
-                    personaje.ruta_imagen = ruta
-                    personaje.cargar_imagen()
+                personaje.establecer_expresion(id_personaje.lower(), expresion_dialogo(juego, id_personaje, self.texto_completo if id_personaje == nombre else ""))
         compuesto = self.fondo.rsplit("/", 1)[-1] in {"Escena 4.png", "Escena 6.png", "Escena 7.png", "Escena 8.png"}
         if compuesto and pixmap_arte("fondos/cafe_interior.png").isNull() and not getattr(self.window(), "sprites_sobre_ilustracion", False):
             self.ocultar_personajes()
@@ -681,11 +823,14 @@ class EscenaCinematica(QFrame):
             return
 
         if nombre in ("", "NARRADOR"):
-            self.ocultar_personajes()
-            self.hablante_actual = "NARRADOR"
-            return
-
-        if nombre not in self.personajes:
+            if not presentes:
+                for personaje in self.personajes.values():
+                    personaje.ocultar_inmediato()
+                self.personajes_activos.clear()
+                self.personajes_en_escena.clear()
+                self.hablante_actual = "NARRADOR"
+                return
+        elif nombre not in self.personajes:
             self.ocultar_personajes()
             self.hablante_actual = nombre
             return
@@ -699,23 +844,28 @@ class EscenaCinematica(QFrame):
                 if personaje.upper().strip() in self.personajes
             }
 
-            presentes.add(nombre)
+            if nombre in self.personajes:
+                presentes.add(nombre)
 
         nuevos = presentes - self.personajes_activos
+
+        for personaje_nombre, personaje in self.personajes.items():
+            if personaje_nombre not in presentes:
+                personaje.ocultar_inmediato()
+
+        # El destino debe estar calculado ANTES de crear QPropertyAnimation.
+        # De lo contrario termina devolviendo al invitado al encuadre anterior.
+        self.personajes_activos = set(presentes)
+        self.personajes_en_escena = set(presentes)
+        self.actualizar_geometria()
 
         for personaje_nombre in nuevos:
             personaje = self.personajes[personaje_nombre]
             personaje.raise_()
             personaje.aparecer(850)
 
-        self.personajes_activos = set(presentes)
-        self.personajes_en_escena = set(presentes)
-
         for personaje_nombre, personaje in self.personajes.items():
             if personaje_nombre not in presentes:
-                personaje.hide()
-                personaje.efecto_fade.setOpacity(0.0)
-                personaje.efecto_dimming.setOpacity(0.0)
                 continue
 
             personaje.raise_()
@@ -805,6 +955,7 @@ class EscenaCinematica(QFrame):
 
         if self.publicacion_telefono is not None and hasattr(self.window(), "juego"):
             self.publicacion_telefono.mostrar(self.window().juego.obtener_publicacion_actual(), self.window().juego.grafo)
+        self.preparar_puesta_audiovisual(self.texto_inicial, self.nombre_inicial)
         self.timer_inicio.start(self.TIEMPO_ANTES_DE_HABLAR)
 
         self.setFocus()
@@ -821,13 +972,18 @@ class EscenaCinematica(QFrame):
         nombre="",
         presentes=None
     ):
+        self.efectos_narrativos.detener()
+        self._audiovisual_iniciado = False
+        if self.publicacion_telefono is not None:
+            self.publicacion_telefono.show()
         if hasattr(self.window(), "audio"):
             self.window().audio.detener_voz()
         if self.animacion is not None:
             self.animacion.stop()
 
         self.timer_texto.stop()
-        self.timer_texto.setInterval(34)
+        self.timer_lectura.stop()
+        self.timer_texto.setInterval(max(1, getattr(self.window(), "velocidad_texto", 34)))
         self.estado_escena = "entrando"
 
         self.texto_completo = texto
@@ -835,8 +991,22 @@ class EscenaCinematica(QFrame):
         self.animando = True
 
         nombre_normalizado = nombre.upper().strip()
+        biblioteca = getattr(self.window(), "biblioteca", None)
+        self.dialogo_era_leido = bool(biblioteca and biblioteca.ya_leido(nombre_normalizado or "NARRADOR", texto))
+        self.boton_saltar.setEnabled(self.dialogo_era_leido)
+        if not self.dialogo_era_leido:
+            self.boton_saltar.setChecked(False)
+        juego = getattr(self.window(), "juego", None)
+        if juego is not None:
+            caso = caso_actual(juego)
+            self.contexto_escena.setText(f"{caso['acto'].split(' · ')[0]}  /  {caso['titulo']}" if juego.indice_proxima_publicacion else "CIUDAD NOVA  /  Antes de la elección")
+            if isinstance(self, EscenaEpilogo):
+                self.contexto_escena.setText("EPÍLOGO  /  Ciudad Nova después de las urnas")
+            self.contexto_escena.show()
+        self.controles_lectura.show()
 
-        self.nombre_label.setText(nombre_normalizado or "NARRADOR")
+        self._nombre_hablante = nombre_normalizado or "NARRADOR"
+        self.nombre_label.setText(NOMBRES_PERSONAJES.get(nombre_normalizado, nombre_normalizado or "NARRADOR"))
         self.nombre_label.show()
 
         self.texto_label.clear()
@@ -850,11 +1020,14 @@ class EscenaCinematica(QFrame):
             nombre_normalizado,
             presentes
         )
+        self.preparar_puesta_audiovisual(texto, nombre_normalizado)
 
         self.franja_superior.raise_()
         self.franja_inferior.raise_()
         self.nombre_label.raise_()
         self.texto_label.raise_()
+        self.contexto_escena.raise_()
+        self.controles_lectura.raise_()
 
         ancho = self.width()
         alto = self.height()
@@ -934,62 +1107,259 @@ class EscenaCinematica(QFrame):
         )
         self.animacion.start()
 
+    def detener_puesta_audiovisual(self):
+        self._clave_preparada = None
+        self.cine_narrativo.detener()
+        self.efectos_narrativos.detener()
+        self.fondo_label.show()
+        self._audiovisual_iniciado = False
+
+    def preparar_puesta_audiovisual(self, texto, nombre):
+        """Cubre la escena con el primer fotograma antes de cualquier espera."""
+        ventana = self.window()
+        reducir = getattr(ventana, "reducir_movimiento", False)
+        activo = getattr(ventana, "animar_fondos", True)
+        self.cine_narrativo.configurar(reducir_movimiento=reducir, activo=activo)
+        self.efectos_narrativos.configurar(reducir_movimiento=reducir, activo=activo)
+        juego = getattr(ventana, "juego", None)
+        clave = clave_cinematica(texto, nombre, juego)
+        if clave is None:
+            clave = clave_personaje_extendido(texto, nombre, juego)
+        if clave is None:
+            from juego.cinematica_extension import clave_extension
+            clave = clave_extension(texto, nombre, juego)
+        if isinstance(self, EscenaEpilogo) and self.dialogo_actual == 0:
+            clave = "epilogo_" + clave_final(juego, juego.resultado_electoral())
+        if isinstance(self, EscenaResultado) and self.tipo == 1:
+            clave = clave_accion_extendida(juego)
+            # Una partida antigua puede tener un narrador distinto al actor.
+            # Sólo se ilustra la acción cuyo personaje coincide con esta voz.
+            if clave and CORTES_ACCIONES[clave]["nombre"] != nombre.upper().strip():
+                clave = None
+        lista = self.cine_narrativo._catalogo
+        preparada = (clave and (self._clave_preparada == clave and self.cine_narrativo.activa
+                                or self.cine_narrativo.iniciar(clave, reproducir=False)))
+        if preparada:
+            self._clave_preparada = clave
+            # La siguiente intervención volverá a introducir a sus actores.
+            for personaje in self.personajes.values():
+                for animacion in (personaje.animacion_fade, personaje.animacion_dim,
+                                  personaje.animacion_entrada, personaje.animacion_salida):
+                    if animacion is not None:
+                        animacion.stop()
+                personaje.hide()
+            self.personajes_activos.clear()
+            self.personajes_en_escena.clear()
+            if self.publicacion_telefono is not None:
+                self.publicacion_telefono.hide()
+            # El video y su cartel cubren el fondo: ocultarlo suspende también
+            # sus partículas y evita renderizar dos ambientes simultáneos.
+            if not self.cine_narrativo._poster.imagen.isNull():
+                self.fondo_label.hide()
+            self.cine_narrativo.raise_()
+            self.contexto_escena.setText(lista[clave]["titulo"])
+            # El corte ya incorpora su rótulo; deja el encuadre libre para
+            # evitar dos títulos superpuestos sobre la misma imagen.
+            self.contexto_escena.hide()
+        else:
+            self._clave_preparada = None
+            self.cine_narrativo.detener()
+            self.fondo_label.show()
+        self.actualizar_pista_corte()
+        for elemento in (self.franja_superior, self.franja_inferior, self.nombre_label,
+                         self.texto_label, self.pista_continuar, self.contexto_escena,
+                         self.controles_lectura):
+            elemento.raise_()
+
+    def corte_accion_pendiente(self):
+        cine = self.cine_narrativo
+        return bool(self._clave_preparada in (CORTES_ACCIONES.keys() | CORTES_EPILOGO.keys()) and cine.activa
+                    and cine._ruta_video is not None and not cine._reducir
+                    and cine._habilitada and cine.estado not in ("finalizada", "error"))
+
+    def actualizar_pista_corte(self):
+        if hasattr(self, "pista_continuar"):
+            self.pista_continuar.setText("La acción está en curso…" if self.corte_accion_pendiente()
+                                         else "ESPACIO · revelar / continuar")
+
+    def estado_corte_cambiado(self, estado):
+        self.actualizar_pista_corte()
+        if estado in ("finalizada", "error") and hasattr(self, "timer_lectura"):
+            self.programar_lectura()
+
+    def iniciar_puesta_audiovisual(self):
+        """Arranca el plano ya preparado junto con la voz, tras entrar el panel."""
+        if self.lectura_pausada or self._audiovisual_iniciado:
+            return
+        self._audiovisual_iniciado = True
+        if self._clave_preparada is None:
+            self.preparar_puesta_audiovisual(self.texto_completo, self.hablante_actual)
+        clave = self._clave_preparada
+        if clave:
+            self.cine_narrativo.reanudar()
+        juego = getattr(self.window(), "juego", None)
+        tipo_resultado = self.tipo if isinstance(self, EscenaResultado) else None
+        efecto = efecto_visual_dialogo(juego, self.texto_completo,
+                                      self.hablante_actual, tipo_resultado)
+        if efecto:
+            self.efectos_narrativos.reproducir(efecto, duracion=7.5 if clave else 5.0,
+                                             intensidad=.58 if clave else .75)
+            self.efectos_narrativos.raise_()
+        # Las capas de vídeo y partículas nunca se superponen a la lectura.
+        for elemento in (self.franja_superior, self.franja_inferior, self.nombre_label,
+                         self.texto_label, self.pista_continuar, self.contexto_escena,
+                         self.controles_lectura):
+            elemento.raise_()
+
     def finalizar_animacion_dialogo(self):
         if self.estado_escena == "inactiva":
             return
         self.animando = False
         self.estado_escena = "dialogo"
+        # El HUD o un resize pueden cambiar el área disponible durante la
+        # entrada. El endValue de la animación conserva la altura anterior;
+        # fija marco y etiquetas al mismo rectángulo una vez completada.
+        self.actualizar_geometria()
         self.escribiendo = True
-        self.hablante_actual = self.nombre_label.text() or "NARRADOR"
+        self.hablante_actual = getattr(self, "_nombre_hablante", self.nombre_label.text() or "NARRADOR")
+        if self.window().isMinimized() and not self.lectura_pausada:
+            self._reanudar_al_restaurar = self.window().pausar_lectura_modal()
+        if self.lectura_pausada:
+            return
+        self.iniciar_puesta_audiovisual()
         if hasattr(self.window(), "audio"):
             self.window().audio.narrar(self.texto_completo, self.hablante_actual)
+            efecto = efecto_dialogo(self.texto_completo)
+            if efecto:
+                self.window().audio.reproducir_efecto(efecto)
         self.pista_continuar.raise_()
-        self.timer_texto.start()
+        if getattr(self.window(), "velocidad_texto", 34) == 0:
+            self.revelar_texto()
+        else:
+            self.timer_texto.start()
+            self.programar_lectura()
+
+    def registrar_lectura(self):
+        if self.lectura_pausada:
+            return
+        ventana = self.window()
+        nombre = self.hablante_actual or "NARRADOR"
+        if hasattr(ventana, "biblioteca"):
+            ventana.biblioteca.marcar(nombre, self.texto_completo)
+            entrada = (nombre, self.texto_completo)
+            if not ventana.historial_dialogos or ventana.historial_dialogos[-1] != entrada:
+                ventana.historial_dialogos.append(entrada)
+                ventana.historial_dialogos[:] = ventana.historial_dialogos[-500:]
+
+    def revelar_texto(self):
+        self.timer_texto.stop()
+        self.indice_texto = len(self.texto_completo)
+        self.texto_label.setText(self.texto_completo)
+        self.escribiendo = False
+        self.estado_escena = "esperando"
+        self.registrar_lectura()
+        self.programar_lectura()
+
+    def programar_lectura(self, _=None):
+        self.timer_lectura.stop()
+        if self.estado_escena not in ("dialogo", "esperando") or self.animando:
+            return
+        if self.boton_saltar.isChecked() and self.dialogo_era_leido:
+            self.timer_lectura.start(120)
+        elif self.boton_auto.isChecked() and not self.escribiendo:
+            self.timer_lectura.start(max(1800, min(14000, len(self.texto_completo)*65)))
+
+    def paso_lectura(self):
+        if self.lectura_pausada or not self.isVisible() or self.estado_escena not in ("dialogo", "esperando"):
+            return
+        if self.corte_accion_pendiente():
+            self.timer_lectura.start(200)
+            return
+        if (self.boton_auto.isChecked() and not self.boton_saltar.isChecked()
+                and getattr(getattr(self.window(), "audio", None), "hablando", False) is True):
+            self.timer_lectura.start(200)
+            return
+        if self.boton_auto.isChecked() or (self.boton_saltar.isChecked() and self.dialogo_era_leido):
+            self.avanzar()
 
     def escribir_caracter(self):
+        if self.lectura_pausada:
+            return
         self.indice_texto = min(len(self.texto_completo), self.indice_texto + 1)
         self.texto_label.setText(self.texto_completo[:self.indice_texto])
         if self.indice_texto >= len(self.texto_completo):
             self.timer_texto.stop()
             self.escribiendo = False
             self.estado_escena = "esperando"
+            self.registrar_lectura()
+            self.programar_lectura()
         else:
             ultimo = self.texto_completo[self.indice_texto-1]
-            self.timer_texto.setInterval(190 if ultimo in ".!?" else 95 if ultimo in ",;:" else 34)
+            velocidad = getattr(self.window(), "velocidad_texto", 34)
+            if velocidad == 0:
+                self.revelar_texto()
+            else:
+                self.timer_texto.setInterval(round(velocidad * (5.6 if ultimo in ".!?" else 2.8 if ultimo in ",;:" else 1)))
 
     def finalizar_escena(self):
+        self.detener_puesta_audiovisual()
+        self._reanudar_al_restaurar = None
         self.estado_escena = "inactiva"
+        self.lectura_pausada = False
         self.animando = True
         self.timer_inicio.stop()
         self.timer_texto.stop()
+        self.timer_lectura.stop()
+        self.boton_auto.setChecked(False)
+        self.boton_saltar.setChecked(False)
+        self.contexto_escena.hide()
+        self.controles_lectura.hide()
         if hasattr(self.window(), "audio"):
             self.window().audio.detener_voz()
         self.pista_continuar.hide()
         if self.animacion is not None:
             self.animacion.stop()
         for personaje in self.personajes.values():
+            personaje.establecer_hablando(False)
             for animacion in (personaje.animacion_fade, personaje.animacion_dim,
                               personaje.animacion_entrada, personaje.animacion_salida):
                 if animacion is not None:
                     animacion.stop()
 
     def hideEvent(self, event):
-        self.finalizar_escena()
+        if self.window().isMinimized() and self.estado_escena != "inactiva":
+            if not self.lectura_pausada:
+                balance = getattr(self, "balance", None)
+                self._balance_pausado_al_minimizar = bool(balance and balance._pausado)
+                self._reanudar_al_restaurar = self.window().pausar_lectura_modal()
+        else:
+            self._reanudar_al_restaurar = None
+            self.finalizar_escena()
         super().hideEvent(event)
 
+    def showEvent(self, event):
+        super().showEvent(event)
+        reanudar = getattr(self, "_reanudar_al_restaurar", None)
+        if reanudar is not None and not self.window().isMinimized():
+            self._reanudar_al_restaurar = None
+            reanudar()
+            if self._balance_pausado_al_minimizar and getattr(self, "balance", None) is not None:
+                self.balance.pausar()
+
     def avanzar(self):
-        if self.animando:
+        if self.animando or self.lectura_pausada:
             return
 
         if self.estado_escena not in ("dialogo", "esperando"):
             return
         if self.escribiendo:
-            self.timer_texto.stop()
-            self.texto_label.setText(self.texto_completo)
-            self.escribiendo = False
-            self.estado_escena = "esperando"
+            self.revelar_texto()
             return
 
+        if self.corte_accion_pendiente():
+            return
+
+        self.timer_lectura.stop()
         self.animando = True
         self.dialogo_terminado.emit()
 
@@ -1078,6 +1448,7 @@ class EscenaDialogo(EscenaCinematica):
 
     def preparar_dialogos(self):
         ventana = self.window()
+        self.fondo = escenario_actual(ventana.juego)["fondo"]
 
         publicacion = None
 
@@ -1100,8 +1471,9 @@ class EscenaDialogo(EscenaCinematica):
         self.presentes_dialogo = {
             nombre.upper()
             for nombre, _ in self.dialogos
-            if nombre.upper() in self.personajes
+            if nombre.upper() in self.personajes or nombre.lower() in ACTORES_NUEVOS
         }
+        self._npc_interlocutor = None
 
     def comenzar_escena(self):
         self.preparar_dialogos()
@@ -1145,6 +1517,9 @@ class EscenaDialogo(EscenaCinematica):
             self.altura_franja
         )
 
+        if self.dialogos:
+            nombre, texto = self.dialogos[0]
+            self.preparar_puesta_audiovisual(texto, nombre)
         self.timer_inicio.start(self.TIEMPO_ANTES_DE_HABLAR)
 
         self.setFocus()
@@ -1256,6 +1631,19 @@ class EscenaDialogo(EscenaCinematica):
             )
 
 
+class EscenaEpilogo(EscenaDialogo):
+    """Desenlace hablado con las mismas ramas que conserva el panel final."""
+    def preparar_dialogos(self):
+        from juego.campana_extendida import epilogo_extendido
+        self.fondo = "assets/expansion/fondos/plaza_noche.png"
+        self.dialogos = epilogo_extendido(self.window().juego)
+        self.presentes_dialogo = {nombre for nombre, _ in self.dialogos if nombre != "NARRADOR"}
+        self._npc_interlocutor = None
+
+    def terminar_escena(self):
+        self.window().mostrar_escena(self.window().ESCENA_FIN)
+
+
 class EscenaAccion(QWidget):
 
     def __init__(self, juego, parent=None):
@@ -1263,10 +1651,12 @@ class EscenaAccion(QWidget):
 
         self.juego = juego
 
-        self.fondo = QLabel(self)
+        self.fondo = FondoEscena(self)
         self.fondo.setScaledContents(False)
         self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.fondo.lower()
+        self.efectos_narrativos = CapaEfectos(self)
+        self._pistas_vistas = 0
 
         self.panel = PanelIlustrado(self)
         self.panel.setStyleSheet("""
@@ -1357,20 +1747,13 @@ class EscenaAccion(QWidget):
         self.boton_ignorar = QPushButton("IGNORAR")
         self.boton_reportar = QPushButton("REPORTAR")
 
-        self.boton_compartir.clicked.connect(
-            lambda: self.ejecutar_accion("compartir")
-        )
-        self.boton_verificar.clicked.connect(
-            lambda: self.ejecutar_accion("verificar")
-        )
-        self.boton_ignorar.clicked.connect(
-            lambda: self.ejecutar_accion("ignorar")
-        )
-        self.boton_reportar.clicked.connect(
-            lambda: self.ejecutar_accion("reportar")
-        )
+        # Los nombres heredados conservan compatibilidad con controles y
+        # guardados. Cada botón envía la decisión propia del oficio vigente.
+        for boton in (self.boton_compartir, self.boton_verificar, self.boton_ignorar, self.boton_reportar):
+            boton.clicked.connect(lambda _=False, b=boton: self.ejecutar_accion(b.property("accion_rol")))
 
         botones = QGridLayout()
+        self.botones_accion = botones
         botones.setHorizontalSpacing(16)
         botones.setVerticalSpacing(16)
         botones.addWidget(self.boton_compartir, 0, 0)
@@ -1379,6 +1762,7 @@ class EscenaAccion(QWidget):
         botones.addWidget(self.boton_reportar, 1, 1)
 
         layout = QVBoxLayout(self.panel)
+        self.layout_accion = layout
         layout.setContentsMargins(25, 23, 25, 33)
         layout.setSpacing(9)
         self.avatar = QLabel()
@@ -1417,38 +1801,113 @@ class EscenaAccion(QWidget):
         self.turno.setWordWrap(True)
         self.aviso.setStyleSheet(f"color:#dce7e3; font:15px '{FUENTE_UI}';")
         self.aviso.setContentsMargins(12, 0, 12, 4)
-        self.retrato_protagonista = QLabel(self)
+        self.retrato_protagonista = SpriteExpresivo(self)
         self.retrato_protagonista.setAlignment(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignHCenter)
         self.retrato_protagonista.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents)
         self.leyenda_personaje = QLabel("Tu decisión deja huella.", self)
         self.leyenda_personaje.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.leyenda_personaje.setStyleSheet("color:#fff3dc; background:rgba(20,35,47,165); border-radius:10px; padding:12px; font:17px 'Atkinson Hyperlegible';")
+        self.capitulo = QLabel(self)
+        self.capitulo.setWordWrap(True)
+        self.capitulo.setStyleSheet(f"color:#f2d6ad; background:rgba(14,35,47,225); border:1px solid #8d8068; border-radius:12px; padding:14px; font:19px '{FUENTE_UI}';")
+        self.panel_mision = PanelIlustrado(self)
+        mision = QVBoxLayout(self.panel_mision)
+        mision.setContentsMargins(22, 19, 22, 19)
+        mision.setSpacing(6)
+        self.objetivo = QLabel()
+        self.objetivo.setWordWrap(True)
+        self.objetivo.setStyleSheet(f"color:#f6e8cd; background:transparent; font:17px '{FUENTE_UI}';")
+        self.boton_investigar = BotonIlustrado("Examinar las fuentes")
+        self.boton_investigar.setToolTip("Abre documentos, contexto y testimonios antes de decidir.")
+        self.boton_investigar.clicked.connect(lambda: self.window().abrir_cuaderno(0))
+        self.pistas_estado = QLabel()
+        self.pistas_estado.setStyleSheet(f"color:#c5d8d0; background:transparent; font:14px '{FUENTE_UI}';")
+        mision.addWidget(self.objetivo)
+        mision.addWidget(self.boton_investigar)
+        mision.addWidget(self.pistas_estado)
+        self.boton_compartir.setToolTip("Difunde la publicación entre tus conexiones. Su alcance depende de la red.")
+        self.boton_verificar.setToolTip("Contrasta el contenido y difunde una corrección si es falso.")
+        self.boton_ignorar.setToolTip("Deja pasar la publicación sin iniciar una difusión.")
+        self.boton_reportar.setToolTip("Solicita retirarla. Un reporte sin fundamento afecta tu reputación.")
         for nombre, boton in (("compartir", self.boton_compartir), ("verificar", self.boton_verificar), ("ignorar", self.boton_ignorar), ("reportar", self.boton_reportar)):
             boton.setIcon(icono_arte(nombre))
             boton.setIconSize(QSize(27, 27))
         decorar_botones(self.panel)
 
+    def actualizar_acciones_rol(self):
+        acciones = acciones_para_rol(self.jugador_de_interfaz().rol)
+        etiquetas = {"compartir": "Compartir", "conversar": "Escuchar", "convocar": "Convocar",
+                     "ignorar": "No reenviar", "contrastar": "Contrastar", "entrevistar": "Entrevistar",
+                     "desmentir": "Desmentir", "reservar": "Reservar"}
+        iconos = {"conversar": "nodo", "convocar": "compartir", "entrevistar": "verificar", "reservar": "ignorar"}
+        botones = (self.boton_compartir, self.boton_verificar, self.boton_ignorar, self.boton_reportar)
+        self.botones_por_accion = {}
+        for boton, accion in zip(botones, acciones):
+            clave = accion["clave"]
+            boton.setProperty("accion_rol", clave)
+            boton.setText(accion.get("titulo_corto", etiquetas[clave]))
+            boton.setToolTip(accion["descripcion"])
+            boton.setStatusTip(accion["descripcion"])
+            boton.setAccessibleName(accion["titulo"] + ". " + accion["descripcion"])
+            boton.setIcon(icono_arte(iconos.get(clave, accion["legacy"])))
+            boton.setStyleSheet(f"font:600 17px '{FUENTE_UI}';")
+            self.botones_por_accion[clave] = boton
+
+    def jugador_de_interfaz(self):
+        ventana = self.window()
+        mi_id = getattr(ventana, "mi_id", None)
+        if getattr(ventana, "cliente_red", None) is not None and mi_id:
+            return next((j for j in self.juego.jugadores if j.id == mi_id), self.juego.jugador)
+        return self.juego.jugador
+
     def actualizar_personaje(self):
-        rol = "periodista" if self.juego.jugador.rol == "periodista" else "ciudadano"
+        rol = "periodista" if self.jugador_de_interfaz().rol == "periodista" else "ciudadano"
+        self.retrato_protagonista.configurar_actor(rol, escenario_actual(self.juego)[rol])
+        self.retrato_protagonista.orientar_hacia("derecha")
+        self.retrato_protagonista.configurar_movimiento(getattr(self.window(), "reducir_movimiento", False), getattr(self.window(), "animar_personajes", True))
         imagen = pixmap_arte(f"personajes/{rol}_neutral.png")
-        self.retrato_protagonista.setGeometry(int(self.width()*.01), int(self.height()*.02), int(self.width()*.38), int(self.height()*.91))
+        self.retrato_protagonista.setGeometry(int(self.width()*.025), 78, int(self.width()*.35), max(220, self.height()-230))
         if not imagen.isNull():
             self.retrato_protagonista.setPixmap(imagen.scaled(self.retrato_protagonista.size(), Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
-        self.leyenda_personaje.setGeometry(int(self.width()*.035), int(self.height()*.86), int(self.width()*.32), 48)
+        self.leyenda_personaje.hide()
+        self.capitulo.setGeometry(int(self.width()*.025), 14, int(self.width()*.35), 82)
+        self.panel_mision.setGeometry(int(self.width()*.025), self.height()-177, int(self.width()*.35), 163)
         self.retrato_protagonista.raise_()
-        self.leyenda_personaje.raise_()
+        self.efectos_narrativos.raise_()
+        self.capitulo.raise_()
+        self.panel_mision.raise_()
         self.panel.raise_()
+
+    def actualizar_pistas(self):
+        publicacion = self.juego.obtener_publicacion_actual()
+        consultadas = getattr(self.window(), "pistas_consultadas", set())
+        vistas = sum((publicacion.id, i) in consultadas for i in range(3)) if publicacion else 0
+        self.pistas_estado.setText(f"{vistas}/3 fuentes consultadas · Caso {self.juego.indice_proxima_publicacion} de {len(self.juego.publicaciones_planificadas)}")
+        if vistas > self._pistas_vistas:
+            self.efectos_narrativos.reproducir("investigar", duracion=3.5, intensidad=.55)
+            if getattr(self.window(), "cuaderno", None) is not None:
+                self.efectos_narrativos.pausar()
+        self._pistas_vistas = vistas
 
     def resizeEvent(self, event):
         self.actualizar_fondo()
+        self.efectos_narrativos.setGeometry(self.rect())
 
         self.panel.setGeometry(int(self.width()*.40), 14, int(self.width()*.575), self.height()-28)
+        compacto = self.height() < 580
+        self.layout_accion.setContentsMargins(25, 16 if compacto else 23, 25, 19 if compacto else 33)
+        self.layout_accion.setSpacing(5 if compacto else 9)
+        self.botones_accion.setVerticalSpacing(8 if compacto else 16)
+        for boton in (self.boton_compartir, self.boton_verificar, self.boton_ignorar, self.boton_reportar):
+            boton.setFixedHeight(48 if compacto else 52)
         self.actualizar_personaje()
 
         super().resizeEvent(event)
 
     def actualizar_fondo(self):
-        pixmap = pixmap_recurso("assets/fondos/Escena 5.png")
+        direccion = escenario_actual(self.juego)
+        self.fondo.establecer_escena(direccion["fondo"], direccion["ambiente"])
+        pixmap = pixmap_recurso(direccion["fondo"])
 
         if pixmap.isNull():
             self.fondo.setStyleSheet(
@@ -1468,7 +1927,17 @@ class EscenaAccion(QWidget):
         self.fondo.lower()
 
     def mostrar(self):
+        self.efectos_narrativos.detener()
+        self.efectos_narrativos.configurar(
+            reducir_movimiento=getattr(self.window(), "reducir_movimiento", False),
+            activo=getattr(self.window(), "animar_fondos", True))
+        self.actualizar_fondo()
+        self.actualizar_acciones_rol()
         self.actualizar_personaje()
+        caso = caso_actual(self.juego)
+        self.capitulo.setText(f"{caso['acto']}\n{caso['titulo']}")
+        self.objetivo.setText(caso["objetivo"])
+        self.actualizar_pistas()
         publicacion = (
             self.juego.obtener_publicacion_actual()
         )
@@ -1490,6 +1959,8 @@ class EscenaAccion(QWidget):
                 boton.setEnabled(False)
 
             return
+
+        self.efectos_narrativos.reproducir("decision", duracion=6.5, intensidad=.5)
 
         for boton in (
             self.boton_compartir,
@@ -1563,9 +2034,10 @@ class EscenaAccion(QWidget):
         self.segundos_restantes -= 1
         if 0 < self.segundos_restantes <= 3 and hasattr(self.window(), "audio"):
             self.window().audio.reproducir_efecto("cuenta_regresiva")
+            self.efectos_narrativos.reproducir("tension", duracion=1.2, intensidad=.5)
         self.aviso.setText(f"{self.juego.evento_actual.texto} · {self.segundos_restantes} s")
         if self.segundos_restantes <= 0:
-            self.ejecutar_accion("ignorar")
+            self.ejecutar_accion(accion_por_defecto(self.juego.jugador.rol))
 
     def actualizar_plazo_red(self, segundos):
         if segundos is None:
@@ -1577,12 +2049,16 @@ class EscenaAccion(QWidget):
         self.cuenta_regresiva()
 
     def finalizar_escena(self):
+        self.efectos_narrativos.detener()
         self.timer_decision.stop()
         self.animacion_panel.stop()
         self.efecto_panel.setOpacity(1.0)
 
     def hideEvent(self, event):
-        self.finalizar_escena()
+        # Minimizar no equivale a abandonar la decisión: el plazo local sigue
+        # contando y el servidor conserva su cuenta autoritativa en una sala.
+        if not self.window().isMinimized():
+            self.finalizar_escena()
         super().hideEvent(event)
 
     def ejecutar_accion(self, accion):
@@ -1873,7 +2349,7 @@ class EscenaArbol(QWidget):
 
         self.juego = juego
 
-        self.fondo = QLabel(self)
+        self.fondo = FondoEscena(self)
         self.fondo.setScaledContents(False)
         self.fondo.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.fondo.lower()
@@ -1974,6 +2450,7 @@ class EscenaArbol(QWidget):
         decorar_botones(self.panel)
 
     def resizeEvent(self, event):
+        self.fondo.establecer_escena("assets/fondos/Escena Arbol.jfif", "observatorio")
         pixmap = pixmap_recurso("assets/fondos/Escena Arbol.jfif")
 
         if not pixmap.isNull():
@@ -2100,6 +2577,11 @@ class EscenaResultado(EscenaCinematica):
         self.siguiente = siguiente
         self.tipo = tipo
         self.nombre_inicial = ""
+        self.balance = BalanceAnimado(self) if tipo == 3 else None
+        self._balance_con_voz = False
+        self._balance_en_curso = False
+        if self.balance is not None:
+            self.balance.terminado.connect(self.balance_presentado)
 
         self.dialogo_terminado.connect(
             self.terminar_escena
@@ -2109,11 +2591,144 @@ class EscenaResultado(EscenaCinematica):
         return contenido_resultado(self.window().juego, self.tipo)
 
     def comenzar_escena(self):
+        if self.balance is not None:
+            self.balance.detener()
+        self._balance_en_curso = False
+        self._balance_con_voz = False
+        self.fondo = escenario_actual(self.window().juego)["fondo"]
         self.texto_inicial, self.nombre_inicial = (
             self.obtener_contenido()
         )
+        if self.tipo == 3:
+            registro = self.window().juego.ultimo_registro or {}
+            titulo = registro.get("titulo_accion", registro.get("accion", "Decisión").capitalize())
+            caso = caso_actual(self.window().juego)["titulo"]
+            self.texto_inicial = f"{caso}. {titulo}. La ciudad responde a nuestra decisión."
+            self.nombre_inicial = "NARRADOR"
 
         super().comenzar_escena()
+
+    def actualizar_geometria(self):
+        super().actualizar_geometria()
+        if getattr(self, "balance", None) is not None:
+            self.balance.setGeometry(self.rect())
+
+    def finalizar_animacion_dialogo(self):
+        if self.tipo != 3:
+            return super().finalizar_animacion_dialogo()
+        if self.estado_escena == "inactiva":
+            return
+        self.animando = False
+        self.escribiendo = False
+        self.estado_escena = "esperando"
+        self.hablante_actual = "NARRADOR"
+        self.timer_texto.stop()
+        for widget in (self.franja_superior, self.franja_inferior, self.nombre_label,
+                       self.texto_label, self.pista_continuar, self.contexto_escena):
+            widget.hide()
+        if self.window().isMinimized() and not self.lectura_pausada:
+            self._reanudar_al_restaurar = self.window().pausar_lectura_modal()
+        if self.lectura_pausada:
+            return
+        juego = self.window().juego
+        registro = dict(juego.ultimo_registro or {})
+        jugador = next((j for j in juego.jugadores if j.id == registro.get("jugador_id")), juego.jugador)
+        registro.setdefault("puntos_despues", jugador.puntos)
+        registro.setdefault("puntos_antes", jugador.puntos-registro.get("puntos", 0))
+        self.balance.preparar(registro, jugador.nombre)
+        self.balance.configurar(getattr(self.window(), "reducir_movimiento", False))
+        self.balance.setGeometry(self.rect())
+        self.balance.raise_()
+        self.controles_lectura.raise_()
+        # Este tramo se presenta entero incluso si ya fue leído antes.
+        self.boton_saltar.setChecked(False)
+        self.boton_saltar.setEnabled(False)
+        self.boton_saltar.setToolTip("Los cambios de la ciudad se presentan uno por uno.")
+        self._balance_en_curso = True
+        self._audiovisual_iniciado = True
+        self.narrar_balance()
+        self.programar_lectura()
+
+    def narrar_balance(self):
+        if self.balance is None or self.lectura_pausada:
+            return
+        audio = getattr(self.window(), "audio", None)
+        pendientes = set(self.balance.claves_pendientes())
+        segmentos = [s for s in segmentos_indicadores(self.window().juego.ultimo_registro or {})
+                     if s["clave"] in pendientes]
+        self._balance_con_voz = bool(audio and audio.narrar_secuencia(segmentos, "NARRADOR") is True)
+        self.balance.comenzar(automatico=not self._balance_con_voz)
+
+    def segmento_balance(self, clave):
+        if (self.balance is not None and self._balance_en_curso
+                and self.isVisible() and not self.lectura_pausada):
+            self.balance.segmento(clave)
+            if clave != "puntos":
+                tarjeta = next((t for t in self.balance.tarjetas if t["clave"] == clave), {})
+                self.window().audio.reproducir_efecto("hallazgo" if tarjeta.get("favorable") else "papeles")
+
+    def fin_balance_voz(self, completada):
+        if self.balance is None or not self._balance_en_curso:
+            return
+        self._balance_con_voz = False
+        # Ni el final de la voz ni su cancelación concluyen una animación corta.
+        # La cola local termina los contadores pendientes sin repetir los vistos.
+        self.balance.finalizar_voz()
+        self.balance_presentado()
+
+    def reanudar_balance(self):
+        if self.balance is None:
+            return
+        if getattr(getattr(self.window(), "audio", None), "hablando", False) is not True:
+            self._balance_con_voz = False
+            self.balance.finalizar_voz()
+        self.balance.reanudar()
+        self.balance_presentado()
+
+    def balance_presentado(self):
+        if self.balance is not None and self.balance.completo:
+            self.registrar_lectura()
+        self.programar_lectura()
+
+    def balance_listo(self):
+        return (self.balance is not None and self._balance_en_curso
+                and self.balance.completo and not self._balance_con_voz
+                and getattr(getattr(self.window(), "audio", None), "hablando", False) is not True)
+
+    def programar_lectura(self, _=None):
+        if self.tipo != 3:
+            return super().programar_lectura(_)
+        self.timer_lectura.stop()
+        if (self.balance_listo() and not self.lectura_pausada and not self.animando
+                and self.estado_escena == "esperando" and self.boton_auto.isChecked()):
+            self.timer_lectura.start(750)
+
+    def revelar_texto(self):
+        if self.tipo != 3:
+            return super().revelar_texto()
+        # No hay texto estadístico que revelar ni atajo que omita un contador.
+
+    def avanzar(self):
+        if self.tipo == 3:
+            if not self.balance_listo() or self.animando or self.lectura_pausada:
+                return
+        super().avanzar()
+
+    def paso_lectura(self):
+        if self.tipo == 3:
+            if (self.boton_auto.isChecked() and self.balance_listo()
+                    and self.isVisible() and not self.lectura_pausada
+                    and self.estado_escena == "esperando"):
+                self.avanzar()
+            return
+        super().paso_lectura()
+
+    def finalizar_escena(self):
+        self._balance_en_curso = False
+        self._balance_con_voz = False
+        if getattr(self, "balance", None) is not None:
+            self.balance.detener()
+        super().finalizar_escena()
 
     def terminar_escena(self):
         ventana = self.window()
@@ -2143,6 +2758,7 @@ class VentanaPrincipal(QMainWindow):
     ESCENA_ARBOL = 9
     ESCENA_FIN = 10
     ESCENA_GRAFO = 11
+    ESCENA_EPILOGO = 12
 
     def __init__(self):
         super().__init__()
@@ -2173,23 +2789,32 @@ class VentanaPrincipal(QMainWindow):
         self.sprites_sobre_ilustracion = False
         self.modo_daltonismo = "normal"
         self.voces_activadas = True
+        self.animar_fondos = True
+        self.animar_personajes = True
+        self.velocidad_texto = 34
+        self.biblioteca = BibliotecaLectura()
+        self.historial_dialogos = []
+        self.pistas_consultadas = set()
+        self.cuaderno = None
         self.dialogo_red = None
         self.mensaje_red.connect(self.recibir_mensaje)
         self.audio = GestorAudio(self)
         from configuracion import cargar
         preferencias = cargar()
+        velocidad = preferencias.get("velocidad_texto", 34)
+        self.velocidad_texto = velocidad if velocidad in (0, 16, 34, 50) else 34
         for categoria, valor in preferencias.get("volumenes", {}).items():
             if categoria in self.audio.volumenes and isinstance(valor, (int, float)):
                 self.audio.configurar(categoria, valor)
         self.audio.silenciar(preferencias.get("silenciado", False))
-        for nombre in ("sin_limite", "reducir_movimiento", "alto_contraste", "sprites_sobre_ilustracion"):
-            setattr(self, nombre, bool(preferencias.get(nombre, False)))
+        for nombre in ("sin_limite", "reducir_movimiento", "alto_contraste", "sprites_sobre_ilustracion", "animar_fondos", "animar_personajes"):
+            setattr(self, nombre, bool(preferencias.get(nombre, nombre in ("animar_fondos", "animar_personajes"))))
         modo = preferencias.get("modo_daltonismo", "normal")
         self.modo_daltonismo = modo if modo in MODOS_DALTONISMO else "normal"
         self.voces_activadas = bool(preferencias.get("voces_activadas", True))
         self.audio.configurar_voces(self.voces_activadas)
 
-        self.juego = Juego()
+        self.juego = Juego(campana="extendida")
 
         self.escenas = QStackedWidget()
 
@@ -2197,19 +2822,19 @@ class VentanaPrincipal(QMainWindow):
 
         self.escena_narracion_1 = EscenaNarracion(
             "assets/fondos/Escena 1.jfif",
-            "Faltan pocos días para las elecciones en Civitas.",
+            "Faltan cuarenta y ocho horas para la elección. En Ciudad Nova, cada teléfono cuenta una versión distinta de lo que está pasando.",
             self.ESCENA_NARRACION_2
         )
 
         self.escena_narracion_2 = EscenaNarracion(
             "assets/fondos/Escena 2.png",
-            "En Civitas comienzan a aparecer publicaciones polémicas.",
+            "Una notificación interrumpe la tarde frente al Café Central. En el grupo del barrio, varias familias están compartiendo el mismo mensaje.",
             self.ESCENA_NARRACION_3
         )
 
         self.escena_narracion_3 = EscenaNarracion(
             "assets/fondos/Escena 3.png",
-            "El candidato Juan quiere cerrar el colegio.",
+            "El mensaje acusa a Juan de querer cerrar el colegio. Nadie adjunta el comunicado original. El botón de compartir está a un toque.",
             self.ESCENA_DIALOGO,
             accion_al_comenzar=(
                 self.juego.iniciar_primera_publicacion
@@ -2245,6 +2870,7 @@ class VentanaPrincipal(QMainWindow):
         )
 
         self.escena_fin = EscenaFin()
+        self.escena_epilogo = EscenaEpilogo()
         self.escena_red = EscenaRed(self.juego)
         self.escena_red.continuar.connect(self.continuar_desde_arbol)
 
@@ -2260,7 +2886,8 @@ class VentanaPrincipal(QMainWindow):
             self.escena_resultado_3,
             self.escena_arbol,
             self.escena_fin,
-            self.escena_red
+            self.escena_red,
+            self.escena_epilogo
         ):
             self.escenas.addWidget(escena)
 
@@ -2291,6 +2918,13 @@ class VentanaPrincipal(QMainWindow):
             self.acciones_partida[clave] = accion
         self.menu_partida.setMenu(menu)
         self.accion_menu_partida = barra.addWidget(self.menu_partida)
+        self.boton_cuaderno = QToolButton()
+        self.boton_cuaderno.setText("Cuaderno")
+        self.boton_cuaderno.setMinimumWidth(145)
+        self.boton_cuaderno.setToolTip("Fuentes, personajes, historial y galería de escenas")
+        self.boton_cuaderno.setAccessibleName("Abrir cuaderno de Ciudad Nova")
+        self.boton_cuaderno.clicked.connect(lambda: self.abrir_cuaderno(0))
+        barra.addWidget(self.boton_cuaderno)
         espacio = QWidget()
         espacio.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         barra.addWidget(espacio)
@@ -2313,6 +2947,12 @@ class VentanaPrincipal(QMainWindow):
         self.statusBar().addPermanentWidget(self.hud, 1)
         self.statusBar().setSizeGripEnabled(False)
         self.audio.aviso.connect(lambda texto: self.statusBar().showMessage("Civitas · " + texto, 2200))
+        self.audio.voz_iniciada.connect(self.iniciar_gesto_voz)
+        self.audio.voz_finalizada.connect(self.terminar_gesto_voz)
+        self.audio.segmento_iniciado.connect(self.sincronizar_balance)
+        self.audio.secuencia_finalizada.connect(self.finalizar_balance_voz)
+        if hasattr(self.audio, "nivel_voz"):
+            self.audio.nivel_voz.connect(self.sincronizar_boca)
         aplicar_estilo(self)
         menu.setStyleSheet(f"QMenu {{background:#193548; color:#fff2dc; padding:8px; font:17px '{FUENTE_UI}'; border:1px solid #bd8855;}} QMenu::item {{padding:12px 24px;}} QMenu::item:selected {{background:#365e70;}}")
         self.aplicar_accesibilidad()
@@ -2341,10 +2981,12 @@ class VentanaPrincipal(QMainWindow):
     def comenzar_juego(self):
         self.cerrar_red()
         if self.juego.indice_proxima_publicacion:
-            self.establecer_juego(Juego())
+            self.establecer_juego(Juego(campana="extendida"))
         dialogo = DialogoRol(self)
         if not dialogo.exec():
             return
+        self.pistas_consultadas.clear()
+        self.historial_dialogos.clear()
         self.juego.seleccionar_rol(dialogo.roles.currentData())
         self.mostrar_escena(
             self.ESCENA_NARRACION_1
@@ -2356,6 +2998,11 @@ class VentanaPrincipal(QMainWindow):
         decorar_botones(self.barra)
 
     def mostrar_escena(self, indice):
+        if self.cuaderno is not None:
+            self.cuaderno.close()
+            self.cuaderno = None
+        for recuerdo in recuerdos(self.juego):
+            self.biblioteca.desbloquear(recuerdo["id"])
         anterior = self.escenas.currentWidget()
         if hasattr(anterior, "finalizar_escena"):
             anterior.finalizar_escena()
@@ -2387,9 +3034,14 @@ class VentanaPrincipal(QMainWindow):
 
         escena.setFocus()
         if hasattr(self, "audio"):
-            pista = "eleccion" if indice == self.ESCENA_FIN else "investigacion" if indice in (self.ESCENA_DIALOGO, self.ESCENA_GRAFO) else "ciudad"
+            pista = "eleccion" if indice in (self.ESCENA_FIN, self.ESCENA_EPILOGO) else "investigacion" if indice in (self.ESCENA_DIALOGO, self.ESCENA_GRAFO) else "ciudad"
             self.audio.cambiar_pista(pista)
-            ambiente = "cafe" if indice in (self.ESCENA_DIALOGO, self.ESCENA_ACCION) else "oficina" if indice in (self.ESCENA_RESULTADO_1, self.ESCENA_RESULTADO_2) else "plaza"
+            ambiente = (escenario_actual(self.juego)["sonido"] if indice in
+                        (self.ESCENA_DIALOGO, self.ESCENA_ACCION, self.ESCENA_RESULTADO_1,
+                         self.ESCENA_RESULTADO_2, self.ESCENA_RESULTADO_3) else
+                        "noche" if indice in (self.ESCENA_FIN, self.ESCENA_EPILOGO) else
+                        "oficina" if indice in (self.ESCENA_ARBOL, self.ESCENA_GRAFO) else
+                        "calle" if indice == self.ESCENA_NARRACION_2 else "plaza")
             self.audio.cambiar_pista(ambiente, "ambiente")
             if indice == self.ESCENA_ACCION:
                 self.audio.reproducir_efecto("notificacion")
@@ -2397,6 +3049,10 @@ class VentanaPrincipal(QMainWindow):
                 self.audio.reproducir_efecto(self.juego.ultima_accion or "resultado")
             elif indice == self.ESCENA_FIN:
                 self.audio.reproducir_efecto("recompensa")
+            elif indice == self.ESCENA_NARRACION_2:
+                self.audio.reproducir_efecto("pasos_calle")
+            elif indice == self.ESCENA_DIALOGO and self.juego.indice_proxima_publicacion == 2:
+                self.audio.reproducir_efecto("puerta_abrir")
             self.actualizar_estado()
         self.animacion_transicion.stop()
         if en_partida and not self.reducir_movimiento:
@@ -2409,6 +3065,101 @@ class VentanaPrincipal(QMainWindow):
             self.animacion_transicion.start()
         else:
             self.velo_transicion.hide()
+
+    def abrir_cuaderno(self, pestana=0):
+        self.audio.reproducir_efecto("pagina")
+        if self.cuaderno is not None:
+            self.cuaderno.close()
+        reanudar = self.pausar_lectura_modal()
+        self.cuaderno = DialogoCuaderno(self, pestana)
+        dialogo = self.cuaderno
+        def volver_a_lectura():
+            if self.cuaderno is dialogo:
+                self.cuaderno = None
+            reanudar()
+        self.cuaderno.finished.connect(volver_a_lectura)
+        self.cuaderno.show()
+
+    def pausar_lectura_modal(self):
+        escena = self.escenas.currentWidget()
+        juego_pausado = self.juego
+        texto = getattr(escena, "texto_completo", "")
+        tenia_voz = getattr(self.audio, "hablando", False) is True
+        if isinstance(escena, EscenaCinematica):
+            escena.boton_auto.setChecked(False)
+            escena.boton_saltar.setChecked(False)
+            escena.lectura_pausada = True
+            escena.timer_texto.stop()
+            escena.timer_inicio.stop()
+            escena.cine_narrativo.pausar()
+            if isinstance(escena, EscenaResultado) and escena.balance is not None:
+                escena.balance.pausar()
+        for capa in escena.findChildren(CapaEfectos):
+            capa.pausar()
+        self.audio.detener_voz()
+        def reanudar():
+            if (self.juego is not juego_pausado or self.escenas.currentWidget() is not escena
+                    or getattr(escena, "texto_completo", "") != texto):
+                return
+            self.audio.detener_voz()  # Termina una posible muestra de Configuración.
+            if isinstance(escena, EscenaCinematica):
+                escena.lectura_pausada = False
+                if escena.estado_escena == "preparando":
+                    escena.timer_inicio.start(1)
+                elif escena.estado_escena in ("dialogo", "esperando"):
+                    if isinstance(escena, EscenaResultado) and escena.balance is not None:
+                        if not escena._balance_en_curso:
+                            escena.finalizar_animacion_dialogo()
+                        elif not escena.balance.completo:
+                            escena.narrar_balance()
+                        else:
+                            escena.reanudar_balance()
+                        escena.setFocus()
+                        return
+                    if not escena._audiovisual_iniciado:
+                        escena.iniciar_puesta_audiovisual()
+                    else:
+                        escena.cine_narrativo.reanudar()
+                    if tenia_voz or escena.escribiendo:
+                        self.audio.narrar(escena.texto_completo, escena.hablante_actual)
+                    if escena.escribiendo:
+                        if self.velocidad_texto == 0:
+                            escena.revelar_texto()
+                        else:
+                            escena.timer_texto.start()
+                escena.setFocus()
+            for capa in escena.findChildren(CapaEfectos):
+                capa.reanudar()
+        return reanudar
+
+    def iniciar_gesto_voz(self, hablante):
+        escena = self.escenas.currentWidget()
+        if isinstance(escena, EscenaCinematica):
+            for nombre, personaje in escena.personajes.items():
+                personaje.establecer_hablando(nombre == hablante)
+
+    def sincronizar_balance(self, clave):
+        escena = self.escenas.currentWidget()
+        if isinstance(escena, EscenaResultado):
+            escena.segmento_balance(clave)
+
+    def finalizar_balance_voz(self, completada):
+        escena = self.escenas.currentWidget()
+        if isinstance(escena, EscenaResultado):
+            escena.fin_balance_voz(completada)
+
+    def sincronizar_boca(self, nivel):
+        escena = self.escenas.currentWidget()
+        if isinstance(escena, EscenaCinematica):
+            hablante = getattr(self.audio, "hablante_actual", "")
+            for nombre, personaje in escena.personajes.items():
+                personaje.establecer_hablando(nombre == hablante, nivel if nombre == hablante else 0.0)
+
+    def terminar_gesto_voz(self):
+        escena = self.escenas.currentWidget()
+        if isinstance(escena, EscenaCinematica):
+            for personaje in escena.personajes.values():
+                personaje.establecer_hablando(False)
 
     def resizeEvent(self, event):
         super().resizeEvent(event)
@@ -2428,9 +3179,10 @@ class VentanaPrincipal(QMainWindow):
                 self.ESCENA_DIALOGO
             )
         else:
-            self.mostrar_escena(
-                self.ESCENA_FIN
-            )
+            self.mostrar_desenlace()
+
+    def mostrar_desenlace(self):
+        self.mostrar_escena(self.ESCENA_EPILOGO if self.juego.campana == "extendida" else self.ESCENA_FIN)
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key.Key_F1:
@@ -2461,6 +3213,16 @@ class VentanaPrincipal(QMainWindow):
             self.indicadores.setText(f"Ciudad Nova · Confianza {self.juego.confianza} · Convivencia {self.juego.convivencia} · Bienestar {self.juego.bienestar_digital} · Información verificada {self.juego.info_verificada} · Desinformación {self.juego.desinformacion} · Conflictos {self.juego.conflictos}")
 
     def aplicar_accesibilidad(self):
+        for balance in self.findChildren(BalanceAnimado):
+            balance.configurar(self.reducir_movimiento)
+        for fondo in self.findChildren(FondoVivo):
+            fondo.configurar(reducir_movimiento=self.reducir_movimiento, activo=self.animar_fondos)
+        for actor in self.findChildren(SpriteExpresivo):
+            actor.configurar_movimiento(self.reducir_movimiento, self.animar_personajes)
+        for capa in self.findChildren(CapaCinematica):
+            capa.configurar(reducir_movimiento=self.reducir_movimiento, activo=self.animar_fondos)
+        for capa in self.findChildren(CapaEfectos):
+            capa.configurar(reducir_movimiento=self.reducir_movimiento, activo=self.animar_fondos)
         for escena in self.escenas.findChildren(EscenaCinematica):
             escena.DURACION_FRANJAS = 1 if self.reducir_movimiento else 450
             escena.TIEMPO_ANTES_DE_HABLAR = 1 if self.reducir_movimiento else 650
@@ -2484,47 +3246,63 @@ class VentanaPrincipal(QMainWindow):
         if self.cliente_red is not None:
             self.statusBar().showMessage("En multijugador el servidor conserva el estado oficial.")
             return
-        ruta, _ = QFileDialog.getSaveFileName(self, "Guardar partida", ruta_recurso('saves/partida.json'), "Partidas (*.json)")
-        if ruta:
-            try:
-                self.juego.guardar(ruta)
-                self.statusBar().showMessage("Partida guardada.")
-            except (OSError, ValueError) as error:
-                QMessageBox.warning(self, "Guardado", str(error))
+        reanudar = self.pausar_lectura_modal()
+        try:
+            ruta, _ = QFileDialog.getSaveFileName(self, "Guardar partida", ruta_recurso('saves/partida.json'), "Partidas (*.json)")
+            if ruta:
+                try:
+                    self.juego.guardar(ruta)
+                    self.statusBar().showMessage("Partida guardada.")
+                except (OSError, ValueError) as error:
+                    QMessageBox.warning(self, "Guardado", str(error))
+        finally:
+            reanudar()
 
     def cargar_partida(self):
         if self.cliente_red is not None:
             return
-        ruta, _ = QFileDialog.getOpenFileName(self, "Cargar partida", ruta_recurso('saves'), "Partidas (*.json)")
-        if ruta:
-            try:
-                juego = Juego.cargar(ruta)
-                self.establecer_juego(juego)
-                indice = self.ESCENA_GRAFO if juego.decision_aplicada else self.ESCENA_DIALOGO
-                if juego.indice_proxima_publicacion == 0:
-                    indice = self.ESCENA_INICIO
-                if juego.finalizada:
-                    indice = self.ESCENA_FIN
-                self.mostrar_escena(indice)
-            except (OSError, ValueError, KeyError, TypeError) as error:
-                QMessageBox.warning(self, "Partida incompatible", str(error))
+        reanudar = self.pausar_lectura_modal()
+        try:
+            ruta, _ = QFileDialog.getOpenFileName(self, "Cargar partida", ruta_recurso('saves'), "Partidas (*.json)")
+            if ruta:
+                try:
+                    juego = Juego.cargar(ruta)
+                    self.pistas_consultadas.clear()
+                    self.historial_dialogos.clear()
+                    self.establecer_juego(juego)
+                    indice = self.ESCENA_GRAFO if juego.decision_aplicada else self.ESCENA_DIALOGO
+                    if juego.indice_proxima_publicacion == 0:
+                        indice = self.ESCENA_INICIO
+                    if juego.finalizada:
+                        indice = self.ESCENA_FIN
+                    self.mostrar_escena(indice)
+                except (OSError, ValueError, KeyError, TypeError) as error:
+                    QMessageBox.warning(self, "Partida incompatible", str(error))
+        finally:
+            reanudar()
 
     def volver_portada(self):
         self.cerrar_red()
         self.mostrar_escena(self.ESCENA_INICIO)
 
     def abrir_multijugador(self):
-        self.dialogo_red = DialogoRed(self)
-        if not self.dialogo_red.exec():
-            self.cerrar_red()
+        reanudar = self.pausar_lectura_modal()
+        try:
+            self.dialogo_red = DialogoRed(self)
+            if not self.dialogo_red.exec():
+                self.cerrar_red()
+        finally:
+            reanudar()
 
     def conectar_red(self, crear, host, puerto, nombre, rol):
+        self.pistas_consultadas.clear()
+        self.historial_dialogos.clear()
         from red.servidor import Servidor
         from red.cliente import Cliente
         self.cerrar_red()
         self.revision_red, self.fase_red = -1, None
         if crear:
-            self.servidor_red = Servidor(puerto=puerto, sin_limite=self.sin_limite)
+            self.servidor_red = Servidor(puerto=puerto, sin_limite=self.sin_limite, campana="extendida")
             self.servidor_red.iniciar()
             puerto = self.servidor_red.puerto
             host = "127.0.0.1"
@@ -2589,8 +3367,11 @@ class VentanaPrincipal(QMainWindow):
             elif self.fase_red == "resultado":
                 self.mostrar_escena(self.ESCENA_RESULTADO_1)
             elif self.fase_red == "final":
-                self.mostrar_escena(self.ESCENA_FIN)
+                self.mostrar_desenlace()
             else:
+                # La barrera de reconexión pausa también la presentación.
+                # El siguiente estado del servidor reconstruirá su escena.
+                self.pausar_lectura_modal()
                 self.escena_accion.timer_decision.stop()
                 ausentes = ", ".join(mensaje.get("desconectados", []))
                 self.statusBar().showMessage(f"Campaña pausada. Esperando reconexión de {ausentes}.")
@@ -2599,6 +3380,8 @@ class VentanaPrincipal(QMainWindow):
                     boton.setEnabled(False)
             self.recuperada_red = False
         elif tipo in ("error", "desconexion"):
+            if tipo == "desconexion" and self.cliente_red is not None:
+                self.pausar_lectura_modal()
             self.audio.reproducir_efecto("error")
             self.statusBar().showMessage(mensaje.get("texto", "Error de red"))
             if self.dialogo_red and self.dialogo_red.isVisible():
@@ -2622,6 +3405,10 @@ class VentanaPrincipal(QMainWindow):
             escena = self.escenas.widget(indice)
             if hasattr(escena, "finalizar_escena"):
                 escena.finalizar_escena()
+        for fondo in self.findChildren(FondoVivo):
+            fondo.configurar(activo=False)
+        for actor in self.findChildren(SpriteExpresivo):
+            actor.configurar_movimiento(True, False)
         super().closeEvent(event)
 
     def alternar_pantalla_completa(self):
@@ -2640,11 +3427,13 @@ def main():
     parser.add_argument("--sin-eventos", action="store_true")
     parser.add_argument("--sin-audio", action="store_true")
     parser.add_argument("--sin-limite", action="store_true")
+    parser.add_argument("--clasica", action="store_true", help="Abrir la campaña anterior de tres actos.")
     args = parser.parse_args()
     app = QApplication(sys.argv)
 
     ventana = VentanaPrincipal()
-    ventana.establecer_juego(Juego(args.semilla, eventos=not args.sin_eventos))
+    ventana.establecer_juego(Juego(args.semilla, eventos=not args.sin_eventos,
+                                  campana="clasica" if args.clasica else "extendida"))
     ventana.sin_limite = ventana.sin_limite or args.sin_limite
     if args.sin_audio:
         ventana.audio.silenciar()

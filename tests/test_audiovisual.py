@@ -20,6 +20,32 @@ class PruebasAudiovisuales(unittest.TestCase):
         from PyQt6.QtCore import PYQT_VERSION_STR, QT_VERSION_STR
         print(f"\nEntorno comprobado: PyQt {PYQT_VERSION_STR} / Qt {QT_VERSION_STR}")
 
+    def avanzar_cinematica(self, ventana, balances_presentados):
+        """Cada iteración deja transcurrir un único contador completo de Qt.
+
+        La campaña usa silencio real; por tanto se ejercita la cola local de
+        animaciones. No se omite la escena ni se concluyen cifras con clics.
+        """
+        escena = ventana.escenas.currentWidget()
+        if escena is ventana.escena_resultado_3 and escena._balance_en_curso:
+            balance = escena.balance
+            self.assertTrue(ventana.audio.silenciado)
+            self.assertFalse(escena._balance_con_voz)
+            self.assertFalse(ventana.audio.hablando)
+            if not balance.completo:
+                clave = balance.clave_actual
+                self.assertIsNotNone(clave)
+                anteriores = set(balance.claves_completadas)
+                balance.establecer_tiempo(balance.DURACION_SIN_VOZ+.1)
+                balance._paso()
+                self.assertEqual(set(balance.claves_completadas)-anteriores, {clave})
+            identificador = ventana.juego.ultimo_registro["publicacion"]["id"]
+            balances_presentados[identificador] = balance.claves_completadas
+            if balance.completo:
+                self.assertEqual(balance.claves_completadas,
+                                 tuple(tarjeta["clave"] for tarjeta in balance.tarjetas))
+        escena.avanzar()
+
     def test_audio_recursos_volumen_y_faltante_opcional(self):
         audio = GestorAudio()
         self.assertTrue(audio.disponible)
@@ -92,6 +118,7 @@ class PruebasAudiovisuales(unittest.TestCase):
 
     def test_dialogo_teclado_f11_y_reduccion_movimiento(self):
         ventana = VentanaPrincipal()
+        self.addCleanup(ventana.close)
         ventana.audio.silenciar()
         ventana.reducir_movimiento = True
         ventana.aplicar_accesibilidad()
@@ -108,7 +135,32 @@ class PruebasAudiovisuales(unittest.TestCase):
         QTest.keyClick(escena, Qt.Key.Key_Space)
         self.assertFalse(escena.escribiendo)
         self.assertEqual(escena.dialogo_actual, 0)
-        # El nuevo fondo está limpio: los protagonistas ahora se componen por capas.
+        # El narrador ilustra el café con un cartel al reducir movimiento.
+        self.assertTrue(escena.cine_narrativo.activa)
+        self.assertEqual(escena.cine_narrativo.estado, "poster")
+        self.assertTrue(escena.cine_narrativo._poster.isVisible())
+        self.assertFalse(escena.personajes["CIUDADANO"].isVisible())
+        QTest.keyClick(escena, Qt.Key.Key_Space)
+        for _ in range(30):
+            QTest.qWait(30)
+            if escena.dialogo_actual == 1 and not escena.animando:
+                break
+        self.assertEqual(escena.dialogo_actual, 1)
+        self.assertTrue(escena.cine_narrativo.activa)
+        self.assertEqual(escena.cine_narrativo.clave_actual, "person_colegio_c")
+        self.assertEqual(escena.cine_narrativo.estado, "poster")
+        self.assertFalse(escena.personajes["CIUDADANO"].isVisible())
+        # Los dos insertos de personajes conservan revelar/continuar. La
+        # cuarta línea vuelve a los actores porque no tiene corte asignado.
+        for indice in (2, 3):
+            QTest.keyClick(escena, Qt.Key.Key_Space)
+            QTest.keyClick(escena, Qt.Key.Key_Space)
+            for _ in range(30):
+                QTest.qWait(30)
+                if escena.dialogo_actual == indice and not escena.animando:
+                    break
+            self.assertEqual(escena.dialogo_actual, indice)
+        self.assertFalse(escena.cine_narrativo.activa)
         self.assertTrue(escena.personajes["CIUDADANO"].isVisible())
         ventana.resize(1600, 900)
         self.app.processEvents()
@@ -174,11 +226,13 @@ class PruebasAudiovisuales(unittest.TestCase):
         servidor = Servidor(puerto=0, semilla=4, eventos=False)
         servidor.iniciar()
         ventanas = []
+        balances_presentados = {}
         try:
             for i, rol in enumerate(("ciudadano", "periodista", "ciudadano", "periodista")):
                 ventana = VentanaPrincipal()
                 ventanas.append(ventana)
-                ventana.audio.silenciar()
+                balances_presentados[ventana] = {}
+                ventana.audio.silenciar(True)
                 ventana.reducir_movimiento = True
                 ventana.aplicar_accesibilidad()
                 ventana.show()
@@ -196,7 +250,7 @@ class PruebasAudiovisuales(unittest.TestCase):
                 for ventana in ventanas:
                     escena = ventana.escenas.currentWidget()
                     if isinstance(escena, EscenaCinematica):
-                        escena.avanzar()
+                        self.avanzar_cinematica(ventana, balances_presentados[ventana])
                     elif escena is ventana.escena_accion and escena.boton_verificar.isEnabled():
                         escena.boton_verificar.click()
                     elif escena is ventana.escena_arbol:
@@ -207,6 +261,9 @@ class PruebasAudiovisuales(unittest.TestCase):
             self.assertTrue(all(v.fase_red == "final" for v in ventanas))
             self.assertEqual(len(ventanas[0].juego.historial), 6)
             self.assertTrue(all(v.juego.datos() == ventanas[0].juego.datos() for v in ventanas))
+            for ventana in ventanas:
+                self.assertEqual(set(balances_presentados[ventana]), {50, 30, 70, 20, 60, 80})
+                self.assertTrue(all("puntos" in claves for claves in balances_presentados[ventana].values()))
             ventanas[0].resize(1366, 768)
             self.app.processEvents()
             carpeta = RAIZ / ".tmp/capturas"
@@ -269,7 +326,8 @@ class PruebasAudiovisuales(unittest.TestCase):
             with self.subTest(rol=rol):
                 ventana = VentanaPrincipal()
                 self.addCleanup(ventana.close)
-                ventana.audio.silenciar()
+                ventana.audio.silenciar(True)
+                balances_presentados = {}
                 ventana.reducir_movimiento = True
                 ventana.sin_limite = True
                 ventana.aplicar_accesibilidad()
@@ -284,7 +342,7 @@ class PruebasAudiovisuales(unittest.TestCase):
                     if escena is ventana.escena_fin:
                         break
                     if isinstance(escena, EscenaCinematica):
-                        escena.avanzar()
+                        self.avanzar_cinematica(ventana, balances_presentados)
                     elif escena is ventana.escena_accion:
                         accion = ("verificar", "compartir", "ignorar", "reportar", "reportar", "verificar")[len(juego.historial)]
                         escena.ejecutar_accion(accion)
@@ -299,6 +357,8 @@ class PruebasAudiovisuales(unittest.TestCase):
                 self.assertIs(ventana.escenas.currentWidget(), ventana.escena_fin)
                 self.assertTrue(juego.finalizada)
                 self.assertEqual([r["publicacion"]["id"] for r in juego.historial], [50,30,70,20,60,80])
+                self.assertEqual(set(balances_presentados), {50, 30, 70, 20, 60, 80})
+                self.assertTrue(all("puntos" in claves for claves in balances_presentados.values()))
                 self.assertIsNone(juego.arbol.buscar(60))
                 self.assertIsNotNone(juego.arbol.buscar(20))
                 ventana.close()

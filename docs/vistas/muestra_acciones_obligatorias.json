@@ -1,0 +1,1349 @@
+{
+  "archivo": "muestra_acciones_obligatorias.mp4",
+  "duracion_segundos": 118.375,
+  "fps": 24,
+  "tamano": [
+    1280,
+    720
+  ],
+  "bytes": 11318087,
+  "sha256": "1cbe9b35b2508b7e950798bbbb3590be97364f85752b18074448fa0e9823f3b6",
+  "decodificacion_completa": true,
+  "flujo_audio_verificado": true,
+  "naturaleza": "Exportación por reloj de los widgets reales y del compositor instalado; transporte multimedia y audio del widget aislados con mocks. No es grabación humana ni evidencia de reproducción real del decodificador.",
+  "sonido": "Mezcla AAC de voces neuronales locales completas, música y ambiente CC0. Sin evaluación auditiva humana.",
+  "botones": "Una línea por elección; explicación en ayuda contextual.",
+  "balances": {
+    "compartir": {
+      "presentados": [
+        "confianza",
+        "desinformacion",
+        "convivencia",
+        "bienestar_digital",
+        "conflictos",
+        "puntos"
+      ],
+      "tarjetas": [
+        {
+          "clave": "confianza",
+          "nombre": "Confianza",
+          "antes": 50,
+          "despues": 47,
+          "delta": -3,
+          "favorable": false
+        },
+        {
+          "clave": "desinformacion",
+          "nombre": "Desinformación",
+          "antes": 0,
+          "despues": 9,
+          "delta": 9,
+          "favorable": false
+        },
+        {
+          "clave": "convivencia",
+          "nombre": "Convivencia",
+          "antes": 50,
+          "despues": 47,
+          "delta": -3,
+          "favorable": false
+        },
+        {
+          "clave": "bienestar_digital",
+          "nombre": "Bienestar digital",
+          "antes": 50,
+          "despues": 47,
+          "delta": -3,
+          "favorable": false
+        },
+        {
+          "clave": "conflictos",
+          "nombre": "Conflictos",
+          "antes": 0,
+          "despues": 3,
+          "delta": 3,
+          "favorable": false
+        },
+        {
+          "clave": "puntos",
+          "nombre": "Tu puntuación",
+          "antes": 0,
+          "despues": -6,
+          "delta": -6,
+          "favorable": false
+        }
+      ],
+      "todos_completos": true,
+      "ultimo_foco": "puntos"
+    },
+    "contrastar": {
+      "presentados": [
+        "info_verificada",
+        "confianza",
+        "desinformacion",
+        "convivencia",
+        "bienestar_digital",
+        "conflictos",
+        "puntos"
+      ],
+      "tarjetas": [
+        {
+          "clave": "info_verificada",
+          "nombre": "Información verificada",
+          "antes": 0,
+          "despues": 5,
+          "delta": 5,
+          "favorable": true
+        },
+        {
+          "clave": "confianza",
+          "nombre": "Confianza",
+          "antes": 47,
+          "despues": 53,
+          "delta": 6,
+          "favorable": true
+        },
+        {
+          "clave": "desinformacion",
+          "nombre": "Desinformación",
+          "antes": 15,
+          "despues": 7,
+          "delta": -8,
+          "favorable": true
+        },
+        {
+          "clave": "convivencia",
+          "nombre": "Convivencia",
+          "antes": 45,
+          "despues": 47,
+          "delta": 2,
+          "favorable": true
+        },
+        {
+          "clave": "bienestar_digital",
+          "nombre": "Bienestar digital",
+          "antes": 49,
+          "despues": 51,
+          "delta": 2,
+          "favorable": true
+        },
+        {
+          "clave": "conflictos",
+          "nombre": "Conflictos",
+          "antes": 5,
+          "despues": 3,
+          "delta": -2,
+          "favorable": true
+        },
+        {
+          "clave": "puntos",
+          "nombre": "Tu puntuación",
+          "antes": 2,
+          "despues": 11,
+          "delta": 9,
+          "favorable": true
+        }
+      ],
+      "todos_completos": true,
+      "ultimo_foco": "puntos"
+    }
+  },
+  "cortes": [
+    {
+      "tipo": "rol",
+      "clave": "ciudadano",
+      "inicio": 0.0,
+      "duracion": 2.5
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_50_compartir",
+      "inicio": 2.5,
+      "duracion": 9.0,
+      "voz": {
+        "clave": "5715a1e91494e3758bc8f3d0",
+        "duracion": 7.056,
+        "texto": "Quise proteger a mi hermana y envié el mensaje antes de comprobarlo. Ahora tengo que hacerme cargo de lo que publiqué.",
+        "hablante": "CIUDADANO"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 50,
+          "texto": "El candidato Juan quiere cerrar el colegio.",
+          "verdadera": false,
+          "impacto": 8,
+          "compartidos": 1,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "COMPARTIDA",
+          "tipo": "rumor",
+          "emisor_id": "ana",
+          "candidato_id": "juan",
+          "danina": false,
+          "alcance": 3
+        },
+        "accion": "compartir",
+        "accion_rol": "compartir",
+        "rol": "ciudadano",
+        "titulo_accion": "Compartir con mi grupo",
+        "publicacion_antes": {
+          "id": 50,
+          "texto": "El candidato Juan quiere cerrar el colegio.",
+          "verdadera": false,
+          "impacto": 7,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "rumor",
+          "emisor_id": "ana",
+          "candidato_id": "juan",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [],
+          "motivo": "La decisión conserva las relaciones existentes."
+        },
+        "jugador_id": "local",
+        "alcance": 3,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 50,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 50,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 0,
+          "confianza": 47,
+          "desinformacion": 9,
+          "convivencia": 47,
+          "bienestar_digital": 47,
+          "conflictos": 3,
+          "participacion": 0
+        },
+        "puntos": -6,
+        "cambios_reales": {
+          "confianza": -3,
+          "desinformacion": 9,
+          "convivencia": -3,
+          "bienestar_digital": -3,
+          "conflictos": 3
+        },
+        "puntos_antes": 0,
+        "puntos_despues": -6,
+        "reputacion_antes": 50,
+        "reputacion_despues": 44,
+        "explicacion": "El rumor ganó alcance y perjudicó la confianza.",
+        "propagacion": {
+          "publicacion_id": 50,
+          "emisor": "ana",
+          "receptores": [
+            "luis",
+            "pedro",
+            "maria"
+          ],
+          "orden": [
+            "ana",
+            "luis",
+            "pedro",
+            "maria"
+          ],
+          "niveles": [
+            [
+              "ana"
+            ],
+            [
+              "luis",
+              "pedro"
+            ],
+            [
+              "maria"
+            ]
+          ],
+          "distancias": {
+            "ana": 0,
+            "luis": 1,
+            "pedro": 1,
+            "maria": 2
+          },
+          "aristas": [
+            [
+              "ana",
+              "luis"
+            ],
+            [
+              "ana",
+              "pedro"
+            ],
+            [
+              "luis",
+              "maria"
+            ]
+          ],
+          "tiempo_simulado": 2.0,
+          "verdadera": false,
+          "correccion": false
+        }
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "confianza",
+      "inicio": 11.5,
+      "duracion": 2.7083333333333335,
+      "voz": {
+        "clave": "9d9fd7fb15bcafdf819247ed",
+        "duracion": 2.52,
+        "texto": "Confianza -3.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "desinformacion",
+      "inicio": 14.208333333333334,
+      "duracion": 2.875,
+      "voz": {
+        "clave": "f7a05c822e37c4b287949563",
+        "duracion": 2.664,
+        "texto": "Desinformación +9.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "convivencia",
+      "inicio": 17.083333333333332,
+      "duracion": 2.7916666666666665,
+      "voz": {
+        "clave": "d8b0a9a7ebc7704cf614535a",
+        "duracion": 2.592,
+        "texto": "Convivencia -3.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "bienestar_digital",
+      "inicio": 19.875,
+      "duracion": 3.2916666666666665,
+      "voz": {
+        "clave": "3b8e41f5d712ed00c8bdfe2f",
+        "duracion": 3.072,
+        "texto": "Bienestar digital -3.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "conflictos",
+      "inicio": 23.166666666666668,
+      "duracion": 2.6666666666666665,
+      "voz": {
+        "clave": "dee5388a08b557ef8586a370",
+        "duracion": 2.472,
+        "texto": "Conflictos +3.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "puntos",
+      "inicio": 25.833333333333332,
+      "duracion": 3.5416666666666665,
+      "voz": {
+        "clave": "1d53cf52e8b180fc4e05533b",
+        "duracion": 3.336,
+        "texto": "Puntuación de la acción: -6.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "foco_final",
+      "clave": "puntos",
+      "inicio": 29.375,
+      "duracion": 1.0
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_30_conversar",
+      "inicio": 30.375,
+      "duracion": 9.0,
+      "voz": {
+        "clave": "2370e62ebeb3827d6b1a1758",
+        "duracion": 7.608,
+        "texto": "Escuché al vecindario antes de reenviar el mensaje. Conocer una preocupación no significa que el titular sea cierto.",
+        "hablante": "CIUDADANO"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 30,
+          "texto": "Adrián Morales presentó una nueva propuesta.",
+          "verdadera": true,
+          "impacto": 4,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "CONVERSADA",
+          "tipo": "propuesta",
+          "emisor_id": "ana",
+          "candidato_id": "adrian",
+          "danina": false,
+          "alcance": 0
+        },
+        "accion": "ignorar",
+        "accion_rol": "conversar",
+        "rol": "ciudadano",
+        "titulo_accion": "Escuchar al vecindario",
+        "publicacion_antes": {
+          "id": 30,
+          "texto": "Adrián Morales presentó una nueva propuesta.",
+          "verdadera": true,
+          "impacto": 4,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "propuesta",
+          "emisor_id": "ana",
+          "candidato_id": "adrian",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [
+            [
+              "ana",
+              "mateo"
+            ],
+            [
+              "mateo",
+              "ana"
+            ]
+          ],
+          "motivo": "Conversación vecinal: ambos participantes pueden escucharse y recibir mensajes futuros.",
+          "vecino_id": "mateo",
+          "testimonio_verificado": false
+        },
+        "jugador_id": "local",
+        "alcance": 0,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 50,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 50,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 0,
+          "confianza": 51,
+          "desinformacion": 0,
+          "convivencia": 53,
+          "bienestar_digital": 51,
+          "conflictos": 0,
+          "participacion": 2
+        },
+        "puntos": 2,
+        "cambios_reales": {
+          "confianza": 1,
+          "convivencia": 3,
+          "bienestar_digital": 1,
+          "participacion": 2
+        },
+        "puntos_antes": 0,
+        "puntos_despues": 2,
+        "reputacion_antes": 50,
+        "reputacion_despues": 52,
+        "explicacion": "Escuchaste a un vecino y abriste una relación de ida y vuelta. No reenviaste el titular ni resolviste su veracidad.",
+        "propagacion": null
+      }
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_70_convocar",
+      "inicio": 39.375,
+      "duracion": 9.0,
+      "voz": {
+        "clave": "922b0590d2169d3b139e546f",
+        "duracion": 7.08,
+        "texto": "Convocar al barrio convirtió el aviso en una conversación compartida. Ahora debemos responder a quienes se sumaron.",
+        "hablante": "CIUDADANO"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 70,
+          "texto": "El parque central tendrá mantenimiento.",
+          "verdadera": true,
+          "impacto": 4,
+          "compartidos": 1,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "CONVOCADA",
+          "tipo": "noticia",
+          "emisor_id": "ana",
+          "candidato_id": "laura",
+          "danina": false,
+          "alcance": 10
+        },
+        "accion": "compartir",
+        "accion_rol": "convocar",
+        "rol": "ciudadano",
+        "titulo_accion": "Convocar al barrio",
+        "publicacion_antes": {
+          "id": 70,
+          "texto": "El parque central tendrá mantenimiento.",
+          "verdadera": true,
+          "impacto": 3,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "noticia",
+          "emisor_id": "ana",
+          "candidato_id": "laura",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [],
+          "motivo": "La decisión conserva las relaciones existentes."
+        },
+        "jugador_id": "local",
+        "alcance": 10,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 50,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 50,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 10,
+          "confianza": 55,
+          "desinformacion": 0,
+          "convivencia": 55,
+          "bienestar_digital": 55,
+          "conflictos": 0,
+          "participacion": 10
+        },
+        "puntos": 15,
+        "cambios_reales": {
+          "info_verificada": 10,
+          "confianza": 5,
+          "convivencia": 5,
+          "bienestar_digital": 5,
+          "participacion": 10
+        },
+        "puntos_antes": 0,
+        "puntos_despues": 15,
+        "reputacion_antes": 50,
+        "reputacion_despues": 65,
+        "explicacion": "La convocatoria movilizó a la comunidad a tres niveles de la red. El alcance y la participación dependen de sus conexiones reales.",
+        "propagacion": {
+          "publicacion_id": 70,
+          "emisor": "carlos",
+          "receptores": [
+            "ana",
+            "sofia",
+            "luis",
+            "pedro",
+            "lucia",
+            "elena",
+            "maria",
+            "mateo",
+            "valeria",
+            "diego"
+          ],
+          "orden": [
+            "carlos",
+            "ana",
+            "sofia",
+            "luis",
+            "pedro",
+            "lucia",
+            "elena",
+            "maria",
+            "mateo",
+            "valeria",
+            "diego"
+          ],
+          "niveles": [
+            [
+              "carlos"
+            ],
+            [
+              "ana",
+              "sofia"
+            ],
+            [
+              "luis",
+              "pedro",
+              "lucia",
+              "elena"
+            ],
+            [
+              "maria",
+              "mateo",
+              "valeria",
+              "diego"
+            ]
+          ],
+          "distancias": {
+            "carlos": 0,
+            "ana": 1,
+            "sofia": 1,
+            "luis": 2,
+            "pedro": 2,
+            "lucia": 2,
+            "elena": 2,
+            "maria": 3,
+            "mateo": 3,
+            "valeria": 3,
+            "diego": 3
+          },
+          "aristas": [
+            [
+              "carlos",
+              "ana"
+            ],
+            [
+              "carlos",
+              "sofia"
+            ],
+            [
+              "ana",
+              "luis"
+            ],
+            [
+              "ana",
+              "pedro"
+            ],
+            [
+              "ana",
+              "lucia"
+            ],
+            [
+              "sofia",
+              "elena"
+            ],
+            [
+              "luis",
+              "maria"
+            ],
+            [
+              "luis",
+              "mateo"
+            ],
+            [
+              "pedro",
+              "valeria"
+            ],
+            [
+              "elena",
+              "diego"
+            ]
+          ],
+          "tiempo_simulado": 3.0,
+          "verdadera": true,
+          "correccion": false
+        }
+      }
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_20_ignorar",
+      "inicio": 48.375,
+      "duracion": 9.0,
+      "voz": {
+        "clave": "73b2546c7af2eef7f25fc272",
+        "duracion": 8.352,
+        "texto": "Dejé el anuncio sin responder. El libro de mi abuelo sigue sobre la mesa; la conversación puede esperar, pero me importa.",
+        "hablante": "CIUDADANO"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 20,
+          "texto": "La ciudad construirá una nueva biblioteca.",
+          "verdadera": true,
+          "impacto": 2,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "IGNORADA",
+          "tipo": "noticia",
+          "emisor_id": "ana",
+          "candidato_id": "adrian",
+          "danina": false,
+          "alcance": 0
+        },
+        "accion": "ignorar",
+        "accion_rol": "ignorar",
+        "rol": "ciudadano",
+        "titulo_accion": "Seguir sin reenviar",
+        "publicacion_antes": {
+          "id": 20,
+          "texto": "La ciudad construirá una nueva biblioteca.",
+          "verdadera": true,
+          "impacto": 2,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "noticia",
+          "emisor_id": "ana",
+          "candidato_id": "adrian",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [],
+          "motivo": "La decisión conserva las relaciones existentes."
+        },
+        "jugador_id": "local",
+        "alcance": 0,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 50,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 50,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 0,
+          "confianza": 50,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 50,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "puntos": 0,
+        "cambios_reales": {},
+        "puntos_antes": 0,
+        "puntos_despues": 0,
+        "reputacion_antes": 50,
+        "reputacion_despues": 50,
+        "explicacion": "No difundiste la publicación. Permanece disponible en Civitas.",
+        "propagacion": null
+      }
+    },
+    {
+      "tipo": "rol",
+      "clave": "periodista",
+      "inicio": 57.375,
+      "duracion": 2.5
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_80_contrastar",
+      "inicio": 59.875,
+      "duracion": 9.25,
+      "voz": {
+        "clave": "649fec842678d16a9e3cca9a",
+        "duracion": 9.024,
+        "texto": "La revisión no respalda ese pronóstico. Tu abuelo puede decidir qué hacer sin tratar el titular como un resultado electoral.",
+        "hablante": "PERIODISTA"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 80,
+          "texto": "Una encuesta afirma conocer al próximo alcalde.",
+          "verdadera": false,
+          "impacto": 6,
+          "compartidos": 0,
+          "verificaciones": 1,
+          "reportes": 0,
+          "estado": "FALSA VERIFICADA",
+          "tipo": "engañosa",
+          "emisor_id": "ana",
+          "candidato_id": "juan",
+          "danina": false,
+          "alcance": 0
+        },
+        "accion": "verificar",
+        "accion_rol": "contrastar",
+        "rol": "periodista",
+        "titulo_accion": "Contrastar las fuentes",
+        "publicacion_antes": {
+          "id": 80,
+          "texto": "Una encuesta afirma conocer al próximo alcalde.",
+          "verdadera": false,
+          "impacto": 6,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "engañosa",
+          "emisor_id": "ana",
+          "candidato_id": "juan",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [],
+          "motivo": "La decisión conserva las relaciones existentes."
+        },
+        "jugador_id": "p",
+        "alcance": 6,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 47,
+          "desinformacion": 15,
+          "convivencia": 45,
+          "bienestar_digital": 49,
+          "conflictos": 5,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 5,
+          "confianza": 53,
+          "desinformacion": 7,
+          "convivencia": 47,
+          "bienestar_digital": 51,
+          "conflictos": 3,
+          "participacion": 0
+        },
+        "puntos": 9,
+        "cambios_reales": {
+          "info_verificada": 5,
+          "confianza": 6,
+          "desinformacion": -8,
+          "convivencia": 2,
+          "bienestar_digital": 2,
+          "conflictos": -2
+        },
+        "puntos_antes": 2,
+        "puntos_despues": 11,
+        "reputacion_antes": 52,
+        "reputacion_despues": 61,
+        "explicacion": "Las fuentes desmienten el rumor; difundiste una corrección.",
+        "propagacion": {
+          "publicacion_id": 80,
+          "emisor": "maria",
+          "receptores": [
+            "carlos",
+            "tomas",
+            "ana",
+            "sofia",
+            "sara",
+            "elena"
+          ],
+          "orden": [
+            "maria",
+            "carlos",
+            "tomas",
+            "ana",
+            "sofia",
+            "sara",
+            "elena"
+          ],
+          "niveles": [
+            [
+              "maria"
+            ],
+            [
+              "carlos",
+              "tomas"
+            ],
+            [
+              "ana",
+              "sofia",
+              "sara",
+              "elena"
+            ]
+          ],
+          "distancias": {
+            "maria": 0,
+            "carlos": 1,
+            "tomas": 1,
+            "ana": 2,
+            "sofia": 2,
+            "sara": 2,
+            "elena": 2
+          },
+          "aristas": [
+            [
+              "maria",
+              "carlos"
+            ],
+            [
+              "maria",
+              "tomas"
+            ],
+            [
+              "carlos",
+              "ana"
+            ],
+            [
+              "carlos",
+              "sofia"
+            ],
+            [
+              "carlos",
+              "sara"
+            ],
+            [
+              "tomas",
+              "elena"
+            ]
+          ],
+          "tiempo_simulado": 1.6,
+          "verdadera": false,
+          "correccion": true
+        }
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "info_verificada",
+      "inicio": 69.125,
+      "duracion": 3.4166666666666665,
+      "voz": {
+        "clave": "4ab1ff8f9aea002ff14af8a7",
+        "duracion": 3.216,
+        "texto": "Información verificada +5.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "confianza",
+      "inicio": 72.54166666666667,
+      "duracion": 2.6666666666666665,
+      "voz": {
+        "clave": "abe4c0cdabc1d12857e8803d",
+        "duracion": 2.448,
+        "texto": "Confianza +6.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "desinformacion",
+      "inicio": 75.20833333333333,
+      "duracion": 2.9583333333333335,
+      "voz": {
+        "clave": "adb62b7ff86c509daaf44944",
+        "duracion": 2.76,
+        "texto": "Desinformación -8.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "convivencia",
+      "inicio": 78.16666666666667,
+      "duracion": 2.6666666666666665,
+      "voz": {
+        "clave": "d7a5b0376bfe8095f9098835",
+        "duracion": 2.472,
+        "texto": "Convivencia +2.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "bienestar_digital",
+      "inicio": 80.83333333333333,
+      "duracion": 3.125,
+      "voz": {
+        "clave": "188d6e512e0965773ac09e1e",
+        "duracion": 2.904,
+        "texto": "Bienestar digital +2.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "conflictos",
+      "inicio": 83.95833333333333,
+      "duracion": 2.7083333333333335,
+      "voz": {
+        "clave": "f0b56c5fce2d9d6d781262e3",
+        "duracion": 2.496,
+        "texto": "Conflictos -2.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "balance",
+      "clave": "puntos",
+      "inicio": 86.66666666666667,
+      "duracion": 3.4166666666666665,
+      "voz": {
+        "clave": "adbe497dd7b1e3d283dd4825",
+        "duracion": 3.216,
+        "texto": "Puntuación de la acción: +9.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "foco_final",
+      "clave": "puntos",
+      "inicio": 90.08333333333333,
+      "duracion": 1.0
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_20_entrevistar",
+      "inicio": 91.08333333333333,
+      "duracion": 9.083333333333334,
+      "voz": {
+        "clave": "3b8efa25e4085f69c43ac279",
+        "duracion": 8.856,
+        "texto": "Abrí una conversación con una fuente. Su testimonio aporta contexto, pero todavía no equivale a una comprobación.",
+        "hablante": "PERIODISTA"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 20,
+          "texto": "La ciudad construirá una nueva biblioteca.",
+          "verdadera": true,
+          "impacto": 2,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "TESTIMONIO PENDIENTE",
+          "tipo": "noticia",
+          "emisor_id": "ana",
+          "candidato_id": "adrian",
+          "danina": false,
+          "alcance": 0
+        },
+        "accion": "ignorar",
+        "accion_rol": "entrevistar",
+        "rol": "periodista",
+        "titulo_accion": "Entrevistar a una fuente",
+        "publicacion_antes": {
+          "id": 20,
+          "texto": "La ciudad construirá una nueva biblioteca.",
+          "verdadera": true,
+          "impacto": 2,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "noticia",
+          "emisor_id": "ana",
+          "candidato_id": "adrian",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [
+            [
+              "ana",
+              "maria"
+            ],
+            [
+              "maria",
+              "ana"
+            ]
+          ],
+          "motivo": "Contacto de entrevista con el emisor o un testigo próximo a la publicación.",
+          "fuente_id": "maria",
+          "testimonio_verificado": false
+        },
+        "jugador_id": "local",
+        "alcance": 0,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 53,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 56,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 0,
+          "confianza": 54,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 57,
+          "conflictos": 0,
+          "participacion": 1
+        },
+        "puntos": 2,
+        "cambios_reales": {
+          "confianza": 1,
+          "bienestar_digital": 1,
+          "participacion": 1
+        },
+        "puntos_antes": 3,
+        "puntos_despues": 5,
+        "reputacion_antes": 53,
+        "reputacion_despues": 55,
+        "explicacion": "Registraste un testimonio y un contacto directo con la fuente. Una entrevista no sustituye la comprobación documental.",
+        "propagacion": null
+      }
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_60_desmentir",
+      "inicio": 100.16666666666667,
+      "duracion": 9.0,
+      "voz": {
+        "clave": "f9333b0aa7e476111db1c372",
+        "duracion": 8.592,
+        "texto": "La rectificación salió a la red y el contenido fue retirado. Explicar el error importa tanto como corregirlo.",
+        "hablante": "PERIODISTA"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 60,
+          "texto": "Circula un rumor sobre uno de los candidatos.",
+          "verdadera": false,
+          "impacto": 8,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 1,
+          "estado": "REPORTADA",
+          "tipo": "rumor",
+          "emisor_id": "ana",
+          "candidato_id": "camila",
+          "danina": false,
+          "alcance": 0
+        },
+        "accion": "reportar",
+        "accion_rol": "desmentir",
+        "rol": "periodista",
+        "titulo_accion": "Desmentir y denunciar",
+        "publicacion_antes": {
+          "id": 60,
+          "texto": "Circula un rumor sobre uno de los candidatos.",
+          "verdadera": false,
+          "impacto": 8,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "rumor",
+          "emisor_id": "ana",
+          "candidato_id": "camila",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [],
+          "motivo": "La decisión conserva las relaciones existentes."
+        },
+        "jugador_id": "local",
+        "alcance": 6,
+        "eliminada": true,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 54,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 58,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 3,
+          "confianza": 58,
+          "desinformacion": 0,
+          "convivencia": 53,
+          "bienestar_digital": 60,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "puntos": 7,
+        "cambios_reales": {
+          "info_verificada": 3,
+          "confianza": 4,
+          "convivencia": 3,
+          "bienestar_digital": 2
+        },
+        "puntos_antes": 4,
+        "puntos_despues": 11,
+        "reputacion_antes": 54,
+        "reputacion_despues": 61,
+        "explicacion": "Publicaste una rectificación fundamentada y denunciaste el contenido falso o dañino. La publicación se retira, pero el historial se conserva.",
+        "propagacion": {
+          "publicacion_id": 60,
+          "emisor": "ana",
+          "receptores": [
+            "luis",
+            "pedro",
+            "lucia",
+            "maria",
+            "mateo",
+            "valeria"
+          ],
+          "orden": [
+            "ana",
+            "luis",
+            "pedro",
+            "lucia",
+            "maria",
+            "mateo",
+            "valeria"
+          ],
+          "niveles": [
+            [
+              "ana"
+            ],
+            [
+              "luis",
+              "pedro",
+              "lucia"
+            ],
+            [
+              "maria",
+              "mateo",
+              "valeria"
+            ]
+          ],
+          "distancias": {
+            "ana": 0,
+            "luis": 1,
+            "pedro": 1,
+            "lucia": 1,
+            "maria": 2,
+            "mateo": 2,
+            "valeria": 2
+          },
+          "aristas": [
+            [
+              "ana",
+              "luis"
+            ],
+            [
+              "ana",
+              "pedro"
+            ],
+            [
+              "ana",
+              "lucia"
+            ],
+            [
+              "luis",
+              "maria"
+            ],
+            [
+              "luis",
+              "mateo"
+            ],
+            [
+              "pedro",
+              "valeria"
+            ]
+          ],
+          "tiempo_simulado": 1.6,
+          "verdadera": false,
+          "correccion": true
+        }
+      }
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_80_reservar",
+      "inicio": 109.16666666666667,
+      "duracion": 9.208333333333334,
+      "voz": {
+        "clave": "453e6c8d2cf1b25bdfd8680e",
+        "duracion": 8.952,
+        "texto": "Preferí mantener la publicación en reserva. Esperar protege el rigor, pero el barrio todavía necesita una respuesta.",
+        "hablante": "PERIODISTA"
+      },
+      "registro_real": {
+        "publicacion": {
+          "id": 80,
+          "texto": "Una encuesta afirma conocer al próximo alcalde.",
+          "verdadera": false,
+          "impacto": 6,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "RESERVADA",
+          "tipo": "engañosa",
+          "emisor_id": "ana",
+          "candidato_id": "juan",
+          "danina": false,
+          "alcance": 0
+        },
+        "accion": "ignorar",
+        "accion_rol": "reservar",
+        "rol": "periodista",
+        "titulo_accion": "Mantener en reserva",
+        "publicacion_antes": {
+          "id": 80,
+          "texto": "Una encuesta afirma conocer al próximo alcalde.",
+          "verdadera": false,
+          "impacto": 6,
+          "compartidos": 0,
+          "verificaciones": 0,
+          "reportes": 0,
+          "estado": "ACTIVA",
+          "tipo": "engañosa",
+          "emisor_id": "ana",
+          "candidato_id": "juan",
+          "danina": false,
+          "alcance": 0
+        },
+        "efectos_red": {
+          "conexiones_creadas": [],
+          "motivo": "La decisión conserva las relaciones existentes."
+        },
+        "jugador_id": "local",
+        "alcance": 0,
+        "eliminada": false,
+        "antes": {
+          "info_verificada": 0,
+          "confianza": 55,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 60,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "despues": {
+          "info_verificada": 0,
+          "confianza": 56,
+          "desinformacion": 0,
+          "convivencia": 50,
+          "bienestar_digital": 62,
+          "conflictos": 0,
+          "participacion": 0
+        },
+        "puntos": 1,
+        "cambios_reales": {
+          "confianza": 1,
+          "bienestar_digital": 2
+        },
+        "puntos_antes": 5,
+        "puntos_despues": 6,
+        "reputacion_antes": 55,
+        "reputacion_despues": 56,
+        "explicacion": "La redacción dejó la publicación en reserva a la espera de pruebas. No se difundió ni se verificó; informar al barrio queda pendiente.",
+        "propagacion": null
+      }
+    }
+  ],
+  "audio_niveles": {
+    "metodo": "FFmpeg volumedetect",
+    "media_db": -24.8,
+    "pico_db": -5.3,
+    "senal_presente": true,
+    "pico_sin_saturacion": true
+  },
+  "ejemplos": "Las ocho elecciones se ilustran con partidas independientes. El balance de correccion procede de una campana valida de seis turnos entre dos oficios."
+}

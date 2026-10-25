@@ -1,0 +1,108 @@
+{
+  "tipo": "Montaje de ocho TarjetaPublicacion Qt reales, no captura de una partida completa",
+  "tamano": [
+    1920,
+    1080
+  ],
+  "ids": [
+    90,
+    40,
+    100,
+    10,
+    110,
+    25,
+    120,
+    35
+  ],
+  "tarjetas": [
+    {
+      "id": 90,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 40,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 100,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 10,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 110,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 25,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 120,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    },
+    {
+      "id": 35,
+      "tarjeta": [
+        458,
+        482
+      ],
+      "medio": [
+        414,
+        226
+      ]
+    }
+  ],
+  "procedencia": "Ilustraciones locales existentes + objetos de interfaz pintados en Qt; sin veredictos en las miniaturas"
+}

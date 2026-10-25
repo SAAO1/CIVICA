@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "tecnica": "Retratos originales de investidura y plaza nocturna; cámara, acta, firma ilustrativa, confeti y luces animados con QPainter. MP4 H.264 sin audio; mezcla musical del juego.",
+  "criterio": "Se reproduce exclusivamente el desenlace real de la partida. Un empate muestra recuento, sin proclamar ganador.",
+  "tipografia": "Atkinson Hyperlegible · SIL Open Font License 1.1 · assets/fuentes/OFL.txt",
+  "clips": [
+    {
+      "clave": "juan",
+      "video": "juan.mp4",
+      "poster": "juan.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1930152,
+      "sha256": "e3af32295119f0a491867d90e33f6a75c0c9b1cdf156d7a76c3e9d16b94625c7",
+      "decodificacion_completa": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/candidatos/juan_electo.png",
+          "sha256": "cc38d6bd918b6cfac92535ae67774746ca5153be50af54990458b53e1fea1529"
+        }
+      ],
+      "inicio": "juan_inicio.png",
+      "inicio_sha256": "733cd027248e0b56c89cb282a2b5279f0ae46746e29e981a7b10a6ed412f64b5"
+    },
+    {
+      "clave": "adrian",
+      "video": "adrian.mp4",
+      "poster": "adrian.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2041143,
+      "sha256": "2a16c4612d0c5f8158a1457e15d0ee165eacfcde02e430dcc3c1f2a8d9e58ed8",
+      "decodificacion_completa": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/candidatos/adrian_electo.png",
+          "sha256": "dc5595600fdabd373e4d13ec3407c1bd4dfac9f0772d77c36e7701f4d97a3cf2"
+        }
+      ],
+      "inicio": "adrian_inicio.png",
+      "inicio_sha256": "230a2977cb249db7f6a2b4f0a65220bc92e867b2b53daa6fbbb1ca71efef8224"
+    },
+    {
+      "clave": "laura",
+      "video": "laura.mp4",
+      "poster": "laura.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2092811,
+      "sha256": "dbe8d27e7e47e68005ec05428b4118d0275abe192056014d38522d5af67fd2e7",
+      "decodificacion_completa": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/candidatos/laura_electo.png",
+          "sha256": "ed9acc0fe7bc7be3b1d7f2c6d99d9451125e33e26e3cf005161f991320550ed6"
+        }
+      ],
+      "inicio": "laura_inicio.png",
+      "inicio_sha256": "41e2884340c3c32f427075d3b778a7153cd365d4e7dff89620ec1e501b64c739"
+    },
+    {
+      "clave": "camila",
+      "video": "camila.mp4",
+      "poster": "camila.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 2216917,
+      "sha256": "0b166540a4ec710e2aef1f742ccafb7e56ec6b3636509028b59606ef0737e6f8",
+      "decodificacion_completa": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/candidatos/camila_electo.png",
+          "sha256": "5e6c8b4c847b9d80ff1d13cb70965f761aa03515124a46d6054d71d4f820935e"
+        }
+      ],
+      "inicio": "camila_inicio.png",
+      "inicio_sha256": "12f683f7f694c8f340d3c7c42c8ed419374e747dbe881d3026291da8e26c4fe5"
+    },
+    {
+      "clave": "recuento",
+      "video": "recuento.mp4",
+      "poster": "recuento.jpg",
+      "duracion": 12.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 288,
+      "bytes": 1618723,
+      "sha256": "43ee3f378c943fea13f096e2a78ea7c32e0667a9e4a82cf52e1e7cbc06741c52",
+      "decodificacion_completa": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        }
+      ],
+      "inicio": "recuento_inicio.png",
+      "inicio_sha256": "c9f32856761e876a42b66144f9a5543bd9ab78bb40cf9f8a8e16e4163a36130b"
+    }
+  ]
+}

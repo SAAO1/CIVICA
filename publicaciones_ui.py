@@ -23,9 +23,12 @@ class TarjetaPublicacion(QWidget):
         self.publicacion = publicacion
         if publicacion:
             nodo = grafo.nodos.get(publicacion.emisor_id) if grafo else None
-            self.autor = nodo.nombre if nodo else "Ana"
+            self.autor = nodo.nombre if nodo else str(publicacion.emisor_id).replace("_", " ").title()
             self.setAccessibleName(f"Civitas. Publicación de {self.autor}. {publicacion.texto}. "
                                    f"{publicacion.compartidos} compartidos, {publicacion.verificaciones} verificaciones.")
+        else:
+            self.autor = "Ciudad Nova"
+            self.setAccessibleName("Civitas. Una nueva publicación llega a Ciudad Nova.")
         self.update()
 
     def paintEvent(self, event):
@@ -88,8 +91,9 @@ class TarjetaPublicacion(QWidget):
         y += alto_texto+5
         pie_h = 77 if self.telefono else 65
         foto_h = max(1, h-y-pie_h)
-        foto = miniatura_publicacion(self.publicacion.id if self.publicacion else 50)
+        foto = miniatura_publicacion(self.publicacion if self.publicacion else 50)
         foto_rect = QRectF(margen, y, ancho_texto, foto_h)
+        self.area_medio = QRectF(foto_rect)
         p.save()
         clip = QPainterPath()
         clip.addRoundedRect(foto_rect, 9, 9)

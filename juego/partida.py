@@ -10,13 +10,19 @@ from models.candidato import candidatos_iniciales
 from juego.red_social import crear_red_social, ampliar_comunidad
 from juego.propagacion import ServicioPropagacion, ResultadoPropagacion
 from juego.decisiones import consecuencias
+from juego.acciones import accion_permitida, accion_legacy, obtener_accion, acciones_para_rol
 from juego.eventos import Evento, generar_evento
 from juego.elecciones import calcular_eleccion
 from recursos import RAIZ
 
 
 class Juego:
-    def __init__(self, semilla=None, eventos=True):
+    CAMPANAS = ("clasica", "extendida")
+
+    def __init__(self, semilla=None, eventos=True, campana="clasica"):
+        if campana not in self.CAMPANAS:
+            raise ValueError("Campaña desconocida")
+        self.campana = campana
         self.arbol = ArbolPublicaciones()
         self.grafo = crear_red_social()
         self.propagacion = ServicioPropagacion(self.arbol, self.grafo)
@@ -40,12 +46,16 @@ class Juego:
         self.receptores_por_publicacion = {}
         self.ultima_propagacion = None
         self.ultima_accion = None
+        self.ultima_accion_rol = None
         self.ultima_publicacion_id = None
         self.ultima_publicacion_texto = ""
         self.ultima_publicacion_verdadera = None
         self.ultimo_resultado = "El árbol comenzará vacío."
         self.ultimo_registro = None
         self.publicaciones_planificadas = self.crear_publicaciones()
+        # El ABB conserva los mismos objetos y compartir aumenta su impacto.
+        # La agenda electoral usa el guion inicial, nunca esos contadores.
+        self._agenda_electoral = tuple(p.datos() for p in self.publicaciones_planificadas)
 
     @property
     def jugador(self):
@@ -61,6 +71,9 @@ class Juego:
     def crear_publicaciones(self):
         with (RAIZ / "data/publicaciones.json").open(encoding="utf-8") as archivo:
             publicaciones = [Publicacion(**p) for p in json.load(archivo)]
+        if self.campana == "extendida":
+            from juego.campana_extendida import PUBLICACIONES_NUEVAS
+            publicaciones.extend(Publicacion(**p) for p in PUBLICACIONES_NUEVAS)
         ids = [p.id for p in publicaciones]
         if len(ids) != len(set(ids)):
             raise ValueError("Los identificadores de publicaciones deben ser únicos")
@@ -86,7 +99,11 @@ class Juego:
         if not self.agregar_publicacion(publicacion):
             raise ValueError("La secuencia contiene una publicación duplicada")
         self.indice_proxima_publicacion += 1
-        self.ciudadanos_nuevos = ampliar_comunidad(self.grafo, self.indice_proxima_publicacion)
+        self.ciudadanos_nuevos = ampliar_comunidad(
+            self.grafo, self.indice_proxima_publicacion, self.campana)
+        if self.campana == "extendida" and self.indice_proxima_publicacion == 7:
+            from juego.red_social import incorporar_influencer
+            self.ciudadanos_nuevos += incorporar_influencer(self.grafo)
         self.evento_actual = generar_evento(self.azar, self) if self.eventos_activos else Evento("normal", "Una publicación llega a Civitas.")
         self.historial_eventos.append(dict(self.evento_actual.datos(), publicacion_id=publicacion.id))
         return True
@@ -102,47 +119,107 @@ class Juego:
     def obtener_publicacion_actual(self):
         return self.arbol.buscar(self.publicacion_actual_id) if self.publicacion_actual_id is not None else None
 
+    def acciones_disponibles(self):
+        return acciones_para_rol(self.jugador.rol)
+
+    def _abrir_contacto(self, accion, publicacion):
+        """Una conversación/entrevista añade relaciones reales, nunca personas ficticias."""
+        origen = self.jugador.ciudadano_id
+        grafo = self.grafo
+        recorrido = grafo.bfs(origen, 2)
+        if accion == "entrevistar":
+            candidatos = [publicacion.emisor_id] + grafo.vecinos(origen) + recorrido.orden[1:]
+            motivo = "Contacto de entrevista con el emisor o un testigo próximo a la publicación."
+        else:
+            candidatos = list(self.ciudadanos_nuevos) + recorrido.orden[1:]
+            candidatos += [a for a, b in grafo.aristas() if b == origen]
+            candidatos += [publicacion.emisor_id]
+            motivo = "Conversación vecinal: ambos participantes pueden escucharse y recibir mensajes futuros."
+        candidatos = list(dict.fromkeys(c for c in candidatos if c in grafo.nodos and c != origen))
+        # Prefiere un contacto que aún no fuera recíproco. Si ya existía, se
+        # conserva y se informa como tal, sin inventar un vínculo nuevo.
+        vecino = (publicacion.emisor_id if accion == "entrevistar"
+                  and publicacion.emisor_id in grafo.nodos and publicacion.emisor_id != origen else None)
+        if vecino is None:
+            vecino = next((c for c in candidatos if not grafo.existe_arista(origen, c)), None)
+        if vecino is None:
+            vecino = next((c for c in candidatos if not grafo.existe_arista(c, origen)),
+                          candidatos[0] if candidatos else None)
+        creadas = []
+        if vecino:
+            for a, b in ((origen, vecino), (vecino, origen)):
+                if grafo.agregar_arista(a, b):
+                    creadas.append([a, b])
+        return {"conexiones_creadas": creadas, "motivo": motivo,
+                "fuente_id" if accion == "entrevistar" else "vecino_id": vecino,
+                "testimonio_verificado": False}
+
     def ejecutar_accion(self, accion, jugador_id=None):
-        if accion not in ("compartir", "verificar", "ignorar", "reportar") or self.decision_aplicada:
+        if self.decision_aplicada or not accion_permitida(accion, self.jugador.rol):
             return False
         if jugador_id is not None and jugador_id != self.jugador.id:
             return False
         publicacion = self.obtener_publicacion_actual()
-        if publicacion is None:
+        if publicacion is None or self.jugador.ciudadano_id not in self.grafo.nodos:
             return False
+        accion_rol = accion
+        base = accion_legacy(accion)
+        definicion = obtener_accion(accion)
+        titulo = definicion["titulo"] if definicion else accion.capitalize()
         antes = self.estado.datos()
+        publicacion_antes = publicacion.datos()
+        puntos_antes = self.jugador.puntos
+        reputacion_antes = self.jugador.reputacion
+        efectos_red = {"conexiones_creadas": [], "motivo": "La decisión conserva las relaciones existentes."}
+        if accion in ("conversar", "entrevistar"):
+            efectos_red = self._abrir_contacto(accion, publicacion)
         resultado = None
         habilidad = ROLES[self.jugador.rol]
-        if accion == "compartir" or (accion == "verificar" and publicacion.verdadera is False):
+        es_correccion = (accion in ("verificar", "contrastar") and publicacion.verdadera is False
+                         or accion == "desmentir" and (publicacion.verdadera is False or publicacion.danina))
+        if accion in ("compartir", "convocar") or es_correccion:
             resultado = self.propagacion.simular(publicacion.id, self.jugador.ciudadano_id,
-                                                habilidad["saltos"], habilidad["intervalo"], accion == "verificar")
+                                                3 if accion == "convocar" else habilidad["saltos"],
+                                                habilidad["intervalo"], es_correccion)
         alcance = resultado.alcance if resultado is not None else 0
         cambios, puntos, explicacion = consecuencias(accion, publicacion, alcance, self.jugador.rol)
         self.estado.aplicar(cambios)
         self.jugador.puntos += puntos
         self.jugador.reputacion = max(0, min(100, self.jugador.reputacion + puntos))
         self.jugador.confianza = max(0, min(100, self.jugador.confianza + cambios.get("confianza", 0)))
-        if accion == "compartir":
+        if accion in ("compartir", "convocar"):
             publicacion.compartidos += 1
             publicacion.impacto += 1
-            publicacion.estado = "COMPARTIDA"
+            publicacion.estado = "CONVOCADA" if accion == "convocar" else "COMPARTIDA"
             recibidos = self.receptores_por_publicacion.setdefault(publicacion.id, set())
             recibidos.update(resultado.receptores)
             publicacion.alcance = len(recibidos)
-        elif accion == "verificar":
+        elif accion in ("verificar", "contrastar"):
             publicacion.verificaciones += 1
             publicacion.estado = "VERIFICADA" if publicacion.verdadera else "FALSA VERIFICADA"
             if publicacion.verdadera is None:
                 publicacion.estado = "OPINIÓN"
         elif accion == "ignorar":
             publicacion.estado = "IGNORADA"
-        else:
+        elif accion in ("reportar", "desmentir"):
             publicacion.reportes += 1
             publicacion.estado = "REPORTADA" if publicacion.verdadera is False or publicacion.danina else "REPORTE RECHAZADO"
+        elif accion == "reservar":
+            publicacion.estado = "RESERVADA"
+        elif accion == "conversar":
+            publicacion.estado = "CONVERSADA"
+        elif accion == "entrevistar":
+            publicacion.estado = "TESTIMONIO PENDIENTE"
         eliminada = publicacion.estado == "REPORTADA"
-        registro = {"publicacion": publicacion.datos(), "accion": accion,
+        despues = self.estado.datos()
+        registro = {"publicacion": publicacion.datos(), "accion": base,
+                    "accion_rol": accion_rol, "rol": self.jugador.rol, "titulo_accion": titulo,
+                    "publicacion_antes": publicacion_antes, "efectos_red": efectos_red,
                     "jugador_id": self.jugador.id, "alcance": alcance, "eliminada": eliminada,
-                    "antes": antes, "despues": self.estado.datos(), "puntos": puntos,
+                    "antes": antes, "despues": despues, "puntos": puntos,
+                    "cambios_reales": {k: despues[k] - v for k, v in antes.items() if despues[k] != v},
+                    "puntos_antes": puntos_antes, "puntos_despues": self.jugador.puntos,
+                    "reputacion_antes": reputacion_antes, "reputacion_despues": self.jugador.reputacion,
                     "explicacion": explicacion,
                     "propagacion": resultado.datos() if resultado else None}
         self.historial.append(registro)
@@ -150,25 +227,28 @@ class Juego:
         self.ultima_propagacion = resultado
         if resultado:
             self.historial_propagacion.append(resultado.datos())
-        self.ultima_accion = accion
+        self.ultima_accion = base
+        self.ultima_accion_rol = accion_rol
         self.ultima_publicacion_id = publicacion.id
         self.ultima_publicacion_texto = publicacion.texto
         self.ultima_publicacion_verdadera = publicacion.verdadera
-        self.ultimo_resultado = f"{accion.upper()} · #{publicacion.id} · {explicacion}"
+        self.ultimo_resultado = f"{titulo.upper()} · #{publicacion.id} · {explicacion}"
         if resultado:
             self.ultimo_resultado += f" Alcance: {alcance} ciudadanos; {resultado.tiempo_simulado:g} unidades simuladas."
+        if efectos_red["conexiones_creadas"]:
+            self.ultimo_resultado += f" {len(efectos_red['conexiones_creadas'])} conexiones nuevas en la red."
         if eliminada:
             self.arbol.eliminar(publicacion.id)
             self.publicaciones_eliminadas.append(publicacion.id)
             self.publicacion_actual_id = None
         self.decision_aplicada = True
-        if accion == "verificar" and "Primera verificación" not in self.jugador.logros:
+        if base == "verificar" and "Primera verificación" not in self.jugador.logros:
             self.jugador.logros.append("Primera verificación")
-        if accion == "reportar" and eliminada and "Detección de rumor" not in self.jugador.logros:
+        if base == "reportar" and eliminada and "Detección de rumor" not in self.jugador.logros:
             self.jugador.logros.append("Detección de rumor")
-        if accion == "compartir" and publicacion.verdadera and "Difusión responsable" not in self.jugador.logros:
+        if base == "compartir" and publicacion.verdadera and "Difusión responsable" not in self.jugador.logros:
             self.jugador.logros.append("Difusión responsable")
-        if self.jugador.rol == "candidato" and accion == "compartir" and publicacion.verdadera:
+        if self.jugador.rol == "candidato" and base == "compartir" and publicacion.verdadera:
             for candidato in self.candidatos:
                 if candidato.id == publicacion.candidato_id:
                     candidato.apoyo += 2
@@ -184,10 +264,14 @@ class Juego:
         return self.publicacion_actual_id is not None
 
     def resultado_electoral(self):
-        return calcular_eleccion(self.candidatos, self.estado, self.historial)
+        return calcular_eleccion(
+            self.candidatos, self.estado, self.historial, self.grafo,
+            agenda=self._agenda_electoral if self.campana == "extendida" else None)
 
     def datos(self):
         return {"version": 1, "semilla": self.semilla, "eventos_activos": self.eventos_activos,
+                "campana": self.campana,
+                "plan_publicaciones": [p.id for p in self.publicaciones_planificadas],
                 "estado": self.estado.datos(), "jugadores": [asdict(j) for j in self.jugadores],
                 "turno": self.turno, "indice": self.indice_proxima_publicacion,
                 "publicacion_actual_id": self.publicacion_actual_id, "decision_aplicada": self.decision_aplicada,
@@ -206,7 +290,13 @@ class Juego:
         from estructuras.grafo import Grafo
         if datos.get("version") != 1:
             raise ValueError("Versión de partida incompatible")
-        juego = cls(datos["semilla"], datos["eventos_activos"])
+        juego = cls(datos["semilla"], datos["eventos_activos"],
+                    campana=datos.get("campana", "clasica"))
+        plan = datos.get("plan_publicaciones")
+        if juego.campana == "extendida" and plan is None:
+            raise ValueError("La campaña extendida necesita su plan de publicaciones")
+        if plan is not None and plan != [p.id for p in juego.publicaciones_planificadas]:
+            raise ValueError("El plan guardado no corresponde a la campaña")
         juego.estado = EstadoCiudad(**datos["estado"])
         juego.jugadores = [Jugador(**j) for j in datos["jugadores"]]
         if not juego.jugadores:
@@ -218,6 +308,9 @@ class Juego:
         juego.finalizada = datos.get("finalizada", False)
         if not 0 <= juego.indice_proxima_publicacion <= len(juego.publicaciones_planificadas):
             raise ValueError("Índice de publicación inválido")
+        if (juego.campana == "extendida" and juego.finalizada
+                and juego.indice_proxima_publicacion != len(juego.publicaciones_planificadas)):
+            raise ValueError("La campaña extendida no puede finalizar antes de sus catorce casos")
         for registro in datos["publicaciones"]:
             iniciales = {k: registro[k] for k in ("id", "texto", "verdadera", "impacto", "tipo", "emisor_id", "candidato_id", "danina")}
             p = Publicacion(**iniciales)
@@ -242,6 +335,7 @@ class Juego:
             registro = juego.historial[-1]
             juego.ultimo_registro = registro
             juego.ultima_accion = registro["accion"]
+            juego.ultima_accion_rol = registro.get("accion_rol", registro["accion"])
             p = registro["publicacion"]
             juego.ultima_publicacion_id = p["id"]
             juego.ultima_publicacion_texto = p["texto"]

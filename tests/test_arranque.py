@@ -44,7 +44,8 @@ class PruebasArranque(unittest.TestCase):
                 ventana.show()
                 app.processEvents()
                 self.assertFalse(ventana.escena_inicio.fondo.pixmap().isNull())
-                self.assertEqual(len(ventana.juego.publicaciones_planificadas), 6)
+                self.assertEqual(ventana.juego.campana, "extendida")
+                self.assertEqual(len(ventana.juego.publicaciones_planificadas), 14)
                 ventana.close()
             finally:
                 os.chdir(original)

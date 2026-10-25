@@ -1,0 +1,3910 @@
+{
+  "version": 2,
+  "tecnica": "Ilustraciones originales generadas con OpenAI ImageGen, montaje de tres planos, cámara y objetos animados QPainter; teléfonos físicos con la publicación canónica de Civitas; exportación local H.264, sin audio incrustado.",
+  "autoria": "CIVICA — Alcalde Digital",
+  "criterios": "Se selecciona por registro de decisión real. Reporte rechazado conserva el contenido y convocatoria sin receptores no muestra personas reunidas. El grupo limitado recibe invitaciones, sin una multitud mayor que sus receptores. No se afirma que un proyecto esté construido ni que un rumor sea verdadero.",
+  "tipografia": {
+    "familia": "Atkinson Hyperlegible",
+    "licencia": "SIL Open Font License 1.1",
+    "archivo": "assets/fuentes/OFL.txt"
+  },
+  "clips": [
+    {
+      "clave": "accion_50_compartir",
+      "publicacion": 50,
+      "accion": "compartir",
+      "variante": "",
+      "titulo": "Compartir · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+      "video": "accion_50_compartir.mp4",
+      "poster": "accion_50_compartir.jpg",
+      "inicio": "accion_50_compartir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1825161,
+      "sha256": "edc9014d5cf691890f903ed3a2cb53548847b2df657027a09666c318cb60a81a",
+      "poster_sha256": "f104c3f1c5cac918a57fe087230ca2526b32b969cbc270df73bf646777fcb84a",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "render_sha256": "84fc78a45547b04c2d719d4ffad76461c35ca8949b287021f68368829ac333a6",
+      "pantalla_publicacion": 50,
+      "pantalla_sha256": "5275f460267122fd1ae0a650d2e067ac29f0246ab4342b65062a0ff14e0ffa52",
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_conversar",
+      "publicacion": 50,
+      "accion": "conversar",
+      "variante": "",
+      "titulo": "Escuchar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+      "video": "accion_50_conversar.mp4",
+      "poster": "accion_50_conversar.jpg",
+      "inicio": "accion_50_conversar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1616645,
+      "sha256": "5cea472098c2ea2552833827bf6382995b4ffba0af8ea95f83ace8998b508dc1",
+      "poster_sha256": "bea3c9c88e4a9e017ccd53d5d0da2b917fac19487ef9a9b7d678b40b4399bd48",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/conversar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/conversar.jpg",
+          "sha256": "8ace9c22202036c6e80d1dcef4507b2b82ce750bdb6099163d9608a77d6767b9"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_convocar",
+      "publicacion": 50,
+      "accion": "convocar",
+      "variante": "",
+      "titulo": "Convocar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+      "video": "accion_50_convocar.mp4",
+      "poster": "accion_50_convocar.jpg",
+      "inicio": "accion_50_convocar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1703026,
+      "sha256": "889736762af831ce9a0de74b4fd3f739c7ccf863deff659fbb755d42f2508e96",
+      "poster_sha256": "b0b5503579f19361d2504a6d29b6fe780eba0313e4f61d7528b353d660a029f7",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/convocar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/convocar.jpg",
+          "sha256": "f213e12565f2a9f2fdc4be781084e77b8716738d1829bbb1540ccb7bdcb4b0a4"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_convocar_sin_receptores",
+      "publicacion": 50,
+      "accion": "convocar",
+      "variante": "sin_receptores",
+      "titulo": "Convocar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+      "video": "accion_50_convocar_sin_receptores.mp4",
+      "poster": "accion_50_convocar_sin_receptores.jpg",
+      "inicio": "accion_50_convocar_sin_receptores_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1630159,
+      "sha256": "b72ad9fdaa0fa20dacae62e338e9b3183951c11eb68bc34dfb7f8f3282c2e040",
+      "poster_sha256": "4c9665d6b4589dd4b5f8f1d632bcd2e8772769d6d817526068765b02976bdc50",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_convocar_alcance_limitado",
+      "publicacion": 50,
+      "accion": "convocar",
+      "variante": "alcance_limitado",
+      "titulo": "Convocar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+      "video": "accion_50_convocar_alcance_limitado.mp4",
+      "poster": "accion_50_convocar_alcance_limitado.jpg",
+      "inicio": "accion_50_convocar_alcance_limitado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1628112,
+      "sha256": "b51bd7765a3aa137566e9455bd581eab2e406d9750be2beac50c4bfbf2995c57",
+      "poster_sha256": "df6e617e96f58439a523832b01f495e008dd565647c105656b138f62997a7e23",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_ignorar",
+      "publicacion": 50,
+      "accion": "ignorar",
+      "variante": "",
+      "titulo": "No reenviar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+      "video": "accion_50_ignorar.mp4",
+      "poster": "accion_50_ignorar.jpg",
+      "inicio": "accion_50_ignorar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1667063,
+      "sha256": "5e0be9caf039fe31cccd9a6ba386a79addbeae3d1e3ac1ed04047948d72970bc",
+      "poster_sha256": "f049753463c161bf4be800c7708861be5d7056331ea1f0d485457f64f2dfcb8b",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg",
+          "sha256": "26c5cc1f7d8c5dbed8d217c799b3f53367ada01c732e50376382780043049c05"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_contrastar",
+      "publicacion": 50,
+      "accion": "contrastar",
+      "variante": "",
+      "titulo": "Contrastar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+      "video": "accion_50_contrastar.mp4",
+      "poster": "accion_50_contrastar.jpg",
+      "inicio": "accion_50_contrastar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1663827,
+      "sha256": "f33d37338fa263d6bfff42496ea8a8538cae1759b924d4e2a921c6d92173ad5c",
+      "poster_sha256": "d2cfd5174601d60a0ec34c6b8ed9e399965a92f3f44dcf555ed043dafbd74fb1",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg",
+          "sha256": "2bc7ad0f94850b270ef14317f8ffd41ac5ecd34731cf5dfee1f08d45037aa856"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_entrevistar",
+      "publicacion": 50,
+      "accion": "entrevistar",
+      "variante": "",
+      "titulo": "Entrevistar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+      "video": "accion_50_entrevistar.mp4",
+      "poster": "accion_50_entrevistar.jpg",
+      "inicio": "accion_50_entrevistar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1690946,
+      "sha256": "fba70630648609ad4c07871b27db521b84f68b6ff8cddedad721d5ef421215b3",
+      "poster_sha256": "18f6aef125ec3ba89900d11f14fbd3cbc7e4e832d97844d6ad4f2504ec16f551",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg",
+          "sha256": "107c5081052952e62fea99afec2feb7b5701d4a89d61a7ce3b8e18d3c2066073"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_desmentir",
+      "publicacion": 50,
+      "accion": "desmentir",
+      "variante": "",
+      "titulo": "Rectificar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+      "video": "accion_50_desmentir.mp4",
+      "poster": "accion_50_desmentir.jpg",
+      "inicio": "accion_50_desmentir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1650821,
+      "sha256": "46f488b10441977649af4f0851da8f13b1148044b07abb7b3091ab89306b6af1",
+      "poster_sha256": "49212188df493b304c7a31d8595f49d0dffc11c78899b8abdc67f6951e1e51ca",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_desmentir_rechazado",
+      "publicacion": 50,
+      "accion": "desmentir",
+      "variante": "rechazado",
+      "titulo": "Rectificar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+      "video": "accion_50_desmentir_rechazado.mp4",
+      "poster": "accion_50_desmentir_rechazado.jpg",
+      "inicio": "accion_50_desmentir_rechazado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1651816,
+      "sha256": "4f48e042b6cd077502d9e756067fe2de499d75c968108d86605b29ec57bd0522",
+      "poster_sha256": "3c41f92c7ec0591f0a9d030d08692b6862ad66f66700a7040498d2fa91fde10f",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_50_reservar",
+      "publicacion": 50,
+      "accion": "reservar",
+      "variante": "",
+      "titulo": "Reservar · El mensaje del colegio",
+      "descripcion_lo_que_se_ve": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+      "video": "accion_50_reservar.mp4",
+      "poster": "accion_50_reservar.jpg",
+      "inicio": "accion_50_reservar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1733461,
+      "sha256": "22312f7dab9d811e7fd2fee258421394f24b95d9efbc572a89fbec95915ac9c6",
+      "poster_sha256": "ee61c8afb2dea12505af288eed102f379cd54bccc81fbbfc1d39161a9f0a0597",
+      "inicio_sha256": "3ee9cd9e81f566697466b91e215127ea44450af4d2a86e686fae68521d7b50f9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El mensaje del colegio",
+          "fuente": "assets/rediseno/fondos/cafe_exterior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Mensaje del colegio",
+          "fuente": "assets/expansion/cinematica/ilustraciones/colegio.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/reservar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_exterior.png",
+          "sha256": "207ba540af04284ee52283237ea7b8cb2048f3cd6d7cde9f2e5cadf504d1002d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/colegio.jpg",
+          "sha256": "15e28cf7eed25e23aa662a88a7aadf6ace62d0cd673b3cc5534327221cf1a1e4"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/reservar.jpg",
+          "sha256": "99f6d99d90831cf52c4e0d4138936b399cdf4f3487f43e35c4af3f7eae3bdff0"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_compartir",
+      "publicacion": 30,
+      "accion": "compartir",
+      "variante": "",
+      "titulo": "Compartir · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+      "video": "accion_30_compartir.mp4",
+      "poster": "accion_30_compartir.jpg",
+      "inicio": "accion_30_compartir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1291521,
+      "sha256": "c7c6cfd3eb833851c0d3d0b1c712a5a1d1fafaaf96ccbd7a860ec7084403ae0c",
+      "poster_sha256": "8aaaf9160c92b526ed733d8f65da9da9e4afdcd1c3ce293f1e7e09941166c63d",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_conversar",
+      "publicacion": 30,
+      "accion": "conversar",
+      "variante": "",
+      "titulo": "Escuchar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+      "video": "accion_30_conversar.mp4",
+      "poster": "accion_30_conversar.jpg",
+      "inicio": "accion_30_conversar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1226135,
+      "sha256": "e1efc3523de3c3433c9c4022564fd9d358888e1b7aca55952a236371e4511ba0",
+      "poster_sha256": "1b7eda9d7e477c72dba180989f34975a65a7905a1dca05fe457f7328274bef92",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/conversar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/conversar.jpg",
+          "sha256": "8ace9c22202036c6e80d1dcef4507b2b82ce750bdb6099163d9608a77d6767b9"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_convocar",
+      "publicacion": 30,
+      "accion": "convocar",
+      "variante": "",
+      "titulo": "Convocar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+      "video": "accion_30_convocar.mp4",
+      "poster": "accion_30_convocar.jpg",
+      "inicio": "accion_30_convocar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1294412,
+      "sha256": "c708b76713f7608e260534b2b673398daddc26d4916e1f6d3e9ef0cd60b8b69d",
+      "poster_sha256": "52b37b0ba108ac870b0e997a853bf198ac754d563f8b15424a7957a52851069a",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/convocar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/convocar.jpg",
+          "sha256": "f213e12565f2a9f2fdc4be781084e77b8716738d1829bbb1540ccb7bdcb4b0a4"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_convocar_sin_receptores",
+      "publicacion": 30,
+      "accion": "convocar",
+      "variante": "sin_receptores",
+      "titulo": "Convocar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+      "video": "accion_30_convocar_sin_receptores.mp4",
+      "poster": "accion_30_convocar_sin_receptores.jpg",
+      "inicio": "accion_30_convocar_sin_receptores_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1232042,
+      "sha256": "e9b09e571d6e185344297f349913d0664bee72bf46ab87cc564841c1c55b93c1",
+      "poster_sha256": "fadfc25267056a8f8d1856d7c647ee3b14883ee32d56ef730f87fe805c0e57cc",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_convocar_alcance_limitado",
+      "publicacion": 30,
+      "accion": "convocar",
+      "variante": "alcance_limitado",
+      "titulo": "Convocar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+      "video": "accion_30_convocar_alcance_limitado.mp4",
+      "poster": "accion_30_convocar_alcance_limitado.jpg",
+      "inicio": "accion_30_convocar_alcance_limitado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1230735,
+      "sha256": "9362c5fbcb24717a79e4cb23e2f2730a028d1ec4891aae56c8fb3f9e4ce6155c",
+      "poster_sha256": "284312af750195de629f86deba31e2c78e44bf39ae9bb803b93a6eefc5f504f5",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_ignorar",
+      "publicacion": 30,
+      "accion": "ignorar",
+      "variante": "",
+      "titulo": "No reenviar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+      "video": "accion_30_ignorar.mp4",
+      "poster": "accion_30_ignorar.jpg",
+      "inicio": "accion_30_ignorar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1259670,
+      "sha256": "cd035a3cfb082fb36928725a1c6297b334e3870e162a2d629e28aa33aa31c7e6",
+      "poster_sha256": "cc4e33add7a8775890781c78967a020c3fa755a24489a29362a5645973ca7165",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg",
+          "sha256": "26c5cc1f7d8c5dbed8d217c799b3f53367ada01c732e50376382780043049c05"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_contrastar",
+      "publicacion": 30,
+      "accion": "contrastar",
+      "variante": "",
+      "titulo": "Contrastar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+      "video": "accion_30_contrastar.mp4",
+      "poster": "accion_30_contrastar.jpg",
+      "inicio": "accion_30_contrastar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1301450,
+      "sha256": "ff3aad15330bc3624f28edd7b592a30390715fc6cbc7984b8c1a961435954d5a",
+      "poster_sha256": "0249906df987077d8fefaaca854d60af1282fec0531bae82df7bb31771dcca02",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg",
+          "sha256": "2bc7ad0f94850b270ef14317f8ffd41ac5ecd34731cf5dfee1f08d45037aa856"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_entrevistar",
+      "publicacion": 30,
+      "accion": "entrevistar",
+      "variante": "",
+      "titulo": "Entrevistar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+      "video": "accion_30_entrevistar.mp4",
+      "poster": "accion_30_entrevistar.jpg",
+      "inicio": "accion_30_entrevistar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1299153,
+      "sha256": "6c6448545a2b1f99df3b4f5aa63a3bc1388adc0b7cc69a9829a3acad40c7b546",
+      "poster_sha256": "362ed8ff7940788d12be5106816ab713d7f36f0ce8f336eee0bcdf5d9b8b7bff",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg",
+          "sha256": "107c5081052952e62fea99afec2feb7b5701d4a89d61a7ce3b8e18d3c2066073"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_desmentir",
+      "publicacion": 30,
+      "accion": "desmentir",
+      "variante": "",
+      "titulo": "Rectificar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+      "video": "accion_30_desmentir.mp4",
+      "poster": "accion_30_desmentir.jpg",
+      "inicio": "accion_30_desmentir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1282051,
+      "sha256": "0d2ee063d41ef80a3875cd49f29358aa7d50b7b3b2a72bbe91fdc683e727387b",
+      "poster_sha256": "9329401feeb10432908abc8f08c8427d4ef867d096b062c3ef000c2ba67601f7",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_desmentir_rechazado",
+      "publicacion": 30,
+      "accion": "desmentir",
+      "variante": "rechazado",
+      "titulo": "Rectificar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+      "video": "accion_30_desmentir_rechazado.mp4",
+      "poster": "accion_30_desmentir_rechazado.jpg",
+      "inicio": "accion_30_desmentir_rechazado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1285185,
+      "sha256": "426a44beff213226c466cc827800509acd7dfb4392658d6f75c46bee9f903901",
+      "poster_sha256": "b94cda4ef7d3c9ff2da5d10e9a859a881cccd242e7af1723cb078854741abdf4",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_30_reservar",
+      "publicacion": 30,
+      "accion": "reservar",
+      "variante": "",
+      "titulo": "Reservar · La propuesta cultural",
+      "descripcion_lo_que_se_ve": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+      "video": "accion_30_reservar.mp4",
+      "poster": "accion_30_reservar.jpg",
+      "inicio": "accion_30_reservar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1351719,
+      "sha256": "7b2a9445435dbfa50bf37f384c8e89c506c9199283df1bccabfe29fcf25b8c89",
+      "poster_sha256": "0467df05aa37de75cf89e3318b949837a701d1d914ec3f672983c5c77f3fd354",
+      "inicio_sha256": "c228871887e5af010964a218426c5b5e18c7307300d33b890336989de63450ce",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La propuesta cultural",
+          "fuente": "assets/rediseno/fondos/cafe_interior.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Propuesta cultural",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/reservar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/cafe_interior.png",
+          "sha256": "9e46da6a61d1697bceded75bae3dd2404ea7339456bc137456d7424f97990781"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libreta.jpg",
+          "sha256": "47c482c51d821aa89bd33c4aa1d2ab0faaceb59ca58a652003f641281b2eb452"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/reservar.jpg",
+          "sha256": "99f6d99d90831cf52c4e0d4138936b399cdf4f3487f43e35c4af3f7eae3bdff0"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_compartir",
+      "publicacion": 70,
+      "accion": "compartir",
+      "variante": "",
+      "titulo": "Compartir · El camino del parque",
+      "descripcion_lo_que_se_ve": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+      "video": "accion_70_compartir.mp4",
+      "poster": "accion_70_compartir.jpg",
+      "inicio": "accion_70_compartir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1747548,
+      "sha256": "43382f0877bff90ea851a75b34f7b0d138d52f85033de24f5005c3c169495f01",
+      "poster_sha256": "be6b090841bdd5b90053303445764c3220ac0f47889097d7c5a48e3641cece91",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_conversar",
+      "publicacion": 70,
+      "accion": "conversar",
+      "variante": "",
+      "titulo": "Escuchar · El camino del parque",
+      "descripcion_lo_que_se_ve": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+      "video": "accion_70_conversar.mp4",
+      "poster": "accion_70_conversar.jpg",
+      "inicio": "accion_70_conversar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1684840,
+      "sha256": "55fbbd28477466a0e9d696a333cbf7d3789f2bded840cc371a9931fc5ee5fd1a",
+      "poster_sha256": "1f497128df195c8072ee9d5d78496ce599d74736ed6d161cd9059f6292b4e49b",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/conversar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/conversar.jpg",
+          "sha256": "8ace9c22202036c6e80d1dcef4507b2b82ce750bdb6099163d9608a77d6767b9"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_convocar",
+      "publicacion": 70,
+      "accion": "convocar",
+      "variante": "",
+      "titulo": "Convocar · El camino del parque",
+      "descripcion_lo_que_se_ve": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+      "video": "accion_70_convocar.mp4",
+      "poster": "accion_70_convocar.jpg",
+      "inicio": "accion_70_convocar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1747161,
+      "sha256": "44b0041c3552a1347b1aef5dd466a9416a20587b5bca160c44d1ff87fbaf1491",
+      "poster_sha256": "d6851e304fee18a16035970a2caf4fe5f082a90f0c9c47c39c7c3d7032877230",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/convocar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/convocar.jpg",
+          "sha256": "f213e12565f2a9f2fdc4be781084e77b8716738d1829bbb1540ccb7bdcb4b0a4"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_convocar_sin_receptores",
+      "publicacion": 70,
+      "accion": "convocar",
+      "variante": "sin_receptores",
+      "titulo": "Convocar · El camino del parque",
+      "descripcion_lo_que_se_ve": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+      "video": "accion_70_convocar_sin_receptores.mp4",
+      "poster": "accion_70_convocar_sin_receptores.jpg",
+      "inicio": "accion_70_convocar_sin_receptores_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1689889,
+      "sha256": "f4aff8fcbe5889c61d69e3d6f46bbcd70c2b35bec6009867a8f191a186f18906",
+      "poster_sha256": "597015db4d37c13b1fea800a55e7a0eda1832453520dbf0e766ff1ada43b480f",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_convocar_alcance_limitado",
+      "publicacion": 70,
+      "accion": "convocar",
+      "variante": "alcance_limitado",
+      "titulo": "Convocar · El camino del parque",
+      "descripcion_lo_que_se_ve": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+      "video": "accion_70_convocar_alcance_limitado.mp4",
+      "poster": "accion_70_convocar_alcance_limitado.jpg",
+      "inicio": "accion_70_convocar_alcance_limitado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1689137,
+      "sha256": "533e59a834cbca780d61546bce4309ddab931bcabc27777be99292cbdc719e2e",
+      "poster_sha256": "e4fb0426f649c8487663efb3a2a4b5ea69f17882a2827bacb38af049d10e1d0b",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_ignorar",
+      "publicacion": 70,
+      "accion": "ignorar",
+      "variante": "",
+      "titulo": "No reenviar · El camino del parque",
+      "descripcion_lo_que_se_ve": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+      "video": "accion_70_ignorar.mp4",
+      "poster": "accion_70_ignorar.jpg",
+      "inicio": "accion_70_ignorar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1724610,
+      "sha256": "9b209874396212e35404a0afed12968970d1f0239c446506bde31ca9aad79bcf",
+      "poster_sha256": "1101fe5d0684714214c2e39f22400727042948066d0e284aef4f5ce8dc727a22",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg",
+          "sha256": "26c5cc1f7d8c5dbed8d217c799b3f53367ada01c732e50376382780043049c05"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_contrastar",
+      "publicacion": 70,
+      "accion": "contrastar",
+      "variante": "",
+      "titulo": "Contrastar · El camino del parque",
+      "descripcion_lo_que_se_ve": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+      "video": "accion_70_contrastar.mp4",
+      "poster": "accion_70_contrastar.jpg",
+      "inicio": "accion_70_contrastar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1715555,
+      "sha256": "cc4ad2793551329963ced36336d30e19d38afa2c9798b86d82b89cf9dd2f8fa0",
+      "poster_sha256": "642f47f9e667deb43f43191781872f003b2f2a4e8e2b565c974b2a14ddfd864e",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg",
+          "sha256": "2bc7ad0f94850b270ef14317f8ffd41ac5ecd34731cf5dfee1f08d45037aa856"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_entrevistar",
+      "publicacion": 70,
+      "accion": "entrevistar",
+      "variante": "",
+      "titulo": "Entrevistar · El camino del parque",
+      "descripcion_lo_que_se_ve": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+      "video": "accion_70_entrevistar.mp4",
+      "poster": "accion_70_entrevistar.jpg",
+      "inicio": "accion_70_entrevistar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1737090,
+      "sha256": "d4e1ac520f8a29065626e64ed46ffa658c48391690a4c9d3054ad9d3297c40ff",
+      "poster_sha256": "5bb99cd70560decd2e7cdbe892440fc3fd38381468ca74301a435c8bb6527dbd",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg",
+          "sha256": "107c5081052952e62fea99afec2feb7b5701d4a89d61a7ce3b8e18d3c2066073"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_desmentir",
+      "publicacion": 70,
+      "accion": "desmentir",
+      "variante": "",
+      "titulo": "Rectificar · El camino del parque",
+      "descripcion_lo_que_se_ve": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+      "video": "accion_70_desmentir.mp4",
+      "poster": "accion_70_desmentir.jpg",
+      "inicio": "accion_70_desmentir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1705970,
+      "sha256": "c4e4ddb8bbe9532950dcb58ce72942066122b89390c94a04006afb85ee302103",
+      "poster_sha256": "d29fefe9ba1210f4d3b5e59af6ae384ed812c562477eda1aa56dec905f070455",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_desmentir_rechazado",
+      "publicacion": 70,
+      "accion": "desmentir",
+      "variante": "rechazado",
+      "titulo": "Rectificar · El camino del parque",
+      "descripcion_lo_que_se_ve": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+      "video": "accion_70_desmentir_rechazado.mp4",
+      "poster": "accion_70_desmentir_rechazado.jpg",
+      "inicio": "accion_70_desmentir_rechazado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1710451,
+      "sha256": "726540d41c00516e85e3fd88b0ec4f264c00c91db402b65b979375431246ea07",
+      "poster_sha256": "2828dd4ca07adfe081639d081952f97d5271e7099ec7dd5d1ec81c7884d5dc63",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_70_reservar",
+      "publicacion": 70,
+      "accion": "reservar",
+      "variante": "",
+      "titulo": "Reservar · El camino del parque",
+      "descripcion_lo_que_se_ve": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+      "video": "accion_70_reservar.mp4",
+      "poster": "accion_70_reservar.jpg",
+      "inicio": "accion_70_reservar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1793866,
+      "sha256": "c11a18b3c1e3b2275c7bca5589f421753256f5c2b6f2a2268949242d138e2317",
+      "poster_sha256": "0157eebf266b2e22889258380a6786577a11aac3ecf326399d6f9ed28e19156a",
+      "inicio_sha256": "f84f8382229bce7937c56fa71750a470b49d839f50a9ae8584dd8316ac554665",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "El camino del parque",
+          "fuente": "assets/expansion/fondos/parque_tarde.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Aviso del parque",
+          "fuente": "assets/expansion/cinematica/ilustraciones/mapa.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/reservar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/parque_tarde.png",
+          "sha256": "8a15ef8f2c4e58f848b6cbc6898ef2d5c894d143304ae5069f327db8826c4fc9"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/mapa.jpg",
+          "sha256": "7e99f490d6316636af381e7d6dcafe803b462294755ea2f5c8f84e32a4eef056"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/reservar.jpg",
+          "sha256": "99f6d99d90831cf52c4e0d4138936b399cdf4f3487f43e35c4af3f7eae3bdff0"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_compartir",
+      "publicacion": 20,
+      "accion": "compartir",
+      "variante": "",
+      "titulo": "Compartir · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+      "video": "accion_20_compartir.mp4",
+      "poster": "accion_20_compartir.jpg",
+      "inicio": "accion_20_compartir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1296376,
+      "sha256": "065157925ec131124b7064ebe2fb797eaf9e35a9e74d4738b109f1d7d92939cd",
+      "poster_sha256": "ebf3aa64ad3e4f192c180ecac7dfeee69942ca2806b2a61a860ccdd235f67080",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_conversar",
+      "publicacion": 20,
+      "accion": "conversar",
+      "variante": "",
+      "titulo": "Escuchar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+      "video": "accion_20_conversar.mp4",
+      "poster": "accion_20_conversar.jpg",
+      "inicio": "accion_20_conversar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1225998,
+      "sha256": "ad11f173f3cfd15d819452b2cf866a131b9e3299bdebb3e32c41d380f4752c17",
+      "poster_sha256": "12b2c1e74d7468c6282832a0ce432ab6ebe7d1c72a38fdbfb3953d2cedec016c",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/conversar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/conversar.jpg",
+          "sha256": "8ace9c22202036c6e80d1dcef4507b2b82ce750bdb6099163d9608a77d6767b9"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_convocar",
+      "publicacion": 20,
+      "accion": "convocar",
+      "variante": "",
+      "titulo": "Convocar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+      "video": "accion_20_convocar.mp4",
+      "poster": "accion_20_convocar.jpg",
+      "inicio": "accion_20_convocar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1277892,
+      "sha256": "e8567470ee678079223ca8f876d2d3f5ec41ad7e7d0a97745f2148d5032c3e43",
+      "poster_sha256": "5cc21f250ca61de2d5c2fd872bc12c4f0b3616f43cdef140462d45e04087bfd3",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/convocar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/convocar.jpg",
+          "sha256": "f213e12565f2a9f2fdc4be781084e77b8716738d1829bbb1540ccb7bdcb4b0a4"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_convocar_sin_receptores",
+      "publicacion": 20,
+      "accion": "convocar",
+      "variante": "sin_receptores",
+      "titulo": "Convocar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+      "video": "accion_20_convocar_sin_receptores.mp4",
+      "poster": "accion_20_convocar_sin_receptores.jpg",
+      "inicio": "accion_20_convocar_sin_receptores_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1236194,
+      "sha256": "987fed902faee314dc778867005e7d0d674b5663aa488b44cd7d90f8aac17b94",
+      "poster_sha256": "d51c57055ea31a7663434f1025bc99e29c77aaebc023204696f5394497538e7b",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_convocar_alcance_limitado",
+      "publicacion": 20,
+      "accion": "convocar",
+      "variante": "alcance_limitado",
+      "titulo": "Convocar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+      "video": "accion_20_convocar_alcance_limitado.mp4",
+      "poster": "accion_20_convocar_alcance_limitado.jpg",
+      "inicio": "accion_20_convocar_alcance_limitado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1235804,
+      "sha256": "a3105f040b88521d072526e5ba9c7c17851e8ca7b3991a6c1e708c6f75ff1b57",
+      "poster_sha256": "fdba024a27bb5404a9c22ddb3872e4866e8697dee4193bb0109e42dbb3bd4b3e",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_ignorar",
+      "publicacion": 20,
+      "accion": "ignorar",
+      "variante": "",
+      "titulo": "No reenviar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+      "video": "accion_20_ignorar.mp4",
+      "poster": "accion_20_ignorar.jpg",
+      "inicio": "accion_20_ignorar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1255366,
+      "sha256": "033923ce6d35477966a4ad82453d9e007d3b7988183d4e54879f24efaf83b9c4",
+      "poster_sha256": "1852ae52df24e2c9919ba90253160863d6b5449a0274f93b8f7904b6cb2bda66",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg",
+          "sha256": "26c5cc1f7d8c5dbed8d217c799b3f53367ada01c732e50376382780043049c05"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_contrastar",
+      "publicacion": 20,
+      "accion": "contrastar",
+      "variante": "",
+      "titulo": "Contrastar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+      "video": "accion_20_contrastar.mp4",
+      "poster": "accion_20_contrastar.jpg",
+      "inicio": "accion_20_contrastar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1310674,
+      "sha256": "4955f5fe12a144f5ca9d9210dca16c7aa9940bbf67b703a28b146578edcdf161",
+      "poster_sha256": "9d76aa8fdd293686ba46c0824fe779197416ce752b699f935e9e2d9eba5d5bc2",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg",
+          "sha256": "2bc7ad0f94850b270ef14317f8ffd41ac5ecd34731cf5dfee1f08d45037aa856"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_entrevistar",
+      "publicacion": 20,
+      "accion": "entrevistar",
+      "variante": "",
+      "titulo": "Entrevistar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+      "video": "accion_20_entrevistar.mp4",
+      "poster": "accion_20_entrevistar.jpg",
+      "inicio": "accion_20_entrevistar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1300651,
+      "sha256": "d374aa5cfc16d0f9cf142dd7fa492a2e9fe0806dacedd24f782e4b4338d3ba3a",
+      "poster_sha256": "cc0278f9b1ae2bef2fce065cbcd4d73fadc9f838a76e6b7464c3c878bf96094c",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg",
+          "sha256": "107c5081052952e62fea99afec2feb7b5701d4a89d61a7ce3b8e18d3c2066073"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_desmentir",
+      "publicacion": 20,
+      "accion": "desmentir",
+      "variante": "",
+      "titulo": "Rectificar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+      "video": "accion_20_desmentir.mp4",
+      "poster": "accion_20_desmentir.jpg",
+      "inicio": "accion_20_desmentir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1280992,
+      "sha256": "4ff003e98876b5d9a025e055d230e6701ac265e91b50412fd36c2f7d9976819e",
+      "poster_sha256": "25ccd625f55115300274d3670dae35fb937b82fd98bab846012d5c80f268a096",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_desmentir_rechazado",
+      "publicacion": 20,
+      "accion": "desmentir",
+      "variante": "rechazado",
+      "titulo": "Rectificar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+      "video": "accion_20_desmentir_rechazado.mp4",
+      "poster": "accion_20_desmentir_rechazado.jpg",
+      "inicio": "accion_20_desmentir_rechazado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1284880,
+      "sha256": "5bbab91dde441bbc8addd45dd176eb0b2278c6e9d3f7cb83f8cc0803666bbb7a",
+      "poster_sha256": "67e43f73b5771c7624f3719d28d141bc137081d37c92951a8e34d3150645db99",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_20_reservar",
+      "publicacion": 20,
+      "accion": "reservar",
+      "variante": "",
+      "titulo": "Reservar · La biblioteca por construir",
+      "descripcion_lo_que_se_ve": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+      "video": "accion_20_reservar.mp4",
+      "poster": "accion_20_reservar.jpg",
+      "inicio": "accion_20_reservar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1350211,
+      "sha256": "01e22406b1e44a1f28fe0992fe5694568fb97cdc28977d35c615b0b5f6e9206a",
+      "poster_sha256": "93736b6d7b584b0670a16c456a09db1b401df7d26d979c33edda076163580098",
+      "inicio_sha256": "9c6a068076374816299e7fb6b22144b00b87010e91f9087e8923216c3814ddcc",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La biblioteca por construir",
+          "fuente": "assets/rediseno/fondos/investigacion.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Proyecto de biblioteca",
+          "fuente": "assets/expansion/cinematica/ilustraciones/libro.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/reservar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/rediseno/fondos/investigacion.png",
+          "sha256": "b392d1f00960f56e9aba3f7134abbc5dd4a818806b381a73c7d8acc3db9d6e4d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/libro.jpg",
+          "sha256": "068abe07eba353953604d03c0e03f4903fb2e0a9f849ae77b9f152b1a37b7e9a"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/reservar.jpg",
+          "sha256": "99f6d99d90831cf52c4e0d4138936b399cdf4f3487f43e35c4af3f7eae3bdff0"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_compartir",
+      "publicacion": 60,
+      "accion": "compartir",
+      "variante": "",
+      "titulo": "Compartir · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+      "video": "accion_60_compartir.mp4",
+      "poster": "accion_60_compartir.jpg",
+      "inicio": "accion_60_compartir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1271291,
+      "sha256": "75b7c38fb080f466a5c95b8d06a00c5033f864f0dd0506ed7e3c7c8719ed4888",
+      "poster_sha256": "7fbbd0c539841db09e4cfe6e0c18d4178c71ed7391969a401a32601906c60011",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_conversar",
+      "publicacion": 60,
+      "accion": "conversar",
+      "variante": "",
+      "titulo": "Escuchar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+      "video": "accion_60_conversar.mp4",
+      "poster": "accion_60_conversar.jpg",
+      "inicio": "accion_60_conversar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1209683,
+      "sha256": "e87f56892a60e760455cfc4936da01f0d2d8fb162c5d5c55dd61c1ebdf8a410e",
+      "poster_sha256": "4232a75ca15d68aff2dcd31a9e7fb27b31ec552f37cc4599dc556cd6a808e619",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/conversar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/conversar.jpg",
+          "sha256": "8ace9c22202036c6e80d1dcef4507b2b82ce750bdb6099163d9608a77d6767b9"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_convocar",
+      "publicacion": 60,
+      "accion": "convocar",
+      "variante": "",
+      "titulo": "Convocar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+      "video": "accion_60_convocar.mp4",
+      "poster": "accion_60_convocar.jpg",
+      "inicio": "accion_60_convocar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1273555,
+      "sha256": "925d35f347e785948f96e415d1a159453971110f416241ff6a6cca7182cdccdd",
+      "poster_sha256": "ed78f98a88a205a0babf07ca383f25361ba47df707c818b6fa7cf62414ae1517",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/convocar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/convocar.jpg",
+          "sha256": "f213e12565f2a9f2fdc4be781084e77b8716738d1829bbb1540ccb7bdcb4b0a4"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_convocar_sin_receptores",
+      "publicacion": 60,
+      "accion": "convocar",
+      "variante": "sin_receptores",
+      "titulo": "Convocar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+      "video": "accion_60_convocar_sin_receptores.mp4",
+      "poster": "accion_60_convocar_sin_receptores.jpg",
+      "inicio": "accion_60_convocar_sin_receptores_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1212381,
+      "sha256": "e5c24193ac5876802cb7f820c3cf519acd5a4484e347f5d0795eb0f55d6d298f",
+      "poster_sha256": "72c58470a4a1218755169945753f678a5b644801ddfe5e927e777b46af1a22fa",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_convocar_alcance_limitado",
+      "publicacion": 60,
+      "accion": "convocar",
+      "variante": "alcance_limitado",
+      "titulo": "Convocar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+      "video": "accion_60_convocar_alcance_limitado.mp4",
+      "poster": "accion_60_convocar_alcance_limitado.jpg",
+      "inicio": "accion_60_convocar_alcance_limitado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1212205,
+      "sha256": "6b1a3821f713457c8892a0afc5de6c7c9c02987f3880cca80f74ead7e241366f",
+      "poster_sha256": "56226ce284bb8798acaa58133ba530729eaad2bb4f4925d9b79fbe6a7711cf9e",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_ignorar",
+      "publicacion": 60,
+      "accion": "ignorar",
+      "variante": "",
+      "titulo": "No reenviar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+      "video": "accion_60_ignorar.mp4",
+      "poster": "accion_60_ignorar.jpg",
+      "inicio": "accion_60_ignorar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1249928,
+      "sha256": "0a7be172bf99378e4fb144ca650647bcf8717e84a2c1a7b0890a562e2717543f",
+      "poster_sha256": "9bc9d85af874d57854590123ac0ce139e8d0c6a2fd68ae138d8a3f152c71a9da",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg",
+          "sha256": "26c5cc1f7d8c5dbed8d217c799b3f53367ada01c732e50376382780043049c05"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_contrastar",
+      "publicacion": 60,
+      "accion": "contrastar",
+      "variante": "",
+      "titulo": "Contrastar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+      "video": "accion_60_contrastar.mp4",
+      "poster": "accion_60_contrastar.jpg",
+      "inicio": "accion_60_contrastar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1252291,
+      "sha256": "e8fd1dcb7b50e0099fd3625f70393880d6209d112cb813282a1ece4e173d2567",
+      "poster_sha256": "84276f36f9828787a15978af925ba68b93ec39b0e5b3903ccc45bcf9a49aacdc",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg",
+          "sha256": "2bc7ad0f94850b270ef14317f8ffd41ac5ecd34731cf5dfee1f08d45037aa856"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_entrevistar",
+      "publicacion": 60,
+      "accion": "entrevistar",
+      "variante": "",
+      "titulo": "Entrevistar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+      "video": "accion_60_entrevistar.mp4",
+      "poster": "accion_60_entrevistar.jpg",
+      "inicio": "accion_60_entrevistar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1254238,
+      "sha256": "23786d55c2a5124c05cb96c5ada42b43da4c6ded8b7093e964d21fddfe9ff43c",
+      "poster_sha256": "a1030d865a2694dc2366205b053d92b9ccb4e18012e3e9dd9fd1faf2a2dccf87",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg",
+          "sha256": "107c5081052952e62fea99afec2feb7b5701d4a89d61a7ce3b8e18d3c2066073"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_desmentir",
+      "publicacion": 60,
+      "accion": "desmentir",
+      "variante": "",
+      "titulo": "Rectificar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+      "video": "accion_60_desmentir.mp4",
+      "poster": "accion_60_desmentir.jpg",
+      "inicio": "accion_60_desmentir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1229925,
+      "sha256": "53b09755ca121ce036f8989690b62f23415793e91b8c7571fcd3d97bb7c09913",
+      "poster_sha256": "87e7187eaa197e6565a2b030f35e5cf645343fdc90ed53c8ce601616600a60d4",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_desmentir_rechazado",
+      "publicacion": 60,
+      "accion": "desmentir",
+      "variante": "rechazado",
+      "titulo": "Rectificar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+      "video": "accion_60_desmentir_rechazado.mp4",
+      "poster": "accion_60_desmentir_rechazado.jpg",
+      "inicio": "accion_60_desmentir_rechazado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1232922,
+      "sha256": "66c870bac6df686c73277bd393c47204961b0df876e09e1f48627404856ad83b",
+      "poster_sha256": "f24c33ac1036171a475434938fc0e49e57932567b27da08322287570709aa4d8",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_60_reservar",
+      "publicacion": 60,
+      "accion": "reservar",
+      "variante": "",
+      "titulo": "Reservar · La acusación bajo la lluvia",
+      "descripcion_lo_que_se_ve": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+      "video": "accion_60_reservar.mp4",
+      "poster": "accion_60_reservar.jpg",
+      "inicio": "accion_60_reservar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1314353,
+      "sha256": "daaa12af0378a2f5f11d994e13fd8d8c6f2ce96ca0a82fbe025214cec4b71d3d",
+      "poster_sha256": "52fef7c3f4e76120c94aaeb51e9251fb20982a0480842cee9a93e46948696f47",
+      "inicio_sha256": "b0fb625dc8d019e739a706f6246a4d8bb82dcf8312e06c4a9b4c0e98dfef5cec",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La acusación bajo la lluvia",
+          "fuente": "assets/expansion/fondos/cafe_lluvia.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Acusación en los grupos",
+          "fuente": "assets/expansion/cinematica/ilustraciones/acusacion.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/reservar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/cafe_lluvia.png",
+          "sha256": "2b8b9b1e028bbe3f0ebd5108c481f3efcb798363bcb320162b33988839c5c45d"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/acusacion.jpg",
+          "sha256": "9239430ef7b07cb3e140530c0f6efe003b7803535844bac6d34f999812701f27"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/reservar.jpg",
+          "sha256": "99f6d99d90831cf52c4e0d4138936b399cdf4f3487f43e35c4af3f7eae3bdff0"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_compartir",
+      "publicacion": 80,
+      "accion": "compartir",
+      "variante": "",
+      "titulo": "Compartir · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+      "video": "accion_80_compartir.mp4",
+      "poster": "accion_80_compartir.jpg",
+      "inicio": "accion_80_compartir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1487820,
+      "sha256": "4d32f6fa837e1f4290f305db6a718160b378a74a31986792f89d70bd77e630fc",
+      "poster_sha256": "e732958b9af38f6c5ba514d14c9f38c234ec090f0129cf9c0faa5996bd430aca",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano utiliza su teléfono para reenviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_conversar",
+      "publicacion": 80,
+      "accion": "conversar",
+      "variante": "",
+      "titulo": "Escuchar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+      "video": "accion_80_conversar.mp4",
+      "poster": "accion_80_conversar.jpg",
+      "inicio": "accion_80_conversar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1418335,
+      "sha256": "d8b634fc72cb17ef4eae295f1f87319227c3c96a0f274ee2c5f0b42b33a2c65d",
+      "poster_sha256": "1ea65b1ba73042c36056d78a45629934e85df016f0d43a1abefb25a8976cc557",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano escucha a una persona del vecindario sobre el caso; no presenta el testimonio como prueba.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/conversar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/conversar.jpg",
+          "sha256": "8ace9c22202036c6e80d1dcef4507b2b82ce750bdb6099163d9608a77d6767b9"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_convocar",
+      "publicacion": 80,
+      "accion": "convocar",
+      "variante": "",
+      "titulo": "Convocar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+      "video": "accion_80_convocar.mp4",
+      "poster": "accion_80_convocar.jpg",
+      "inicio": "accion_80_convocar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1481517,
+      "sha256": "314ca8022dcd53bbd8860b52f3d9f8867f4c5f00185e1c8d4b526f39d316f814",
+      "poster_sha256": "4f7fd373e9183cf4c5f644a28c04da8c09752c5b01018a84742f070478156b8f",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano invita al vecindario y conversa con quienes se suman; el contenido sigue necesitando contexto.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/convocar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/convocar.jpg",
+          "sha256": "f213e12565f2a9f2fdc4be781084e77b8716738d1829bbb1540ccb7bdcb4b0a4"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_convocar_sin_receptores",
+      "publicacion": 80,
+      "accion": "convocar",
+      "variante": "sin_receptores",
+      "titulo": "Convocar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+      "video": "accion_80_convocar_sin_receptores.mp4",
+      "poster": "accion_80_convocar_sin_receptores.jpg",
+      "inicio": "accion_80_convocar_sin_receptores_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1426773,
+      "sha256": "4292edca43b947839de7ade2507eeafa8c1b11cc5c8532467d077622eb9c155c",
+      "poster_sha256": "04a5da63fb2b99aa8322f4ea24f421f98cf35127eef7ac84009434a966160ac2",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano intenta invitar al barrio desde el teléfono; no aparece una reunión ni personas que reciban el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_convocar_alcance_limitado",
+      "publicacion": 80,
+      "accion": "convocar",
+      "variante": "alcance_limitado",
+      "titulo": "Convocar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+      "video": "accion_80_convocar_alcance_limitado.mp4",
+      "poster": "accion_80_convocar_alcance_limitado.jpg",
+      "inicio": "accion_80_convocar_alcance_limitado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1429235,
+      "sha256": "5cbae4aa63b9f3a1c8d021a251423a2072f6a81993d0c72556010edc8c5c8e8c",
+      "poster_sha256": "a53e0943a393558312af1ad727acf08062c38a98feffd6aa071e660c0e3ab1ae",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano envía invitaciones desde el teléfono a un grupo reducido; no se representa una multitud ni una reunión mayor que el alcance real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/compartir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/compartir.jpg",
+          "sha256": "4b51a531303088f76081400127db39787a87ffd89d2b1e6655918e2bb9aa7184"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_ignorar",
+      "publicacion": 80,
+      "accion": "ignorar",
+      "variante": "",
+      "titulo": "No reenviar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+      "video": "accion_80_ignorar.mp4",
+      "poster": "accion_80_ignorar.jpg",
+      "inicio": "accion_80_ignorar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1448998,
+      "sha256": "5974bb6f0d987be2f2cc98534941bc6f13d09b20a3c401cbbc7a00c379f17fe7",
+      "poster_sha256": "d354a5bb6f575ca2ee9efa7d089aa94480d99021dd6decc4bbe902cfdc88f76c",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "El ciudadano aparta el teléfono y continúa sin enviar el mensaje del caso.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/ignorar.jpg",
+          "sha256": "26c5cc1f7d8c5dbed8d217c799b3f53367ada01c732e50376382780043049c05"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_contrastar",
+      "publicacion": 80,
+      "accion": "contrastar",
+      "variante": "",
+      "titulo": "Contrastar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+      "video": "accion_80_contrastar.mp4",
+      "poster": "accion_80_contrastar.jpg",
+      "inicio": "accion_80_contrastar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1497771,
+      "sha256": "6055d760b9b5f6c19460fe5a02617ea3818affb91a1b2d8e0c52a351a5913238",
+      "poster_sha256": "b4ede07f9b537b3e3a71c1b2984437043726aaa8847ad47edc1121cdaed6a125",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista coteja el mensaje con documentos y anotaciones, sin inventar obras o resultados electorales.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/contrastar.jpg",
+          "sha256": "2bc7ad0f94850b270ef14317f8ffd41ac5ecd34731cf5dfee1f08d45037aa856"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_entrevistar",
+      "publicacion": 80,
+      "accion": "entrevistar",
+      "variante": "",
+      "titulo": "Entrevistar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+      "video": "accion_80_entrevistar.mp4",
+      "poster": "accion_80_entrevistar.jpg",
+      "inicio": "accion_80_entrevistar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1485275,
+      "sha256": "8d6a051de54d9b9d10abec72536403ebdf6f306c964f7bdf4acd998a56009a69",
+      "poster_sha256": "5d3b7c142064b6590a238f80e515d23d75fe4b510a3c8f616bf629dc5e0e7205",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista escucha una fuente y toma notas; el testimonio permanece pendiente de contraste.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/entrevistar.jpg",
+          "sha256": "107c5081052952e62fea99afec2feb7b5701d4a89d61a7ce3b8e18d3c2066073"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_desmentir",
+      "publicacion": 80,
+      "accion": "desmentir",
+      "variante": "",
+      "titulo": "Rectificar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+      "video": "accion_80_desmentir.mp4",
+      "poster": "accion_80_desmentir.jpg",
+      "inicio": "accion_80_desmentir_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1471873,
+      "sha256": "e0205b3a21ea759798f97169ea99bef0b7635f48ff800e18998eb7c1aaeab1e5",
+      "poster_sha256": "e1bd091d6eb1c521e328dfdceb9064b00c52f22104e785d9d6213a92a48768af",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista redacta una rectificación del contenido y presenta el reporte autorizado por el resultado real.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_desmentir_rechazado",
+      "publicacion": 80,
+      "accion": "desmentir",
+      "variante": "rechazado",
+      "titulo": "Rectificar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+      "video": "accion_80_desmentir_rechazado.mp4",
+      "poster": "accion_80_desmentir_rechazado.jpg",
+      "inicio": "accion_80_desmentir_rechazado_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1473559,
+      "sha256": "7d991dfe7646be41da6662781d22437c9ddbb4515ea2999b73ea47c460a51b29",
+      "poster_sha256": "cdf746fa8dad13c1b3fb9e50552734720030d5d63ae3ec9af415dd68725b12e8",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista presenta un reporte que se rechaza: la publicación permanece, sin sello de verificación ni retirada.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/desmentir.jpg",
+          "sha256": "1464aea18e4de01a6e8496154f1e9739be347a1b1e9d31072422636b20456402"
+        }
+      ]
+    },
+    {
+      "clave": "accion_80_reservar",
+      "publicacion": 80,
+      "accion": "reservar",
+      "variante": "",
+      "titulo": "Reservar · La víspera de las urnas",
+      "descripcion_lo_que_se_ve": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+      "video": "accion_80_reservar.mp4",
+      "poster": "accion_80_reservar.jpg",
+      "inicio": "accion_80_reservar_inicio.png",
+      "duracion": 9.0,
+      "fps": 24,
+      "ancho": 1280,
+      "alto": 720,
+      "fotogramas": 216,
+      "bytes": 1534573,
+      "sha256": "87849f667f53c9efd9ef0b99d71212a16e6ac0d6058f9f4f271aed1275497b6f",
+      "poster_sha256": "a4d59872e241e871f21756431698bbd2afa8b30b62e6882d33903e4d912a5e2f",
+      "inicio_sha256": "fc0db39dcccd65b7938572d282c80b83dde80648ad4bf149e50f619da8e0ecb9",
+      "inicio_extraido_del_video": true,
+      "decodificacion_completa": true,
+      "planos": [
+        {
+          "inicio": 0.0,
+          "fin": 1.9,
+          "tipo": "lugar",
+          "descripcion": "La víspera de las urnas",
+          "fuente": "assets/expansion/fondos/plaza_noche.png"
+        },
+        {
+          "inicio": 1.9,
+          "fin": 3.7,
+          "tipo": "objeto",
+          "descripcion": "Pronóstico electoral",
+          "fuente": "assets/expansion/cinematica/ilustraciones/urna.jpg"
+        },
+        {
+          "inicio": 3.7,
+          "fin": 9.0,
+          "tipo": "accion",
+          "descripcion": "La periodista cierra una carpeta pendiente de pruebas, sin publicar ni retirar el mensaje.",
+          "fuente": "assets/expansion/acciones_video/ilustraciones/reservar.jpg"
+        }
+      ],
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/fondos/plaza_noche.png",
+          "sha256": "fcd4b33835adb7769e9cff323195aef2ea551c26b19fd9af1e0775282bfc9eda"
+        },
+        {
+          "ruta": "assets/expansion/cinematica/ilustraciones/urna.jpg",
+          "sha256": "a99e9064801a61cf5abba874d9fc000e49570928098aed6cb6670c84c54bb4c7"
+        },
+        {
+          "ruta": "assets/expansion/acciones_video/ilustraciones/reservar.jpg",
+          "sha256": "99f6d99d90831cf52c4e0d4138936b399cdf4f3487f43e35c4af3f7eae3bdff0"
+        }
+      ]
+    }
+  ]
+}

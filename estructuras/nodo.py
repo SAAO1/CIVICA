@@ -3,4 +3,3 @@ class Nodo:
         self.publicacion = publicacion
         self.izquierda = None
         self.derecha = None
-

@@ -1,0 +1,29 @@
+{
+  "fecha_utc": "2026-10-24T21:43:45+00:00",
+  "correcto": true,
+  "frases_guion": 191,
+  "inventario_total": 967,
+  "clips_manifest": 1587,
+  "por_hablante": {
+    "NARRADOR": 412,
+    "INFLUENCER": 65,
+    "CIUDADANO": 167,
+    "PERIODISTA": 226,
+    "LAURA": 25,
+    "CAMILA": 29,
+    "JUAN": 26,
+    "ADRIAN": 17
+  },
+  "identidades": {
+    "CIUDADANO": "es-CO-GonzaloNeural",
+    "PERIODISTA": "es-CO-SalomeNeural",
+    "NARRADOR": "es-MX-JorgeNeural",
+    "INFLUENCER": "es-MX-DaliaNeural",
+    "JUAN": "es-ES-AlvaroNeural",
+    "ADRIAN": "es-AR-TomasNeural",
+    "LAURA": "es-ES-ElviraNeural",
+    "CAMILA": "es-CL-CatalinaNeural"
+  },
+  "aviso": "Voces neuronales sintéticas locales, no grabaciones de actores humanos.",
+  "errores": []
+}

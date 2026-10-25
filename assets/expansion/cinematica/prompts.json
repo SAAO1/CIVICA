@@ -1,0 +1,49 @@
+{
+  "herramienta": "image_gen incorporada",
+  "fecha": "2026-10-24",
+  "uso": "Pinturas originales para cortos narrativos; render de animaciones Qt y codificación MP4 FFmpeg.",
+  "imagenes": [
+    {
+      "archivo": "ilustraciones/colegio.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\ciudad.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic cutaway painting for the Spanish visual novel CIVICA. Match reference image rendering style: finely painted semi-realistic anime environments, Colombian-inspired Ciudad Nova, warm plaster/wood, rich cinematic natural lighting, beautiful believable perspective, clean detailed high quality. Full bleed illustration, no frames, no interface, no captions, no legible text, no logos. This is a world context illustration, no main character faces needed. Keep important story objects in upper two thirds since subtitle panel covers bottom third. Depict a modest neighborhood school exterior in the same city during a bright ordinary weekday, open gate, ochre-white school walls, leafy courtyard visible, colorful drawings near the entrance, mountains beyond. School clearly operating normally, no closing sign, no construction, no protest. Foreground to right: a casually held smartphone with dark blank glass and soft cyan glow, seen from behind a hand, believable anatomy. A few small distant adult family silhouettes walking calmly near gate, no identifiable portraits. Composition layers tree leaves foreground upperleft, sunlit school middle, distant mountains. Mood: human concern caused by an unverified message, not a school actually closing. Strong warm sunlight, teal shadows, tactile stone.",
+      "original_generado": "exec-55df8244-2a6b-4fea-a356-9e8b7e513ab4.png",
+      "conversion": "JPEG calidad 92; composición conservada"
+    },
+    {
+      "archivo": "ilustraciones/libreta.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\cafe_interior.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic cutaway painting for the Spanish visual novel CIVICA. Match reference image rendering style: finely painted semi-realistic anime environments, Colombian-inspired Ciudad Nova, warm plaster/wood, rich cinematic natural lighting, beautiful believable perspective, clean detailed high quality. Full bleed illustration, no frames, no interface, no captions, no legible text, no logos. This is a world context illustration, no main character faces needed. Keep important story objects in upper two thirds since subtitle panel covers bottom third. Close high three-quarter cinematic view of a journalist's open cream notebook on the wooden Café Central table by the arched window. Brass fountain pen diagonally next to page, small cup of untouched black coffee to left, warm sunlight, plaza and civic clock tower softly out of focus behind. Notebook blank ruled pages with small nonlinguistic handwritten strokes and empty margins, no readable words. A folded cultural event leaflet without writing partially visible underneath, pressed green leaf, subtle coffee ring. No people or hands. Notebook prominent centerupper, inviting human work scene. Strong depth, foreground soft bokeh, exquisite paper fiber and warm worn wood detail.",
+      "original_generado": "exec-d92c037e-3121-44a8-9f4d-f37cbc16f5c4.png",
+      "conversion": "JPEG calidad 92; composición conservada"
+    },
+    {
+      "archivo": "ilustraciones/mapa.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\cafe_interior.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic cutaway painting for Spanish visual novel CIVICA. Reference image establishes painterly semi-realistic anime rendering, warm Colombian-inspired civic city, rich cinematic natural light, coherent wood/cream plaster, detailed believable perspective. Full bleed painting no borders no UI no captions no readable text no logos. Important objects upper two thirds for subtitle overlay bottom. High-angle close shot of a large unfolded hand-drawn neighborhood park map on wooden café table. Map creampaper shows curving green park paths, a small round fountain and tree shapes, surrounding blocks in watercolor, no legible labels. One ordinary adult hand at upper-right touches a winding route on map with index finger, natural anatomy five fingers, no other person. A pencil and small folded note near edge, coffee cup behind. Through softfocus window in upperbackground visible tropical park foliage and warm afternoon. Blank central map area for an animated route drawn later. Rich tactile paper creases, honest everyday investigation mood, amber green palette.",
+      "original_generado": "exec-588a7743-620a-4417-b0d2-d5fc9ef932a2.png",
+      "conversion": "JPEG calidad 92; composición conservada"
+    },
+    {
+      "archivo": "ilustraciones/libro.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\cafe_interior.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic cutaway painting for Spanish visual novel CIVICA. Reference image establishes painterly semi-realistic anime rendering, warm Colombian-inspired civic city, rich cinematic natural light, coherent wood/cream plaster, detailed believable perspective. Full bleed painting no borders no UI no captions no readable text no logos. Important objects upper two thirds for subtitle overlay bottom. Close cinematic still life on an evening investigation desk: a beloved old cloth-bound teal book opened halfway at center, worn golden corners, cream page edges, ribbon bookmark, a smartphone with blank dark screen just behind to right, folded project plan under the book, an angled warm brass reading lamp at upperleft. Behind desk indistinct shelves with books and soft blurred arched city window at dusk, maintain same world. No people, no readable words on pages or spine. An intimate sentimental book that belonged to a grandfather, not a magical object. Dustlit warm beam, paper fibers and worn binding, evocative orange and deep teal color harmony, practical detailed anatomy of an open book. All essential book/lamp objects occupy uppermiddle and leave soft dark wood lower edge.",
+      "original_generado": "exec-8de24aad-5054-47d6-bf00-cf41bf0d8584.png",
+      "conversion": "JPEG calidad 92; composición conservada"
+    },
+    {
+      "archivo": "ilustraciones/acusacion.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\expansion\\fondos\\cafe_lluvia.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic story cutaway for Spanish visual novel CIVICA, full bleed no border, no UI, no captions/logos/legible text. Preserve reference painterly semi-realistic anime Colombian-inspired Ciudad Nova, exquisite tangible detail, rich cinematic light, believable architecture. Important objects uppermiddle for subtitle overlay bottom third. Cinematic intimate closeup of a wooden café table beside a rain-streaked arched window, a smartphone lying diagonally in centerupper displaying a blank dark teal screen with a soft red notification light, an open small journalist notebook with pen resting motionless on the blank page to left, untouched cup of coffee, warm amber brass lamp reflection. Outside through the glass, rainy bluegray civic plaza and clocktower, droplets crisp in foreground glass. No faces, people or readable letters. Mood of suspense and an interrupted conversation, a dangerous unverified accusation spreading on a phone, without depicting any actual crime or accused person. Layers: blurred leftforeground plant, sharp phone/notebook/wood, softly diffuse outsidecity. Natural stilllife perspective, beautiful wet blue and warm gold interplay. Leave phone screen darkblank for animated notifications added later.",
+      "original_generado": "exec-48451c86-710f-4aa6-a767-409a19b8be03.png",
+      "conversion": "JPEG calidad 92; composición conservada"
+    },
+    {
+      "archivo": "ilustraciones/urna.jpg",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\expansion\\fondos\\plaza_noche.png",
+      "prompt": "Use case: illustration-story. Asset type: landscape 16:9 cinematic story cutaway for Spanish visual novel CIVICA, full bleed no border, no UI, no captions/logos/legible text. Preserve reference painterly semi-realistic anime Colombian-inspired Ciudad Nova, exquisite tangible detail, rich cinematic light, believable architecture. Important objects uppermiddle for subtitle overlay bottom third. Cinematic close view inside a modest civic voting room prepared for tomorrow's election. A simple cream cardboard ballot box with narrow empty slot prominently at uppermiddle on a wooden table; a few neatly stacked blank folded papers beside it, small desk lamp casting warm amber light. No votes being cast, no result numbers, no party logos, no people, no official flags. The open arched window behind shows recognizable Ciudad Nova clocktower and indigo evening plaza with gold streetlamps, same skyline as reference. Soft sheer curtain framed at right with gentle curved folds. Hopeful thoughtful suspense, future choice remains open, no predetermined victor. Deep cinematic depth, rich paper/wood textures, teal indigo and brass gold palette, lowerforeground soft shadowedtable.",
+      "original_generado": "exec-6da000f7-4df6-435e-8fdb-d3e8c6797f55.png",
+      "conversion": "JPEG calidad 92; composición conservada"
+    }
+  ]
+}

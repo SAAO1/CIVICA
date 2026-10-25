@@ -1,13 +1,17 @@
 import math
+import copy
+import html
 
-from PyQt6.QtCore import Qt, QTimer, QPointF, QRectF, QSize, pyqtSignal
+from PyQt6.QtCore import Qt, QTimer, QElapsedTimer, QEvent, QPointF, QRectF, QSize, pyqtSignal
 from PyQt6.QtGui import QPainter, QColor, QIcon, QPen, QFont, QPolygonF, QPainterPath, QRadialGradient
 from PyQt6.QtWidgets import (QWidget, QFrame, QLabel, QPushButton, QVBoxLayout,
                             QHBoxLayout, QComboBox, QLineEdit, QGridLayout, QDialog,
                             QTextBrowser, QCheckBox, QSlider, QScrollArea, QTabWidget,
                             QSizePolicy, QButtonGroup)
 from models.jugador import ROLES, ROLES_JUGABLES
+from juego.acciones import acciones_para_rol
 from recursos import pixmap_recurso
+from audiovisual_ui import FondoEscena
 from accesibilidad import paleta
 from arte import (PanelIlustrado, BotonIlustrado, aplicar_estilo, dibujar_fondo,
                   pixmap_arte, avatar_arte, ESTILO_ARTE, FUENTE_UI, _nueve_segmentos)
@@ -27,6 +31,16 @@ class VisualizadorGrafo(QWidget):
         self.etiqueta = "Red social de Ciudad Nova"
         self.tipo = "exploracion"
         self.nuevos = set()
+        self.conexiones_nuevas = set()
+        self.focos_contacto = set()
+        self.etiquetas_contacto = {}
+        self.progreso_contacto = 1.0
+        self._tiempo_contacto = 0.0
+        self._reloj_contacto = QElapsedTimer()
+        self._ventana_observada = None
+        self.timer_contacto = QTimer(self)
+        self.timer_contacto.setInterval(34)
+        self.timer_contacto.timeout.connect(self._paso_contacto)
         self.posiciones = {}
         self.radio_nodo = 28
         self.cajas_nombres = {}
@@ -34,7 +48,129 @@ class VisualizadorGrafo(QWidget):
         self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.setToolTip("Selecciona un retrato para consultar sus conexiones. Las flechas indican quién recibe la información.")
 
+    def establecer_contactos(self, aristas=(), origen=None, vecino=None, accion=None):
+        """Resalta sólo vínculos que constan en el registro y en el grafo real."""
+        self.timer_contacto.stop()
+        self.conexiones_nuevas = {tuple(a) for a in aristas if len(a) == 2
+                                  and self.grafo.existe_arista(*a)}
+        self.focos_contacto = {id for id in (origen, vecino) if id in self.grafo.nodos}
+        self.etiquetas_contacto = {}
+        if origen in self.focos_contacto:
+            self.etiquetas_contacto[origen] = "ORIGEN"
+        if vecino in self.focos_contacto:
+            self.etiquetas_contacto[vecino] = "FUENTE" if accion == "entrevistar" else "VECINO"
+        self.progreso_contacto = 0.0 if self.conexiones_nuevas else 1.0
+        self._tiempo_contacto = 0.0
+        self._reloj_contacto.invalidate()
+        self._sincronizar_contacto()
+        self.update()
+
+    def _sincronizar_contacto(self):
+        if getattr(self.window(), "reducir_movimiento", False):
+            self.progreso_contacto = 1.0
+        if (self.conexiones_nuevas and self.progreso_contacto < 1 and self.isVisible()
+                and not self.window().isMinimized()):
+            if not self._reloj_contacto.isValid():
+                self._reloj_contacto.start()
+            self.timer_contacto.start()
+        else:
+            self._pausar_reloj_contacto()
+        self.update()
+
+    def _pausar_reloj_contacto(self):
+        if self._reloj_contacto.isValid():
+            self._tiempo_contacto += self._reloj_contacto.elapsed()
+            self._reloj_contacto.invalidate()
+        self.timer_contacto.stop()
+
+    def _paso_contacto(self):
+        if not self.isVisible() or self.window().isMinimized():
+            self._pausar_reloj_contacto()
+            return
+        if getattr(self.window(), "reducir_movimiento", False):
+            self.progreso_contacto = 1.0
+        else:
+            self.progreso_contacto = min(1.0, (self._tiempo_contacto+self._reloj_contacto.elapsed())/2200)
+        if self.progreso_contacto >= 1:
+            self.timer_contacto.stop()
+        self.update()
+
+    def completar_contactos(self):
+        self._pausar_reloj_contacto()
+        self.progreso_contacto = 1.0
+        self.update()
+
+    def _dibujar_contactos(self, p, radio, escala, colores):
+        # Dos arcos separan las direcciones de una relación recíproca. El
+        # trazo se une de un retrato al otro y termina con una flecha real.
+        avance = self.progreso_contacto
+        avance = avance*avance*(3-2*avance)
+        for a, b in sorted(self.conexiones_nuevas):
+            if a not in self.posiciones or b not in self.posiciones:
+                continue
+            inicio, fin = self.posiciones[a], self.posiciones[b]
+            vector = fin-inicio
+            largo = math.hypot(vector.x(), vector.y())
+            if largo < 1:
+                continue
+            unidad = vector/largo
+            normal = QPointF(-unidad.y(), unidad.x())
+            salida = inicio+unidad*(radio+6)
+            llegada = fin-unidad*(radio+8)
+            control = (salida+llegada)/2+normal*min(58*escala, largo*.22)
+            curva = QPainterPath(salida)
+            curva.quadTo(control, llegada)
+            trazo = QPainterPath(salida)
+            for n in range(1, 49):
+                trazo.lineTo(curva.pointAtPercent(avance*n/48))
+            p.setBrush(Qt.BrushStyle.NoBrush)
+            p.setPen(QPen(QColor(8, 21, 29, 200), 8*escala,
+                          Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap))
+            p.drawPath(trazo)
+            p.setPen(QPen(QColor(colores["acento"]), 3.1*escala,
+                          Qt.PenStyle.DashDotLine, Qt.PenCapStyle.RoundCap))
+            p.drawPath(trazo)
+            punta = curva.pointAtPercent(avance)
+            if avance < 1:
+                p.setPen(Qt.PenStyle.NoPen)
+                p.setBrush(QColor(255, 234, 186, 55))
+                p.drawEllipse(punta, 12*escala, 12*escala)
+                p.setBrush(QColor("#fff1ce"))
+                p.drawEllipse(punta, 4*escala, 4*escala)
+            else:
+                tangente = llegada-curva.pointAtPercent(.96)
+                magnitud = max(.01, math.hypot(tangente.x(), tangente.y()))
+                tangente /= magnitud
+                perpendicular = QPointF(-tangente.y(), tangente.x())
+                p.setBrush(QColor(colores["acento"]))
+                p.setPen(Qt.PenStyle.NoPen)
+                p.drawPolygon(QPolygonF([llegada, llegada-tangente*12+perpendicular*5,
+                                        llegada-tangente*12-perpendicular*5]))
+
+    def showEvent(self, event):
+        super().showEvent(event)
+        ventana = self.window()
+        if self._ventana_observada is not ventana:
+            if self._ventana_observada is not None:
+                self._ventana_observada.removeEventFilter(self)
+            self._ventana_observada = ventana
+            if ventana is not self:
+                ventana.installEventFilter(self)
+        self._sincronizar_contacto()
+
+    def hideEvent(self, event):
+        self._pausar_reloj_contacto()
+        super().hideEvent(event)
+
+    def eventFilter(self, objeto, event):
+        if objeto is self._ventana_observada and event.type() == QEvent.Type.WindowStateChange:
+            self._sincronizar_contacto()
+        return super().eventFilter(objeto, event)
+
     def paintEvent(self, event):
+        if getattr(self.window(), "reducir_movimiento", False) and self.progreso_contacto < 1:
+            self.timer_contacto.stop()
+            self.progreso_contacto = 1.0
         p = QPainter(self)
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
         p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
@@ -97,6 +233,7 @@ class VisualizadorGrafo(QWidget):
             p.setBrush(p.pen().color())
             p.drawPolygon(QPolygonF([llegada, llegada - unidad * 12 + normal * 5,
                                     llegada - unidad * 12 - normal * 5]))
+        self._dibujar_contactos(p, radio, escala, colores)
         for id, centro in self.posiciones.items():
             activo = id in self.visitados
             p.setPen(Qt.PenStyle.NoPen)
@@ -139,6 +276,10 @@ class VisualizadorGrafo(QWidget):
                 p.setBrush(Qt.BrushStyle.NoBrush)
                 p.setPen(QPen(QColor(colores["acento"]), 2, Qt.PenStyle.DotLine))
                 p.drawEllipse(centro, radio+7, radio+7)
+            if id in self.focos_contacto:
+                p.setBrush(Qt.BrushStyle.NoBrush)
+                p.setPen(QPen(QColor(colores["acento"]), 2.5*escala, Qt.PenStyle.DashDotLine))
+                p.drawEllipse(centro, radio+10, radio+10)
             p.setPen(QColor("white"))
             fuente = QFont(self.font())
             fuente.setPixelSize(round(16 * escala))
@@ -155,8 +296,10 @@ class VisualizadorGrafo(QWidget):
                 marca = 10*escala
                 p.drawEllipse(distintivo, marca, marca)
                 p.drawText(QRectF(distintivo.x()-marca, distintivo.y()-marca, marca*2, marca*2),
-                           Qt.AlignmentFlag.AlignCenter, {"falsa": "!", "verdadera": "V", "correccion": "C"}.get(self.tipo, "R"))
-            etiqueta = nombre + (" · EMISOR" if id == self.emisor else "")
+                           Qt.AlignmentFlag.AlignCenter, {"falsa": "!", "verdadera": "V", "correccion": "C", "vinculo": "+", "entrevista": "+"}.get(self.tipo, "R"))
+            distintivo_contacto = self.etiquetas_contacto.get(id)
+            etiqueta = nombre + (" · EMISOR" if id == self.emisor and self.tipo not in ("vinculo", "entrevista")
+                                 else " · "+distintivo_contacto if distintivo_contacto else "")
             caja_nombre = QRectF(centro.x()-ancho_nombre/2, centro.y()+radio+9, ancho_nombre, alto_nombre)
             self.cajas_nombres[id] = caja_nombre
             p.setPen(Qt.PenStyle.NoPen)
@@ -186,6 +329,9 @@ class EscenaRed(QWidget):
         super().__init__(parent)
         self.juego = juego
         self.setStyleSheet(ESTILO)
+        self.ambiente_vivo = FondoEscena(self)
+        self.ambiente_vivo.oscuridad = 75
+        self.ambiente_vivo.establecer_escena("assets/rediseno/fondos/observatorio.png", "observatorio")
         self.panel = PanelIlustrado()
         self.panel.setObjectName("panelRed")
         self.panel.setMaximumSize(1600, 800)
@@ -194,7 +340,7 @@ class EscenaRed(QWidget):
         layout.setSpacing(12)
         cabecera = QHBoxLayout()
         self.titulo = QLabel("<span style='font-size:25px;font-weight:600;'>OBSERVATORIO</span><br>"
-                             "<span style='font-size:15px;font-weight:400;color:#c2d4cb;'>Así viaja una publicación por la ciudad</span>")
+                             "<span style='font-size:15px;font-weight:400;color:#c2d4cb;'>Las decisiones cambian la comunidad</span>")
         self.titulo.setStyleSheet("color: #f2d1a3;")
         cabecera.addWidget(self.titulo, 1)
         self.contador = QLabel()
@@ -285,6 +431,7 @@ class EscenaRed(QWidget):
         self.timer_repeticion.setInterval(2000)
         self.timer_repeticion.timeout.connect(self.repetir)
         self.repeticion_activada = False
+        self.comparacion_alcances = None
         self.pasos, self.indice, self.aristas_animacion = [], 0, []
         self.rellenar()
         aplicar_estilo(self)
@@ -293,6 +440,8 @@ class EscenaRed(QWidget):
         super().resizeEvent(event)
         if not hasattr(self, "inspector"):
             return
+        self.ambiente_vivo.setGeometry(self.rect())
+        self.ambiente_vivo.lower()
         escala = max(.94, min(1.35, self.width()/1366))
         compacto = self.height() < 660
         muy_compacto = self.height() < 600
@@ -304,10 +453,10 @@ class EscenaRed(QWidget):
         self.inspector.setMinimumWidth(round(245*escala))
         self.inspector.setMaximumWidth(round(285*escala))
         subtitulo = "" if muy_compacto else (
-            f"<br><span style='font-size:{round(15*escala)}px;font-weight:400;color:#c2d4cb;'>Así viaja una publicación por la ciudad</span>")
+            f"<br><span style='font-size:{round(15*escala)}px;font-weight:400;color:#c2d4cb;'>Las decisiones cambian la comunidad</span>")
         self.titulo.setText(
             f"<span style='font-size:{round(25*escala)}px;font-weight:600;'>OBSERVATORIO</span>" + subtitulo)
-        self.titulo.setToolTip("Así viaja una publicación por la ciudad")
+        self.titulo.setToolTip("Difusión, conversaciones y fuentes de Ciudad Nova")
         self.leyenda.setVisible(not muy_compacto)
         self.visualizador.setMinimumHeight(240 if muy_compacto else 310)
         for etiqueta, tamano, color in (
@@ -356,8 +505,16 @@ class EscenaRed(QWidget):
     def mostrar(self):
         self.finalizar_escena()
         self.rellenar()
+        self.comparacion_alcances = None
+        self.visualizador.establecer_contactos()
+        self.explicacion.setText("BFS avanza por niveles.\nDFS sigue cada camino hasta el fondo.")
         self.resumen.setText(self.juego.ultimo_resultado)
         self.boton_continuar.setEnabled(True)
+        registro = self.juego.ultimo_registro or {}
+        accion = registro.get("accion_rol", registro.get("accion"))
+        if accion in ("conversar", "entrevistar"):
+            self.mostrar_contacto(registro)
+            return
         resultado = self.juego.ultima_propagacion
         if resultado:
             tipo = "correccion" if resultado.correccion else "falsa" if resultado.verdadera is False else "verdadera" if resultado.verdadera is True else "exploracion"
@@ -369,12 +526,48 @@ class EscenaRed(QWidget):
             self.visualizador.aristas_usadas.clear()
             self.visualizador.update()
             self.leyenda.setText("Sin difusión · Retratos: ciudadanos · Flechas: dirección de las relaciones")
-            self.detalle.setText("Esta decisión no inició una difusión. Puedes explorar la red con BFS y DFS.")
+            self.detalle.setText({
+                "ignorar": "Seguiste sin reenviar: no hubo difusión ni nuevos contactos.",
+                "reservar": "La información quedó en reserva, pendiente de pruebas. No hubo difusión ni nuevos contactos.",
+                "contrastar": "El contraste no requirió difundir una corrección. Puedes explorar las relaciones de la comunidad.",
+                "desmentir": "La denuncia no inició una rectificación. Las relaciones de la comunidad se conservan.",
+            }.get(accion, "Esta decisión no inició una difusión. Puedes explorar la red con BFS y DFS."))
             self.estado_reproduccion.setText("Elige BFS, DFS o compara el alcance para explorar.")
+
+    def mostrar_contacto(self, registro):
+        accion = registro["accion_rol"]
+        efectos = registro.get("efectos_red", {})
+        autor = next((j for j in self.juego.jugadores if j.id == registro.get("jugador_id")), self.juego.jugador)
+        origen = autor.ciudadano_id
+        vecino = efectos.get("fuente_id") if accion == "entrevistar" else efectos.get("vecino_id")
+        aristas = efectos.get("conexiones_creadas", [])
+        self.pasos, self.indice, self.aristas_animacion = [], 0, []
+        self.visualizador.tipo = "entrevista" if accion == "entrevistar" else "vinculo"
+        self.visualizador.emisor = origen
+        self.visualizador.aristas_usadas.clear()
+        self.visualizador.establecer_contactos(aristas, origen, vecino, accion)
+        self.visualizador.visitados = set(self.visualizador.focos_contacto)
+        self.origen.setCurrentIndex(max(0, self.origen.findData(origen)))
+        titulo = registro.get("titulo_accion", "Entrevistar a una fuente" if accion == "entrevistar" else "Escuchar al vecindario")
+        rol = ROLES.get(registro.get("rol", autor.rol), ROLES[autor.rol])["nombre"]
+        self.resumen.setText(f"{rol} · {titulo} · Publicación #{registro['publicacion']['id']}")
+        self.leyenda.setText("+ Contacto · Arcos dorados con puntos y rayas: conexiones nuevas · Flechas: dirección")
+        nodos = self.juego.grafo.nodos
+        nombre_origen = nodos[origen].nombre if origen in nodos else autor.nombre
+        nombre_vecino = nodos[vecino].nombre if vecino in nodos else "sin contacto disponible"
+        cantidad = len(self.visualizador.conexiones_nuevas)
+        cambio = (f"{cantidad} conexión nueva" if cantidad == 1 else f"{cantidad} conexiones nuevas") if cantidad else "Contacto ya existente"
+        cierre = "Testimonio pendiente de contraste." if accion == "entrevistar" else "La publicación no se difundió."
+        self.detalle.setText(f"{nombre_origen} ↔ {nombre_vecino} · {cambio}. {cierre}")
+        self.estado_reproduccion.setText("Movimiento reducido · Vínculo completo" if getattr(self.window(), "reducir_movimiento", False)
+                                        else "Contacto destacado · Explorar no aplica más puntos")
+        self.explicacion.setText("El vínculo cambia las rutas futuras.\nCompara su alcance sin reenviar.")
+        self.visualizador.update()
 
     def iniciar_animacion(self, niveles, aristas, emisor, tipo="exploracion"):
         self.timer.stop()
         self.timer_repeticion.stop()
+        self.visualizador.completar_contactos()
         self.repeticion_activada = not getattr(self.window(), "reducir_movimiento", False)
         self.pasos, self.indice = [list(n) for n in niveles], 0
         self.aristas_animacion = [tuple(a) for a in aristas]
@@ -440,15 +633,25 @@ class EscenaRed(QWidget):
         self.timer_repeticion.stop()
         while self.indice < len(self.pasos):
             self.paso()
-        self.estado_reproduccion.setText("Recorrido completo" if self.pasos else "Sin difusión en esta decisión")
+        if not self.pasos and self.visualizador.focos_contacto:
+            self.visualizador.completar_contactos()
+            self.estado_reproduccion.setText("Contacto completo · Sin difusión en esta decisión")
+        else:
+            self.estado_reproduccion.setText("Recorrido completo" if self.pasos else "Sin difusión en esta decisión")
 
     def finalizar_escena(self):
         self.repeticion_activada = False
         self.timer.stop()
         self.timer_repeticion.stop()
+        self.visualizador.completar_contactos()
 
     def hideEvent(self, event):
-        self.finalizar_escena()
+        if self.window().isMinimized():
+            # Minimizar pausa el enlace; salir de la escena sí lo termina.
+            self.timer.stop()
+            self.timer_repeticion.stop()
+        else:
+            self.finalizar_escena()
         super().hideEvent(event)
 
     def consultar(self, id):
@@ -489,9 +692,26 @@ class EscenaRed(QWidget):
             return
         anterior = self.juego.ultima_propagacion
         from models.jugador import ROLES
-        habilidad = ROLES[self.juego.jugador.rol]
-        r = self.juego.propagacion.simular(id, self.origen.currentData(), habilidad["saltos"], habilidad["intervalo"], bool(anterior and anterior.correccion))
-        self.resumen.setText(f"Simulación sin aplicar puntos · Antes: {anterior.alcance if anterior else 0} · Ahora: {r.alcance} · Emisor {r.emisor}")
+        registro = self.juego.ultimo_registro or {}
+        habilidad = ROLES.get(registro.get("rol"), ROLES[self.juego.jugador.rol])
+        saltos = 3 if registro.get("accion_rol") == "convocar" else habilidad["saltos"]
+        origen = self.origen.currentData()
+        if origen not in self.juego.grafo.nodos:
+            return
+        r = self.juego.propagacion.simular(id, origen, saltos, habilidad["intervalo"], bool(anterior and anterior.correccion))
+        conexiones = self.visualizador.conexiones_nuevas
+        if conexiones:
+            # La comparación se hace en una copia; consultar nunca elimina un
+            # vínculo real ni vuelve a aplicar consecuencias a la comunidad.
+            sin_vinculos = copy.deepcopy(self.juego.grafo)
+            for a, b in conexiones:
+                sin_vinculos.eliminar_arista(a, b)
+            antes = max(0, len(sin_vinculos.bfs(origen, saltos).orden)-1)
+            self.comparacion_alcances = {"sin_conexiones": antes, "con_conexiones": r.alcance}
+            self.resumen.setText(f"Simulación sin aplicar puntos · Sin nuevas conexiones: {antes} · Con ellas: {r.alcance}")
+        else:
+            self.comparacion_alcances = None
+            self.resumen.setText(f"Simulación sin aplicar puntos · Difusión previa: {anterior.alcance if anterior else 0} · Simulada: {r.alcance}")
         tipo = "correccion" if r.correccion else "falsa" if r.verdadera is False else "verdadera" if r.verdadera is True else "exploracion"
         self.iniciar_animacion(r.niveles, r.aristas, r.emisor, tipo)
 
@@ -565,7 +785,7 @@ class DialogoRol(DialogoIlustrado):
         self.titulo = QLabel("TU VOZ CAMBIA LA CIUDAD")
         self.titulo.setStyleSheet("font-size: 27px; font-weight: 600; color: #f2d1a3;")
         layout.addWidget(self.titulo)
-        self.subtitulo = QLabel("Elige a quién acompañarás durante esta historia.")
+        self.subtitulo = QLabel("Cada personaje tiene cuatro decisiones propias.")
         self.subtitulo.setWordWrap(True)
         self.subtitulo.setStyleSheet("font-size: 18px;")
         layout.addWidget(self.subtitulo)
@@ -605,6 +825,8 @@ class DialogoRol(DialogoIlustrado):
     def actualizar(self):
         rol = self.roles.currentData()
         self.detalle.setText(ROLES[rol]["habilidad"])
+        self.detalle.setToolTip("\n\n".join(accion["titulo"]+": "+accion["descripcion"]
+                                         for accion in acciones_para_rol(rol)))
         if hasattr(self, "tarjetas"):
             self.tarjetas[rol].setChecked(True)
             for tarjeta in self.tarjetas.values():
@@ -612,6 +834,7 @@ class DialogoRol(DialogoIlustrado):
 
 
 def mostrar_ayuda(parent):
+    reanudar = parent.pausar_lectura_modal() if hasattr(parent, "pausar_lectura_modal") else None
     dialogo = DialogoIlustrado(parent)
     dialogo.setWindowTitle("Manual de usuario · CIVICA")
     dialogo.setStyleSheet(ESTILO)
@@ -619,45 +842,68 @@ def mostrar_ayuda(parent):
     layout.setContentsMargins(48, 54, 48, 36)
     layout.setSpacing(16)
     texto = QTextBrowser()
+    acciones_html = "".join("<h3>"+html.escape(ROLES[rol]["nombre"])+"</h3><ul>"+
+                            "".join("<li><b>"+html.escape(accion["titulo"])+":</b> "+
+                                    html.escape(accion["descripcion"])+"</li>"
+                                    for accion in acciones_para_rol(rol))+"</ul>"
+                            for rol in ROLES_JUGABLES)
     texto.setHtml("""<h2>Construye una Ciudad Nova informada</h2>
     <p>Cuida la confianza, la convivencia y el bienestar antes de la elección.</p>
     <p><b>Espacio, Enter o clic:</b> revelar el texto; otra interacción continúa.
     Tab y Enter permiten seleccionar botones. F11 cambia la pantalla; F1 abre este manual.
     El engranaje de la esquina superior derecha abre Configuración.</p>
-    <p><b>Compartir:</b> difunde entre tus conexiones. Las noticias falsas perjudican a la ciudad;
-    la información verdadera favorece la participación. El alcance depende de la red.</p>
-    <p><b>Verificar:</b> consulta las fuentes y, ante un rumor falso, difunde una corrección.</p>
-    <p><b>Ignorar:</b> no inicia difusión. <b>Reportar:</b> retira contenido falso o dañino;
-    denunciar noticias verdaderas sin fundamento perjudica tu reputación.</p>
-    <p>Los personajes seleccionables son el ciudadano y la periodista.
-    Ciudadano: bonificación al verificar. Periodista: más confianza por verificar.
-    El influencer y los candidatos pertenecen a la historia.</p>
+    <p>Los indicadores se presentan uno a uno. Las escenas de tus decisiones
+    y los contadores deben terminar antes de continuar. El manual pausa la presentación.</p>
+    <p>Ciudadano y periodista tienen cuatro decisiones distintas. En multijugador,
+    cada persona actúa con las opciones de su oficio.</p>""" + acciones_html + """
+    <p>El influencer y los candidatos pertenecen a la historia.</p>
     <p>Los puntos y la reputación son individuales. Los indicadores pertenecen a toda la ciudad.
     Tus acciones influyen en el apoyo de cuatro candidatos ficticios y en el final narrativo.</p>
-    <p><b>Observatorio:</b> la difusión avanza automáticamente a un ritmo fijo y se repite
+    <p><b>Observatorio:</b> conversar y entrevistar destacan los contactos y las conexiones
+    nuevas con arcos dorados de puntos y rayas. No se confunden con una difusión ni con
+    una verificación. <b>Comparar alcance</b> muestra cuántas personas serían alcanzadas
+    con esos vínculos y sin ellos, sin reenviar la publicación ni cambiar tus puntos.</p>
+    <p>La difusión avanza automáticamente a un ritmo fijo y se repite
     dos segundos después de terminar. BFS explora por niveles; DFS sigue cada cadena de conexiones.
     Selecciona un ciudadano de origen y usa <b>Comparar alcance</b> para simular desde esa persona
     sin cambiar tus puntos ni aplicar otra decisión.</p>
     <p><b>Una comunidad que crece:</b> nuevos ciudadanos y sus conexiones se incorporan
     a medida que avanza la historia. El observatorio anuncia sus nombres y los marca con un aro punteado.
     Selecciona un retrato para consultar sus conexiones.</p>
-    <p>En las alertas urgentes, el tiempo agotado equivale a ignorar. Puedes desactivar el límite
+    <p>En las alertas urgentes, al agotarse el tiempo el ciudadano sigue sin reenviar y la
+    periodista mantiene la información en reserva. Puedes desactivar el límite
     o reducir movimiento desde Configuración; al reducirlo, el observatorio muestra el recorrido completo
     sin repetir la animación. También puedes adaptar los colores al daltonismo, activar alto contraste
     y ajustar por separado las voces de los personajes y del narrador. Toda señal sonora importante
     tiene texto visible.</p>
     <p>En multijugador, espera tu turno. El servidor conserva el estado y sincroniza las decisiones.</p>""")
+    texto.append("""<h3>Tu cuaderno de Ciudad Nova</h3>
+    <p><b>Cuaderno:</b> consulta fuentes de cada caso, perfiles de los protagonistas,
+    diálogos leídos, galería y glosario. <b>Examinar las fuentes</b> abre documentos
+    ficticios de la historia; tú eliges después qué hacer con la publicación.
+    Las alertas con tiempo continúan mientras el cuaderno está abierto.</p>
+    <p><b>Historial:</b> vuelve a leer los diálogos completos de esta sesión.
+    <b>Auto:</b> avanza el texto hasta una decisión. <b>Saltar leído:</b> avanza sólo
+    las líneas que ya terminaste de leer y se detiene ante contenido nuevo.
+    La velocidad de escritura se ajusta en Configuración, incluida la lectura instantánea.</p>
+    <p>La galería conserva escenas desbloqueadas en este equipo. Repetir la historia
+    con otras decisiones muestra reacciones y epílogos diferentes.</p>""")
     layout.addWidget(texto)
     cerrar = QPushButton("Volver")
     cerrar.clicked.connect(dialogo.accept)
     layout.addWidget(cerrar)
     dialogo.resize(640, 550)
     aplicar_estilo(dialogo)
-    dialogo.exec()
+    try:
+        dialogo.exec()
+    finally:
+        if reanudar is not None:
+            reanudar()
 
 
 def mostrar_configuracion(parent):
     from configuracion import guardar
+    reanudar_lectura = parent.pausar_lectura_modal() if hasattr(parent, "pausar_lectura_modal") else None
     dialogo = DialogoIlustrado(parent)
     dialogo.setWindowTitle("Configuración y accesibilidad")
     dialogo.setStyleSheet(ESTILO)
@@ -700,6 +946,35 @@ def mostrar_configuracion(parent):
         opciones.addWidget(check)
     opciones.addStretch()
     pestanas.addTab(accesibilidad, "Accesibilidad")
+    lectura = QWidget()
+    lectura_layout = QVBoxLayout(lectura)
+    lectura_layout.setContentsMargins(16, 18, 16, 14)
+    lectura_layout.addWidget(QLabel("Velocidad del texto de los diálogos"))
+    velocidad_texto = QComboBox()
+    velocidad_texto.setAccessibleName("Velocidad de lectura")
+    for etiqueta, milisegundos in (("Pausada", 50), ("Normal", 34), ("Ágil", 16), ("Instantánea", 0)):
+        velocidad_texto.addItem(etiqueta, milisegundos)
+    velocidad_texto.setCurrentIndex(max(0, velocidad_texto.findData(getattr(parent, "velocidad_texto", 34))))
+    lectura_layout.addWidget(velocidad_texto)
+    ayuda_lectura = QLabel("Espacio o Enter revela la línea completa. Auto avanza los diálogos y Saltar leído se detiene ante una línea nueva. Ambos se detienen al cambiar de escena; las decisiones siempre las tomas tú.")
+    ayuda_lectura.setWordWrap(True)
+    lectura_layout.addWidget(ayuda_lectura)
+    lectura_layout.addStretch()
+    pestanas.addTab(lectura, "Lectura")
+    visual = QWidget()
+    visual_layout = QVBoxLayout(visual)
+    visual_layout.setContentsMargins(16, 18, 16, 14)
+    for clave, etiqueta in (("animar_fondos", "Fondos vivos: clima, luces y movimiento de cámara"),
+                            ("animar_personajes", "Personajes: respiración, parpadeo y gestos al hablar")):
+        check = QCheckBox(etiqueta)
+        check.setChecked(getattr(parent, clave, True))
+        controles[clave] = check
+        visual_layout.addWidget(check)
+    detalle_visual = QLabel("Reducir movimiento tiene prioridad y deja la escena quieta. Puedes mantener las voces y los ambientes sonoros con cualquiera de estas opciones.")
+    detalle_visual.setWordWrap(True)
+    visual_layout.addWidget(detalle_visual)
+    visual_layout.addStretch()
+    pestanas.addTab(visual, "Escenas")
     sonido = QWidget()
     audio_layout = QVBoxLayout(sonido)
     audio_layout.setContentsMargins(16, 18, 16, 14)
@@ -717,6 +992,34 @@ def mostrar_configuracion(parent):
         estado_voces.setWordWrap(True)
         estado_voces.setStyleSheet("font-size: 13px; color: #c2d3c9;")
         audio_layout.addWidget(estado_voces)
+    muestras = QHBoxLayout()
+    ejemplos = (("Ciudadano", "CIUDADANO", "Mi hermana estudia en ese colegio. Si lo cierran, ¿a dónde va a ir?"),
+                ("Periodista", "PERIODISTA", "Entiendo la urgencia. Antes de avisar a las familias, necesitamos el comunicado completo."),
+                ("Narrador", "NARRADOR", "Una notificación interrumpe la mañana. El ciudadano deja el café sin probar."))
+    for etiqueta, hablante, texto_muestra in ejemplos:
+        boton_muestra = QPushButton("Probar " + etiqueta)
+        boton_muestra.setToolTip("Escuchar el doblaje de " + etiqueta.lower())
+        boton_muestra.clicked.connect(lambda _, h=hablante, t=texto_muestra: parent.audio.narrar(t, h) if voces.isChecked() else None)
+        muestras.addWidget(boton_muestra)
+    audio_layout.addLayout(muestras)
+    nuevos = QHBoxLayout()
+    selector_voz = QComboBox()
+    selector_voz.setAccessibleName("Personaje de los nuevos actos")
+    from juego.campana_extendida import FRASES_POSIBLES
+    for clave, etiqueta in (("INFLUENCER", "Valeria Cruz"), ("JUAN", "Juan Torres"),
+                             ("ADRIAN", "Adrián Morales"), ("LAURA", "Laura Ríos"),
+                             ("CAMILA", "Camila Vega")):
+        muestra = next(texto for hablante, texto in FRASES_POSIBLES if hablante == clave)
+        selector_voz.addItem(etiqueta, (clave, muestra))
+    nuevos.addWidget(selector_voz, 1)
+    probar_nueva = QPushButton("Escuchar personaje")
+    def escuchar_nuevo():
+        hablante, texto = selector_voz.currentData()
+        if voces.isChecked():
+            parent.audio.narrar(texto, hablante)
+    probar_nueva.clicked.connect(escuchar_nuevo)
+    nuevos.addWidget(probar_nueva)
+    audio_layout.addLayout(nuevos)
     for categoria, volumen in parent.audio.volumenes.items():
         fila = QHBoxLayout()
         etiqueta = QLabel("Volumen " + ("de voces" if categoria == "voces" else categoria))
@@ -734,7 +1037,12 @@ def mostrar_configuracion(parent):
         fila.addWidget(numero)
         audio_layout.addLayout(fila)
     audio_layout.addStretch()
-    pestanas.addTab(sonido, "Sonido y voces")
+    sonido_area = QScrollArea()
+    sonido_area.setWidgetResizable(True)
+    sonido_area.viewport().setAutoFillBackground(False)
+    sonido.setStyleSheet("background:#182d41;")
+    sonido_area.setWidget(sonido)
+    pestanas.addTab(sonido_area, "Sonido y voces")
     manual = BotonIlustrado("Manual de usuario")
     manual.setToolTip("Controles, decisiones y reglas del juego · F1")
     manual.clicked.connect(lambda: mostrar_ayuda(dialogo))
@@ -747,6 +1055,9 @@ def mostrar_configuracion(parent):
         parent.alto_contraste = controles["alto_contraste"].isChecked()
         parent.modo_daltonismo = daltonismo.currentData()
         parent.voces_activadas = voces.isChecked()
+        parent.velocidad_texto = velocidad_texto.currentData()
+        parent.animar_fondos = controles["animar_fondos"].isChecked()
+        parent.animar_personajes = controles["animar_personajes"].isChecked()
         if hasattr(parent.audio, "configurar_voces"):
             parent.audio.configurar_voces(parent.voces_activadas)
         parent.aplicar_accesibilidad()
@@ -755,6 +1066,9 @@ def mostrar_configuracion(parent):
                  "alto_contraste": parent.alto_contraste,
                  "modo_daltonismo": parent.modo_daltonismo,
                  "voces_activadas": parent.voces_activadas,
+                 "velocidad_texto": parent.velocidad_texto,
+                 "animar_fondos": parent.animar_fondos,
+                 "animar_personajes": parent.animar_personajes,
                  "sprites_sobre_ilustracion": parent.sprites_sobre_ilustracion})
         dialogo.accept()
     boton = BotonIlustrado("Guardar preferencias")
@@ -762,7 +1076,11 @@ def mostrar_configuracion(parent):
     layout.addWidget(boton)
     dialogo.resize(720, 670)
     aplicar_estilo(dialogo)
-    dialogo.exec()
+    try:
+        dialogo.exec()
+    finally:
+        if reanudar_lectura is not None:
+            reanudar_lectura()
 
 
 class DialogoRed(DialogoIlustrado):

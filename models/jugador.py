@@ -2,9 +2,9 @@ from dataclasses import dataclass, field
 
 ROLES = {
     "ciudadano": {"nombre": "Ciudadano", "saltos": 2, "intervalo": 1.0,
-                  "habilidad": "Bonificación al verificar información."},
+                  "habilidad": "Comparte, conversa con vecinos, convoca al barrio o decide no reenviar."},
     "periodista": {"nombre": "Periodista", "saltos": 2, "intervalo": 0.8,
-                   "habilidad": "Verificación: mayor recuperación de confianza."},
+                   "habilidad": "Contrasta fuentes, entrevista, desmiente con fundamento o mantiene información en reserva."},
     "influencer": {"nombre": "Influencer", "saltos": 4, "intervalo": 0.5,
                    "habilidad": "Difusión: cuatro niveles en lugar de dos."},
     "candidato": {"nombre": "Candidato", "saltos": 2, "intervalo": 1.0,

@@ -9,8 +9,8 @@ from pathlib import Path
 from catalogo_ciudadanos import (COLUMNAS_ATLAS_CIUDADANOS, FILAS_ATLAS_CIUDADANOS,
                                  RUTA_ATLAS_CIUDADANOS, indice_retrato_ciudadano)
 from PyQt6.QtCore import QObject, QEvent, QMargins, QRectF, QSize, Qt
-from PyQt6.QtGui import (QBitmap, QColor, QFontDatabase, QIcon, QLinearGradient,
-                         QPainter, QPen, QPixmap, QRegion)
+from PyQt6.QtGui import (QBitmap, QColor, QFont, QFontDatabase, QIcon, QLinearGradient,
+                         QPainter, QPainterPath, QPen, QPixmap, QRegion)
 from PyQt6.QtWidgets import QFrame, QPushButton, QToolButton, QCheckBox, QSlider, QStyle
 
 
@@ -215,18 +215,205 @@ def avatar_arte(id):
     return _AVATARES[clave]
 
 
-def miniatura_publicacion(id):
-    ids = (50, 30, 70, 20, 60, 80)
+IDS_PUBLICACIONES_ORIGINALES = (50, 30, 70, 20, 60, 80)
+MEDIOS_PUBLICACIONES = {
+    90: ("parque", "Clip compartido · Parque central", 70, "estudio"),
+    40: ("canal", "Canal de correcciones", 60, "estudio"),
+    100: ("colegio", "Las cubiertas del colegio", 50, "debate"),
+    10: ("debate", "Mesa de debate · Prioridades", 20, "debate"),
+    110: ("audio", "Audio recibido · Fragmento del foro", 60, "redaccion"),
+    25: ("archivo", "La entrevista completa", 50, "redaccion"),
+    120: ("mapa", "Puestos y accesos · Ciudad Nova", 80, "urnas"),
+    35: ("captura", "Captura compartida en Civitas", 80, "urnas"),
+}
+
+
+def _imagen_publicacion_local(ruta):
+    """Carga por contenido: reconoce reemplazos y no depende del directorio actual."""
+    try:
+        ruta = ruta.resolve()
+        if not ruta.is_relative_to(RAIZ_EXPANSION.resolve()) or not ruta.is_file():
+            return QPixmap(), None
+        estado = ruta.stat()
+        firma = (str(ruta), estado.st_mtime_ns, estado.st_size)
+        if firma not in _PIXMAPS:
+            imagen = QPixmap()
+            imagen.loadFromData(ruta.read_bytes())
+            # Un archivo incompleto no debe quedar atrapado en la caché.
+            if imagen.isNull():
+                return imagen, firma
+            if len(_PIXMAPS) >= 48:
+                _PIXMAPS.clear()
+            _PIXMAPS[firma] = imagen
+        return _PIXMAPS[firma], firma
+    except (OSError, TypeError, ValueError):
+        return QPixmap(), None
+
+
+def _foto_publicacion_original(id):
     atlas = pixmap_arte("publicaciones/noticias.png")
-    if atlas.isNull() or id not in ids:
+    if atlas.isNull() or id not in IDS_PUBLICACIONES_ORIGINALES:
         return QPixmap()
-    clave = (atlas.cacheKey(), id)
+    clave = ("atlas_publicaciones", atlas.cacheKey(), id)
+    if clave in _MINIATURAS:
+        return _MINIATURAS[clave]
+    indice = IDS_PUBLICACIONES_ORIGINALES.index(id)
+    columna, fila = indice % 3, indice // 3
+    x0, x1 = round(columna*atlas.width()/3), round((columna+1)*atlas.width()/3)
+    y0, y1 = round(fila*atlas.height()/2), round((fila+1)*atlas.height()/2)
+    if len(_MINIATURAS) >= 64:
+        _MINIATURAS.clear()
+    _MINIATURAS[clave] = atlas.copy(x0+3, y0+3, max(1, x1-x0-6), max(1, y1-y0-6))
+    return _MINIATURAS[clave]
+
+
+def _dibujar_medio_publicacion(foto, clase, titulo):
+    """Compone el objeto de la noticia: foto, canal, archivo, audio o mapa.
+
+    Son interfaces de la ficción pintadas en Qt sobre las ilustraciones locales;
+    no muestran veredictos ni convierten el aspecto de una captura en evidencia.
+    """
+    salida = QPixmap(1200, 675)
+    salida.fill(QColor("#f5efdf"))
+    p = QPainter(salida)
+    p.setRenderHint(QPainter.RenderHint.Antialiasing)
+    p.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
+
+    def texto(cadena, caja, tam=32, color="#26302f", negrita=False):
+        fuente = QFont(FUENTE_UI)
+        fuente.setPixelSize(tam)
+        fuente.setBold(negrita)
+        p.setFont(fuente)
+        p.setPen(QColor(color))
+        p.drawText(QRectF(*caja), Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter
+                   | Qt.TextFlag.TextWordWrap, cadena)
+
+    def foto_en(caja):
+        if foto.isNull():
+            return
+        destino = QRectF(*caja)
+        escala = max(destino.width()/foto.width(), destino.height()/foto.height())
+        sw, sh = destino.width()/escala, destino.height()/escala
+        p.drawPixmap(destino, foto, QRectF((foto.width()-sw)/2, (foto.height()-sh)/2, sw, sh))
+
+    foto_en((0, 0, 1200, 675))
+    if clase in ("parque", "colegio", "debate", "foto"):
+        sombra = QLinearGradient(0, 400, 0, 675)
+        sombra.setColorAt(0, QColor(10, 18, 17, 0))
+        sombra.setColorAt(1, QColor(10, 18, 17, 235))
+        p.fillRect(0, 400, 1200, 275, sombra)
+        texto(titulo, (42, 545, 1110, 95), 42, "#fff4de", True)
+        if clase == "parque":
+            p.setPen(Qt.PenStyle.NoPen)
+            p.setBrush(QColor(15, 20, 18, 190))
+            p.drawRoundedRect(QRectF(986, 35, 173, 58), 14, 14)
+            texto("00:12 / 00:28", (1000, 42, 155, 40), 23, "#fff4de")
+            p.fillRect(42, 648, 1110, 5, QColor(255, 255, 255, 130))
+            p.fillRect(42, 648, 474, 5, QColor("#f4b662"))
+    else:
+        p.fillRect(0, 0, 1200, 675, QColor(17, 27, 24, 115))
+        p.setPen(QPen(QColor("#d6c8af"), 2))
+        p.setBrush(QColor("#fffaf0"))
+        p.drawRoundedRect(QRectF(74, 45, 1052, 585), 22, 22)
+        texto("civitas" if clase in ("canal", "captura") else "Ciudad Nova · Archivo de campaña",
+              (112, 66, 970, 44), 29, "#886037", True)
+        p.fillRect(112, 121, 975, 2, QColor("#e2d7c6"))
+        texto(titulo, (112, 141, 970, 65), 38, negrita=True)
+        if clase == "canal":
+            texto("Mensaje original  →  Fuentes  →  Registro de cambios", (112, 216, 965, 60), 28)
+            for i, (rotulo, detalle) in enumerate((("01  Mensaje de origen", "Conservar el enlace de la publicación"),
+                                                   ("02  Documentos y contexto", "Abrir las fuentes que acompañan la aclaración"),
+                                                   ("03  Historial de cambios", "Consultar qué se modificó y cuándo"))):
+                y = 290+i*91
+                p.fillRect(112, y, 975, 76, QColor("#eee7d8"))
+                texto(rotulo, (135, y+5, 910, 30), 28, negrita=True)
+                texto(detalle, (135, y+36, 910, 30), 23, "#665d4f")
+        elif clase == "audio":
+            texto("Grabación reenviada · Toca para escuchar", (112, 216, 970, 45), 27)
+            p.fillRect(112, 292, 975, 181, QColor("#e7dfd0"))
+            alturas = (30, 54, 89, 44, 112, 69, 142, 85, 37, 102, 55, 133, 75, 46, 98, 140)
+            p.setPen(QPen(QColor("#9a613d"), 8, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap))
+            for i in range(74):
+                alto = alturas[i % len(alturas)]
+                x = 140+i*12.4
+                p.drawLine(round(x), round(382-alto/2), round(x), round(382+alto/2))
+            texto("Reproducir · 00:00                  Fragmento compartido", (128, 500, 935, 53), 29)
+        elif clase == "archivo":
+            foto_en((112, 235, 373, 305))
+            texto("ENTREVISTA DEL FORO", (525, 234, 535, 53), 27, "#886037", True)
+            texto("La pregunta de las familias\nLa respuesta sin cortes\nEl enlace al registro completo", (525, 305, 535, 174), 30)
+            texto("Archivo de campaña · Colegio de Ciudad Nova", (112, 560, 970, 39), 25)
+        elif clase == "mapa":
+            # Plano de la ficción, no una ruta ni un puesto real del jugador.
+            p.fillRect(112, 230, 975, 320, QColor("#e8e2d4"))
+            p.setPen(Qt.PenStyle.NoPen)
+            for fila in range(3):
+                for col in range(5):
+                    p.setBrush(QColor("#a3ac85") if (fila+col) % 3 == 0 else QColor("#cbb99a"))
+                    p.drawRoundedRect(QRectF(138+col*186, 250+fila*94, 152, 64), 7, 7)
+            p.setPen(QPen(QColor("#9c5e35"), 11, Qt.PenStyle.DashLine, Qt.PenCapStyle.RoundCap))
+            p.setBrush(Qt.BrushStyle.NoBrush)
+            ruta = QPainterPath()
+            ruta.moveTo(167, 525)
+            ruta.lineTo(167, 332)
+            ruta.lineTo(632, 332)
+            ruta.lineTo(632, 267)
+            p.drawPath(ruta)
+            p.setBrush(QColor("#fffaf0"))
+            p.setPen(QPen(QColor("#9c5e35"), 6))
+            p.drawEllipse(QRectF(613, 247, 38, 38))
+            texto("Entradas accesibles · Horarios · Puestos de la jornada", (112, 566, 975, 36), 25)
+        else:
+            texto("Mensaje atribuido a Adrián Morales", (112, 217, 970, 47), 27, "#665d4f")
+            p.fillRect(112, 285, 975, 231, QColor("#eee7d8"))
+            texto("«Comentar en Civitas sustituye el voto»", (151, 308, 895, 161), 48, negrita=True)
+            texto("Captura reenviada · Abrir la publicación de origen", (112, 553, 975, 44), 25)
+    p.end()
+    return salida
+
+
+def miniatura_publicacion(publicacion):
+    """Medio de los catorce casos, también en teléfono y partidas importadas.
+
+    Acepta el ID antiguo o el objeto Publicacion. El respaldo sigue el tema del
+    contenido; nunca devuelve un rectángulo vacío por no reconocer su número.
+    """
+    id = getattr(publicacion, "id", publicacion)
+    contenido = str(getattr(publicacion, "texto", ""))
+    try:
+        conocida = id in IDS_PUBLICACIONES_ORIGINALES or id in MEDIOS_PUBLICACIONES
+    except TypeError:
+        conocida = False
+    if conocida and id in IDS_PUBLICACIONES_ORIGINALES:
+        foto = _foto_publicacion_original(id)
+        if not foto.isNull():
+            return foto
+    # Una imagen dedicada puede añadirse o sustituirse con el juego abierto.
+    if conocida:
+        for extension in ("jpg", "png"):
+            foto, _ = _imagen_publicacion_local(RAIZ_EXPANSION / "siete_actos" / "publicaciones" / f"{id}.{extension}")
+            if not foto.isNull():
+                return foto
+    configuracion = MEDIOS_PUBLICACIONES.get(id) if conocida else None
+    if configuracion is None:
+        texto = contenido.casefold()
+        foto_id = (70 if any(p in texto for p in ("parque", "barrio")) else
+                   50 if any(p in texto for p in ("colegio", "clase", "educa")) else
+                   30 if any(p in texto for p in ("cultura", "biblioteca")) else
+                   80 if any(p in texto for p in ("voto", "votar", "elecci")) else 60)
+        configuracion = ("foto", contenido or "Una publicación de Ciudad Nova", foto_id, "estudio")
+    clase, titulo, foto_id, escena = configuracion
+    contexto, firma = _imagen_publicacion_local(RAIZ_EXPANSION / "siete_actos" / "ilustraciones" / f"{escena}.jpg")
+    atlas = pixmap_arte("publicaciones/noticias.png")
+    clave = (str(id), contenido if not conocida else "", clase, firma, atlas.cacheKey())
     if clave not in _MINIATURAS:
-        indice = ids.index(id)
-        columna, fila = indice % 3, indice // 3
-        x0, x1 = round(columna*atlas.width()/3), round((columna+1)*atlas.width()/3)
-        y0, y1 = round(fila*atlas.height()/2), round((fila+1)*atlas.height()/2)
-        _MINIATURAS[clave] = atlas.copy(x0+3, y0+3, max(1, x1-x0-6), max(1, y1-y0-6))
+        # Los objetos y la foto permanecen relacionados con la publicación.
+        foto = contexto if clase in ("debate", "canal", "audio", "mapa", "captura") else _foto_publicacion_original(foto_id)
+        if foto.isNull():
+            foto = contexto
+        if len(_MINIATURAS) >= 64:
+            _MINIATURAS.clear()
+        _MINIATURAS[clave] = _dibujar_medio_publicacion(foto, clase, titulo)
     return _MINIATURAS[clave]
 
 
