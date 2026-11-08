@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "generado_utc": "2026-11-08T00:17:33.871768+00:00",
+  "productor": {
+    "archivo": "herramientas/producir_primeros_planos.py",
+    "sha256": "da29c918b0a254eaf7ec0816b0b7b39c0043f813f8f26e2132fe72b42860418f",
+    "bytes": 7775
+  },
+  "dependencias": [
+    {
+      "archivo": "herramientas/producir_pulido_visual.py",
+      "sha256": "ef5588f6fa931650890ee6eb6522259c7c47524e689c84d90ae44963a4035474",
+      "bytes": 16099
+    }
+  ],
+  "metodo": "Cámara cíclica y luz tenue con QPainter sobre cuatro CG originales de ImageGen; H.264 por FFmpeg. Sin rótulos, botones, deformación facial ni video generativo.",
+  "audio": "Sin pista de audio; el doblaje neural se conserva por separado.",
+  "archivo_procedencia": {
+    "archivo": "assets/novela/prologo/origen_arte.json",
+    "sha256": "b769ff91e86f4f686795013778a410f2d83b32307f4b1045a3513ea65949ab99",
+    "bytes": 5113
+  },
+  "origen_arte": {
+    "herramienta": "image_gen.imagegen",
+    "recursos": [
+      {
+        "id": "juan",
+        "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-6b6341c4-5964-4413-83bd-22e5cd8c9156.png",
+        "destino": "assets/novela/prologo/cg/juan.png",
+        "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. JUAN TORRES, tousled red-brown hair, black rectangular glasses, beige blazer and black turtleneck. He speaks thoughtfully with an open hand while discussing education.",
+        "sha256": "7105b14b90441b260ae004988d3e34c89983aa3990d9f3ab7c6b4b5c2a2999b5"
+      },
+      {
+        "id": "adrian",
+        "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-60956fbd-3478-48c6-bed0-938219685ad2.png",
+        "destino": "assets/novela/prologo/cg/adrian.png",
+        "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. ADRIAN MORALES, mature silver swept hair, black glasses, dark navy suit white shirt navy tie. He speaks calmly with book resting at podium and one subtle hand gesture.",
+        "sha256": "38c6eb9542e229043cd5352fe0f0b90042a3095f5efef07b12b32cbec4007525"
+      },
+      {
+        "id": "laura",
+        "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-0606300e-70d8-45c6-b27a-9b779d3e8e0a.png",
+        "destino": "assets/novela/prologo/cg/laura.png",
+        "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. LAURA RIOS, long straight dark brown hair, navy pantsuit white blouse. She speaks firmly with a natural open palm gesture, focused expression, discussing parks and coexistence.",
+        "sha256": "0257cd7d3045a47c5578aaef3fe5a609013433be6e19efbdc9c04c30a326b446"
+      },
+      {
+        "id": "camila",
+        "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-22c97712-73bc-484e-bab4-188d75d42a6f.png",
+        "destino": "assets/novela/prologo/cg/camila.png",
+        "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. CAMILA VEGA, long wavy auburn hair, navy suit white blouse RED silk neck scarf. She speaks warmly and decisively with one open hand, discussing civic participation.",
+        "sha256": "6e847016a43acad6e1b07afb566597cb83c8aa1cd559e9fc0ef1704cbb9f9e2d"
+      }
+    ]
+  },
+  "cg": [
+    {
+      "archivo": "assets/novela/prologo/cg/juan.png",
+      "sha256": "7105b14b90441b260ae004988d3e34c89983aa3990d9f3ab7c6b4b5c2a2999b5",
+      "bytes": 1784439,
+      "id": "juan",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/prologo/cg/adrian.png",
+      "sha256": "38c6eb9542e229043cd5352fe0f0b90042a3095f5efef07b12b32cbec4007525",
+      "bytes": 1746954,
+      "id": "adrian",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/prologo/cg/laura.png",
+      "sha256": "0257cd7d3045a47c5578aaef3fe5a609013433be6e19efbdc9c04c30a326b446",
+      "bytes": 1926420,
+      "id": "laura",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/prologo/cg/camila.png",
+      "sha256": "6e847016a43acad6e1b07afb566597cb83c8aa1cd559e9fc0ef1704cbb9f9e2d",
+      "bytes": 1837042,
+      "id": "camila",
+      "ancho": 1672,
+      "alto": 941
+    }
+  ],
+  "videos": [
+    {
+      "archivo": "assets/novela/prologo/videos/juan.mp4",
+      "sha256": "6bd46cecff3375d84fe92dbb4a4148bfe3e2e16e8a99d40ff50083f5f5f5b63a",
+      "bytes": 1001156,
+      "clave": "juan",
+      "cg": "juan",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "textos": [],
+      "botones": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/prologo/videos/juan_inicio.png",
+        "sha256": "508d2e9331e6da829cf3841fd6dcffd93d69291270fc8f1e49d155512f73e63e",
+        "bytes": 568442
+      },
+      "poster": {
+        "archivo": "assets/novela/prologo/videos/juan_poster.jpg",
+        "sha256": "d4c34ede96dc236b63a6731f5412c05ce30809d8db63933663c0a0771ded9069",
+        "bytes": 228455
+      },
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "6aa8feaacd0297f82abe7b4540715ee16714655fd62f6b7c80ef6d222d089806",
+          "69b79b7fd9084dbf68b35f86ded18bf4c9904d91d4ada0239c46d407f96f7bbd",
+          "125c4a9a19f9a54617608005f7a70128b0f8a5e3778cd6733009b812be131e5c"
+        ],
+        "diferencia_rgb_media": [
+          7.385244176255964,
+          6.61605388717373
+        ],
+        "camara_ciclica": true
+      }
+    },
+    {
+      "archivo": "assets/novela/prologo/videos/adrian.mp4",
+      "sha256": "27acb780333fbfa641e12954bc293edf72d0f2fd422ee0a2ad5a5d7c74ca0c55",
+      "bytes": 1012382,
+      "clave": "adrian",
+      "cg": "adrian",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "textos": [],
+      "botones": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/prologo/videos/adrian_inicio.png",
+        "sha256": "6c0d9ab59344d5d82e93747d70413cd99ffa467afd9908ea9f705bee798287c8",
+        "bytes": 576030
+      },
+      "poster": {
+        "archivo": "assets/novela/prologo/videos/adrian_poster.jpg",
+        "sha256": "a5fe9bfbe3415669d0fe84a8f61f8ffc966078e3fcfb386f74e217a06e09eefc",
+        "bytes": 235559
+      },
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "0833d8380515c8ad475b7f0e470aa561aaf6f0e875eb4c69df08a0b02b2ac6fb",
+          "4e03e6ab7fbfa321478eb8d190a37693e46759cd955c90c335aa0b2780119ffc",
+          "31e11f0b02770e11adbabedfe729864c781ad9dde2f515c8f2997c4e293fb04f"
+        ],
+        "diferencia_rgb_media": [
+          7.766383665450463,
+          6.925063149031715
+        ],
+        "camara_ciclica": true
+      }
+    },
+    {
+      "archivo": "assets/novela/prologo/videos/laura.mp4",
+      "sha256": "a2d21955c6355af944d1a6f0f468f977479a4001dadb111bbfcdd851e876e09f",
+      "bytes": 1188008,
+      "clave": "laura",
+      "cg": "laura",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "textos": [],
+      "botones": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/prologo/videos/laura_inicio.png",
+        "sha256": "864e8e2b2b776fcbe68863ff04ea3d25ac11a72eee8b5ccf29e271c923449636",
+        "bytes": 690998
+      },
+      "poster": {
+        "archivo": "assets/novela/prologo/videos/laura_poster.jpg",
+        "sha256": "b7e69dbe68ea2c8835368c74b42d77c76be9e91d8caa44099c548f7225fe5c07",
+        "bytes": 256569
+      },
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "b2e67eb927001c1316380f101fc6f2fc62d793d1a195971fc9ea321fa1691c50",
+          "6987fb7f8d558715327df941ea45b01f0cbb93eaad602a77d80adb3375b01b50",
+          "7ac7fe97fc2a42a117c4b2eb35c3973fa8ed80fcab3c3f66f0995d774edde0ac"
+        ],
+        "diferencia_rgb_media": [
+          7.898926466460847,
+          7.236352792590513
+        ],
+        "camara_ciclica": true
+      }
+    },
+    {
+      "archivo": "assets/novela/prologo/videos/camila.mp4",
+      "sha256": "eb516a871607686c9055c892e97202f98b95f25c900e4a30303cd5abab5323d1",
+      "bytes": 1154393,
+      "clave": "camila",
+      "cg": "camila",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "textos": [],
+      "botones": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/prologo/videos/camila_inicio.png",
+        "sha256": "b09af25d4937ad723ff8fb12d1a20cc829fc7870f257311d3c893cad404d2f50",
+        "bytes": 647668
+      },
+      "poster": {
+        "archivo": "assets/novela/prologo/videos/camila_poster.jpg",
+        "sha256": "2e9ff378b68ca8649e88c5d917bc1dbd4120f8f0ae553891ecba79c38233b57e",
+        "bytes": 254181
+      },
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "b1eff63969894dc8cbe0dc24c841f3f49d1d719424bad97bc7817814f0f9de0d",
+          "bd33e0b04de904398c0fab78ebf38fcf8b5c1b633f1dabca18f92e5be63754ed",
+          "2183dcb8931d2168b6449c93771afd6a2ca1217a0eb538fddbe898b54358f427"
+        ],
+        "diferencia_rgb_media": [
+          8.107002525961269,
+          7.2416152119000845
+        ],
+        "camara_ciclica": true
+      }
+    }
+  ]
+}

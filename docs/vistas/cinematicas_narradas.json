@@ -1,0 +1,23 @@
+{
+  "archivo": "cinematicas_narradas.mp4",
+  "duracion_segundos": 108.0,
+  "fps": 24,
+  "tamano": [
+    1280,
+    720
+  ],
+  "cortes": [
+    "ciudad_48h",
+    "mensaje_barrio",
+    "rumor_colegio",
+    "cafe_alerta",
+    "libreta_cultura",
+    "mapa_parque",
+    "libro_biblioteca",
+    "acusacion_lluvia",
+    "noche_electoral"
+  ],
+  "decodificacion_completa": true,
+  "naturaleza": "Exportación offline de widgets reales y compositor de los MP4; no grabación de una sesión humana.",
+  "sonido": "Tomas locales del narrador + ambientes CC0 de cada caso + música CC0 incluida."
+}

@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "filtro": "acompressor=threshold=0.22:ratio=2:attack=5:release=100:makeup=3,alimiter=limit=0.84:level=false:latency=true",
+  "originales_conservados": true,
+  "muestra": true,
+  "clips": {
+    "bbd4276cfc437f7d0b6ece03.mp3": {
+      "archivo": "bbd4276cfc437f7d0b6ece03.mp3",
+      "hablante": "CIUDADANO",
+      "sha_original": "36473f0a3f29f351b7200b8f691bbc2db4f4cf3778370afd736534f7557038ad",
+      "sha256": "164d7061c4a33dc1520af88db9786fc86d5884c40d8e7ab1fe9da9be71d03930",
+      "bytes": 63692,
+      "rms": 0.1978439,
+      "pico_real": 0.816294,
+      "duracion_ms": 5232,
+      "ganancia_db": 3.917
+    },
+    "a887e906cdcd037050439f3b.mp3": {
+      "archivo": "a887e906cdcd037050439f3b.mp3",
+      "hablante": "PERIODISTA",
+      "sha_original": "dad33c8f5f9f5695065a3dc80bbd49d3f91f206ad976286d5bf62d956ba2f849",
+      "sha256": "828b77e8f827efd2dc3c9df8f3af3b00be73c9019991fe4730b33586cfb70df8",
+      "bytes": 90764,
+      "rms": 0.2590231,
+      "pico_real": 0.8444158,
+      "duracion_ms": 7488,
+      "ganancia_db": 4.969
+    },
+    "8a3efed186379cd2239db99a.mp3": {
+      "archivo": "8a3efed186379cd2239db99a.mp3",
+      "hablante": "ADRIAN",
+      "sha_original": "6eaad23b13cb005ab1d3c0117ec45dbf91e2fedfe9b57f0ba20753582300d72d",
+      "sha256": "8de13a39d8395c45f1e3d986a0630c80c15ef21a4d902f8a7f93af35ac81e4c3",
+      "bytes": 66572,
+      "rms": 0.2063013,
+      "pico_real": 0.8189349,
+      "duracion_ms": 5472,
+      "ganancia_db": 7.132
+    },
+    "b940ec74e1adefa5240595ed.mp3": {
+      "archivo": "b940ec74e1adefa5240595ed.mp3",
+      "hablante": "JUAN",
+      "sha_original": "e0f6ef26eb802a0003dcf00e6c2cca29d0efa4a79363a12554fea040bcb484bd",
+      "sha256": "f5d1ebbb8fe897912f5a7d62abd2d6cdbac0868c4138eb3426503ae1f8f9eb1d",
+      "bytes": 117836,
+      "rms": 0.1634907,
+      "pico_real": 0.8154747,
+      "duracion_ms": 9744,
+      "ganancia_db": 7.387
+    },
+    "00f511178522f50b34c836b7.mp3": {
+      "archivo": "00f511178522f50b34c836b7.mp3",
+      "hablante": "INFLUENCER",
+      "sha_original": "2a6dab5ac8dc62b2a090f61d900ee747da60e35aa62c07aeb2450803d3b15e6a",
+      "sha256": "09bccbcd5d17334bfaa3036bd8c9f8ba078589e0e322f858a2d9fad2a0fbd9f7",
+      "bytes": 96524,
+      "rms": 0.231898,
+      "pico_real": 0.8156996,
+      "duracion_ms": 7968,
+      "ganancia_db": 6.864
+    },
+    "04010df5705309135db6172f.mp3": {
+      "archivo": "04010df5705309135db6172f.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "29037e04884292a1d9ad4382795635fe50a2a27d48930811a4e9458ddf2a32e4",
+      "sha256": "389436b3258baabd25bf2f1069169fdba25c60536336f6eec468e6f820fba11d",
+      "bytes": 115532,
+      "rms": 0.2152385,
+      "pico_real": 0.8319373,
+      "duracion_ms": 9552,
+      "ganancia_db": 3.278
+    },
+    "2f88a1fca37659f5fc685f54.mp3": {
+      "archivo": "2f88a1fca37659f5fc685f54.mp3",
+      "hablante": "LAURA",
+      "sha_original": "428b8522ba5b2ed1006092a93a42ff1cc4418dec02f3380b4327bb2e8526c583",
+      "sha256": "13867c0c1da08e320d4e80cd5d7845bc422b7ce6624f17db405455a10bc38335",
+      "bytes": 98540,
+      "rms": 0.1725938,
+      "pico_real": 0.8247037,
+      "duracion_ms": 8136,
+      "ganancia_db": 7.487
+    },
+    "4cf3b8ac7e0623557d0e245b.mp3": {
+      "archivo": "4cf3b8ac7e0623557d0e245b.mp3",
+      "hablante": "CAMILA",
+      "sha_original": "f1f97e3e977c10c0694511e65063e503fe326f9a4ce7488dac6130a066ad8daf",
+      "sha256": "4760a3e6a8417eda3c3ecc55acce88751c18634db5779510458a0b1a3c978f62",
+      "bytes": 104876,
+      "rms": 0.2313953,
+      "pico_real": 0.8146564,
+      "duracion_ms": 8664,
+      "ganancia_db": 6.96
+    },
+    "567bd8406e0f67c0d7a9b345.mp3": {
+      "archivo": "567bd8406e0f67c0d7a9b345.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "07cf8f04159323e6a2282c2a2c1f97d9c3b166c3e581680212eae518e101159c",
+      "sha256": "e04259a37b8a30e06c76061e8696be630a6a60353a5250fe63f2e3a3a3101fb4",
+      "bytes": 38348,
+      "rms": 0.2202194,
+      "pico_real": 0.8146002,
+      "duracion_ms": 3120,
+      "ganancia_db": 3.735
+    },
+    "21b577b6150b6a6b8390f8a4.mp3": {
+      "archivo": "21b577b6150b6a6b8390f8a4.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "21fe117bb333f94003b6ac564094ef53a46710b7b71ba1a5f85e006bdec2bc45",
+      "sha256": "373b7b6930ea13eb88f7ef52d99b48ff4bfb9116321fbd0e6eaf70181699f027",
+      "bytes": 28844,
+      "rms": 0.1923036,
+      "pico_real": 0.8236925,
+      "duracion_ms": 2328,
+      "ganancia_db": 3.619
+    },
+    "02158b845a450c4ffdcbdd90.mp3": {
+      "archivo": "02158b845a450c4ffdcbdd90.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "0bbc40223b1f329103abb57effa4a9f26be2ef1011894278306561673df317a8",
+      "sha256": "3c6348cc45159271c086fad0400e5eb72b59df6457259d90db915625eca13ad3",
+      "bytes": 33740,
+      "rms": 0.2161404,
+      "pico_real": 0.8232859,
+      "duracion_ms": 2736,
+      "ganancia_db": 3.742
+    },
+    "2dcdebd41eddd27dd5f91111.mp3": {
+      "archivo": "2dcdebd41eddd27dd5f91111.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "69695a1bc655c97ede4eb0a6f5181333e4a1d19ea078dcd5e2227988e4441052",
+      "sha256": "742d931d8d3203cbc3d4d43424afa8e4b5e65b895fd3f1af11014b00a7255988",
+      "bytes": 29132,
+      "rms": 0.1747717,
+      "pico_real": 0.8156152,
+      "duracion_ms": 2352,
+      "ganancia_db": 3.268
+    },
+    "04c29a270a43378e9251a8e9.mp3": {
+      "archivo": "04c29a270a43378e9251a8e9.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "6293397a79aecb327748969b8119d7cb8107b4eee228a8fcaf2219de4c478f3d",
+      "sha256": "f1736f40b32526050cf0765a43cfd9acc98245c30203cb9239adea65fd51aa1b",
+      "bytes": 32012,
+      "rms": 0.1923624,
+      "pico_real": 0.8170785,
+      "duracion_ms": 2592,
+      "ganancia_db": 4.323
+    },
+    "188d6e512e0965773ac09e1e.mp3": {
+      "archivo": "188d6e512e0965773ac09e1e.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "498c01f843e9d5e56d11d11939fe1f3e6eab67e25c1838a69d4226e4755b0f5b",
+      "sha256": "3e4b36c6faae8ed05f1c72c619492fc15797b6e94a6110112fcedd26c451931d",
+      "bytes": 35756,
+      "rms": 0.2021375,
+      "pico_real": 0.8169926,
+      "duracion_ms": 2904,
+      "ganancia_db": 4.135
+    },
+    "d7a5b0376bfe8095f9098835.mp3": {
+      "archivo": "d7a5b0376bfe8095f9098835.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "d34c3a9242c259fc935a740c452d2b803130f83682a933c4df2ddb119f873533",
+      "sha256": "143a1de24bde9cf7adf9adb8e2b69534fd31ea8987113e1f88718f8db1ac4a6e",
+      "bytes": 30572,
+      "rms": 0.1921598,
+      "pico_real": 0.8313708,
+      "duracion_ms": 2472,
+      "ganancia_db": 4.204
+    },
+    "024dfc40e685c5b1a8ce255d.mp3": {
+      "archivo": "024dfc40e685c5b1a8ce255d.mp3",
+      "hablante": "NARRADOR",
+      "sha_original": "6b1c3311fd1b87d5ff4b2a98e8e863054a5b4fa4fa8c36acb7f1e361e7874be8",
+      "sha256": "d6cb86e48784523f41836463951acb7265dfa39d1d24be164c8d2b80df350114",
+      "bytes": 40076,
+      "rms": 0.1970205,
+      "pico_real": 0.8408633,
+      "duracion_ms": 3264,
+      "ganancia_db": 3.439
+    }
+  },
+  "cantidad": 16,
+  "mediana_ganancia_db": 4.169499999999999,
+  "pico_maximo": 0.8444158,
+  "segundos": 1.895
+}

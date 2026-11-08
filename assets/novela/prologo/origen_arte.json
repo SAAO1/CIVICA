@@ -1,0 +1,33 @@
+{
+  "herramienta": "image_gen.imagegen",
+  "recursos": [
+    {
+      "id": "juan",
+      "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-6b6341c4-5964-4413-83bd-22e5cd8c9156.png",
+      "destino": "assets/novela/prologo/cg/juan.png",
+      "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. JUAN TORRES, tousled red-brown hair, black rectangular glasses, beige blazer and black turtleneck. He speaks thoughtfully with an open hand while discussing education.",
+      "sha256": "7105b14b90441b260ae004988d3e34c89983aa3990d9f3ab7c6b4b5c2a2999b5"
+    },
+    {
+      "id": "adrian",
+      "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-60956fbd-3478-48c6-bed0-938219685ad2.png",
+      "destino": "assets/novela/prologo/cg/adrian.png",
+      "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. ADRIAN MORALES, mature silver swept hair, black glasses, dark navy suit white shirt navy tie. He speaks calmly with book resting at podium and one subtle hand gesture.",
+      "sha256": "38c6eb9542e229043cd5352fe0f0b90042a3095f5efef07b12b32cbec4007525"
+    },
+    {
+      "id": "laura",
+      "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-0606300e-70d8-45c6-b27a-9b779d3e8e0a.png",
+      "destino": "assets/novela/prologo/cg/laura.png",
+      "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. LAURA RIOS, long straight dark brown hair, navy pantsuit white blouse. She speaks firmly with a natural open palm gesture, focused expression, discussing parks and coexistence.",
+      "sha256": "0257cd7d3045a47c5578aaef3fe5a609013433be6e19efbdc9c04c30a326b446"
+    },
+    {
+      "id": "camila",
+      "original": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-22c97712-73bc-484e-bab4-188d75d42a6f.png",
+      "destino": "assets/novela/prologo/cg/camila.png",
+      "prompt": "Use case: illustration-story. Production cinematic16:9 close-up CG for CIVICA anime visual novel, the fictional candidate from reference speaking at the same elegant Latin American public forum. Match face identity, hairstyle, age, outfit and glasses/props EXACTLY to reference. Medium shot waist-up behind a polished dark wooden podium with a microphone, character face in upper-middle and hands visible expressing the speech naturally. Deep NAVY velvet drapes, warm GOLD stage lights, a little out-of-focus auditorium at edges. Beautiful detailed painterly anime realism, believable hands and anatomy. Lower22% quiet/uncluttered to overlay dialogue. No text, no party flags, no watermark, no other candidates. Warm human conviction, not threatening. CAMILA VEGA, long wavy auburn hair, navy suit white blouse RED silk neck scarf. She speaks warmly and decisively with one open hand, discussing civic participation.",
+      "sha256": "6e847016a43acad6e1b07afb566597cb83c8aa1cd559e9fc0ef1704cbb9f9e2d"
+    }
+  ]
+}

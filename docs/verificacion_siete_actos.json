@@ -1,0 +1,39 @@
+{
+  "correcto": true,
+  "actos": 7,
+  "casos": 14,
+  "nuevos_casos": 8,
+  "personajes_nuevos": 5,
+  "sprites_nuevos": 25,
+  "fondos_nuevos": 4,
+  "ilustraciones_nuevas": 4,
+  "videos_nuevos": 96,
+  "videos_decisiones": 88,
+  "videos_narrador": 8,
+  "voces_locales": 1587,
+  "identidades_voz": 8,
+  "ambientes_nuevos": 4,
+  "efectos_sonoros_nuevos": 4,
+  "efectos_visuales_nuevos": 4,
+  "combinaciones_principales_epilogo": 45,
+  "suite": {
+    "pruebas": 304,
+    "fallas": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": 408.485,
+    "limpieza_qt_entre_pruebas": true
+  },
+  "cuatro_clientes_catorce_turnos": true,
+  "hashes_96_actuales": true,
+  "capturas_reparto_dos_resoluciones": 10,
+  "botones_reales": 8,
+  "pulsaciones_bloqueadas": 800,
+  "muestra": {
+    "archivo": "docs/vistas/muestra_siete_actos.mp4",
+    "duracion_segundos": 203.29166666666666,
+    "naturaleza": "Widgets reales y compositores del juego por reloj; audio y transporte de los widgets aislados. No es grabación humana ni prueba del decodificador Qt."
+  },
+  "aviso_voces": "Voces sintéticas neuronales; no grabaciones de actores humanos.",
+  "aviso_animacion": "Montajes ilustrados, cámara, objetos y gestos faciales; no video corporal generado."
+}

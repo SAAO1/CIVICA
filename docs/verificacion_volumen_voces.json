@@ -1,0 +1,173 @@
+{
+  "version": 2,
+  "filtro": "acompressor=threshold=0.20:ratio=2:attack=5:release=120:makeup=2.5,alimiter=limit=0.95:level=false:latency=true,volume=0.8",
+  "formato": "MP3 libmp3lame · 48 kbps · 24 kHz · mono",
+  "medicion": "RMS y pico sobre PCM float32 a 24 kHz; envolvente labial con medir_audio existente",
+  "muestras": {
+    "clips": [
+      {
+        "clave": "bbd4276cfc437f7d0b6ece03",
+        "hablante": "CIUDADANO",
+        "texto": "Mi hermana estudia en ese colegio. Si lo cierran, ¿a dónde va a ir?",
+        "rms_antes": 0.07611,
+        "rms_despues": 0.1260252,
+        "pico_real": 0.7611818,
+        "ganancia_rms_db": 4.38,
+        "duracion_ms": 5232
+      },
+      {
+        "clave": "a887e906cdcd037050439f3b",
+        "hablante": "PERIODISTA",
+        "texto": "Entiendo la urgencia. Antes de avisar a las familias, necesitamos el comunicado completo.",
+        "rms_antes": 0.083996,
+        "rms_despues": 0.1461752,
+        "pico_real": 0.7983494,
+        "ganancia_rms_db": 4.812,
+        "duracion_ms": 7488
+      },
+      {
+        "clave": "04010df5705309135db6172f",
+        "hablante": "NARRADOR",
+        "texto": "Faltan cuarenta y ocho horas para la elección. En Ciudad Nova, cada teléfono cuenta una versión distinta de lo que está pasando.",
+        "rms_antes": 0.1011491,
+        "rms_despues": 0.1475737,
+        "pico_real": 0.7543766,
+        "ganancia_rms_db": 3.281,
+        "duracion_ms": 9552
+      },
+      {
+        "clave": "00f511178522f50b34c836b7",
+        "hablante": "INFLUENCER",
+        "texto": "Soy Valeria. Normalmente preparo una entrada mejor, pero hoy mi entrada tiene treinta mensajes sin responder.",
+        "rms_antes": 0.105224,
+        "rms_despues": 0.1678925,
+        "pico_real": 0.7531494,
+        "ganancia_rms_db": 4.058,
+        "duracion_ms": 7968
+      },
+      {
+        "clave": "b940ec74e1adefa5240595ed",
+        "hablante": "JUAN",
+        "texto": "Caben las dos. Propongo reparar por etapas y usar aulas alternas para mantener las clases. Aquí está el plan completo.",
+        "rms_antes": 0.0698456,
+        "rms_despues": 0.1163718,
+        "pico_real": 0.7847588,
+        "ganancia_rms_db": 4.434,
+        "duracion_ms": 9744
+      },
+      {
+        "clave": "8a3efed186379cd2239db99a",
+        "hablante": "ADRIAN",
+        "texto": "Y esos espacios alternos necesitarán libros y estudio, además de paredes.",
+        "rms_antes": 0.0907586,
+        "rms_despues": 0.1473945,
+        "pico_real": 0.7362978,
+        "ganancia_rms_db": 4.212,
+        "duracion_ms": 5472
+      },
+      {
+        "clave": "2f88a1fca37659f5fc685f54",
+        "hablante": "LAURA",
+        "texto": "Esa cinta marca los juegos que están en mantenimiento. Si alguien no encuentra el acceso abierto, quiero saberlo.",
+        "rms_antes": 0.0728923,
+        "rms_despues": 0.1253204,
+        "pico_real": 0.7631803,
+        "ganancia_rms_db": 4.707,
+        "duracion_ms": 8136
+      },
+      {
+        "clave": "4cf3b8ac7e0623557d0e245b",
+        "hablante": "CAMILA",
+        "texto": "Presenté un canal para enlazar correcciones con el mensaje original. El cambio debe quedar a la vista, también cuando incomode.",
+        "rms_antes": 0.1038346,
+        "rms_despues": 0.1668295,
+        "pico_real": 0.7604281,
+        "ganancia_rms_db": 4.119,
+        "duracion_ms": 8664
+      },
+      {
+        "clave": "567bd8406e0f67c0d7a9b345",
+        "hablante": "NARRADOR",
+        "texto": "Información verificada +1.",
+        "rms_antes": 0.0984229,
+        "rms_despues": 0.1432603,
+        "pico_real": 0.8094386,
+        "ganancia_rms_db": 3.261,
+        "duracion_ms": 3120
+      },
+      {
+        "clave": "21b577b6150b6a6b8390f8a4",
+        "hablante": "NARRADOR",
+        "texto": "Confianza +5.",
+        "rms_antes": 0.0851675,
+        "rms_despues": 0.1267709,
+        "pico_real": 0.7741665,
+        "ganancia_rms_db": 3.455,
+        "duracion_ms": 2328
+      },
+      {
+        "clave": "d7a5b0376bfe8095f9098835",
+        "hablante": "NARRADOR",
+        "texto": "Convivencia +2.",
+        "rms_antes": 0.073301,
+        "rms_despues": 0.1184364,
+        "pico_real": 0.7632227,
+        "ganancia_rms_db": 4.168,
+        "duracion_ms": 2472
+      },
+      {
+        "clave": "188d6e512e0965773ac09e1e",
+        "hablante": "NARRADOR",
+        "texto": "Bienestar digital +2.",
+        "rms_antes": 0.0844349,
+        "rms_despues": 0.1255758,
+        "pico_real": 0.8510412,
+        "ganancia_rms_db": 3.448,
+        "duracion_ms": 2904
+      },
+      {
+        "clave": "02158b845a450c4ffdcbdd90",
+        "hablante": "NARRADOR",
+        "texto": "Desinformacion +15.",
+        "rms_antes": 0.0922858,
+        "rms_despues": 0.1404919,
+        "pico_real": 0.8864995,
+        "ganancia_rms_db": 3.65,
+        "duracion_ms": 2736
+      },
+      {
+        "clave": "2dcdebd41eddd27dd5f91111",
+        "hablante": "NARRADOR",
+        "texto": "Conflictos +5.",
+        "rms_antes": 0.0854409,
+        "rms_despues": 0.1199708,
+        "pico_real": 0.7499455,
+        "ganancia_rms_db": 2.948,
+        "duracion_ms": 2352
+      },
+      {
+        "clave": "04c29a270a43378e9251a8e9",
+        "hablante": "NARRADOR",
+        "texto": "Participacion +5.",
+        "rms_antes": 0.0726702,
+        "rms_despues": 0.1169433,
+        "pico_real": 0.789079,
+        "ganancia_rms_db": 4.132,
+        "duracion_ms": 2592
+      },
+      {
+        "clave": "024dfc40e685c5b1a8ce255d",
+        "hablante": "NARRADOR",
+        "texto": "Puntuación de la acción: +8.",
+        "rms_antes": 0.0887447,
+        "rms_despues": 0.1326114,
+        "pico_real": 0.747486,
+        "ganancia_rms_db": 3.489,
+        "duracion_ms": 3264
+      }
+    ],
+    "mediana_ganancia_rms_db": 4.088,
+    "pico_maximo": 0.8864995
+  },
+  "aplicado": false
+}

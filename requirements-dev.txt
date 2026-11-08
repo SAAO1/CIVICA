@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# FFmpeg para verificar y producir recursos; no se necesita para jugar.
+imageio-ffmpeg==0.6.0

@@ -1,0 +1,92 @@
+{
+    "fecha":  "2026-10-24",
+    "suite":  {
+                  "pruebas":  239,
+                  "fallas":  0,
+                  "errores":  0,
+                  "omitidas":  0,
+                  "segundos":  164.046,
+                  "limpieza_qt_entre_pruebas":  true
+              },
+    "alcance":  [
+                    "Decisiones distintas por oficio",
+                    "Multijugador de dos a cuatro participantes",
+                    "Balance central sincronizado con voz",
+                    "Videos de personajes y cinco desenlaces",
+                    "Guardados y aristas de la comunidad",
+                    "Pausa al minimizar y ante interrupcion de sala"
+                ],
+    "medios_reales":  {
+                          "videos_finales":  [
+                                                 {
+                                                     "clave":  "juan",
+                                                     "decodificacion_completa":  true
+                                                 },
+                                                 {
+                                                     "clave":  "adrian",
+                                                     "decodificacion_completa":  true
+                                                 },
+                                                 {
+                                                     "clave":  "laura",
+                                                     "decodificacion_completa":  true
+                                                 },
+                                                 {
+                                                     "clave":  "camila",
+                                                     "decodificacion_completa":  true
+                                                 },
+                                                 {
+                                                     "clave":  "recuento",
+                                                     "decodificacion_completa":  true
+                                                 }
+                                             ],
+                          "secuencia_real":  {
+                                                 "inicios":  [
+                                                                 {
+                                                                     "clave":  "confianza",
+                                                                     "tarjeta":  "confianza",
+                                                                     "estado":  "PlayingState"
+                                                                 },
+                                                                 {
+                                                                     "clave":  "conflictos",
+                                                                     "tarjeta":  "conflictos",
+                                                                     "estado":  "PlayingState"
+                                                                 }
+                                                             ],
+                                                 "finales":  [
+                                                                 "confianza",
+                                                                 "conflictos"
+                                                             ],
+                                                 "completada":  [
+                                                                    true
+                                                                ],
+                                                 "balance_final":  true
+                                             }
+                      },
+    "roles_locales_y_turnos":  {
+                                   "combinaciones":  16,
+                                   "correctas":  16
+                               },
+    "regresiones_corregidas":  [
+                                   "La nueva escena tras un timeout minimizado espera para narrar hasta restaurar la ventana",
+                                   "La interrupcion de sala pausa voz, texto y cine; la reconexion recupera el estado del servidor",
+                                   "Minimizar el observatorio pausa el enlace animado sin completarlo prematuramente"
+                               ],
+    "recursos":  {
+                     "mp4_total":  29,
+                     "mp4_narrativos":  21,
+                     "mp4_finales":  5,
+                     "mp4_ambientes":  3,
+                     "voces_locales":  1017,
+                     "gif":  11,
+                     "acciones_por_rol":  4
+                 },
+    "evidencias":  [
+                       ".tmp/verificacion_roles_impacto_finales.txt",
+                       ".tmp/verificacion_roles_impacto_finales.json",
+                       ".tmp/verificacion_media_impacto.json",
+                       ".tmp/auditoria_cierres_roles.json",
+                       ".tmp/verificacion_cinematicas_personajes/resultado.json",
+                       "tests/test_pausa_campana.py",
+                       "tests/test_observatorio_roles.py"
+                   ]
+}

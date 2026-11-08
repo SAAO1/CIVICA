@@ -1,0 +1,643 @@
+{
+  "version": 1,
+  "tecnica": "Cine ilustrado contextual con cámara, rostros y luz de escena",
+  "procedencia": "procedencia.json",
+  "codec": "h264",
+  "pixel_format": "yuv420p",
+  "crf": 28,
+  "preset": "medium",
+  "clips": [
+    {
+      "clave": "personaje_90_valeria_presenta",
+      "publicacion": 90,
+      "nombre": "INFLUENCER",
+      "texto": "Soy Valeria. Normalmente preparo una entrada mejor, pero hoy mi entrada tiene treinta mensajes sin responder.",
+      "titulo": "Valeria prepara el directo",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "e2efc79d96151ad870c13167690f0dc9b2f4a5695878fd60e2a6e298e41c2b4c",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/estudio.jpg",
+          "sha256": "2aa61975283631721f7d0ec5f4bd241dfa3dc11ec8bb0545690cecff2d79d9c0"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/estudio.jpg",
+          "sha256": "16fb867ed85cca3277e9aba379afdb0e5aa5e8d0e5e2ae2c2203615b0cc8c490"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+          "sha256": "ec6671170b6c73f83eb38da2e918f8229935c57cdcb4d1d876a5a602e97cf35d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_hablando.png",
+          "sha256": "15a637fdeabe5585e091a4c472a4d70cc3315ed5bc9fd91c2ad19d6a6e953626"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_parpadeo.png",
+          "sha256": "6f5e7910117f3444f8b3820ad705b965535acb7f28c53e90e6ee6768f0cea2bb"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_preocupado.png",
+          "sha256": "4349fb4571150f4c8f852aa3672a5e215aa2d06e490d8eb62fedf0f5d766972e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_decidido.png",
+          "sha256": "2a274eb83e6e62223234d647f3403b8284739790c88179794135ca7ae2f4c038"
+        }
+      ],
+      "video": "personaje_90_valeria_presenta.mp4",
+      "video_sha256": "4de860acf6dff945e548f4625dc22a85ce213b4fb00e03dfb3bc7f6e2858b272",
+      "video_bytes": 1502868,
+      "poster": "personaje_90_valeria_presenta.jpg",
+      "poster_sha256": "34324ce695abfb1c641ed4f5b8bc3e948b92f533462c0b829c86bdae0f546770",
+      "poster_bytes": 248241,
+      "inicio": "personaje_90_valeria_presenta_inicio.png",
+      "inicio_sha256": "8d2e3c08d6d10351a291d8d57eee01a5b088b95dc14e314df9cba794f5fc0e9b",
+      "inicio_bytes": 1794774,
+      "sha256": "4de860acf6dff945e548f4625dc22a85ce213b4fb00e03dfb3bc7f6e2858b272",
+      "bytes": 1502868
+    },
+    {
+      "clave": "personaje_90_valeria_recorte",
+      "publicacion": 90,
+      "nombre": "INFLUENCER",
+      "texto": "El recorte lo hice yo. Dejé fuera el sendero porque se veía feo. Ahora el titular dice que no queda ninguna entrada.",
+      "titulo": "El encuadre y su responsabilidad",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "e861f9c1482cceb81c04a7be712bff46190fcba2463180ec2b5e6dd19c5dece2",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/estudio.jpg",
+          "sha256": "2aa61975283631721f7d0ec5f4bd241dfa3dc11ec8bb0545690cecff2d79d9c0"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/estudio.jpg",
+          "sha256": "16fb867ed85cca3277e9aba379afdb0e5aa5e8d0e5e2ae2c2203615b0cc8c490"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+          "sha256": "ec6671170b6c73f83eb38da2e918f8229935c57cdcb4d1d876a5a602e97cf35d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_hablando.png",
+          "sha256": "15a637fdeabe5585e091a4c472a4d70cc3315ed5bc9fd91c2ad19d6a6e953626"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_parpadeo.png",
+          "sha256": "6f5e7910117f3444f8b3820ad705b965535acb7f28c53e90e6ee6768f0cea2bb"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_preocupado.png",
+          "sha256": "4349fb4571150f4c8f852aa3672a5e215aa2d06e490d8eb62fedf0f5d766972e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_decidido.png",
+          "sha256": "2a274eb83e6e62223234d647f3403b8284739790c88179794135ca7ae2f4c038"
+        }
+      ],
+      "video": "personaje_90_valeria_recorte.mp4",
+      "video_sha256": "ed9b665485cd500e5004ce46b5ed86cd1151aa2c4a3d17d53d2da1a522cc5c12",
+      "video_bytes": 1502124,
+      "poster": "personaje_90_valeria_recorte.jpg",
+      "poster_sha256": "b594f47d16983396ed18d2ac6d27a2a34351dfdee84b48b993e340ede4d9b8e0",
+      "poster_bytes": 248275,
+      "inicio": "personaje_90_valeria_recorte_inicio.png",
+      "inicio_sha256": "6c1f24989b6488aba1cf4949e6c8b00d837acdcac3d654f862c5463647a4a544",
+      "inicio_bytes": 1795421,
+      "sha256": "ed9b665485cd500e5004ce46b5ed86cd1151aa2c4a3d17d53d2da1a522cc5c12",
+      "bytes": 1502124
+    },
+    {
+      "clave": "personaje_40_camila_canal",
+      "publicacion": 40,
+      "nombre": "CAMILA",
+      "texto": "Presenté un canal para enlazar correcciones con el mensaje original. El cambio debe quedar a la vista, también cuando incomode.",
+      "titulo": "Camila conserva las dos versiones",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "ec90c63de87b76e14aa9701a63e384ee9839366f041669a168aac1ce7585c21f",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/estudio.jpg",
+          "sha256": "2aa61975283631721f7d0ec5f4bd241dfa3dc11ec8bb0545690cecff2d79d9c0"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/estudio.jpg",
+          "sha256": "16fb867ed85cca3277e9aba379afdb0e5aa5e8d0e5e2ae2c2203615b0cc8c490"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_neutral.png",
+          "sha256": "e68c2cdfddad624c53f04d69f58c85278267d3bbd5fcb8caa4d2bde290d5bc0e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_hablando.png",
+          "sha256": "3e557728c686339dd4a21b1f4e02d920899a9dcfe9d9eb9eea259dc672adb41f"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_parpadeo.png",
+          "sha256": "594741088967aa37cf449452eb8a744bcbdbf43f3d59a1943205083b7df704b0"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_preocupado.png",
+          "sha256": "008cbb33e4129565d0fc3be4dd9ee68b568002a8df0ea46ba1cefd147ffd6a8d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_decidido.png",
+          "sha256": "d2bde3932b1ed621095201910e7758ab7c36e2e8d135aee063d802849c244fac"
+        }
+      ],
+      "video": "personaje_40_camila_canal.mp4",
+      "video_sha256": "34f7e7eb62a53953f2a8701aaf9c23d9bcba4ad3440bfb1d27a75c485d028019",
+      "video_bytes": 1318458,
+      "poster": "personaje_40_camila_canal.jpg",
+      "poster_sha256": "e46994fbb106e436ab23f278b5c6ee3e22c471c4c1f0cb482cdea9aa3c0f50ad",
+      "poster_bytes": 227135,
+      "inicio": "personaje_40_camila_canal_inicio.png",
+      "inicio_sha256": "57fcd5e798ed7b57b3a9dbda8fe2fdaa40c7777cc29ebaab994f3574e94c7cc1",
+      "inicio_bytes": 1800569,
+      "sha256": "34f7e7eb62a53953f2a8701aaf9c23d9bcba4ad3440bfb1d27a75c485d028019",
+      "bytes": 1318458
+    },
+    {
+      "clave": "personaje_100_juan_plan",
+      "publicacion": 100,
+      "nombre": "JUAN",
+      "texto": "Caben las dos. Propongo reparar por etapas y usar aulas alternas para mantener las clases. Aquí está el plan completo.",
+      "titulo": "Juan explica las etapas",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "1ba6ef442256d4ad2e345ee196400defb0eeccefc16893aaa38fb3deef9c6c39",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/debate.jpg",
+          "sha256": "1583438a31e65cbc1bd3294f67922550ec47893199d576e3a4742b3d649bddae"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/debate.jpg",
+          "sha256": "ae09061fa873dd61798c2ceacd36614200759a2a8621f5cf7b7f30fa5fd9c27a"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_neutral.png",
+          "sha256": "52421f1d74abe81e320e0fda073d239fce4992201960d17441556a6561e65f3b"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_hablando.png",
+          "sha256": "e354da6a49946eba303c1963659b6d998a3a0ee2bb5479dbbf759ff0ad6405de"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_parpadeo.png",
+          "sha256": "cc64e4a3fba662678a2a260fafeba52f00d5a250e7c2d1374f607d628b38cd26"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_preocupado.png",
+          "sha256": "e6e1dad5867f4b10f486a21b527fb5f02e2ee0baba9ef11ad889f07f8e8e2faa"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_decidido.png",
+          "sha256": "d2f048765d0bece48c1a7fcdcb005658bb9d1163b454f6fcc1d31880869cf7f8"
+        }
+      ],
+      "video": "personaje_100_juan_plan.mp4",
+      "video_sha256": "3b46df6ba745d1d5744eddd29fa81603b97c6b558644e2867de4abca76e5e3db",
+      "video_bytes": 653419,
+      "poster": "personaje_100_juan_plan.jpg",
+      "poster_sha256": "6b27b82a3f9645916b0b6c2643a39c5adfa9d399cdb596e0b5b8e4cf8ebb1b65",
+      "poster_bytes": 141639,
+      "inicio": "personaje_100_juan_plan_inicio.png",
+      "inicio_sha256": "c211ddfd36899f441d704be8bf9c18d5d8742356274beb0926f166d92238aa47",
+      "inicio_bytes": 1157165,
+      "sha256": "3b46df6ba745d1d5744eddd29fa81603b97c6b558644e2867de4abca76e5e3db",
+      "bytes": 653419
+    },
+    {
+      "clave": "personaje_10_adrian_cultura",
+      "publicacion": 10,
+      "nombre": "ADRIAN",
+      "texto": "Para mí, la cultura debe ser la primera prioridad de la próxima alcaldía. Una ciudad también necesita lugares donde imaginarse.",
+      "titulo": "Adrián defiende su prioridad",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "43ff67762d5c1c44df5fe4d39c31fae0ae3859d3849de85fbf25fafeba30167a",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/debate.jpg",
+          "sha256": "1583438a31e65cbc1bd3294f67922550ec47893199d576e3a4742b3d649bddae"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/debate.jpg",
+          "sha256": "ae09061fa873dd61798c2ceacd36614200759a2a8621f5cf7b7f30fa5fd9c27a"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/adrian_neutral.png",
+          "sha256": "2f4ce766e89257516aa6c57b630e8165f759a1b9170d8099e250730e1e54099d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/adrian_hablando.png",
+          "sha256": "b4b67cd13136643c9561443c331ee96db99a12bf494747f4cf5717b2318c7aa2"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/adrian_parpadeo.png",
+          "sha256": "f29f4f613983302a6417173ff1fd9a5d1a76f9598aa5d599c325ac998e77dab7"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/adrian_preocupado.png",
+          "sha256": "5934168ce3056009d5924246c6cf4d1a3b24aa405c8e783baf8d666251ed172d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/adrian_decidido.png",
+          "sha256": "9e60fde84920ff8580bdbfb63ff3ece6c8e8de47b6c5261c658205b752ac0019"
+        }
+      ],
+      "video": "personaje_10_adrian_cultura.mp4",
+      "video_sha256": "95cf5501b416e8bdd757dd4b0b2bd5aeb6a05d666c0179e8802af75619af0fe7",
+      "video_bytes": 648075,
+      "poster": "personaje_10_adrian_cultura.jpg",
+      "poster_sha256": "f1a79f7b394c0b9cf87fd83a810703e1d0b31e39ec6f6ac01da9aac58d0a3738",
+      "poster_bytes": 140475,
+      "inicio": "personaje_10_adrian_cultura_inicio.png",
+      "inicio_sha256": "cc171dfd05d5bdd93ac0f279882fb03a12b9f7b34cd641cd7dfeda594fe9c8bd",
+      "inicio_bytes": 1154981,
+      "sha256": "95cf5501b416e8bdd757dd4b0b2bd5aeb6a05d666c0179e8802af75619af0fe7",
+      "bytes": 648075
+    },
+    {
+      "clave": "personaje_110_camila_audio",
+      "publicacion": 110,
+      "nombre": "CAMILA",
+      "texto": "Era una advertencia sobre un engaño. La frase completa empezaba antes de lo que se está reenviando.",
+      "titulo": "La advertencia de Camila",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "7606bee419feed2a47b8f006e7dd3ed45ec36dd452b40598002de0b7421809b3",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/redaccion.jpg",
+          "sha256": "3d8c7e59348650302febe2db40b980b5551d1a3081d238ddfeddbd48477deb6e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/redaccion.jpg",
+          "sha256": "9e1c34c416e7ae6c3c6001242a5f0f7e0d48d259c5554f4ea554a038f9f505ff"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_neutral.png",
+          "sha256": "e68c2cdfddad624c53f04d69f58c85278267d3bbd5fcb8caa4d2bde290d5bc0e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_hablando.png",
+          "sha256": "3e557728c686339dd4a21b1f4e02d920899a9dcfe9d9eb9eea259dc672adb41f"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_parpadeo.png",
+          "sha256": "594741088967aa37cf449452eb8a744bcbdbf43f3d59a1943205083b7df704b0"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_preocupado.png",
+          "sha256": "008cbb33e4129565d0fc3be4dd9ee68b568002a8df0ea46ba1cefd147ffd6a8d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/camila_decidido.png",
+          "sha256": "d2bde3932b1ed621095201910e7758ab7c36e2e8d135aee063d802849c244fac"
+        }
+      ],
+      "video": "personaje_110_camila_audio.mp4",
+      "video_sha256": "0a0474cc5e49529c257d079aa6d2782b70d7d0d6673309cd8815ccc8b6fcc875",
+      "video_bytes": 991820,
+      "poster": "personaje_110_camila_audio.jpg",
+      "poster_sha256": "2b3df8d6af5e7b2254ede132d5d7daad2c97cd1f5d2d4f010203ef7d32cb3c25",
+      "poster_bytes": 186635,
+      "inicio": "personaje_110_camila_audio_inicio.png",
+      "inicio_sha256": "49e24ac9194dea62ea7b699f75dec913e5c5cd478d2133e804caee86cb4e53ae",
+      "inicio_bytes": 1731706,
+      "sha256": "0a0474cc5e49529c257d079aa6d2782b70d7d0d6673309cd8815ccc8b6fcc875",
+      "bytes": 991820
+    },
+    {
+      "clave": "personaje_110_valeria_pausa",
+      "publicacion": 110,
+      "nombre": "INFLUENCER",
+      "texto": "Y si el directo se queda en silencio mientras lo buscamos, se queda. Puedo sobrevivir a una pausa.",
+      "titulo": "Valeria deja respirar el directo",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "6621957e6092cddcd1c0aafa827a370053d219b126962dd506ccf959e1b3530c",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/redaccion.jpg",
+          "sha256": "3d8c7e59348650302febe2db40b980b5551d1a3081d238ddfeddbd48477deb6e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/redaccion.jpg",
+          "sha256": "9e1c34c416e7ae6c3c6001242a5f0f7e0d48d259c5554f4ea554a038f9f505ff"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+          "sha256": "ec6671170b6c73f83eb38da2e918f8229935c57cdcb4d1d876a5a602e97cf35d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_hablando.png",
+          "sha256": "15a637fdeabe5585e091a4c472a4d70cc3315ed5bc9fd91c2ad19d6a6e953626"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_parpadeo.png",
+          "sha256": "6f5e7910117f3444f8b3820ad705b965535acb7f28c53e90e6ee6768f0cea2bb"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_preocupado.png",
+          "sha256": "4349fb4571150f4c8f852aa3672a5e215aa2d06e490d8eb62fedf0f5d766972e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_decidido.png",
+          "sha256": "2a274eb83e6e62223234d647f3403b8284739790c88179794135ca7ae2f4c038"
+        }
+      ],
+      "video": "personaje_110_valeria_pausa.mp4",
+      "video_sha256": "7048067f1e23477571362a7ebf180e6f4f459d1fd1b7804d2e21777c2e8f658b",
+      "video_bytes": 965800,
+      "poster": "personaje_110_valeria_pausa.jpg",
+      "poster_sha256": "55187b824e5fef2e3904ffe265f0957fef114cebfc4f7deb9a587ebe9c12631f",
+      "poster_bytes": 183627,
+      "inicio": "personaje_110_valeria_pausa_inicio.png",
+      "inicio_sha256": "a5d80bd7719e191bcf36f5d204b40fcd6b08730133a45d12e1d480c4df2943a4",
+      "inicio_bytes": 1730483,
+      "sha256": "7048067f1e23477571362a7ebf180e6f4f459d1fd1b7804d2e21777c2e8f658b",
+      "bytes": 965800
+    },
+    {
+      "clave": "personaje_25_juan_archivo",
+      "publicacion": 25,
+      "nombre": "JUAN",
+      "texto": "Conservé la pregunta de aquella familia. No quería que mi respuesta empezara cuando ya no se oyera lo que me estaban pidiendo.",
+      "titulo": "La pregunta permanece en el archivo",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "4c9bddf4258a719f9276687cf19ab2940ccc7d5ccb5c00bbb166e07cc27fec84",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/redaccion.jpg",
+          "sha256": "3d8c7e59348650302febe2db40b980b5551d1a3081d238ddfeddbd48477deb6e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/redaccion.jpg",
+          "sha256": "9e1c34c416e7ae6c3c6001242a5f0f7e0d48d259c5554f4ea554a038f9f505ff"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_neutral.png",
+          "sha256": "52421f1d74abe81e320e0fda073d239fce4992201960d17441556a6561e65f3b"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_hablando.png",
+          "sha256": "e354da6a49946eba303c1963659b6d998a3a0ee2bb5479dbbf759ff0ad6405de"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_parpadeo.png",
+          "sha256": "cc64e4a3fba662678a2a260fafeba52f00d5a250e7c2d1374f607d628b38cd26"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_preocupado.png",
+          "sha256": "e6e1dad5867f4b10f486a21b527fb5f02e2ee0baba9ef11ad889f07f8e8e2faa"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/juan_decidido.png",
+          "sha256": "d2f048765d0bece48c1a7fcdcb005658bb9d1163b454f6fcc1d31880869cf7f8"
+        }
+      ],
+      "video": "personaje_25_juan_archivo.mp4",
+      "video_sha256": "1e75c328c2cdec80f0928b46d9df13f954da7ed73db69cb6c1880cf532082c71",
+      "video_bytes": 1008604,
+      "poster": "personaje_25_juan_archivo.jpg",
+      "poster_sha256": "f3e1118c5066eed2d8fdfb13563e2836738863f2fbe29e0c42b3cf7a3a13af1e",
+      "poster_bytes": 188895,
+      "inicio": "personaje_25_juan_archivo_inicio.png",
+      "inicio_sha256": "e9a0b119e0e9d450e9d1a0ded805f784cbf3581728695bb09bdf8635852a74a4",
+      "inicio_bytes": 1731378,
+      "sha256": "1e75c328c2cdec80f0928b46d9df13f954da7ed73db69cb6c1880cf532082c71",
+      "bytes": 1008604
+    },
+    {
+      "clave": "personaje_25_llamada_hermana",
+      "publicacion": 25,
+      "nombre": "CIUDADANO",
+      "texto": "Me toca llamar a mi hermana. No puedo mandarle una carpeta y fingir que la conversación ocurrió.",
+      "titulo": "Una llamada que la carpeta no sustituye",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "1f16e720477ab1247d56092be03bd09c3dfd4043b9319a1ee186707961ab1d52",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/redaccion.jpg",
+          "sha256": "3d8c7e59348650302febe2db40b980b5551d1a3081d238ddfeddbd48477deb6e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/redaccion.jpg",
+          "sha256": "9e1c34c416e7ae6c3c6001242a5f0f7e0d48d259c5554f4ea554a038f9f505ff"
+        }
+      ],
+      "video": "personaje_25_llamada_hermana.mp4",
+      "video_sha256": "f59050749257772c61e87d926db50d493bd4fb749d407159099c0f32b0d9e81d",
+      "video_bytes": 769147,
+      "poster": "personaje_25_llamada_hermana.jpg",
+      "poster_sha256": "6de2aad340296364b2e1c5244a5fe24167ab0271307ade8de68fe297ef92467d",
+      "poster_bytes": 206105,
+      "inicio": "personaje_25_llamada_hermana_inicio.png",
+      "inicio_sha256": "22043a43e29b5fd2d7f472e8ad9a2491c9f40744dbd99368a5d4f57717b5c6c7",
+      "inicio_bytes": 1742576,
+      "sha256": "f59050749257772c61e87d926db50d493bd4fb749d407159099c0f32b0d9e81d",
+      "bytes": 769147
+    },
+    {
+      "clave": "personaje_120_abuelo_entrada",
+      "publicacion": 120,
+      "nombre": "CIUDADANO",
+      "texto": "El abuelo ya eligió zapatos, bastón y tema de conversación. Solo nos falta una entrada por la que pueda pasar.",
+      "titulo": "El abuelo y el camino accesible",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "98902bffffcc8f2577ad747583057751786dee1cc8cc6aa6cfe5831bc06fc1d8",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/urnas.jpg",
+          "sha256": "e74b4c7c36c39341b54b3916108c7b82043a7b1158fb5c78958ef2edca42d35e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/urnas.jpg",
+          "sha256": "5228955cf14c3771302f57eb679d5251207302bed18674e6302f56d842d76267"
+        }
+      ],
+      "video": "personaje_120_abuelo_entrada.mp4",
+      "video_sha256": "3c54af672e50f02f7b9e5425ac12a32bb04ff194e0c368d52729a1026f763633",
+      "video_bytes": 1111513,
+      "poster": "personaje_120_abuelo_entrada.jpg",
+      "poster_sha256": "8840ced1e836617e793f206d5ad31b26e8a919994137d304c3376be25ba06cf0",
+      "poster_bytes": 279916,
+      "inicio": "personaje_120_abuelo_entrada_inicio.png",
+      "inicio_sha256": "73dce411167954e26b776fbc254349bdfaed26c7f943e59ddee2138bc7ba19e5",
+      "inicio_bytes": 2126229,
+      "sha256": "3c54af672e50f02f7b9e5425ac12a32bb04ff194e0c368d52729a1026f763633",
+      "bytes": 1111513
+    },
+    {
+      "clave": "personaje_120_laura_mapa",
+      "publicacion": 120,
+      "nombre": "LAURA",
+      "texto": "Compartí el mapa de la organización electoral. La entrada accesible está señalada; conserven el enlace por si hay una actualización.",
+      "titulo": "Laura conserva la fuente del mapa",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "2fd15aeedcf4092212cea34d15b18dc20f804785f8216074bc91dc834418d3aa",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/urnas.jpg",
+          "sha256": "e74b4c7c36c39341b54b3916108c7b82043a7b1158fb5c78958ef2edca42d35e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/urnas.jpg",
+          "sha256": "5228955cf14c3771302f57eb679d5251207302bed18674e6302f56d842d76267"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/laura_neutral.png",
+          "sha256": "c4054ea061790599a97c58048bbdc20305ff0fea15a9391df813f8dd2b85d059"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/laura_hablando.png",
+          "sha256": "500ae95cf25e0d8ff0aee9d02fe150493f68774d21b3cc8d8763422735439512"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/laura_parpadeo.png",
+          "sha256": "c59f7ea2f974a2f7e443655c47ae8ec7ba0426b82345457de85f15f4e0e9741c"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/laura_preocupado.png",
+          "sha256": "f84e338a3fb230950c2f8269b60771686541aff78501a7084669e35696e1abc8"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/laura_decidido.png",
+          "sha256": "222b723b762dce7290dff00a50a3f8b7fbb4f422daec25ac04af89d5471ec16b"
+        }
+      ],
+      "video": "personaje_120_laura_mapa.mp4",
+      "video_sha256": "d3e3962cc4db6d28eada9cb51df67d228865316c50cd9fbcc4cf87db5c6be154",
+      "video_bytes": 1863439,
+      "poster": "personaje_120_laura_mapa.jpg",
+      "poster_sha256": "4eb9f368e213025e3812596681f5a1e4e33736c52a9c8e18dbcc9c5989ed2c36",
+      "poster_bytes": 276918,
+      "inicio": "personaje_120_laura_mapa_inicio.png",
+      "inicio_sha256": "c43ee801c48af8fad65c6a6f016630a60dcf7d4511fa3cecbead521221e5e197",
+      "inicio_bytes": 2116316,
+      "sha256": "d3e3962cc4db6d28eada9cb51df67d228865316c50cd9fbcc4cf87db5c6be154",
+      "bytes": 1863439
+    },
+    {
+      "clave": "personaje_35_valeria_urna",
+      "publicacion": 35,
+      "nombre": "INFLUENCER",
+      "texto": "Me piden abrir una encuesta para que la gente vote desde el sofá. Mi teléfono hace muchas cosas, pero no es una urna.",
+      "titulo": "El teléfono no es una urna",
+      "duracion": 9.0,
+      "fps": 24,
+      "fotogramas": 216,
+      "ancho": 1280,
+      "alto": 720,
+      "entrada_sha256": "d436876062f501ad8f00d9b6496542840c701a7e55cd074ef9a4d4650119a065",
+      "decodificacion_completa": true,
+      "inicio_extraido_del_video": true,
+      "fuentes": [
+        {
+          "ruta": "assets/expansion/siete_actos/fondos/urnas.jpg",
+          "sha256": "e74b4c7c36c39341b54b3916108c7b82043a7b1158fb5c78958ef2edca42d35e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/ilustraciones/urnas.jpg",
+          "sha256": "5228955cf14c3771302f57eb679d5251207302bed18674e6302f56d842d76267"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+          "sha256": "ec6671170b6c73f83eb38da2e918f8229935c57cdcb4d1d876a5a602e97cf35d"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_hablando.png",
+          "sha256": "15a637fdeabe5585e091a4c472a4d70cc3315ed5bc9fd91c2ad19d6a6e953626"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_parpadeo.png",
+          "sha256": "6f5e7910117f3444f8b3820ad705b965535acb7f28c53e90e6ee6768f0cea2bb"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_preocupado.png",
+          "sha256": "4349fb4571150f4c8f852aa3672a5e215aa2d06e490d8eb62fedf0f5d766972e"
+        },
+        {
+          "ruta": "assets/expansion/siete_actos/personajes/influencer_decidido.png",
+          "sha256": "2a274eb83e6e62223234d647f3403b8284739790c88179794135ca7ae2f4c038"
+        }
+      ],
+      "video": "personaje_35_valeria_urna.mp4",
+      "video_sha256": "292c838627a76363ba4857a8e32c30c41db288ff4fc2693d82dcc973ff143b11",
+      "video_bytes": 1854292,
+      "poster": "personaje_35_valeria_urna.jpg",
+      "poster_sha256": "84ea7c7732447c753bd9446eff3604e3de04c50e70546a4a438b89e76e76db82",
+      "poster_bytes": 278058,
+      "inicio": "personaje_35_valeria_urna_inicio.png",
+      "inicio_sha256": "64a7e54b8cee0e7926070e1f9ebe7698dd9b5c74bcde5c418eade877819be83c",
+      "inicio_bytes": 2118825,
+      "sha256": "292c838627a76363ba4857a8e32c30c41db288ff4fc2693d82dcc973ff143b11",
+      "bytes": 1854292
+    }
+  ]
+}

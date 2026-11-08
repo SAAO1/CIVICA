@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "origen": "ImageGen integrado. Copia binaria íntegra de las hojas originales; no se descartó ni alteró el alpha.",
+  "hojas": [
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/juan_expresiones.png",
+      "sha256": "c73c63919c6aa11fb5d7bb2dc42c6089cb2c00031f98bc16c8154978e332cb6d",
+      "tipo": "expresiones",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/adrian_expresiones.png",
+      "sha256": "7d5d2074ad97435e1f720b1283fecdb9e75d53c9c0a4af43b3bd2266844fb55f",
+      "tipo": "expresiones",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/laura_expresiones.png",
+      "sha256": "e6cfc1822f17945e0729d40a85ba63c6dacdde2c661b767677b52b5ce4769621",
+      "tipo": "expresiones",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/camila_expresiones.png",
+      "sha256": "5972635055d9a93849fba16d21ff6e68fb33904f69316b728509e1c5625b6293",
+      "tipo": "expresiones",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/influencer_expresiones.png",
+      "sha256": "25d2047bb1e8144eb83d0442f82b93e5b146cb3568b6ecce27c484c8b4a2b51c",
+      "tipo": "expresiones",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/juan_animacion.png",
+      "sha256": "83e5c94f2a972699ac0290c041db2fb8e5138391daddfbaaf781442e52bc9b1e",
+      "tipo": "animacion",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/adrian_animacion.png",
+      "sha256": "a86b852b01f966bfadd8a9d2100ee73b7b8c5eece0b1fa458312b1bc93702c06",
+      "tipo": "animacion",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/laura_animacion.png",
+      "sha256": "24b8828e09655c4865c6f44f4d5902f8d9f85255cbd06dfe843dc9f0bc219f97",
+      "tipo": "animacion",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/camila_animacion.png",
+      "sha256": "7ee38a672083a88044b66c71fa8a15570b8ae8bb5eacabb8c5478ea23a28fc7e",
+      "tipo": "animacion",
+      "alpha_original": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/atlas/influencer_animacion.png",
+      "sha256": "86c529fafda52db9293b379e0a597655bea931b425eb3b52444dbf439b6ed7fa",
+      "tipo": "animacion",
+      "alpha_original": true
+    }
+  ]
+}

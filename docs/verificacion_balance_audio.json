@@ -1,0 +1,163 @@
+{
+  "correcto": true,
+  "segmentos": [
+    {
+      "clave": "info_verificada",
+      "tarjeta_actual": "info_verificada",
+      "estado_transporte": "PlayingState",
+      "archivo": "4ab1ff8f9aea002ff14af8a7.mp3",
+      "posicion_ms": 0,
+      "duracion_ms": 3216,
+      "antes": 0,
+      "despues": 5,
+      "delta": 5,
+      "subtitulo_oculto": true,
+      "pulsaciones_anticipadas_ignoradas": 30,
+      "transcurrido_ms": 4859
+    },
+    {
+      "clave": "confianza",
+      "tarjeta_actual": "confianza",
+      "estado_transporte": "PlayingState",
+      "archivo": "abe4c0cdabc1d12857e8803d.mp3",
+      "posicion_ms": 0,
+      "duracion_ms": 2448,
+      "antes": 50,
+      "despues": 56,
+      "delta": 6,
+      "subtitulo_oculto": true,
+      "pulsaciones_anticipadas_ignoradas": 30,
+      "transcurrido_ms": 8339
+    },
+    {
+      "clave": "desinformacion",
+      "tarjeta_actual": "desinformacion",
+      "estado_transporte": "PlayingState",
+      "archivo": "adb62b7ff86c509daaf44944.mp3",
+      "posicion_ms": 0,
+      "duracion_ms": 2760,
+      "antes": 9,
+      "despues": 1,
+      "delta": -8,
+      "subtitulo_oculto": true,
+      "pulsaciones_anticipadas_ignoradas": 30,
+      "transcurrido_ms": 10879
+    },
+    {
+      "clave": "convivencia",
+      "tarjeta_actual": "convivencia",
+      "estado_transporte": "PlayingState",
+      "archivo": "d7a5b0376bfe8095f9098835.mp3",
+      "posicion_ms": 0,
+      "duracion_ms": 2472,
+      "antes": 50,
+      "despues": 52,
+      "delta": 2,
+      "subtitulo_oculto": true,
+      "pulsaciones_anticipadas_ignoradas": 30,
+      "transcurrido_ms": 13790
+    },
+    {
+      "clave": "bienestar_digital",
+      "tarjeta_actual": "bienestar_digital",
+      "estado_transporte": "PlayingState",
+      "archivo": "188d6e512e0965773ac09e1e.mp3",
+      "posicion_ms": 0,
+      "duracion_ms": 2904,
+      "antes": 50,
+      "despues": 52,
+      "delta": 2,
+      "subtitulo_oculto": true,
+      "pulsaciones_anticipadas_ignoradas": 30,
+      "transcurrido_ms": 16376
+    },
+    {
+      "clave": "puntos",
+      "tarjeta_actual": "puntos",
+      "estado_transporte": "PlayingState",
+      "archivo": "adbe497dd7b1e3d283dd4825.mp3",
+      "posicion_ms": 0,
+      "duracion_ms": 3216,
+      "antes": 0,
+      "despues": 9,
+      "delta": 9,
+      "subtitulo_oculto": true,
+      "pulsaciones_anticipadas_ignoradas": 30,
+      "transcurrido_ms": 19323
+    }
+  ],
+  "confianza_animacion": [
+    {
+      "retardo_programado_ms": 0,
+      "reloj_animacion_ms": 48,
+      "pixel_sha256": "2adafdc5f34cc152c359217f68e4045825482174d03815bcf7c28114d95f8695",
+      "antes": 50,
+      "despues": 56,
+      "cambio": 6
+    },
+    {
+      "retardo_programado_ms": 500,
+      "reloj_animacion_ms": 518,
+      "pixel_sha256": "b84ce7840c88edcf621c0d415bc8f7df0b53b5fdfdce8205cbe12d23b3e62d61",
+      "antes": 50,
+      "despues": 56,
+      "cambio": 6
+    },
+    {
+      "retardo_programado_ms": 1000,
+      "reloj_animacion_ms": 1023,
+      "pixel_sha256": "b84f95b7bce71b5e8360a99d2432f399fde7874db08303b99117fdbc9aff24dc",
+      "antes": 50,
+      "despues": 56,
+      "cambio": 6
+    }
+  ],
+  "errores": [],
+  "transporte": "QMediaPlayer real; clips neuronales locales",
+  "escena": "VentanaPrincipal · EscenaResultado tipo 3",
+  "valoracion_auditiva_humana": false,
+  "configuracion_prueba": {
+    "general": 0.2,
+    "voces": 0.6,
+    "musica": 0,
+    "ambiente": 0,
+    "efectos": 0
+  },
+  "indicadores_antes": {
+    "info_verificada": 0,
+    "confianza": 50,
+    "desinformacion": 9,
+    "convivencia": 50,
+    "bienestar_digital": 50,
+    "conflictos": 0,
+    "participacion": 0
+  },
+  "indicadores_despues": {
+    "info_verificada": 5,
+    "confianza": 56,
+    "desinformacion": 1,
+    "convivencia": 52,
+    "bienestar_digital": 52,
+    "conflictos": 0,
+    "participacion": 0
+  },
+  "claves_esperadas": [
+    "info_verificada",
+    "confianza",
+    "desinformacion",
+    "convivencia",
+    "bienestar_digital",
+    "puntos"
+  ],
+  "voces_locales": 1017,
+  "contadores_completos": true,
+  "cuadricula_de_resumen": false,
+  "capturas": [
+    ".tmp/balance_real/confianza_animacion.jpg",
+    ".tmp/balance_real/balance_final.jpg"
+  ],
+  "duracion_segundos": 22.807,
+  "estado_partida_sin_cambios": true,
+  "preferencias_sin_cambios": true,
+  "guardado_config_no_invocado": true
+}

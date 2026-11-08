@@ -1,0 +1,530 @@
+{
+  "correcto": true,
+  "resolucion": [
+    1360,
+    720
+  ],
+  "videos": [
+    {
+      "archivo": "docs/capturas_inmersion/prologo_juan.png",
+      "clave": "pulido_foro_juan",
+      "estado": "reproduciendo",
+      "reproductor": "PlayingState",
+      "video_fuente": "C:/Users/USER/Downloads/CIVICA-main/CIVICA-main/assets/novela/prologo/videos/juan.mp4",
+      "frames_validos": 6,
+      "frames_distintos": 6,
+      "posiciones_ms": [
+        0,
+        83,
+        166
+      ],
+      "muestras_sink": [
+        {
+          "inicio_us": 0,
+          "posicion_ms": 0,
+          "rgb_sha256": "2d0d5c51c3f6197e7853171d4124fffbb553b0c5d5273fcfe78dc67fd72f9e94"
+        },
+        {
+          "inicio_us": 41667,
+          "posicion_ms": 0,
+          "rgb_sha256": "44275591d17835e7d01e518e1e622f5c76ce5bc075c8f510136bf23f0555271c"
+        },
+        {
+          "inicio_us": 83333,
+          "posicion_ms": 83,
+          "rgb_sha256": "f7d752d561f884082d5424fb743925a2940da89efa401a6c84e1bab1222558f5"
+        },
+        {
+          "inicio_us": 125000,
+          "posicion_ms": 83,
+          "rgb_sha256": "96a1a6e6d2ccdbe8d989a45937d3495f05d5234c59a29a78b55c8d884386f7ad"
+        },
+        {
+          "inicio_us": 166667,
+          "posicion_ms": 166,
+          "rgb_sha256": "8f7c060f27123b73bbd6b8bec38c072abecde9243e41f9f597d76b36f1d894de"
+        },
+        {
+          "inicio_us": 208333,
+          "posicion_ms": 166,
+          "rgb_sha256": "97fb758b790209ed9763b642d6227c13991272beedf3a79e5cbaa4ef7465f20b"
+        }
+      ],
+      "poster_oculto": true,
+      "video_visible": true,
+      "hud_visible": false,
+      "indicadores_visibles": false,
+      "anclaje_y": 0.0,
+      "recorte_inferior": 0.0,
+      "origen_video": [
+        0.0,
+        0.0,
+        1280.0,
+        720.0
+      ],
+      "destino_video": [
+        0,
+        0,
+        1360,
+        765
+      ],
+      "cubierta_opciones_coinciden": true,
+      "cabello_sin_recorte_superior": true,
+      "enter_avanza_linea": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_adrian.png",
+      "clave": "pulido_foro_adrian",
+      "estado": "reproduciendo",
+      "reproductor": "PlayingState",
+      "video_fuente": "C:/Users/USER/Downloads/CIVICA-main/CIVICA-main/assets/novela/prologo/videos/adrian.mp4",
+      "frames_validos": 7,
+      "frames_distintos": 7,
+      "posiciones_ms": [
+        0,
+        166,
+        333
+      ],
+      "muestras_sink": [
+        {
+          "inicio_us": 0,
+          "posicion_ms": 0,
+          "rgb_sha256": "4c56090dadfd5891882c4060d9873ae3b4a061dae643df8c205865ed9872ec31"
+        },
+        {
+          "inicio_us": 41667,
+          "posicion_ms": 0,
+          "rgb_sha256": "f0beba4763b45043f514281417e4b3a36a49db297116624fcd12e2cc29cb7165"
+        },
+        {
+          "inicio_us": 83333,
+          "posicion_ms": 166,
+          "rgb_sha256": "b9df40f4de14c3d039147379458ed5a82c5e5f4c329271cda8ca5caf548c8758"
+        },
+        {
+          "inicio_us": 125000,
+          "posicion_ms": 166,
+          "rgb_sha256": "cc9324ce832bc83afa502741260ac1fd423dcc3f0f259f8ca170e6b26d7895b4"
+        },
+        {
+          "inicio_us": 166667,
+          "posicion_ms": 166,
+          "rgb_sha256": "360692bfe25fe9edb347d6bb75250c36e1cb848e84e6280854adbfad94223ec3"
+        },
+        {
+          "inicio_us": 208333,
+          "posicion_ms": 166,
+          "rgb_sha256": "d7ac316151e1704570b388ba0ca70f370819bdad76dd304a2cd11eb4ae138227"
+        },
+        {
+          "inicio_us": 250000,
+          "posicion_ms": 333,
+          "rgb_sha256": "456761f2cb3486f606ba434d625bf5b1e7f08444484fb65a7c0e05707524a7f9"
+        }
+      ],
+      "poster_oculto": true,
+      "video_visible": true,
+      "hud_visible": false,
+      "indicadores_visibles": false,
+      "anclaje_y": 0.0,
+      "recorte_inferior": 0.0,
+      "origen_video": [
+        0.0,
+        0.0,
+        1280.0,
+        720.0
+      ],
+      "destino_video": [
+        0,
+        0,
+        1360,
+        765
+      ],
+      "cubierta_opciones_coinciden": true,
+      "cabello_sin_recorte_superior": true,
+      "enter_avanza_linea": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_laura.png",
+      "clave": "pulido_foro_laura",
+      "estado": "reproduciendo",
+      "reproductor": "PlayingState",
+      "video_fuente": "C:/Users/USER/Downloads/CIVICA-main/CIVICA-main/assets/novela/prologo/videos/laura.mp4",
+      "frames_validos": 10,
+      "frames_distintos": 10,
+      "posiciones_ms": [
+        41,
+        125,
+        166,
+        250,
+        291,
+        333
+      ],
+      "muestras_sink": [
+        {
+          "inicio_us": 0,
+          "posicion_ms": 41,
+          "rgb_sha256": "8313dcf46b97dde217cd475b776556e298ae60a338ab7828a376e7d6a9fd4f0b"
+        },
+        {
+          "inicio_us": 41667,
+          "posicion_ms": 41,
+          "rgb_sha256": "53b567660fbaa5eae589f020a589c715e125a4c6a44563458030d80e889c9c5d"
+        },
+        {
+          "inicio_us": 83333,
+          "posicion_ms": 125,
+          "rgb_sha256": "66948685e9726336434e4c33e249cbe9f4b5feff8a93d41c4b47bd6a2652af43"
+        },
+        {
+          "inicio_us": 125000,
+          "posicion_ms": 125,
+          "rgb_sha256": "928da5c4f5507670b8b4e70bc4b9e922bad0e74c18e5c278e3cbf92a1632ff1f"
+        },
+        {
+          "inicio_us": 166667,
+          "posicion_ms": 166,
+          "rgb_sha256": "f9aca4bc3e7c883fe4c91cf9070d2289d94ba5b4ae27814abc4d1c20204d7f83"
+        },
+        {
+          "inicio_us": 208333,
+          "posicion_ms": 166,
+          "rgb_sha256": "171d751a0dcf99bd5c59149afe3b008c55ad9097891b61b7fa9cd26bf6fa39dd"
+        },
+        {
+          "inicio_us": 250000,
+          "posicion_ms": 250,
+          "rgb_sha256": "63fb5c36a5d6d108cde38abda138b831bb78e472b114d9b75c46a7381fb378ef"
+        },
+        {
+          "inicio_us": 291667,
+          "posicion_ms": 291,
+          "rgb_sha256": "d774ab1689dbc3d8af5e29685247a5e75a5da586f42e46c14d2fc5310e00fc60"
+        },
+        {
+          "inicio_us": 333333,
+          "posicion_ms": 333,
+          "rgb_sha256": "e37f3814ba72ecaec638367be3a6f8ad1dfdf5eae88e7d67f1315473c082f0be"
+        },
+        {
+          "inicio_us": 375000,
+          "posicion_ms": 333,
+          "rgb_sha256": "61d9c745d56c13cd56220c769b570dd5ac33ccc4ffda922a094b31b43ca1fe21"
+        }
+      ],
+      "poster_oculto": true,
+      "video_visible": true,
+      "hud_visible": false,
+      "indicadores_visibles": false,
+      "anclaje_y": 0.0,
+      "recorte_inferior": 0.0,
+      "origen_video": [
+        0.0,
+        0.0,
+        1280.0,
+        720.0
+      ],
+      "destino_video": [
+        0,
+        0,
+        1360,
+        765
+      ],
+      "cubierta_opciones_coinciden": true,
+      "cabello_sin_recorte_superior": true,
+      "enter_avanza_linea": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_camila.png",
+      "clave": "pulido_foro_camila",
+      "estado": "reproduciendo",
+      "reproductor": "PlayingState",
+      "video_fuente": "C:/Users/USER/Downloads/CIVICA-main/CIVICA-main/assets/novela/prologo/videos/camila.mp4",
+      "frames_validos": 10,
+      "frames_distintos": 10,
+      "posiciones_ms": [
+        0,
+        41,
+        83,
+        166,
+        208,
+        250,
+        333
+      ],
+      "muestras_sink": [
+        {
+          "inicio_us": 0,
+          "posicion_ms": 0,
+          "rgb_sha256": "0966eb250d9b542d8b5620e53e092d004ac784847a65faa74fdc63722cab34b0"
+        },
+        {
+          "inicio_us": 41667,
+          "posicion_ms": 41,
+          "rgb_sha256": "ccbca5fa333f5c6859bbf3095b75da5d263ff694ac3f4ec3c5ec699204a763a2"
+        },
+        {
+          "inicio_us": 83333,
+          "posicion_ms": 83,
+          "rgb_sha256": "207a4e1d2f96c78c6c8bef423c8c06c999c862139b89405584671f9633f53047"
+        },
+        {
+          "inicio_us": 125000,
+          "posicion_ms": 83,
+          "rgb_sha256": "29063624ff092f43a944cc70a56ff5942c6608efef64ae371a61e5baa5785915"
+        },
+        {
+          "inicio_us": 166667,
+          "posicion_ms": 166,
+          "rgb_sha256": "2c8c3df8deff309b8af1c4ca39297da18d2982a86ed0908a4dd84cfe9959f916"
+        },
+        {
+          "inicio_us": 208333,
+          "posicion_ms": 166,
+          "rgb_sha256": "4268537a91f40333e35a7b4f30a8685a67145c102cf7db96871d37529d5399a1"
+        },
+        {
+          "inicio_us": 250000,
+          "posicion_ms": 208,
+          "rgb_sha256": "fd52e82837a377955f1d9bea5e8d3686049233849603cb3479a739aef29ebb89"
+        },
+        {
+          "inicio_us": 291667,
+          "posicion_ms": 250,
+          "rgb_sha256": "9422e40bb69cbdd2530cc26e2831ce394122203c262f866ded2073ecc55af4d0"
+        },
+        {
+          "inicio_us": 333333,
+          "posicion_ms": 333,
+          "rgb_sha256": "ad3b0412b4a6869881f6c23b9c96718f1691ec717b359961014b1b0bde1b9c37"
+        },
+        {
+          "inicio_us": 375000,
+          "posicion_ms": 333,
+          "rgb_sha256": "28882e13f68b73004fcfdfd0c8f3f142500a74c4d5790c220e85d86a9b2024bb"
+        }
+      ],
+      "poster_oculto": true,
+      "video_visible": true,
+      "hud_visible": false,
+      "indicadores_visibles": false,
+      "anclaje_y": 0.0,
+      "recorte_inferior": 0.0,
+      "origen_video": [
+        0.0,
+        0.0,
+        1280.0,
+        720.0
+      ],
+      "destino_video": [
+        0,
+        0,
+        1360,
+        765
+      ],
+      "cubierta_opciones_coinciden": true,
+      "cabello_sin_recorte_superior": true,
+      "enter_avanza_linea": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/consecuencia.png",
+      "clave": "pulido_caso_50",
+      "estado": "reproduciendo",
+      "reproductor": "PlayingState",
+      "video_fuente": "C:/Users/USER/Downloads/CIVICA-main/CIVICA-main/assets/novela/pulido/videos/caso_50.mp4",
+      "frames_validos": 12,
+      "frames_distintos": 12,
+      "posiciones_ms": [
+        0,
+        41,
+        83,
+        166,
+        291,
+        375,
+        500
+      ],
+      "muestras_sink": [
+        {
+          "inicio_us": 0,
+          "posicion_ms": 0,
+          "rgb_sha256": "44665f886e7ee1ac478c88abbf778d0a0e8d35feecf0d8d7379e0661a8eb7c45"
+        },
+        {
+          "inicio_us": 41667,
+          "posicion_ms": 41,
+          "rgb_sha256": "73d201dea263b6170934023e17acb2e80749589c9afe6854f5cf1420fe0773f6"
+        },
+        {
+          "inicio_us": 83333,
+          "posicion_ms": 83,
+          "rgb_sha256": "bce58f05ee1b376e4c441ae656a347c501c984397f2bc192d6e9a42262cc97e9"
+        },
+        {
+          "inicio_us": 125000,
+          "posicion_ms": 83,
+          "rgb_sha256": "1ece200219c107dd36db8521d6e75233ee0e58259f0547a9dd5edcbee18a6704"
+        },
+        {
+          "inicio_us": 166667,
+          "posicion_ms": 166,
+          "rgb_sha256": "68638841eed9764768f77494ab8a9e44ab3856163235bad0142cfaa22b969e76"
+        },
+        {
+          "inicio_us": 208333,
+          "posicion_ms": 166,
+          "rgb_sha256": "0f6d060eb115fe27f2330fcf6f3064576f460b440a58eb78a5b4dbb97b67eb39"
+        },
+        {
+          "inicio_us": 250000,
+          "posicion_ms": 291,
+          "rgb_sha256": "9615ed7081d08ba907cc36493b440d616542b32325e427b75ef79ce73a07964f"
+        },
+        {
+          "inicio_us": 291667,
+          "posicion_ms": 291,
+          "rgb_sha256": "3e381d1cff3d4b45196e9b1a02994de22767b16f0cd688dbd5ea4d73fea21bef"
+        },
+        {
+          "inicio_us": 333333,
+          "posicion_ms": 375,
+          "rgb_sha256": "5591ca4b125aa33b869c0d9fd1a6bad536f87eab9cd9bc9fb89084342f05c62f"
+        },
+        {
+          "inicio_us": 375000,
+          "posicion_ms": 375,
+          "rgb_sha256": "a1a04a47fd5ab039d612527adb958c8e7e28af75af3e90f3e8d792c988e62409"
+        },
+        {
+          "inicio_us": 416667,
+          "posicion_ms": 375,
+          "rgb_sha256": "6493f58a698ab8723993b0c48fd6b22e98b0e27298e537462186b9daa5085baf"
+        },
+        {
+          "inicio_us": 458333,
+          "posicion_ms": 500,
+          "rgb_sha256": "31ccf974222f69aad5b0b906e2f7b5a588ae09f9adf615862fa374051a0d2663"
+        }
+      ],
+      "poster_oculto": true,
+      "video_visible": true,
+      "hud_visible": false,
+      "indicadores_visibles": false,
+      "anclaje_y": 0.5,
+      "recorte_inferior": 0.155,
+      "origen_video": [
+        0.0,
+        0.0,
+        1280.0,
+        608.4
+      ],
+      "destino_video": [
+        -3,
+        0,
+        1365,
+        649
+      ],
+      "cubierta_opciones_coinciden": true,
+      "pie_rasterizado_excluido": true,
+      "boton_explicacion": false,
+      "valores_reales": [
+        {
+          "clave": "info_verificada",
+          "nombre": "Información verificada",
+          "antes": 0,
+          "despues": 5,
+          "delta": 5,
+          "favorable": true
+        },
+        {
+          "clave": "confianza",
+          "nombre": "Confianza",
+          "antes": 50,
+          "despues": 56,
+          "delta": 6,
+          "favorable": true
+        },
+        {
+          "clave": "desinformacion",
+          "nombre": "Desinformación",
+          "antes": 0,
+          "despues": 0,
+          "delta": 0,
+          "favorable": null
+        },
+        {
+          "clave": "convivencia",
+          "nombre": "Convivencia",
+          "antes": 50,
+          "despues": 52,
+          "delta": 2,
+          "favorable": true
+        },
+        {
+          "clave": "bienestar_digital",
+          "nombre": "Bienestar digital",
+          "antes": 50,
+          "despues": 52,
+          "delta": 2,
+          "favorable": true
+        },
+        {
+          "clave": "conflictos",
+          "nombre": "Conflictos",
+          "antes": 0,
+          "despues": 0,
+          "delta": 0,
+          "favorable": null
+        },
+        {
+          "clave": "participacion",
+          "nombre": "Participación",
+          "antes": 0,
+          "despues": 0,
+          "delta": 0,
+          "favorable": null
+        },
+        {
+          "clave": "puntos",
+          "nombre": "Tu puntuación",
+          "antes": 0,
+          "despues": 9,
+          "delta": 9,
+          "favorable": true
+        }
+      ],
+      "alpha_balance_zona_superior": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "fondo_superior_libre": true,
+      "enter_abre_archivo": true,
+      "clic_abre_archivo": true
+    }
+  ],
+  "errores": [],
+  "guardados_usuario": false,
+  "biblioteca_en_memoria": true,
+  "metadatos_presentacion_verificados": true,
+  "observaciones_visuales_resueltas": [
+    "Cabello completo por anclaje superior en los4primeros planos",
+    "Pie rasterizado eliminado por recorte inferior normalizado de15.5porciento"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "correcto": true,
+  "recorridos": [
+    {
+      "rol": "ciudadano",
+      "caso": 50,
+      "prueba": "50:contexto",
+      "accion": "conversar",
+      "historial": 1,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "ciudadano",
+      "caso": 90,
+      "prueba": "90:contexto",
+      "accion": "conversar",
+      "historial": 2,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "ciudadano",
+      "caso": 110,
+      "prueba": "110:contexto",
+      "accion": "conversar",
+      "historial": 3,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "ciudadano",
+      "caso": 40,
+      "prueba": "40:contexto",
+      "accion": "conversar",
+      "historial": 4,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "ciudadano",
+      "caso": 120,
+      "prueba": "120:contexto",
+      "accion": "conversar",
+      "historial": 5,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "ciudadano",
+      "caso": 35,
+      "prueba": "35:contexto",
+      "accion": "conversar",
+      "historial": 6,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "periodista",
+      "caso": 50,
+      "prueba": "50:contexto",
+      "accion": "contrastar",
+      "historial": 1,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "periodista",
+      "caso": 90,
+      "prueba": "90:contexto",
+      "accion": "contrastar",
+      "historial": 2,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "periodista",
+      "caso": 110,
+      "prueba": "110:contexto",
+      "accion": "contrastar",
+      "historial": 3,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "periodista",
+      "caso": 40,
+      "prueba": "40:contexto",
+      "accion": "contrastar",
+      "historial": 4,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "periodista",
+      "caso": 120,
+      "prueba": "120:contexto",
+      "accion": "contrastar",
+      "historial": 5,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    },
+    {
+      "rol": "periodista",
+      "caso": 35,
+      "prueba": "35:contexto",
+      "accion": "contrastar",
+      "historial": 6,
+      "consecuencia_8_valores": true,
+      "arbol_grafo_recorridos": true
+    }
+  ],
+  "actos_por_rol": 6,
+  "decisiones": 12
+}

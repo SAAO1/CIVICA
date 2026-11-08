@@ -1,0 +1,538 @@
+{
+  "campana": "extendida",
+  "casos": 14,
+  "actos": 7,
+  "muestras": 768,
+  "muestreo_reproducible": true,
+  "no_es_enumeracion_exhaustiva": true,
+  "decisiones_validas": true,
+  "recargas_invariantes": true,
+  "distribucion_participantes": {
+    "1 participante": 308,
+    "2 participantes": 154,
+    "3 participantes": 153,
+    "4 participantes": 153
+  },
+  "ganadores_en_muestra": {
+    "Adrián Morales": 321,
+    "Laura Ríos": 167,
+    "Juan Torres": 140,
+    "Camila Vega": 140
+  },
+  "mayor_trama_bytes": 53546,
+  "demostraciones": {
+    "juan": {
+      "semilla": 42,
+      "eventos": false,
+      "roles": [
+        "periodista"
+      ],
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ganadores": [
+        "Juan Torres"
+      ],
+      "apoyos": {
+        "juan": 33.395,
+        "adrian": 25.0,
+        "laura": 25.0,
+        "camila": 25.0
+      }
+    },
+    "adrian": {
+      "semilla": 42,
+      "eventos": false,
+      "roles": [
+        "periodista"
+      ],
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ganadores": [
+        "Adrián Morales"
+      ],
+      "apoyos": {
+        "juan": 25.0,
+        "adrian": 41.682,
+        "laura": 25.0,
+        "camila": 25.0
+      }
+    },
+    "laura": {
+      "semilla": 42,
+      "eventos": false,
+      "roles": [
+        "periodista"
+      ],
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ganadores": [
+        "Laura Ríos"
+      ],
+      "apoyos": {
+        "juan": 25.0,
+        "adrian": 25.0,
+        "laura": 45.118,
+        "camila": 25.0
+      }
+    },
+    "camila": {
+      "semilla": 42,
+      "eventos": false,
+      "roles": [
+        "periodista"
+      ],
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ganadores": [
+        "Camila Vega"
+      ],
+      "apoyos": {
+        "juan": 25.0,
+        "adrian": 25.0,
+        "laura": 25.0,
+        "camila": 47.653
+      }
+    },
+    "empate": {
+      "semilla": 42,
+      "eventos": false,
+      "roles": [
+        "periodista"
+      ],
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ganadores": [
+        "Juan Torres",
+        "Adrián Morales",
+        "Laura Ríos",
+        "Camila Vega"
+      ],
+      "apoyos": {
+        "juan": 25.0,
+        "adrian": 25.0,
+        "laura": 25.0,
+        "camila": 25.0
+      }
+    }
+  }
+}

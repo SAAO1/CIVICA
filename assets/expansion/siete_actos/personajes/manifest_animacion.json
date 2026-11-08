@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "tecnica": "Rasgos reales ImageGen registrados y extraídos sobre cuerpo neutral intacto. Ningún píxel cambia fuera del rectángulo facial, alpha idéntico al original.",
+  "frames": [
+    {
+      "error": 482.15749235474004,
+      "escala": 1.02,
+      "dx": -6,
+      "dy": 0,
+      "id": "juan",
+      "estado": "hablando",
+      "archivo": "assets/expansion/siete_actos/personajes/juan_hablando.png",
+      "rasgo": [
+        398,
+        210,
+        88,
+        47
+      ],
+      "pixeles_modificados": 3201,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 407.5581039755352,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": 3,
+      "id": "juan",
+      "estado": "parpadeo",
+      "archivo": "assets/expansion/siete_actos/personajes/juan_parpadeo.png",
+      "rasgo": [
+        378,
+        143,
+        132,
+        65
+      ],
+      "pixeles_modificados": 8196,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 366.9106060606061,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": 0,
+      "id": "adrian",
+      "estado": "hablando",
+      "archivo": "assets/expansion/siete_actos/personajes/adrian_hablando.png",
+      "rasgo": [
+        356,
+        199,
+        90,
+        50
+      ],
+      "pixeles_modificados": 3667,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 356.8636363636364,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": 0,
+      "id": "adrian",
+      "estado": "parpadeo",
+      "archivo": "assets/expansion/siete_actos/personajes/adrian_parpadeo.png",
+      "rasgo": [
+        326,
+        138,
+        142,
+        62
+      ],
+      "pixeles_modificados": 8366,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 362.00101317122596,
+      "escala": 1.0,
+      "dx": -3,
+      "dy": 0,
+      "id": "laura",
+      "estado": "hablando",
+      "archivo": "assets/expansion/siete_actos/personajes/laura_hablando.png",
+      "rasgo": [
+        328,
+        206,
+        86,
+        52
+      ],
+      "pixeles_modificados": 4092,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 355.0688956433637,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": 3,
+      "id": "laura",
+      "estado": "parpadeo",
+      "archivo": "assets/expansion/siete_actos/personajes/laura_parpadeo.png",
+      "rasgo": [
+        295,
+        148,
+        121,
+        65
+      ],
+      "pixeles_modificados": 7291,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 513.2494887525562,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": 6,
+      "id": "camila",
+      "estado": "hablando",
+      "archivo": "assets/expansion/siete_actos/personajes/camila_hablando.png",
+      "rasgo": [
+        343,
+        205,
+        90,
+        48
+      ],
+      "pixeles_modificados": 3898,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 476.2750511247444,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": 6,
+      "id": "camila",
+      "estado": "parpadeo",
+      "archivo": "assets/expansion/siete_actos/personajes/camila_parpadeo.png",
+      "rasgo": [
+        325,
+        142,
+        139,
+        65
+      ],
+      "pixeles_modificados": 8431,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 185.99026763990267,
+      "escala": 1.0,
+      "dx": 0,
+      "dy": -3,
+      "id": "influencer",
+      "estado": "hablando",
+      "archivo": "assets/expansion/siete_actos/personajes/influencer_hablando.png",
+      "rasgo": [
+        317,
+        228,
+        88,
+        45
+      ],
+      "pixeles_modificados": 3620,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    },
+    {
+      "error": 384.1666666666667,
+      "escala": 1.0,
+      "dx": 3,
+      "dy": 0,
+      "id": "influencer",
+      "estado": "parpadeo",
+      "archivo": "assets/expansion/siete_actos/personajes/influencer_parpadeo.png",
+      "rasgo": [
+        292,
+        169,
+        137,
+        58
+      ],
+      "pixeles_modificados": 7464,
+      "pixeles_modificados_fuera_rasgo": 0,
+      "alpha_identico": true
+    }
+  ]
+}

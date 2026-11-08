@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "herramienta": "ImageGen integrado (image_gen__imagegen), sin CLI/API",
+  "fecha": "2026-10-24",
+  "tecnica": "Cinco hojas transparentes de tres expresiones. Extracción de celdas y normalización con QImage; se preserva alpha generado, no se inventa por color.",
+  "referencias": [
+    "assets/rediseno/personajes/candidatos.png",
+    "assets/rediseno/personajes/periodista_retrato.png"
+  ],
+  "personajes": [
+    {
+      "id": "juan",
+      "nombre": "Juan Torres",
+      "expresiones": [
+        "neutral",
+        "preocupado",
+        "decidido"
+      ],
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-7372d068-5a3d-4236-b02b-23be0f674373.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent production sprite expression sheet for CIVICA, a premium visual novel. Reference image is the approved four-candidate atlas. Preserve EXACT identity of TOP LEFT man Juan Torres: copper red tousled hair, black rectangular eyeglasses, warm brown eyes, fair-medium Latino skin, beige blazer over dark navy turtleneck, charcoal trousers and brown shoes. Create a NEW 3-column, one-row expression sprite sheet of this same adult man age34 shown FULL BODY from complete hair to shoes. Every equal-width cell contains exactly one copy, aligned same size, position, hands, clothing and standing pose, relaxed arm and holding a closed cream folder low in one hand, subtle three-quarter turn toward viewer right. LEFT neutral attentive closed mouth; CENTER concerned thoughtful brow and small uneasy mouth; RIGHT determined warm confident small smile. The facial expressions must be visibly different, while identity/pose remain identical. Semi-realistic anime painterly rendering, fine warm copper rim light, dimensional fabric and skin, sophisticated thin linework. Three equal vertical cells across landscape canvas; all head/feet/hands within each cell with generous clear margins and transparent gutters, never crossing cell boundaries. Genuine TRANSPARENT ALPHA everywhere outside silhouettes, including between legs. NO environment, ground plane, background, shadow puddles, gradient, labels, words, logos, names, speech bubbles, frames, watermark or checkerboard pattern. No podium, sash or mayoral insignia: he is still a candidate. Adult proportions, no chibi. Final image wide 3:2, 1536x1024 or higher.",
+      "atlas": "assets/expansion/siete_actos/atlas/juan_expresiones.png"
+    },
+    {
+      "id": "adrian",
+      "nombre": "Adrián Morales",
+      "expresiones": [
+        "neutral",
+        "preocupado",
+        "decidido"
+      ],
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-35e2a5bf-6af3-4fc8-8b18-bfe7283d0a71.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent production sprite expression sheet for CIVICA, a premium visual novel. Reference image is the approved four-candidate atlas. Preserve EXACT identity of TOP RIGHT man Adrián Morales: silver-gray swept layered hair, dark thin oval eyeglasses, warm brown eyes, mature Latino man age49, charcoal navy tailored suit, white shirt, muted teal-blue tie, charcoal trousers and formal dark shoes. Create a NEW 3-column one-row expression sprite sheet of this SAME man shown FULL BODY from complete hair to shoes. Every equal-width cell contains exactly one copy, aligned same size, position, hands, clothing and standing pose, a slim closed book held low in left hand, right hand relaxed; subtle three-quarter turn toward viewer left. LEFT calm neutral closed mouth; CENTER worried thoughtful brow and slightly tense mouth; RIGHT determined encouraging small smile. Facial expressions visibly different, exact identity and pose stable. Semi-realistic anime painterly rendering matching reference, fine warm copper rim light, dimensional fabric/skin, sophisticated thin linework. Three equal vertical cells across landscape canvas; complete heads/feet/hands entirely within each cell, generous clear margins and transparent gutters, never crossing cell boundaries. Genuine TRANSPARENT ALPHA everywhere outside silhouettes and between legs. NO background, environment, floor, shadow puddles, gradient, labels, words, names, logos, speech bubbles, boxes, watermark or painted checkerboard. No podium, sash or mayoral insignia: still a candidate. Adult realistic proportions, no chibi. Wide 3:2 1536x1024 or higher.",
+      "atlas": "assets/expansion/siete_actos/atlas/adrian_expresiones.png"
+    },
+    {
+      "id": "laura",
+      "nombre": "Laura Ríos",
+      "expresiones": [
+        "neutral",
+        "preocupado",
+        "decidido"
+      ],
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-b0aa4f0e-19a3-42d4-8fec-f6148d7d05e2.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent production sprite expression sheet for CIVICA, a premium visual novel. Reference image is the approved four-candidate atlas. Preserve EXACT identity of BOTTOM LEFT woman Laura Ríos: straight flowing black hair below shoulders with side part, brown almond eyes, medium warm Latina skin, adult woman age36, navy blue tailored pantsuit, plain white open-collar blouse, small pearl stud earrings, dark flat formal shoes. Create a NEW 3-column one-row expression sheet of this SAME adult woman shown FULL BODY from complete hair to shoes. Each equal-width cell contains exactly one copy, identical scale, pose, hands and clothing: relaxed upright pose, holding a thin closed teal civic folder low in one hand, slight three-quarter turn toward viewer right. LEFT attentive neutral closed mouth; CENTER visibly worried thoughtful brow and slight tense frown; RIGHT determined reassuring warm small smile. Facial expressions must differ clearly; identity/pose remain consistent. Semi-realistic anime painterly rendering matching reference, refined thin lines, dimensional clothes, skin and individual hair strands, warm subtle copper rim light. Landscape 3:2 1536x1024 or higher. Three exact equal-width columns with full head, hands and feet inside each cell, clean clear margins/gutters and no overlapping figures. Genuine TRANSPARENT ALPHA outside silhouettes and between legs. NO floor, background, environment, gradient, shadow puddles, labels, names, text, boxes, speech bubbles, watermark, checkerboard pattern. No sash, podium or mayoral insignia: still candidate. Natural adult proportions, not chibi.",
+      "atlas": "assets/expansion/siete_actos/atlas/laura_expresiones.png"
+    },
+    {
+      "id": "camila",
+      "nombre": "Camila Vega",
+      "expresiones": [
+        "neutral",
+        "preocupado",
+        "decidido"
+      ],
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-f752c92a-1f6b-45a6-911f-133014691c74.png",
+      "prompt": "Use case: identity-preserve. Asset type: transparent production sprite expression sheet for CIVICA, a premium visual novel. Reference image is the approved four-candidate atlas. Preserve EXACT identity of BOTTOM RIGHT woman Camila Vega: warm chestnut wavy layered shoulder-length hair, brown eyes, fair-medium warm Latina skin, adult woman age38, navy tailored pantsuit, white open-collar blouse, rust red neck scarf tied to one side, small gold hoop earrings, dark formal flat shoes. Create NEW 3-column one-row expression sprite sheet of this SAME woman FULL BODY from complete hair to shoes. Each equal-width cell has exactly one figure, identical scale/pose/hands/clothes, standing upright holding a plain dark smartphone low in one hand, other hand relaxed, subtle three-quarter turn toward viewer left. LEFT calm neutral closed mouth; CENTER concerned thoughtful brow and small tense frown; RIGHT determined encouraging small smile. Clearly different facial emotions, exact stable identity. Match reference sophisticated semi-realistic anime painterly style, fine linework, dimensional skin and fabric, warm soft copper rim light. Three exact equal columns across landscape3:2 canvas1536x1024 or higher. Head/hands/feet completely within each cell with clear margins and transparent gutters, no overlap. True TRANSPARENT ALPHA outside every silhouette, including gaps between legs. NO background, floor, environment, gradient, shadow puddles, frames, labels, lettering, logos, bubbles, watermark or checkerboard pattern. No sash, podium or mayoral insignia: still candidate. Adult proportions, not chibi.",
+      "atlas": "assets/expansion/siete_actos/atlas/camila_expresiones.png"
+    },
+    {
+      "id": "influencer",
+      "nombre": "Valeria Cruz",
+      "expresiones": [
+        "neutral",
+        "preocupado",
+        "decidido"
+      ],
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-6837ac3b-4fde-4a72-b262-5ca653b15e72.png",
+      "prompt": "Use case: illustration-story. Asset type: transparent production character expression sheet for CIVICA premium visual novel. The supplied candidate atlas and journalist portrait are ART STYLE references only; create an ORIGINAL distinct adult Latina woman age27, Valeria Cruz, an influencer and community livestream host. Medium warm brown skin, expressive hazel-brown eyes, dark brown curly shoulder-length hair with a single half-up bun, subtle copper hairclip, small silver ear studs. Burgundy bomber jacket over plain cream T-shirt, dark high-waisted straight jeans, white sneakers; dark over-ear headphones resting around neck, plain smartphone held low in one hand. Contemporary modest natural adult outfit, no logos. NEW 3-column one-row sheet showing SAME woman FULL BODY from complete hair to sneakers three times at identical size, position, hands, pose and clothing. Upright relaxed standing pose, subtly turned toward viewer left. LEFT attentive neutral closed mouth; CENTER worried reflective brow, slightly uneasy mouth; RIGHT determined hopeful small smile. Clearly distinguish the three expressions while preserving identity exactly. Match reference sophisticated painterly semi-realistic anime, detailed dimensional skin/folds/hair, fine linework, warm subtle copper rim light and navy shadows. Three exact equal vertical cells across landscape3:2 canvas1536x1024 or higher; complete head/hands/shoes visible within each cell with clear margins and transparent gutters, no overlapping figures. GENUINE TRANSPARENT ALPHA outside all silhouettes and between legs; no environment, background, floor, shadow puddles, gradient, borders, labels, letters, names, logos, watermark or painted checkerboard. No sexualized pose, no school uniform, no chibi.",
+      "atlas": "assets/expansion/siete_actos/atlas/influencer_expresiones.png"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "tecnica": "Cuatro pinturas ImageGen originales, cámara y objetos dibujados en capas QPainter, MP4 H.264 sin pista de voz. La voz exacta la reproduce el juego. No es animación corporal generada.",
+  "coherencia": "Cada publicación nueva tiene un corte propio enlazado a su primera frase de narrador; no proclama ganadores ni certifica rumores.",
+  "clips": [
+    {
+      "clave": "narrador_90",
+      "publicacion": 90,
+      "texto": "El aro de luz enmarca el teléfono de Valeria. Fuera del encuadre, una llamada insiste por tercera vez.",
+      "video": "narrador_90.mp4",
+      "poster": "narrador_90.jpg",
+      "inicio": "narrador_90_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 2328655,
+      "sha256": "0c251b8900a1d0c09b86a394259fe49bf0cb3186bd6894af6e30741da6826412",
+      "inicio_sha256": "afd907b03c5e074a4f6d4bd8e8537a2a2d1a4af0fc0d04532ac92fbcce4602da",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/estudio.jpg",
+        "assets/expansion/siete_actos/ilustraciones/estudio.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_40",
+      "publicacion": 40,
+      "texto": "Valeria apoya el teléfono junto al aro de luz. El silencio entre dos notificaciones dura menos que una respiración.",
+      "video": "narrador_40.mp4",
+      "poster": "narrador_40.jpg",
+      "inicio": "narrador_40_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 2281146,
+      "sha256": "1cff46b9a8d862c883718e1a17620f8d4c8621cd257b0b5863c58dcdffd86ded",
+      "inicio_sha256": "afd907b03c5e074a4f6d4bd8e8537a2a2d1a4af0fc0d04532ac92fbcce4602da",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/estudio.jpg",
+        "assets/expansion/siete_actos/ilustraciones/estudio.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_100",
+      "publicacion": 100,
+      "texto": "Los focos del foro encienden cuatro atriles. En la primera fila, el ciudadano sostiene una pregunta escrita por su hermana.",
+      "video": "narrador_100.mp4",
+      "poster": "narrador_100.jpg",
+      "inicio": "narrador_100_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 1614107,
+      "sha256": "05f822639474c11ab37edcb8c5c940a157f804264488fbf359d5d60e1f30f6a2",
+      "inicio_sha256": "80b1655f5da6692062e53c3de9d978b6bf0ff32ebdefb5443eb1750a3b9624a3",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/debate.jpg",
+        "assets/expansion/siete_actos/ilustraciones/debate.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_10",
+      "publicacion": 10,
+      "texto": "La moderación recoge el reloj de la mesa. Nadie en los cuatro atriles parece dispuesto a devolver el último minuto.",
+      "video": "narrador_10.mp4",
+      "poster": "narrador_10.jpg",
+      "inicio": "narrador_10_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 1614107,
+      "sha256": "05f822639474c11ab37edcb8c5c940a157f804264488fbf359d5d60e1f30f6a2",
+      "inicio_sha256": "80b1655f5da6692062e53c3de9d978b6bf0ff32ebdefb5443eb1750a3b9624a3",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/debate.jpg",
+        "assets/expansion/siete_actos/ilustraciones/debate.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_110",
+      "publicacion": 110,
+      "texto": "La lluvia golpea la ventana de la redacción. Un audio termina demasiado pronto y deja a todos mirando el teléfono.",
+      "video": "narrador_110.mp4",
+      "poster": "narrador_110.jpg",
+      "inicio": "narrador_110_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 2346757,
+      "sha256": "149dcb1df4c70188207e717daae97026a16af3c1007501b2ca26fb86d9520c02",
+      "inicio_sha256": "b32b4d4d92352b1689db73c5d0ab2ccc51cab56f5eab74a2ce0ab5dea47c8c53",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/redaccion.jpg",
+        "assets/expansion/siete_actos/ilustraciones/redaccion.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_25",
+      "publicacion": 25,
+      "texto": "En la redacción queda una carpeta abierta con el nombre del colegio. La periodista deja el archivo completo junto al primer mensaje de la campaña.",
+      "video": "narrador_25.mp4",
+      "poster": "narrador_25.jpg",
+      "inicio": "narrador_25_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 2088185,
+      "sha256": "cb7e05e3f97f6a50ac9de6a7825bafe9455ba92e9c190717dda35af5254e7bbf",
+      "inicio_sha256": "b32b4d4d92352b1689db73c5d0ab2ccc51cab56f5eab74a2ce0ab5dea47c8c53",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/redaccion.jpg",
+        "assets/expansion/siete_actos/ilustraciones/redaccion.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_120",
+      "publicacion": 120,
+      "texto": "La mañana electoral abre la plaza. El abuelo espera junto al ciudadano mientras un mapa pasa de mano en mano.",
+      "video": "narrador_120.mp4",
+      "poster": "narrador_120.jpg",
+      "inicio": "narrador_120_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 3205563,
+      "sha256": "75ab0d4d81015427226d2382372bcadb1bae6010d986f70ba9cb3d5ae4ea311e",
+      "inicio_sha256": "9e451fa9ce7fd0baad0ab88c0cb224bca1691712bcdb8e842d2473e9847cf57c",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/urnas.jpg",
+        "assets/expansion/siete_actos/ilustraciones/urnas.jpg"
+      ]
+    },
+    {
+      "clave": "narrador_35",
+      "publicacion": 35,
+      "texto": "La plaza se llena de pasos y conversaciones. Antes del cierre electoral, un último mensaje intenta convertir los comentarios de Civitas en votos.",
+      "video": "narrador_35.mp4",
+      "poster": "narrador_35.jpg",
+      "inicio": "narrador_35_inicio.png",
+      "duracion": 10.0,
+      "fps": 24,
+      "fotogramas": 240,
+      "ancho": 1280,
+      "alto": 720,
+      "bytes": 3818359,
+      "sha256": "31e6f91e4a64df182432fe9eed0f7425cc3ceb46f8015f6fd7747c3b8c637ba4",
+      "inicio_sha256": "9e451fa9ce7fd0baad0ab88c0cb224bca1691712bcdb8e842d2473e9847cf57c",
+      "decodificacion_completa": true,
+      "fuentes": [
+        "assets/expansion/siete_actos/fondos/urnas.jpg",
+        "assets/expansion/siete_actos/ilustraciones/urnas.jpg"
+      ]
+    }
+  ]
+}

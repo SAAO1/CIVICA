@@ -1,0 +1,100 @@
+{
+  "pruebas": 481,
+  "fallas": 0,
+  "errores": 0,
+  "omitidas": 0,
+  "segundos": 232.215,
+  "limpieza_qt_entre_pruebas": true,
+  "fuentes": [
+    {
+      "archivo": "interfaz/componentes/resultados.py",
+      "bytes": 13961,
+      "sha256": "7c7331a32e32eac3b3ea66434de3aca35073b54ff3e24e2d3421cb141b3c9f3f"
+    },
+    {
+      "archivo": "interfaz/escenas/accion.py",
+      "bytes": 21347,
+      "sha256": "54a66d36b55de1a27002a8c0c9f08debba863eb8f05eb01e19264184d10bba2b"
+    },
+    {
+      "archivo": "interfaz/novela/direccion.py",
+      "bytes": 5213,
+      "sha256": "82593595be44fd30d22624b82c4d0f58c25eeb3416743a107b66489460baaafd"
+    },
+    {
+      "archivo": "interfaz/novela/transiciones.py",
+      "bytes": 4709,
+      "sha256": "30a1306dea55735c456c576d6a86209b44386f93cd5738aea7f42d51f87cca19"
+    },
+    {
+      "archivo": "interfaz/novela/ventana.py",
+      "bytes": 25689,
+      "sha256": "5d48120fa1f4a59fb192dafc66c6af682833adb5911697b65b72bcf62c2cf003"
+    },
+    {
+      "archivo": "interfaz/escenas/cinematica.py",
+      "bytes": 47894,
+      "sha256": "6884f9d241a805c0f1efb4ff6afbec0795940f8a35c4ac3c34a9363140bd7774"
+    },
+    {
+      "archivo": "tests/test_balance_roles_ui.py",
+      "bytes": 24149,
+      "sha256": "6bd68a7efc53b7d26e91286d94e9277a892839455cad74c0d0bf2130c7bed0da"
+    },
+    {
+      "archivo": "tests/test_direccion_novela.py",
+      "bytes": 11658,
+      "sha256": "138c3bf05ee4ff6ba5ca9599b64dcd932477702193cd7d8261443bbe349b550d"
+    },
+    {
+      "archivo": "tests/test_transiciones_novela.py",
+      "bytes": 6324,
+      "sha256": "535c4f415cdd101664f827a002c586b559b51cbf1a6771492e3bf0d52b320477"
+    },
+    {
+      "archivo": "tests/test_regresiones_visuales.py",
+      "bytes": 5500,
+      "sha256": "d286f774222ef89dca920f417e9165eac8dd56c6e3ce2aac0cf83e67905585ec"
+    }
+  ],
+  "capturas": [
+    {
+      "archivo": "docs/capturas_ajustes_visuales/arbol.png",
+      "bytes": 817532,
+      "sha256": "84d87336a4e1975e0f71496b867a6adea0f0cfba76631576f28371a23a2bcb12"
+    },
+    {
+      "archivo": "docs/capturas_ajustes_visuales/estadisticas_1100_texto_grande.png",
+      "bytes": 711076,
+      "sha256": "00ef9c3ac65ce02c35d13cbe8073cb536f3b053808b8381cd488d56c542a9477"
+    },
+    {
+      "archivo": "docs/capturas_ajustes_visuales/estadisticas_1360.png",
+      "bytes": 881786,
+      "sha256": "67c4cdf6b3b63ef17d5dcec2f9348ad8c0884da6c12acaa263796fc323a205e3"
+    },
+    {
+      "archivo": "docs/capturas_ajustes_visuales/grafo.png",
+      "bytes": 856825,
+      "sha256": "2518c376f7e08bd15280812e7f51a2cc7f632cd425a32d9fc767702fe128f604"
+    },
+    {
+      "archivo": "docs/capturas_ajustes_visuales/inicio_sin_barra.png",
+      "bytes": 1309163,
+      "sha256": "5a948a0f6552ac79da17f7477a29317ef6ec403efd0707b68a74a1e8c436e5ac"
+    }
+  ],
+  "recursos_reutilizados": [
+    {
+      "archivo": "assets/rediseno/fondos/ciudad.png",
+      "bytes": 3099474,
+      "sha256": "23c22382301fb0f45e5a3f897dad5f4fc4659f6247116104c23a02a193e27b33"
+    },
+    {
+      "archivo": "assets/rediseno/ui/panel.png",
+      "bytes": 1673721,
+      "sha256": "da562f940aaf268786e140855591eb82b5d78608c06fb156bfafdbf09b0462af"
+    }
+  ],
+  "qa": "qa_recorrido_ajustes_visuales.json"
+}

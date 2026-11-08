@@ -1,0 +1,131 @@
+{
+  "pruebas": 476,
+  "fallas": 0,
+  "errores": 0,
+  "omitidas": 0,
+  "segundos": 233.168,
+  "limpieza_qt_entre_pruebas": true,
+  "fecha": "2026-11-07",
+  "qa": [
+    "qa_recorrido_inmersion.json",
+    "qa_libro_inmersion.json",
+    "qa_video_inmersion.json"
+  ],
+  "cooperativa": "Dos clientes locales con TCP; no se probaron dos dispositivos fisicos",
+  "fuentes_verificadas": {
+    "interfaz/novela/ventana.py": {
+      "bytes": 25484,
+      "sha256": "9dcca5b2dd46e112a7c408a40b41b4622471d33dd545751b1ac5fcca94d15720"
+    },
+    "interfaz/novela/direccion.py": {
+      "bytes": 5190,
+      "sha256": "73fecff4dd0665842e21c113c9a7467eddd49ed4e3f0835cee6f5b3a5e9f6cad"
+    },
+    "interfaz/escenas/cinematica.py": {
+      "bytes": 47627,
+      "sha256": "13f6a9e8259ab1b65676a119ae33c28b988152cffac99eeec8eb5713ce71c545"
+    },
+    "interfaz/cinematica/reproductor.py": {
+      "bytes": 19660,
+      "sha256": "7b0a8787a6faee0153fc185f216e149b47d45cc367a125dffe9654b004e63795"
+    },
+    "interfaz/escenas/resultado.py": {
+      "bytes": 7683,
+      "sha256": "9f927154039b9b64f2f0d8eb12f2d4725d6ba24a91ca59127a570ef2cc45d088"
+    },
+    "interfaz/componentes/resultados.py": {
+      "bytes": 13994,
+      "sha256": "ed1390394c83d98d31f998150f923ca6ff4a5a58936c18b1ee242841c7eca6d5"
+    },
+    "interfaz/novela/interacciones.py": {
+      "bytes": 34031,
+      "sha256": "90defb3edcfc40262a5d5abaaf013df1192763836df59cc98aa1ba566b49912b"
+    },
+    "interfaz/novela/guia_investigacion.py": {
+      "bytes": 2512,
+      "sha256": "fd0339ad0b708b27a8b87380be765bea2e0e452c8637ac8fc451ed47938e52a3"
+    },
+    "interfaz/novela/mapa.py": {
+      "bytes": 4431,
+      "sha256": "9c2c1e53d731ae5fa40d9ff7f9290aa1a65cff2546424f23f40b7b894016250a"
+    },
+    "juego/investigacion.py": {
+      "bytes": 34359,
+      "sha256": "dec67214ba2d694d8be83ed88221928a68c08c823b88b012dacaf9437e526a94"
+    },
+    "juego/casos_feria.py": {
+      "bytes": 6786,
+      "sha256": "a8a26e614d5dbb4de99459b1b4cdb8c948fee58cea4b3c7a0b6a1a19909ad3c4"
+    },
+    "interfaz/dialogos.py": {
+      "bytes": 27414,
+      "sha256": "a702f2b83879d23d437941ffc0316de659165bac6d0d54fd43d8508433bdea73"
+    },
+    "herramientas/producir_primeros_planos.py": {
+      "bytes": 7775,
+      "sha256": "da29c918b0a254eaf7ec0816b0b7b39c0043f813f8f26e2132fe72b42860418f"
+    }
+  },
+  "capturas": [
+    {
+      "archivo": "docs/capturas_inmersion/arbol.png",
+      "bytes": 817532,
+      "sha256": "84d87336a4e1975e0f71496b867a6adea0f0cfba76631576f28371a23a2bcb12"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/confirmacion_acto_v.png",
+      "bytes": 1267064,
+      "sha256": "bfa8fc2644792deeea360093e2b3270f9929c521b2cb7b80b1cb4ee2c3324493"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/consecuencia.png",
+      "bytes": 1133647,
+      "sha256": "749e5cd7b853eb65db40d962621c5ef4124cc3d83607bcde717b5f57b53f94ef"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/grafo.png",
+      "bytes": 856825,
+      "sha256": "2518c376f7e08bd15280812e7f51a2cc7f632cd425a32d9fc767702fe128f604"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/inicio_sin_barra.png",
+      "bytes": 1309163,
+      "sha256": "5a948a0f6552ac79da17f7477a29317ef6ec403efd0707b68a74a1e8c436e5ac"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/libro_fuente_abuelo.png",
+      "bytes": 1342133,
+      "sha256": "d3c08cf4c951310d3dcb45e3e36dba89e1619170049807e87b30b1f0299431a2"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/libro_fuente_madre.png",
+      "bytes": 1331724,
+      "sha256": "0c3b45eb04f9e480f476425f2df5f7749253181cad3a2c6d726efa450d780120"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/libro_respuestas.png",
+      "bytes": 1274147,
+      "sha256": "930407757ef27f2eafcf43f0765cb6e07c5e5c6f13ba73b3f89e39e34203ccd3"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_adrian.png",
+      "bytes": 865441,
+      "sha256": "b83f23a94aed85b9db567346cba08b6316ef760d22e722b23921d788582f9d74"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_camila.png",
+      "bytes": 931189,
+      "sha256": "8250604e16a9614ec3bdf224b30bd9644c5a1a31d4f00f6ccbe0252a6194ce7d"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_juan.png",
+      "bytes": 835157,
+      "sha256": "3afe5e73782e9891f3f813c070a74096f25eff5dae088b11108a1bd6b905ddc8"
+    },
+    {
+      "archivo": "docs/capturas_inmersion/prologo_laura.png",
+      "bytes": 964259,
+      "sha256": "9a7bcdaa42c12860486abe332aba0746b9e6447ae302a0d658e27fb592590950"
+    }
+  ]
+}

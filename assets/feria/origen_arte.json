@@ -1,0 +1,33 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "date": "2026-11-07",
+  "transparency": false,
+  "images": [
+    {
+      "file": "portada.png",
+      "source": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-59626f88-2f11-4c72-b347-21099b41c3e8.png",
+      "prompt": "Create a polished widescreen 16:9 key-art illustration for CIVICA, an investigative visual novel set during an election in a fictional Latin American city. The attached images are STYLE AND CHARACTER REFERENCES, not edit targets: preserve the recognizable faces and outfits of the young brown-haired citizen in a black hoodie holding a phone and the brown-haired woman journalist with beige blazer, dark clothes, press lanyard and notebook. A tense, intimate newsroom at blue hour overlooking a warm illuminated Colombian city square with clocktower. Composition: characters grouped in the RIGHT HALF, citizen slightly in foreground looking at a phone, journalist beside him studying a marked document, human curiosity rather than action combat. LEFT HALF must have quiet deep petrol/indigo negative space with faint rainy glass and distant city lights, suitable for large live UI typography. On desk near lower right a smartphone, archival document, headphones and evidence photographs, subtle coral screen glow. Painterly cinematic anime realism matching reference faces, rich warm amber highlights against teal shadows, restrained atmospheric depth, elegant illustrated mystery-game art, crisp details, coherent hands. No words, no letters, no numbers, no logos, no watermarks, no fake UI baked in. Render an actual background asset, not a framed mockup, landscape composition.",
+      "references": [
+        "assets/rediseno/personajes/ciudadano_neutral.png",
+        "assets/rediseno/personajes/periodista_neutral.png",
+        "assets/expansion/fondos/plaza_noche.png"
+      ]
+    },
+    {
+      "file": "mapa_ciudad.png",
+      "source": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-1114f82b-e9c4-4bce-a6b2-5ce1a72fabc2.png",
+      "prompt": "Use case: stylized-concept. Asset type: illustrated city map background for a playable investigative visual novel. Create a high-quality wide 16:9 bird's-eye / gentle isometric map of Ciudad Nova, a fictional Colombian city, with exactly three clear landmark areas: municipal archive in an elegant cream building at upper LEFT, a leafy residential neighborhood with school and cafe at lower CENTER, a newsroom with broad lit windows at upper RIGHT. A warm illuminated civic plaza with clocktower in distant upper center ties the city together, matching the cinematic painterly atmosphere and architecture of the reference. Curved walkable streets and river or green corridor connect the three areas. Rich petrol blue dusk and amber windows, hand-painted detailed roofs and tropical trees, inviting small-scale city, sophisticated illustrated game art, restrained rather than cartoon toy village. All three interactive landmark locations must be visibly different with clear open patches nearby for live labels and clickable markers drawn by the application. Crisp composition legible at 900 pixels width. No text, letters, numbers, labels, icons, UI, borders, map legend, compass or watermarks. Render a complete usable scenic map illustration, not a screenshot or interface mockup.",
+      "references": [
+        "assets/expansion/fondos/plaza_noche.png"
+      ]
+    },
+    {
+      "file": "mesa_investigacion.png",
+      "source": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-329ba1cc-320a-44f4-a9cf-aaa1fb6afe8e.png",
+      "prompt": "Create a widescreen 16:9 illustrated background plate for a serious but inviting investigative visual novel, matching the warm painterly cinematic mystery style of the attached city reference. Overhead three-quarter view of a newsroom investigation desk at night, elegant warm wood, pool of amber light from brass desk lamp, dark petrol blue shadows, subtle rain reflected in window top edge. An open archival folder with two blank off-white document sheets in the CENTER, an unbranded black smartphone and headphones on the RIGHT, three photographic prints near LOWER LEFT, a folded neighborhood street map at UPPER LEFT, a fountain pen and small coral paper tab. Distinct physical materials, high quality illustration, believable perspective, uncluttered enough for live UI overlays. Critical: all papers and phone display blank, no text, no lettering, no numbers or fake news headlines, no badges, no watermarks. No people or hands. Colors and visual atmosphere should match the reference's sophisticated Colombian city at blue hour. Full-frame usable illustration, not a product mockup or rendered app screenshot.",
+      "references": [
+        "assets/expansion/fondos/plaza_noche.png"
+      ]
+    }
+  ]
+}

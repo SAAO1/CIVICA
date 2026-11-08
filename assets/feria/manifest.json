@@ -1,0 +1,556 @@
+{
+  "version": 1,
+  "fecha": "2026-11-07",
+  "zona_horaria": "America/Bogota",
+  "productor": {
+    "archivo": "herramientas/producir_recursos_feria.py",
+    "bytes": 20097,
+    "sha256": "e9edb4255f8493b7a1b4dbedd7e8b87079e40a30cc63c2a62ea1f6a4a4b378c3"
+  },
+  "tecnica": "Ilustraciones ImageGen existentes; cámara, lluvia y documentos nativos QPainter; H.264 FFmpeg. No son videos generativos.",
+  "ilustraciones": [
+    {
+      "archivo": "assets/feria/portada.png",
+      "bytes": 2262796,
+      "sha256": "27a6292ef1f7c64d2fee1dc9ee7c81f8b8392888e2953d315a28bb0da54dc8e9"
+    },
+    {
+      "archivo": "assets/feria/mapa_ciudad.png",
+      "bytes": 3941227,
+      "sha256": "923ca3b1c97e4e64f971d0ae01df29306c91179f037df3fac24b11b300748325"
+    },
+    {
+      "archivo": "assets/feria/mesa_investigacion.png",
+      "bytes": 2763998,
+      "sha256": "52102a5c40e6b0a938704037d832f9590d780efdbcdb1b45b468a400aeb21872"
+    }
+  ],
+  "origen_arte": {
+    "tool": "image_gen.imagegen (built-in)",
+    "date": "2026-11-07",
+    "transparency": false,
+    "images": [
+      {
+        "file": "portada.png",
+        "source": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-59626f88-2f11-4c72-b347-21099b41c3e8.png",
+        "prompt": "Create a polished widescreen 16:9 key-art illustration for CIVICA, an investigative visual novel set during an election in a fictional Latin American city. The attached images are STYLE AND CHARACTER REFERENCES, not edit targets: preserve the recognizable faces and outfits of the young brown-haired citizen in a black hoodie holding a phone and the brown-haired woman journalist with beige blazer, dark clothes, press lanyard and notebook. A tense, intimate newsroom at blue hour overlooking a warm illuminated Colombian city square with clocktower. Composition: characters grouped in the RIGHT HALF, citizen slightly in foreground looking at a phone, journalist beside him studying a marked document, human curiosity rather than action combat. LEFT HALF must have quiet deep petrol/indigo negative space with faint rainy glass and distant city lights, suitable for large live UI typography. On desk near lower right a smartphone, archival document, headphones and evidence photographs, subtle coral screen glow. Painterly cinematic anime realism matching reference faces, rich warm amber highlights against teal shadows, restrained atmospheric depth, elegant illustrated mystery-game art, crisp details, coherent hands. No words, no letters, no numbers, no logos, no watermarks, no fake UI baked in. Render an actual background asset, not a framed mockup, landscape composition.",
+        "references": [
+          "assets/rediseno/personajes/ciudadano_neutral.png",
+          "assets/rediseno/personajes/periodista_neutral.png",
+          "assets/expansion/fondos/plaza_noche.png"
+        ]
+      },
+      {
+        "file": "mapa_ciudad.png",
+        "source": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-1114f82b-e9c4-4bce-a6b2-5ce1a72fabc2.png",
+        "prompt": "Use case: stylized-concept. Asset type: illustrated city map background for a playable investigative visual novel. Create a high-quality wide 16:9 bird's-eye / gentle isometric map of Ciudad Nova, a fictional Colombian city, with exactly three clear landmark areas: municipal archive in an elegant cream building at upper LEFT, a leafy residential neighborhood with school and cafe at lower CENTER, a newsroom with broad lit windows at upper RIGHT. A warm illuminated civic plaza with clocktower in distant upper center ties the city together, matching the cinematic painterly atmosphere and architecture of the reference. Curved walkable streets and river or green corridor connect the three areas. Rich petrol blue dusk and amber windows, hand-painted detailed roofs and tropical trees, inviting small-scale city, sophisticated illustrated game art, restrained rather than cartoon toy village. All three interactive landmark locations must be visibly different with clear open patches nearby for live labels and clickable markers drawn by the application. Crisp composition legible at 900 pixels width. No text, letters, numbers, labels, icons, UI, borders, map legend, compass or watermarks. Render a complete usable scenic map illustration, not a screenshot or interface mockup.",
+        "references": [
+          "assets/expansion/fondos/plaza_noche.png"
+        ]
+      },
+      {
+        "file": "mesa_investigacion.png",
+        "source": "C:/Users/USER/.codex/generated_images/01a1b711-e6df-7491-a1c0-c5ee450b18a9/exec-329ba1cc-320a-44f4-a9cf-aaa1fb6afe8e.png",
+        "prompt": "Create a widescreen 16:9 illustrated background plate for a serious but inviting investigative visual novel, matching the warm painterly cinematic mystery style of the attached city reference. Overhead three-quarter view of a newsroom investigation desk at night, elegant warm wood, pool of amber light from brass desk lamp, dark petrol blue shadows, subtle rain reflected in window top edge. An open archival folder with two blank off-white document sheets in the CENTER, an unbranded black smartphone and headphones on the RIGHT, three photographic prints near LOWER LEFT, a folded neighborhood street map at UPPER LEFT, a fountain pen and small coral paper tab. Distinct physical materials, high quality illustration, believable perspective, uncluttered enough for live UI overlays. Critical: all papers and phone display blank, no text, no lettering, no numbers or fake news headlines, no badges, no watermarks. No people or hands. Colors and visual atmosphere should match the reference's sophisticated Colombian city at blue hour. Full-frame usable illustration, not a product mockup or rendered app screenshot.",
+        "references": [
+          "assets/expansion/fondos/plaza_noche.png"
+        ]
+      }
+    ]
+  },
+  "fuente_tipografica": {
+    "familia": "Atkinson Hyperlegible",
+    "licencia": "SIL OFL 1.1",
+    "archivo": "assets/fuentes/OFL.txt"
+  },
+  "catalogo": {
+    "archivo": "assets/feria/fuentes/casos_feria_produccion.py",
+    "bytes": 4971,
+    "sha256": "e81325eb9b4205b9ea38a81bfaf3d4f7bb374acfb91406f9b344578504d332c9"
+  },
+  "pruebas": [
+    {
+      "archivo": "assets/feria/pruebas/50_recorte.png",
+      "bytes": 68755,
+      "sha256": "fcfa3faf21f6e25d5e483fe91ba82f85eeece1447f865b8d8fd6c905050b526c",
+      "caso_id": 50,
+      "variante": "recorte",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/50_original.png",
+      "bytes": 62838,
+      "sha256": "1406c17a47432883483c5b5bc4586b3350931b7e1c023b4ba48c981522e7239f",
+      "caso_id": 50,
+      "variante": "original",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/90_recorte.png",
+      "bytes": 68102,
+      "sha256": "b4ac5bbb2b6442877731cf553837ffbdee6520f16baab6f605e2dd1ab7237e1f",
+      "caso_id": 90,
+      "variante": "recorte",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/90_original.png",
+      "bytes": 69429,
+      "sha256": "2315e84bd057edf6861db4d9d48b31a13bb9fc682b7f8d5a91b43bb0ea7f31ce",
+      "caso_id": 90,
+      "variante": "original",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/110_recorte.png",
+      "bytes": 66486,
+      "sha256": "80d59c99f2ad38c404d0afdebd833a4ee9431599fda5173e56e5400d4f0b52f9",
+      "caso_id": 110,
+      "variante": "recorte",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/110_original.png",
+      "bytes": 77598,
+      "sha256": "e439dd59ae912461feacc47f6808eb3394ebbe75c3cdc1c9e7e165ab3d0037b9",
+      "caso_id": 110,
+      "variante": "original",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/40_recorte.png",
+      "bytes": 65342,
+      "sha256": "57fd017c2d5c9a527d5a490bd2da1a308a472e2bc21de03d38e785626bbdef69",
+      "caso_id": 40,
+      "variante": "recorte",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/40_original.png",
+      "bytes": 72360,
+      "sha256": "93b7ba2b49b123b1388ab715ae08a5f45f7ba2e026233c3a38a8db6648032968",
+      "caso_id": 40,
+      "variante": "original",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/120_recorte.png",
+      "bytes": 66959,
+      "sha256": "607e9f69a3c84916b6a96eb46b0845f79d961d1a053452ccc543b320886f3413",
+      "caso_id": 120,
+      "variante": "recorte",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/120_original.png",
+      "bytes": 72294,
+      "sha256": "445d95942b50c8d97dc6a449b67b98c0ec3252425124aa9531b620ffb7e33c90",
+      "caso_id": 120,
+      "variante": "original",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/35_recorte.png",
+      "bytes": 68132,
+      "sha256": "c2ed21e71f3889e9338e0b772c54783445bb3e5afa37dca0da647cbf56771852",
+      "caso_id": 35,
+      "variante": "recorte",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    },
+    {
+      "archivo": "assets/feria/pruebas/35_original.png",
+      "bytes": 75810,
+      "sha256": "9970910930503babaeb4e21df01c509c0513a0b2c7b7e122a7d00484eee5f6eb",
+      "caso_id": 35,
+      "variante": "original",
+      "ancho": 1400,
+      "alto": 900,
+      "tamano_texto_cuerpo_px": 38,
+      "tecnica": "Gráfico documental nativo de QPainter; texto del catálogo ficticio."
+    }
+  ],
+  "videos": [
+    {
+      "archivo": "assets/feria/videos/caso_50.mp4",
+      "bytes": 462863,
+      "sha256": "9ae9d7f08a9f4f145aafbe2093e3c5b459ef36bc2f1910c6c91412fa3d02afbf",
+      "caso_id": 50,
+      "duracion": 6.0,
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "fotogramas": 144,
+      "codec": "h264",
+      "audio_incrustado": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/feria/videos/caso_50_inicio.png",
+        "bytes": 700397,
+        "sha256": "69b192f746ba59014d07110189cf4e7fdc6d56d04de99e5ac4b35c701bb5820e"
+      },
+      "poster": {
+        "archivo": "assets/feria/videos/caso_50.jpg",
+        "bytes": 150347,
+        "sha256": "9e6db64aafcb4b06ce32889a25129ecc15dd5c7e55b0e5a7f9a8aa8f95de9063"
+      },
+      "fuente": {
+        "archivo": "assets/feria/portada.png",
+        "bytes": 2262796,
+        "sha256": "27a6292ef1f7c64d2fee1dc9ee7c81f8b8392888e2953d315a28bb0da54dc8e9"
+      },
+      "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+    },
+    {
+      "archivo": "assets/feria/videos/caso_90.mp4",
+      "bytes": 846807,
+      "sha256": "b857521d3a5c5b7c7c56e35d6525cdd0be7c2dbf1ebe06e01ac534f5ff566dc5",
+      "caso_id": 90,
+      "duracion": 6.0,
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "fotogramas": 144,
+      "codec": "h264",
+      "audio_incrustado": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/feria/videos/caso_90_inicio.png",
+        "bytes": 1376539,
+        "sha256": "c5c525ca203873a11f8593b0d3aef8c9b293b534e548064f8ad30b449bb62da0"
+      },
+      "poster": {
+        "archivo": "assets/feria/videos/caso_90.jpg",
+        "bytes": 251545,
+        "sha256": "b32c6ac05b212014b28492e6afc5a021c744e36aede4c1318eccf367d8fcc6e9"
+      },
+      "fuente": {
+        "archivo": "assets/feria/mapa_ciudad.png",
+        "bytes": 3941227,
+        "sha256": "923ca3b1c97e4e64f971d0ae01df29306c91179f037df3fac24b11b300748325"
+      },
+      "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+    },
+    {
+      "archivo": "assets/feria/videos/caso_110.mp4",
+      "bytes": 501524,
+      "sha256": "6141b7ca1a0ef7eee9cf12ad11139ff65d750ad74ace05e31b35ee86da660f15",
+      "caso_id": 110,
+      "duracion": 6.0,
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "fotogramas": 144,
+      "codec": "h264",
+      "audio_incrustado": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/feria/videos/caso_110_inicio.png",
+        "bytes": 831866,
+        "sha256": "2ec6da2767123069ebb36238c560fd20040aa33a1e17327de0becf5de0a3352d"
+      },
+      "poster": {
+        "archivo": "assets/feria/videos/caso_110.jpg",
+        "bytes": 172509,
+        "sha256": "118a747181edcf28e13acbc0361d922addc54eb5837c8ac39a2dcf97137b0812"
+      },
+      "fuente": {
+        "archivo": "assets/feria/mesa_investigacion.png",
+        "bytes": 2763998,
+        "sha256": "52102a5c40e6b0a938704037d832f9590d780efdbcdb1b45b468a400aeb21872"
+      },
+      "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+    },
+    {
+      "archivo": "assets/feria/videos/caso_40.mp4",
+      "bytes": 506103,
+      "sha256": "adb8077226898c1b001f9eecd18473c9116d712e408a2cfde067a1982c90db37",
+      "caso_id": 40,
+      "duracion": 6.0,
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "fotogramas": 144,
+      "codec": "h264",
+      "audio_incrustado": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/feria/videos/caso_40_inicio.png",
+        "bytes": 823048,
+        "sha256": "3dcb4be45e3ea1a532fb605d3046719f35e0428c2bc1a5b42cd56d2d39288a4d"
+      },
+      "poster": {
+        "archivo": "assets/feria/videos/caso_40.jpg",
+        "bytes": 171872,
+        "sha256": "a5371bd5158999a61b6be5cf44addd89f213c176e8ab7f7225d56ea71f8b6f25"
+      },
+      "fuente": {
+        "archivo": "assets/feria/mesa_investigacion.png",
+        "bytes": 2763998,
+        "sha256": "52102a5c40e6b0a938704037d832f9590d780efdbcdb1b45b468a400aeb21872"
+      },
+      "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+    },
+    {
+      "archivo": "assets/feria/videos/caso_120.mp4",
+      "bytes": 842519,
+      "sha256": "575e28b3240459e5ff6370f67b7580dd05d7cf7ae5af1cd309086759e5c7d666",
+      "caso_id": 120,
+      "duracion": 6.0,
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "fotogramas": 144,
+      "codec": "h264",
+      "audio_incrustado": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/feria/videos/caso_120_inicio.png",
+        "bytes": 1378745,
+        "sha256": "18af24dc41c394173cd830a088782d7189d5ff0ee8e90970c342b946a4b9fdd5"
+      },
+      "poster": {
+        "archivo": "assets/feria/videos/caso_120.jpg",
+        "bytes": 252356,
+        "sha256": "4f81574d068088e70d5f98ec56e04897be9d8c194408948ed945d49af8d33b78"
+      },
+      "fuente": {
+        "archivo": "assets/feria/mapa_ciudad.png",
+        "bytes": 3941227,
+        "sha256": "923ca3b1c97e4e64f971d0ae01df29306c91179f037df3fac24b11b300748325"
+      },
+      "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+    },
+    {
+      "archivo": "assets/feria/videos/caso_35.mp4",
+      "bytes": 838163,
+      "sha256": "5458ca20cc57477ef5d9cd3f57d34512884d0afb4e23dda5b1d858a66a59379b",
+      "caso_id": 35,
+      "duracion": 6.0,
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "fotogramas": 144,
+      "codec": "h264",
+      "audio_incrustado": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/feria/videos/caso_35_inicio.png",
+        "bytes": 1368451,
+        "sha256": "be8dc51d72033f25790bf82cfc42f367f0aacc8b0a35a191a5607ffa5ef27033"
+      },
+      "poster": {
+        "archivo": "assets/feria/videos/caso_35.jpg",
+        "bytes": 249979,
+        "sha256": "523bc730ec0a33727a902f781dfcb3d2533dbc00c2e9160b949204c0b99d6804"
+      },
+      "fuente": {
+        "archivo": "assets/feria/mapa_ciudad.png",
+        "bytes": 3941227,
+        "sha256": "923ca3b1c97e4e64f971d0ae01df29306c91179f037df3fac24b11b300748325"
+      },
+      "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+    }
+  ],
+  "portada_video": {
+    "archivo": "assets/feria/videos/portada_loop.mp4",
+    "bytes": 722240,
+    "sha256": "3fe79939413b507670d4cc47238c75000ac569271eff4babf85c0790a3b9be7c",
+    "caso_id": null,
+    "duracion": 6.0,
+    "ancho": 1280,
+    "alto": 720,
+    "fps": 24,
+    "fotogramas": 144,
+    "codec": "h264",
+    "audio_incrustado": false,
+    "decodificacion_completa": true,
+    "primer_fotograma": {
+      "archivo": "assets/feria/videos/portada_loop_inicio.png",
+      "bytes": 1334968,
+      "sha256": "b19a0be942ea3cc06db03b66d905c80dde6a90c0bd83f2a0a7f84c43ce2efd80"
+    },
+    "poster": {
+      "archivo": "assets/feria/videos/portada_loop.jpg",
+      "bytes": 216788,
+      "sha256": "ce9fa64ce0c71051549104951e0a47711958420141c5060a92b0db9f7b85ce87"
+    },
+    "fuente": {
+      "archivo": "assets/feria/portada.png",
+      "bytes": 2262796,
+      "sha256": "27a6292ef1f7c64d2fee1dc9ee7c81f8b8392888e2953d315a28bb0da54dc8e9"
+    },
+    "contenido": "Apertura sin prueba completa: solo el recorte recibido y el objetivo del caso."
+  },
+  "portada_gif": {
+    "archivo": "assets/feria/portada_animada.gif",
+    "bytes": 7766834,
+    "sha256": "b066aa9b7b82f1ba220727fa508281f1bd529dcfe564fb282fcabe667a633aea",
+    "ancho": 800,
+    "alto": 450,
+    "fps": 12,
+    "duracion": 6.0,
+    "fotogramas": 72,
+    "paleta_maxima": 128,
+    "bucle": true,
+    "decodificacion_completa": true
+  },
+  "audio": {
+    "archivos": [
+      {
+        "archivo": "assets/feria/audio/caso_110_recortado.wav",
+        "bytes": 86900,
+        "sha256": "1b8367f062bb109a0000856bbf4ac4aa6db146cdef936a7a4d59205af0561acd",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 43428,
+        "duracion": 1.8095,
+        "pico": 0.530457,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_110_completo.wav",
+        "bytes": 301652,
+        "sha256": "8ec97f5539f695c3409368bea09795109a87a1c80fc172e7de025c7c1fe65e2a",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 150804,
+        "duracion": 6.2835,
+        "pico": 0.530457,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_50_apertura.wav",
+        "bytes": 357142,
+        "sha256": "002fed5311f639b81960a03f9c2b97204f6f7cf012417c0c0c5ec7d391c9d592",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 178548,
+        "duracion": 7.4395,
+        "pico": 0.426086,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_90_apertura.wav",
+        "bytes": 322822,
+        "sha256": "d2e5a1eaa89411050cf411142be92bdc4dd8d55081e4b163daf6e4fd1de17476",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 161388,
+        "duracion": 6.7245,
+        "pico": 0.470917,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_110_apertura.wav",
+        "bytes": 336022,
+        "sha256": "a2e14423c8e17002ea7c50ac54c9965f7b2c80139454baecf747e457beca00c5",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 167988,
+        "duracion": 6.9995,
+        "pico": 0.426178,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_40_apertura.wav",
+        "bytes": 369862,
+        "sha256": "e9acb28e67a860bb331f1a760a8c1e91b72490acea605ae97687d61cb902573f",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 184908,
+        "duracion": 7.7045,
+        "pico": 0.426788,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_120_apertura.wav",
+        "bytes": 353782,
+        "sha256": "519e5df933f81fb98f25f51d085c7dd779bb1f7999a5ba5351b20103f4a159fa",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 176868,
+        "duracion": 7.3695,
+        "pico": 0.492523,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      },
+      {
+        "archivo": "assets/feria/audio/caso_35_apertura.wav",
+        "bytes": 348982,
+        "sha256": "06ab73621e30e439bf681bff964398e66cb4b8a1fd53372c2f3005125eef3530",
+        "canales": 1,
+        "bits": 16,
+        "frecuencia": 24000,
+        "fotogramas": 174468,
+        "duracion": 7.2695,
+        "pico": 0.382202,
+        "voz": "Microsoft Sabina Desktop",
+        "idioma": "es-MX",
+        "origen": "Síntesis local System.Speech; no es una grabación de una persona real."
+      }
+    ],
+    "segmentos_originales": [
+      "Si alguien pretende",
+      "cobrar por votar",
+      "denuncia ese engaño."
+    ],
+    "transcripcion_recortada": "cobrar por votar",
+    "transcripcion_completa": "Si alguien pretende cobrar por votar, denuncia ese engaño.",
+    "segmento_central_inicio_frame": 52068,
+    "segmento_central_frames": 43428,
+    "recortado_es_segmento_exactamente_conservado": true
+  }
+}

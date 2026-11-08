@@ -1,0 +1,42 @@
+{
+  "herramienta": "ImageGen integrado; sin CLI/API",
+  "fecha": "2026-10-24",
+  "assets": [
+    {
+      "id": "estudio",
+      "archivo": "assets/expansion/siete_actos/fondos/estudio.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-4b585e76-26aa-4b21-ab7b-5dfb635f801d.png",
+      "referencias": [
+        "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: empty widescreen visual novel background for CIVICA, Ciudad Nova, a fictional Latin American city. Match supplied reference sophisticated semi-realistic anime painterly environment style, rich detail, navy shadows, warm copper and teal accent lighting, no characters. A modest independent creator's home livestream studio in late afternoon: warm wooden desk on right with blank dark laptop, upright phone on small tripod, compact microphone on boom arm, neutral ring light, headphones on hook, shelves with books and small potted plants, dark acoustic wall panels, large left window with soft urban warm light and roofs. Practical lived-in community journalist feel, no luxury or influencer brand. Eye-level cinematic 16:9 composition with broad empty floor/foreground and uncluttered middle-left space for standing sprites. All usable props in upper75percent; lower20percent naturally quiet floor/table edge for dialogue overlay. No people, silhouettes, faces, readable writing, logos, signage, icons, UI, panels, frames, watermark. Full-frame landscape illustration, detailed brushwork not photorealistic or flatvector."
+    },
+    {
+      "id": "debate",
+      "archivo": "assets/expansion/siete_actos/fondos/debate.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-6a1a9d8a-9f29-49f6-8d74-cd11badac9e8.png",
+      "referencias": [
+        "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: empty widescreen visual novel background for CIVICA, fictional Ciudad Nova mayoral debate. Supplied reference is art style only: refined semi-realistic anime painterly, rich dimensional detail, navy, teal and warm copper light. Interior of modest municipal cultural auditorium in early evening, four evenly-spaced EMPTY wooden debate lecterns on wide stage, each with simple microphone and blank rectangular front, no inscriptions or party flags. Warm stage spotlights and tasteful dark teal curtain/backdrop with abstract geometric panels, rows of empty soft-focus chairs seen lowforeground, no people. Four equal podiums, none elevated or favored. Camera from audience eye level, cinematic wide16:9, full stage visible, no winner imagery, no sash, no ballots. Upper75percent holdsstage, lower20percent quietlydark chairs for dialogue. No text, logos, slogans, numbers, screen UI, border, watermark. Professional painted game environment, no photograph, no flatvector."
+    },
+    {
+      "id": "redaccion",
+      "archivo": "assets/expansion/siete_actos/fondos/redaccion.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-ccda6d3a-92e0-4cf6-9334-01458c02551a.png",
+      "referencias": [
+        "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: empty night newsroom visual novel background for CIVICA, fictional Latin American Ciudad Nova. Reference art style: sophisticated semi-realistic anime painterly environment, rich detailed brushwork, navy teal and warm copper palette. A small independent newspaper newsroom late at night during steady rain. Two wooden worktables with dark laptop monitors showing only indistinct soft abstract horizontal bands, a compact audio recorder and headphones, cream notebooks and plain paper folders, shelves and pinned blank clippings, large window with visible rain streaks and blurred amber city lights. One warm desk lamp and cool monitor glow, thoughtful suspenseful investigative mood, no disaster. No people, no figures or faces. Eye-level widescreen16:9, inviting quiet middle area to overlay characters, props mostly upper75percent, bottom20percent low-detail dark floor/front desk. No readable text, names, numbers, logos, UI, borders or watermark. No police tape. Painted dimensional illustrated visual-novel setting, not photorealistic notvector."
+    },
+    {
+      "id": "urnas",
+      "archivo": "assets/expansion/siete_actos/fondos/urnas.jpg",
+      "fuente": "C:/Users/USER/.codex/generated_images/01a16fcd-3bcf-7cd2-9bdb-fd0cc52bc71c/exec-27adf3b2-c662-40dc-bdde-9ab225111711.png",
+      "referencias": [
+        "assets/expansion/cinematica/ilustraciones/libreta.jpg"
+      ],
+      "prompt": "Use case: illustration-story. Asset type: empty election day plaza visual novel background for CIVICA, fictional Ciudad Nova. Reference is polished semi-realistic anime painterly art style, rich warm copper sunlight and navy teal shadows. Early morning municipal school courtyard used as voting entrance, warm Latin American colonial civic architecture with trees and paved walkway, open tall iron gate, broad unobstructed ramp beside stairs, covered registration tables with plain sealed cardboard ballot boxes and empty chairs, a simple unmarked street map board near entrance, no winner imagery. Morning light after rain, gentle fresh optimistic but unresolved atmosphere, no party color banners. No people or characters, no readable texts, labels, letters, logos, symbols, numbers, UI, borders or watermark. Wide16:9 eye-level perspective, accessible paths clearly visible, lower20percent natural quiet paving for dialogue overlays. Detailed dimensional painterly anime environment, not photo not flatvector."
+    }
+  ]
+}

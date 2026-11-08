@@ -1,0 +1,8 @@
+[
+  {"id":50,"texto":"El candidato Juan quiere cerrar el colegio.","verdadera":false,"impacto":7,"tipo":"rumor","candidato_id":"juan"},
+  {"id":30,"texto":"Adrián Morales presentó una nueva propuesta.","verdadera":true,"impacto":4,"tipo":"propuesta","candidato_id":"adrian"},
+  {"id":70,"texto":"El parque central tendrá mantenimiento.","verdadera":true,"impacto":3,"candidato_id":"laura"},
+  {"id":20,"texto":"La ciudad construirá una nueva biblioteca.","verdadera":true,"impacto":2,"candidato_id":"adrian"},
+  {"id":60,"texto":"Circula un rumor sobre uno de los candidatos.","verdadera":false,"impacto":8,"tipo":"rumor","candidato_id":"camila"},
+  {"id":80,"texto":"Una encuesta afirma conocer al próximo alcalde.","verdadera":false,"impacto":6,"tipo":"engañosa","candidato_id":"juan"}
+]

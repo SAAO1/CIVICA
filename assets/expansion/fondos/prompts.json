@@ -1,0 +1,21 @@
+{
+  "herramienta": "image_gen incorporada",
+  "fecha": "2026-10-24",
+  "imagenes": [
+    {
+      "archivo": "cafe_lluvia.png",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\cafe_interior.png",
+      "prompt": "Use case: lighting-weather. Asset type: 16:9 high resolution visual novel background painting for CIVICA. Image1 is the existing fictional Café Central, preserve its recognizable interior, viewpoint, warm anime cinematic painterly style, wooden tables, left espresso bar, right large arched glass windows and door, plant pots and chairs. Transform the scene to late afternoon during a soft tropical rain outside, blue-grey city reflected on wet plaza stones through windows, amber pendant lamps lit indoors, delicate droplets on window glass. Crucial: leave the central floor and left/right middle foreground empty for transparent character sprites, no people, no silhouettes. No written text or logos. Cozy, intimate, thoughtful atmosphere, controlled contrast, layered depth; foreground table bottom can frame composition but keep middle readable. Still image clean plate intended for overlaid rain streaks, steam and slow lighting animation, no motion blur, no integrated UI. Perfect coherent architecture, landscape 1920x1080 composition."
+    },
+    {
+      "archivo": "parque_tarde.png",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\ciudad.png",
+      "prompt": "Use case: illustration-story. Asset type: 16:9 high resolution visual novel background painting for CIVICA. Image1 is a world and rendering style reference only: warm painterly anime cinematic Colombian-inspired Ciudad Nova with historic civic architecture, mountains and modern distant skyline. Depict the central neighborhood park in late golden afternoon: curving stone walking path with empty middle foreground, wooden bench to one side, spreading tropical trees and layered foliage at upper corners, a low flower bed, municipal maintenance area far in background with a discreet cordon, small fountain centered in middle distance, distant clock tower recognizable from reference. Keep ALL foreground and middle ground free of people, no characters, no vehicles occupying path. Wide level eye camera, believable perspective, rich leaf details and dappled warm light, serene hopeful mood. Designed as clean background plate for independent moving leaves, floating seeds, fountain highlights, and character sprites. No text, signs with readable words, logos, UI, or motion blur. Landscape 1920x1080 composition."
+    },
+    {
+      "archivo": "plaza_noche.png",
+      "referencia": "C:\\Users\\USER\\Documents\\AlcaldeDigital\\assets\\rediseno\\fondos\\ciudad.png",
+      "prompt": "Use case: lighting-weather. Asset type: 16:9 high resolution visual novel background painting for CIVICA. Image1 is the fictional Ciudad Nova plaza, preserve recognizable city hall clock tower, plaza fountain, surrounding historic stone buildings, mountains, blue and teal banners and cinematic painterly anime style. Change to blue hour on election evening: deep indigo sky with faint last sunset on horizon, golden lit city hall windows and warm street lamps, fountain gleaming silver, soft reflections on stone paving, discreet strings of small warm lamps over side streets. Empty middle and foreground to overlay character sprites, no crowds or foreground people. Emotion: anticipation and thoughtful suspense, not horror. Clear depth, beautiful blue-gold color harmony, readable dark areas, controlled highlights. Clean environment plate designed for animated lamps, fountain ripples, tiny drifting leaves, and clouds. No text, numbers on digital displays, signs, logos, interface, or motion blur. Landscape 1920x1080 composition."
+    }
+  ]
+}

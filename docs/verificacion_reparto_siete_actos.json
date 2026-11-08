@@ -1,0 +1,436 @@
+{
+  "version": 2,
+  "correcto": true,
+  "naturaleza": "Quince encuadres de widgets Qt reales; voces y transporte aislados. Cinco NPC solos a tres resoluciones, con entradas completadas en tiempo real.",
+  "contacto": "docs/vistas/reparto_siete_actos.jpg",
+  "capturas": [
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "hablante": "INFLUENCER",
+      "actores_visibles": [
+        "INFLUENCER"
+      ],
+      "actor_rect": [
+        726,
+        78,
+        352,
+        408
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        29,
+        27,
+        421,
+        268
+      ]
+    },
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "hablante": "JUAN",
+      "actores_visibles": [
+        "JUAN"
+      ],
+      "actor_rect": [
+        726,
+        78,
+        352,
+        408
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        29,
+        325,
+        421,
+        268
+      ]
+    },
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "hablante": "ADRIAN",
+      "actores_visibles": [
+        "ADRIAN"
+      ],
+      "actor_rect": [
+        726,
+        78,
+        352,
+        408
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        29,
+        623,
+        421,
+        268
+      ]
+    },
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "hablante": "LAURA",
+      "actores_visibles": [
+        "LAURA"
+      ],
+      "actor_rect": [
+        726,
+        78,
+        352,
+        408
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        29,
+        921,
+        421,
+        268
+      ]
+    },
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "hablante": "CAMILA",
+      "actores_visibles": [
+        "CAMILA"
+      ],
+      "actor_rect": [
+        726,
+        78,
+        352,
+        408
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        29,
+        1219,
+        421,
+        268
+      ]
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "hablante": "INFLUENCER",
+      "actores_visibles": [
+        "INFLUENCER"
+      ],
+      "actor_rect": [
+        902,
+        78,
+        437,
+        536
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        486,
+        27,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "hablante": "JUAN",
+      "actores_visibles": [
+        "JUAN"
+      ],
+      "actor_rect": [
+        902,
+        78,
+        437,
+        536
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        486,
+        325,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "hablante": "ADRIAN",
+      "actores_visibles": [
+        "ADRIAN"
+      ],
+      "actor_rect": [
+        902,
+        78,
+        437,
+        536
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        486,
+        623,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "hablante": "LAURA",
+      "actores_visibles": [
+        "LAURA"
+      ],
+      "actor_rect": [
+        902,
+        78,
+        437,
+        536
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        486,
+        921,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "hablante": "CAMILA",
+      "actores_visibles": [
+        "CAMILA"
+      ],
+      "actor_rect": [
+        902,
+        78,
+        437,
+        536
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        486,
+        1219,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "hablante": "INFLUENCER",
+      "actores_visibles": [
+        "INFLUENCER"
+      ],
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        832
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        966,
+        27,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "hablante": "JUAN",
+      "actores_visibles": [
+        "JUAN"
+      ],
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        832
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        966,
+        325,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "hablante": "ADRIAN",
+      "actores_visibles": [
+        "ADRIAN"
+      ],
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        832
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        966,
+        623,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "hablante": "LAURA",
+      "actores_visibles": [
+        "LAURA"
+      ],
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        832
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        966,
+        921,
+        468,
+        263
+      ]
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "hablante": "CAMILA",
+      "actores_visibles": [
+        "CAMILA"
+      ],
+      "actor_rect": [
+        1268,
+        78,
+        614,
+        832
+      ],
+      "mirada": "izquierda",
+      "entrada_real_finalizada": true,
+      "movimiento_activado": true,
+      "captura": null,
+      "contacto_rect": [
+        966,
+        1219,
+        468,
+        263
+      ]
+    }
+  ],
+  "protagonistas": [
+    {
+      "resolucion": [
+        1100,
+        700
+      ],
+      "actores_visibles": [
+        "CIUDADANO",
+        "PERIODISTA"
+      ],
+      "miradas_hacia_centro": true,
+      "sin_superposicion": true
+    },
+    {
+      "resolucion": [
+        1366,
+        768
+      ],
+      "actores_visibles": [
+        "CIUDADANO",
+        "PERIODISTA"
+      ],
+      "miradas_hacia_centro": true,
+      "sin_superposicion": true
+    },
+    {
+      "resolucion": [
+        1920,
+        1080
+      ],
+      "actores_visibles": [
+        "CIUDADANO",
+        "PERIODISTA"
+      ],
+      "miradas_hacia_centro": true,
+      "sin_superposicion": true
+    }
+  ]
+}

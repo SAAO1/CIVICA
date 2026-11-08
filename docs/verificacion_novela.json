@@ -1,0 +1,267 @@
+{
+  "fecha": "2026-11-07",
+  "resultado": "aprobado",
+  "suite": {
+    "pruebas": 412,
+    "fallas": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": 177.796,
+    "limpieza_qt_entre_pruebas": true
+  },
+  "version": {
+    "actos": 6,
+    "presentacion": "escenas originales de novela visual",
+    "controlador": "interfaz/novela/ventana.py",
+    "doblaje": "MP3 neurales originales sin voces Windows en el recorrido principal"
+  },
+  "recursos": {
+    "cantidad_por_extension": {
+      ".json": 2,
+      ".gif": 1,
+      ".png": 27,
+      ".mp4": 6,
+      ".jpg": 6
+    },
+    "imagenes_ilegibles": 0,
+    "imagenes": [
+      {
+        "archivo": "assets/novela/cg/archivo.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "9a068b28900f517170e386e1113bddb09e8acbba01b2966e2bcc0f9970abb28e"
+      },
+      {
+        "archivo": "assets/novela/cg/parque.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "a910838e8bcbb239f19c80fc17c245c24bfe7911cd9dc990a059074f418d0950"
+      },
+      {
+        "archivo": "assets/novela/cg/redaccion.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "fbdaed34857cc990a573d5a1f24faeba38801316992d56662d1999cc7bf2b66a"
+      },
+      {
+        "archivo": "assets/novela/cg/urnas.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "ec22bdf1d44ab854877db2afe9aea89c3f6808078af97838d98b6ab17af062dc"
+      },
+      {
+        "archivo": "assets/novela/ui/audiencia.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "3ea7e6a14c4e1fef09d8d2f9b0a140db50247ef42ba6133b6a5cfeb3029ed911"
+      },
+      {
+        "archivo": "assets/novela/ui/audio.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "1c23d7fc09af135fd712d0d165b4b11adb226b98de26b112cd53427df82337b0"
+      },
+      {
+        "archivo": "assets/novela/ui/botones_atlas.png",
+        "ancho": 1254,
+        "alto": 1254,
+        "sha256": "246d689d4e89f934bbac86a6183ba8b8f9e75133def26a82eec01f9e1de851e5"
+      },
+      {
+        "archivo": "assets/novela/ui/boton_hover.png",
+        "ancho": 1254,
+        "alto": 313,
+        "sha256": "4299c2ba2d5560a6c60ee9f5382fe95ce66f2859cab75a458280f09b2922444b"
+      },
+      {
+        "archivo": "assets/novela/ui/boton_inactivo.png",
+        "ancho": 1254,
+        "alto": 313,
+        "sha256": "f981cf4e93834d236bedd3b99ecf08d1d93bc69579b3da8bb6f11400f5a7e50a"
+      },
+      {
+        "archivo": "assets/novela/ui/boton_normal.png",
+        "ancho": 1254,
+        "alto": 313,
+        "sha256": "dbbc3c78f56ce091137b7b7eb02fea5468388c68b2664d9835f91bb9642073b6"
+      },
+      {
+        "archivo": "assets/novela/ui/boton_pulsado.png",
+        "ancho": 1254,
+        "alto": 313,
+        "sha256": "8a576fe23752ae3f930354704bf5f198aa56581ae1d307f893ec07779dea9e95"
+      },
+      {
+        "archivo": "assets/novela/ui/cinta_titulo.png",
+        "ancho": 2172,
+        "alto": 724,
+        "sha256": "db21c1e658cd0cd14b398e1ce221a2dfe24ae8cfad8622dda2da1225a0f46df1"
+      },
+      {
+        "archivo": "assets/novela/ui/cooperativa.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "b19f4e08406fb47c88c3bb005ad1af229d1f1d1d47e790642355fbb14a19802e"
+      },
+      {
+        "archivo": "assets/novela/ui/expediente.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "f7b95dd1db66ce2618231f161a2e973fa37f6238f55ad2ca017e00898d828171"
+      },
+      {
+        "archivo": "assets/novela/ui/iconos_atlas.png",
+        "ancho": 1774,
+        "alto": 887,
+        "sha256": "6b39f4817865a8cd0b688ebe2711d7bdc2f950d2febcc9c937eee7e7b036b081"
+      },
+      {
+        "archivo": "assets/novela/ui/investigar.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "1fcaa8198a3f723f884777a51f03e0915c5128f07b9f5475049ad37a55ab38ba"
+      },
+      {
+        "archivo": "assets/novela/ui/marco_expediente.png",
+        "ancho": 1536,
+        "alto": 1024,
+        "sha256": "2c14a803170569bc61443cb9032b02ffd826ccd2a4cc353ee81e0a6f6070250b"
+      },
+      {
+        "archivo": "assets/novela/ui/recuerdo.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "2358c2d506c62fe663d0ca9c950200b68e97a99c949ef55a129ff8687d44bee8"
+      },
+      {
+        "archivo": "assets/novela/ui/redactar.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "0a3fa678537cf749ae1782d2be55f047102bca0faa3beca1a50199282569367a"
+      },
+      {
+        "archivo": "assets/novela/ui/tarjeta_pista.png",
+        "ancho": 1536,
+        "alto": 1024,
+        "sha256": "f95e07023d549427f0946914ddedbc430a02064b6b11ba26152b52513d86d4e8"
+      },
+      {
+        "archivo": "assets/novela/ui/volver.png",
+        "ancho": 443,
+        "alto": 443,
+        "sha256": "5a7121d4e2d23314bc9d37b9bc3dadf2e8a77562d42a8543ee6edeb5ecf6f1ec"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_1_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "8a064cdf5705e8f6fa99ac49eaa87fb7385ad62c10c59d8c24330f6eb49177c7"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_1_preview.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "7cdbd8827350ad87efefa8804ad50314a4a5b566cd993996b8ef2d1bd9fc6b5c"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_2_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "597c792e332165a76ffb41e14fde1dbc8df070e99b87afb6fa4dfc562b485642"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_2_preview.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "345ce349145500216b698a28e3ab21d883a0bb8868c9b05969c28c11fdf0fe55"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_3_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "c432be67ffa32a2273b1d3265344bb28079fcab3c7700b854b1a3bb1451701a0"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_3_preview.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "e79864a6d5c932c5c9dff5c895d7e9ac5f170dd6b409e62e049dff7fdb07ea8a"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_4_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "ae8f7a65a0d2c8e754809dd2075cdd5bd43774fc695521568895be9076daa3ce"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_4_preview.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "acb36d15cab015301b125927a4d6814d8d67b1b9297a30189b90c56b1a032fa9"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_5_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "56f3125741b77d6b85b4ddb4d01be5c408e53eda57b04c87aa2c90897db4a5b3"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_5_preview.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "a504de7d22fd0aef2c916bd9bc8bba9155a97a5a51e24126b60760ddf4722012"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_6_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "3ee9bfad358d86f456de74f4275d14b8053ea58b3888f8a77790890d5779586e"
+      },
+      {
+        "archivo": "assets/novela/videos/acto_6_preview.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "577d4e841ee176a5b7c1edc51ae13017aac273feddfa7e9f839a8f8ff1ad7448"
+      }
+    ],
+    "videos": {
+      "cantidad": 6,
+      "segundos_por_clip": 4,
+      "fps": 24,
+      "resolucion": [
+        1280,
+        720
+      ],
+      "audio": false,
+      "cuadros_decodificados_por_clip": 96
+    },
+    "gif": {
+      "cantidad": 1,
+      "cuadros": 48
+    },
+    "metodo": "ImageGen para ilustraciones; QPainter y FFmpeg para animar los planos",
+    "prompts": "assets/novela/origen_arte.json",
+    "manifest": "assets/novela/manifest.json"
+  },
+  "cooperativo": {
+    "roles": [
+      "ciudadano",
+      "periodista"
+    ],
+    "ventanas_reales": 2,
+    "pruebas_e2e": 6,
+    "reconexiones_consecutivas": 30,
+    "transporte": "TCP real, roles exclusivos y vistas privadas",
+    "alcance_fisico": "Dos clientes en un equipo Windows. No se verificaron dos equipos fisicos."
+  },
+  "capturas": [
+    "docs/capturas/novela_decision.png",
+    "docs/capturas/novela_dialogo.png",
+    "docs/capturas/novela_editor.png",
+    "docs/capturas/novela_entrevista.png",
+    "docs/capturas/novela_fuentes.png",
+    "docs/capturas/novela_plano.png"
+  ],
+  "inicio_desde_carpeta_externa": "python -B CIVICA-main/main.py",
+  "log_completo": "docs/verificacion_novela.txt"
+}

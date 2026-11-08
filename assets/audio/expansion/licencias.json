@@ -1,0 +1,912 @@
+{
+  "version": 1,
+  "proyecto": "CIVICA / Alcalde Digital",
+  "licencia_recursos": "CC0-1.0",
+  "proveedor": "BigSoundBank / LaSonothèque",
+  "licencia_proveedor": "https://bigsoundbank.com/licenses.html",
+  "descripcion": "Montajes de grabaciones reales, salvo la notificación electrónica indicada en su ficha. Los autores y las páginas individuales se registran por fuente.",
+  "fuentes": {
+    "cafe": {
+      "id": "2561",
+      "titulo_original": "Coffee Shop at the Capucins",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/coffee-shop-at-the-capucins-s2561.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/2561.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:14:12.479500+00:00",
+      "sha256_original": "9bce43a63733eac383657334bad7dfe596c59de0528aa0c22d28f35bdddf97b3"
+    },
+    "plaza": {
+      "id": "0526",
+      "titulo_original": "Pedestrian Place",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/pedestrian-place-s0526.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0526.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:13:49.747522+00:00",
+      "sha256_original": "f466bf536a2c7a8d6d2c829c61b7e142222167154cb805ea9dee35c59ecf3725"
+    },
+    "calle": {
+      "id": "0527",
+      "titulo_original": "Small pedestrian street",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/small-pedestrian-street-s0527.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0527.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:13:48.046086+00:00",
+      "sha256_original": "6dbe018a53bac30049892d5ce872b47e804b961e609f9ba7c4a13ecf1e8de3ee"
+    },
+    "aves": {
+      "id": "0100",
+      "titulo_original": "Forest",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/forest-s0100.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0100.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:13:51.104260+00:00",
+      "sha256_original": "c6c04cce07cbdb11ec8732ca28035213a5bcbcb5d3638112b71d0ed90edeabec"
+    },
+    "teclado": {
+      "id": "0229",
+      "titulo_original": "Computer Keyboard",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/computer-keyboard-s0229.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0229.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:13:51.634944+00:00",
+      "sha256_original": "ee2265725caf7b68e339e5d8ab76e59e0957a9d80a8db62f06753352205bb066"
+    },
+    "teclado_lento": {
+      "id": "1733",
+      "titulo_original": "Slow Keyboard",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/slow-keyboard-s1733.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1733.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:07.993471+00:00",
+      "sha256_original": "82ed39702ec903dec14249a57b84428465fce3bc2d9c74b8e5f6531178685fa2"
+    },
+    "ventilacion": {
+      "id": "0126",
+      "titulo_original": "Computer 2 (Ventilation)",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/computer-2-ventilation-s0126.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0126.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:06.807068+00:00",
+      "sha256_original": "955f82bacfdf50d1f581441391ef76fb7e074efd76375ca4b02924e5a21655c5"
+    },
+    "papeles": {
+      "id": "0785",
+      "titulo_original": "Paper",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/paper-s0785.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0785.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:09.223555+00:00",
+      "sha256_original": "b2a4e31f92cf68000fc5b198d38b8b3d3d40955a8adf674b11aa8fb9dbb1df7c"
+    },
+    "pagina": {
+      "id": "2212",
+      "titulo_original": "Pages that Turn #5",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/pages-that-turn-5-s2212.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/2212.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:09.253141+00:00",
+      "sha256_original": "8478ff6c5df0fef0b9f5c10005bbf59d76685f0c267bde875ecc212422840cac"
+    },
+    "lapiz": {
+      "id": "0221",
+      "titulo_original": "Pencil #1",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/pencil-s0221.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0221.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:10.562513+00:00",
+      "sha256_original": "9dea1af01e6eed65c728050d6df8de81c1585bc020cf3f1e597d54e26e7cb0b6"
+    },
+    "lluvia": {
+      "id": "2679",
+      "titulo_original": "Rain Under an Umbrella",
+      "autor": "Pierre SIBANARCO",
+      "pagina_fuente": "https://bigsoundbank.com/rain-under-an-umbrella-s2679.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/2679.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:14:12.396350+00:00",
+      "sha256_original": "128d1f724175161635f524b110c580c545875654db402d9aaae4f13a775698bd"
+    },
+    "noche": {
+      "id": "1469",
+      "titulo_original": "Campaign at night #3",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/campaign-at-night-3-s1469.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1469.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:14:28.808130+00:00",
+      "sha256_original": "9885ebb4f8efdef021fba2f792a4bed6fdb7efc566223ebae093e36ee50c398c"
+    },
+    "viento": {
+      "id": "0904",
+      "titulo_original": "Wind in the Trees",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/forest-wind-in-the-trees-s0904.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0904.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:14:32.703570+00:00",
+      "sha256_original": "25f907ab068df5836b28af2c923468b97d2b75afbc56cce27834d3526ac7b3c0"
+    },
+    "ciudad_noche": {
+      "id": "0680",
+      "titulo_original": "Paris by Night",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/paris-by-night-s0680.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0680.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_de_campo",
+      "verificado_utc": "2026-10-24T15:14:21.736480+00:00",
+      "sha256_original": "3acef3f248c8a8af23c6fef1b31d18000fcd77a14ca952f35ff2d233ac7c307c"
+    },
+    "clic": {
+      "id": "1735",
+      "titulo_original": "Raspberry Mouse, Single Click",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/raspberry-mouse-single-click-s1735.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1735.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:26.720198+00:00",
+      "sha256_original": "e476a4526e7da72cae5090cbbb02b217fef77fda17ad5e067bc65ea42a39bcde"
+    },
+    "pasos_madera": {
+      "id": "0165",
+      "titulo_original": "Man Footsteps on the Wooden Floor",
+      "autor": "DavidGreck",
+      "pagina_fuente": "https://bigsoundbank.com/man-footsteps-on-the-wooden-floor-s0165.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0165.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:28.457823+00:00",
+      "sha256_original": "eeedcf093f783928780b6bc66ad8914e3c6df9e16fb2a5f480e5304390abc6d6"
+    },
+    "pasos_calle": {
+      "id": "1319",
+      "titulo_original": "Fast Steps on Concrete",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/fast-steps-on-concrete-s1319.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1319.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:31.949657+00:00",
+      "sha256_original": "56b459ad0630581b12e1b2e0d0d2455130cb084ad9d8f40670064265f2431c64"
+    },
+    "puerta_abrir": {
+      "id": "1703",
+      "titulo_original": "Apartment Door, Opening #2",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/apartment-door-opening-2-s1703.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1703.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:30.364014+00:00",
+      "sha256_original": "8353b7f494714412bc88e7903175a3eec3a37799d00b3b11326fd2c5c5f34294"
+    },
+    "puerta_cerrar": {
+      "id": "1704",
+      "titulo_original": "Apartment Door, Closing #1",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/apartment-door-closing-1-s1704.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1704.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:32.468266+00:00",
+      "sha256_original": "524b8f460f3f81ef89a09089c4999298f9bfb8b91e301c1437e99f598beeae0c"
+    },
+    "llamada_puerta": {
+      "id": "0320",
+      "titulo_original": "Knock on a Glass Door #2",
+      "autor": "DavidGreck",
+      "pagina_fuente": "https://bigsoundbank.com/knock-on-the-glass-door-2-s0320.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0320.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:32.878847+00:00",
+      "sha256_original": "3fff15b2c3294e047a581005f7638f931efe86002ccd38796ae785bd67382a05"
+    },
+    "taza": {
+      "id": "1194",
+      "titulo_original": "Teaspoon, placed on a plate",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/teaspoon-placed-on-a-plate-s1194.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1194.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:34.277355+00:00",
+      "sha256_original": "009f7da47db98f1e5ac4b4c5191d6db540fbcffd77e5312f83577383f06edbca"
+    },
+    "cucharilla": {
+      "id": "0410",
+      "titulo_original": "Spoon into a Mug of Coffee",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/spoon-into-a-mug-of-coffee-s0410.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0410.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:35.634812+00:00",
+      "sha256_original": "a0f0adc43205ec0e335b58a2fa62c2a636c67da4cb62229df02a36d2ff9203ab"
+    },
+    "cafetera": {
+      "id": "0301",
+      "titulo_original": "Senseo Coffee Maker: Service #1",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/senseo-service-s0301.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/0301.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:34.552036+00:00",
+      "sha256_original": "51009813682857b4a74e2c3ff8c0a7b65ac7075e8197e6821f1b460cddb60dff"
+    },
+    "suspiro": {
+      "id": "1405",
+      "titulo_original": "Sigh by the Mouth",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/sigh-by-the-mouth-s1405.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1405.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_foley",
+      "verificado_utc": "2026-10-24T15:14:35.837416+00:00",
+      "sha256_original": "b3e96c3bae61554f4b82a1b999e61cf6c6991eb57d522215843e8cba79ac20c2"
+    },
+    "notificacion": {
+      "id": "2066",
+      "titulo_original": "Notification, \"LaSoLisa\" #4",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/notification-lasolisa-4-s2066.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/2066.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "diseno_sonoro_sintetizado_por_el_autor",
+      "verificado_utc": "2026-10-24T15:14:35.761295+00:00",
+      "sha256_original": "d0e02f8234f4bdf99dace264ff1854444537a81060cf98cb0a363b6e53f09d35"
+    },
+    "hallazgo": {
+      "id": "1399",
+      "titulo_original": "Idea #2",
+      "autor": "Joseph SARDIN",
+      "pagina_fuente": "https://bigsoundbank.com/idea-2-s1399.html",
+      "descarga_original": "https://bigsoundbank.com/UPLOAD/mp3/1399.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "CC0 (public domain): Free and royalty-free",
+      "naturaleza": "grabacion_metallofono",
+      "verificado_utc": "2026-10-24T15:14:36.379181+00:00",
+      "sha256_original": "e71a9257a4d27406d0af6541bb33d0807657a6cfc4d8c658cc1ebd606a875d79"
+    }
+  },
+  "recursos": [
+    {
+      "archivo": "assets/audio/expansion/ambientes/cafe.wav",
+      "nombre": "cafe",
+      "categoria": "ambientes",
+      "descripcion": "Café con murmullo distante y vajilla cercana.",
+      "fuentes": [
+        "cafe",
+        "cucharilla",
+        "taza"
+      ],
+      "procesos": [
+        "recorte de grabaciones reales",
+        "filtro de distancia del murmullo",
+        "capas y paneo de vajilla",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -29.72,
+      "bytes": 5760044,
+      "sha256": "917b624b3167aab382b83ee7a417bf11ad0c705023de0807b7dc834360c55714"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/plaza.wav",
+      "nombre": "plaza",
+      "categoria": "ambientes",
+      "descripcion": "Plaza peatonal: multitud distante, aire y aves.",
+      "fuentes": [
+        "plaza",
+        "aves"
+      ],
+      "procesos": [
+        "mezcla de dos grabaciones",
+        "filtro de distancia para la multitud",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -28.16,
+      "bytes": 5760044,
+      "sha256": "d47b4b34e93cf632686e0d74e5a33cfcd5a7f284a885cc287e11a340178fcc55"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/calle.wav",
+      "nombre": "calle",
+      "categoria": "ambientes",
+      "descripcion": "Calle peatonal con actividad urbana y aves lejanas.",
+      "fuentes": [
+        "calle",
+        "aves"
+      ],
+      "procesos": [
+        "recorte y mezcla",
+        "filtrado y difusión de actividad distante",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -23.55,
+      "bytes": 5760044,
+      "sha256": "8a518a1fe802dd33efa3de597afbe8d7c58fc3f2455faabb631b8fe762c95991"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/oficina.wav",
+      "nombre": "oficina",
+      "categoria": "ambientes",
+      "descripcion": "Oficina con ventilación tenue, pausas de escritura y documentos.",
+      "fuentes": [
+        "ventilacion",
+        "teclado_lento",
+        "papeles"
+      ],
+      "procesos": [
+        "montaje de grabaciones de objetos",
+        "pausas naturales",
+        "paneo espacial",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -35.51,
+      "bytes": 5760044,
+      "sha256": "46bb13001f2839b6d9cd9ef59e584882b95f71ac40954a5e7b22c6c157c9a8de"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/lluvia.wav",
+      "nombre": "lluvia",
+      "categoria": "ambientes",
+      "descripcion": "Lluvia regular sobre una superficie de tela, en exterior.",
+      "fuentes": [
+        "lluvia"
+      ],
+      "procesos": [
+        "recorte de grabación real",
+        "extensión mediante solapamientos",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -32.7,
+      "bytes": 5760044,
+      "sha256": "e938376dd6f0ff6e1214f11b23d15b6e948c61560e940ebe072a38c310718801"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/noche.wav",
+      "nombre": "noche",
+      "categoria": "ambientes",
+      "descripcion": "Noche con insectos, aire entre árboles y tráfico muy distante.",
+      "fuentes": [
+        "noche",
+        "ciudad_noche"
+      ],
+      "procesos": [
+        "dos grabaciones de campo",
+        "tráfico filtrado en segundo plano",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -27.37,
+      "bytes": 5760044,
+      "sha256": "8ce6dd8a31f26762257d0484bb9b6038a002eacf942d5e166576c0ffcec9ffe8"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/viento.wav",
+      "nombre": "viento",
+      "categoria": "ambientes",
+      "descripcion": "Viento real moviendo hojas de árboles.",
+      "fuentes": [
+        "viento"
+      ],
+      "procesos": [
+        "recorte y filtrado de subgraves",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -28.22,
+      "bytes": 5760044,
+      "sha256": "aea1743745562c84851bd944e5e2281ed81cc28e123cc8cca8a7a731f9287804"
+    },
+    {
+      "archivo": "assets/audio/expansion/ambientes/interior_lluvia.wav",
+      "nombre": "interior_lluvia",
+      "categoria": "ambientes",
+      "descripcion": "Lluvia amortiguada desde un interior silencioso.",
+      "fuentes": [
+        "lluvia",
+        "ventilacion"
+      ],
+      "procesos": [
+        "perspectiva interior mediante filtro",
+        "ventilación tenue",
+        "empalme circular de 2 s",
+        "nivel RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 45.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -5.0,
+      "rms_dbfs": -29.83,
+      "bytes": 5760044,
+      "sha256": "c7f6a070fdd860207f51c1b983638379da1dccf6654165977d1a05ea64649b32"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/clic_real.wav",
+      "nombre": "clic_real",
+      "categoria": "efectos",
+      "descripcion": "Clic físico de un ratón.",
+      "fuentes": [
+        "clic"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 0.305,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -29.68,
+      "bytes": 39088,
+      "sha256": "755d5203eaa05a0c7e8f24f84e9aeda92c3ad7328e25e38d291f9e437e43f3ae"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/pagina.wav",
+      "nombre": "pagina",
+      "categoria": "efectos",
+      "descripcion": "Paso de página de un libro.",
+      "fuentes": [
+        "pagina"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 1.707,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -34.78,
+      "bytes": 218488,
+      "sha256": "a2294ba372ad8d3d5c7bc63c8e811aa67df2a278119b7a0dc8ccd314c4c27435"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/papeles.wav",
+      "nombre": "papeles",
+      "categoria": "efectos",
+      "descripcion": "Manipulación de documentos.",
+      "fuentes": [
+        "papeles"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 2.507,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -36.07,
+      "bytes": 320944,
+      "sha256": "4d5d3e35fca4979809f2665d3d730d54c1c0b889c8a6156cce07d7a7b2ff4f1f"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/lapiz.wav",
+      "nombre": "lapiz",
+      "categoria": "efectos",
+      "descripcion": "Anotación con lápiz sobre papel.",
+      "fuentes": [
+        "lapiz"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 2.5,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -30.88,
+      "bytes": 320044,
+      "sha256": "bae5ed0e377d2f8640c8883116936d8fb7c2935e6c20eef9310334531d708d8b"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/teclado.wav",
+      "nombre": "teclado",
+      "categoria": "efectos",
+      "descripcion": "Varias teclas de un teclado físico.",
+      "fuentes": [
+        "teclado"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 1.789,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -29.93,
+      "bytes": 228976,
+      "sha256": "cc04ad9df2aa865d7882dfec2984a4336bbdb4a63acc1f9b50610b616f66a701"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/pasos_madera.wav",
+      "nombre": "pasos_madera",
+      "categoria": "efectos",
+      "descripcion": "Pasos humanos sobre piso de madera.",
+      "fuentes": [
+        "pasos_madera"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 4.346,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -27.64,
+      "bytes": 556392,
+      "sha256": "199bae459dc7c390305b6c10b7796d5204c2242e7e0d6850bfedb84baccaf0a6"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/pasos_calle.wav",
+      "nombre": "pasos_calle",
+      "categoria": "efectos",
+      "descripcion": "Pasos rápidos sobre concreto.",
+      "fuentes": [
+        "pasos_calle"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 4.3,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -31.94,
+      "bytes": 550444,
+      "sha256": "62fdd9fdde6204eaaea00b3cfd46baf9d457af4078858eefe808b8d843b9dba4"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/puerta_abrir.wav",
+      "nombre": "puerta_abrir",
+      "categoria": "efectos",
+      "descripcion": "Apertura de puerta de madera.",
+      "fuentes": [
+        "puerta_abrir"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 3.876,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -35.08,
+      "bytes": 496168,
+      "sha256": "c0dab08a9948e76fb8edf6f09b7f42faa10a477cbeb75ba3256f89dde73ef289"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/puerta_cerrar.wav",
+      "nombre": "puerta_cerrar",
+      "categoria": "efectos",
+      "descripcion": "Cierre de puerta de madera.",
+      "fuentes": [
+        "puerta_cerrar"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 2.736,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -32.8,
+      "bytes": 350296,
+      "sha256": "dd378326ed4bbd60750624cf6698285f2dae7d46595da0051c4e5791022a1a11"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/llamada_puerta.wav",
+      "nombre": "llamada_puerta",
+      "categoria": "efectos",
+      "descripcion": "Golpes en una puerta de vidrio.",
+      "fuentes": [
+        "llamada_puerta"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 1.357,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -24.57,
+      "bytes": 173700,
+      "sha256": "6fa35c3255523d02c4de95f611e142bf4aa2b3c39ce547588663a2ecb48130f1"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/taza.wav",
+      "nombre": "taza",
+      "categoria": "efectos",
+      "descripcion": "Cucharilla depositada sobre un plato: detalle de vajilla.",
+      "fuentes": [
+        "taza"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 1.639,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -28.69,
+      "bytes": 209880,
+      "sha256": "ad25c1a86da531b69b894b38248a39b22efc7dc75903bd091a4bda3921ab3ebc"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/cucharilla.wav",
+      "nombre": "cucharilla",
+      "categoria": "efectos",
+      "descripcion": "Cucharilla removiendo una taza de café.",
+      "fuentes": [
+        "cucharilla"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 2.6,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -33.85,
+      "bytes": 332844,
+      "sha256": "60ce4928ce540a3a128fe26072137bfcb8d0ae7d87e8d88bbf6360f48a636a8a"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/cafetera.wav",
+      "nombre": "cafetera",
+      "categoria": "efectos",
+      "descripcion": "Cafetera sirviendo café.",
+      "fuentes": [
+        "cafetera"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 5.3,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -25.79,
+      "bytes": 678444,
+      "sha256": "da0178191b91b7056f12e6b862d9ab376524ba062a942d8a1a6b7a1f4cd42ec6"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/suspiro.wav",
+      "nombre": "suspiro",
+      "categoria": "efectos",
+      "descripcion": "Suspiro humano sin palabras.",
+      "fuentes": [
+        "suspiro"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 3.836,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -3.0,
+      "rms_dbfs": -25.27,
+      "bytes": 491080,
+      "sha256": "2fa05f5effec28fbe09fd28c29fe79f76412ba845b02474e9296681f2c9510df"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/notificacion_suave.wav",
+      "nombre": "notificacion_suave",
+      "categoria": "efectos",
+      "descripcion": "Aviso breve de diseño sonoro electrónico del autor; no es una grabación real.",
+      "fuentes": [
+        "notificacion"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 0.4,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -9.1,
+      "rms_dbfs": -22.0,
+      "bytes": 51244,
+      "sha256": "bfb376d6a75a809922849d3ba6417965cf445dc802a4efcc0f7f1fe3369e58d2"
+    },
+    {
+      "archivo": "assets/audio/expansion/efectos/hallazgo.wav",
+      "nombre": "hallazgo",
+      "categoria": "efectos",
+      "descripcion": "Nota real de metalófono como descubrimiento.",
+      "fuentes": [
+        "hallazgo"
+      ],
+      "procesos": [
+        "recorte",
+        "retiro de silencio excedente",
+        "fundidos de 25 ms",
+        "normalización de pico y RMS",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 1.702,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -7.37,
+      "rms_dbfs": -22.0,
+      "bytes": 217844,
+      "sha256": "d0d3fd8a26f76d28f14b87aa53c2b510551eed4d9a1b635acfd4fe82649132b7"
+    }
+  ],
+  "total_bytes_wav": 51316228
+}

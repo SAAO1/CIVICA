@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-10-14",
+  "recursos": [
+    {
+      "archivo": "ui/panel.png",
+      "prompt": "Use case: stylized-concept. Asset type: one production game UI panel skin for CIVICA, a polished illustrated anime visual novel about civic life. Reference image is ONLY palette/lighting/craft style, not layout or people. Create a single isolated rectangular EMPTY panel with actual transparent exterior, landscape 3:2. Materials: deeply layered midnight blue painted enamel/inlaid leather (#182d41), softly lit warm cream bevel, narrow muted copper edging #bd8855, small restrained teal ornamental corner inlays #477f83. The center must be perfectly quiet dark ink matte and near-uniform so real text and variable graphs can be rendered on top by Qt. Thin gently rounded corners, subtle tactile grain and soft raised 3D rim with delicate realistic shadow, sophisticated anime game interface rather than web dashboard, no gears or excessive fantasy ornament. Panel occupies 90 percent of canvas with even exterior margin; frame symmetrical, straight edges, no perspective, front view, no background scene, no text, no letters, no icons, no mockup, no extra panels. This image is a reusable stretchable UI skin, wide empty central area. Real alpha transparent outside.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-bfcd3bdc-2add-46a1-b2d7-a99733515868.png",
+      "ancho": 1536,
+      "alto": 1024,
+      "bytes": 1673721,
+      "rgba": true,
+      "sha256": "da562f940aaf268786e140855591eb82b5d78608c06fb156bfafdbf09b0462af"
+    },
+    {
+      "archivo": "ui/boton.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE reusable illustrated visual novel button skin, not a mockup. Create one empty front-facing wide rounded rectangular button, width-to-height 4:1, centered, filling 90% canvas width and 65% canvas height. Actual transparent outside. Layered handpainted midnight teal-blue enamel, subtle leather grain, inset ivory highlight, restrained copper thin double rim, softly raised bevel and short realistic shadow. Same CIVICA warm anime illustration craft style as reference, palette #182d41 #f6e8cd #bd8855 #477f83. Center has dark QUIET empty matte surface for dynamic cream text at runtime; no icon no letters no words. Geometry flat orthographic face, rounded rectangle not perspective; no multiple buttons or arrows, no busy decoration, soft cinematic light. Must look tangible and polished rather than flat Qt controls. The button should occupy a wide horizontal canvas and have straight stretchable center.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-211531a4-5adb-4421-b47d-89b3ba0716cf.png",
+      "ancho": 2172,
+      "alto": 724,
+      "bytes": 1728542,
+      "rgba": true,
+      "sha256": "de50769938fb5dd4a73e2cbade04b6216794886eba4fbe86d16567326dd38e7d"
+    },
+    {
+      "archivo": "ui/dialogo.png",
+      "prompt": "Use case: stylized-concept. One production dialogue box skin for CIVICA anime visual novel, isolated flat front view, extra wide horizontal 5:1 aspect. Match reference panel materials: midnight blue leather/enamel, subtle tactile grain, slender copper and ivory beveled rim, small understated teal corner floral accents. Single continuous EMPTY central dark matte area for multiline dynamic text. Thin raised name-tab inset along upper left, but no letters. No oversized ornaments, center very calm and readable, no text, no words, no buttons, no scene, no characters. Actual transparent background outside the panel. Small soft shadow just outside. This must be a finished high quality illustrated game UI asset, not a UI screenshot.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-50b286ee-e67c-4134-9175-3c8d1fea3f44.png",
+      "ancho": 2172,
+      "alto": 724,
+      "bytes": 1848784,
+      "rgba": true,
+      "sha256": "8860263c06ef843b511d0e618d68f34414ca35e03bc2d36d580f8f0bd8fe26c0"
+    },
+    {
+      "archivo": "ui/logo.png",
+      "prompt": "Use case: logo-brand. One finished title logo for CIVICA — Alcalde Digital, warm illustrated anime civic visual novel. Exact main text 'CIVICA' large beautiful ivory dimensional serif lettering, restrained brushed copper inset bevel, subtle midnight blue shadow. Exact subtitle 'ALCALDE DIGITAL' smaller, spaced and beautifully legible centered beneath. Above or integrated very small refined emblem of a town clocktower with two flowing branches / civic network dots, no official university seals. Warm cream #f6e8cd copper #bd8855 teal #477f83 midnight ink #182d41. High-end polished illustrated videogame title treatment with soft material light, not flat defaultfont and not militaristic fantasy. Compact centered balanced lockup, transparent background, no background panel, no extra words, no watermark. Landscape 3:2 canvas, title occupies width with generous transparent margin. Keep main word spelled C I V I C A.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-ff29daae-2214-4ff6-b115-c8ef3a456148.png",
+      "ancho": 1536,
+      "alto": 1024,
+      "bytes": 2172023,
+      "rgba": true,
+      "sha256": "124561494954e08906f2e8912bfb59d45559d0f4e9b721d172cc1550a687b845"
+    },
+    {
+      "archivo": "ui/iconos.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE game icon atlas sheet, exactly 6 columns and 4 rows, 24 distinct evenly spaced icons, each icon centered in its own identical square cell, generous transparent gutters, front view. Genuine transparent background, no tile backgrounds, no labels, no letters, no numbers. CIVICA warm anime visual novel style, hand-painted polished cream ivory and copper with teal enamel details, subtle soft dimensional bevel and light shadow, consistent professional game UI icon family readable small. Fixed row-major order: row1 branching share arrow, magnifier with check, eye with slash, shield with exclamation, open help book with small question mark, settings gear; row2 save disk, open folder, home, three connected community dots, circular reconnect arrow, four fullscreen corners; row3 heart trust, handshake, wellbeing leaf, verified document check, misinformation speech bubble warning, conflict broken lightning; row4 group of people, points star, reputation medal, achievement trophy, clock, pause bars. Clean individual silhouettes, not an app mockup, no extra decorative borders or scene, no merged symbols across cell boundaries. Canvas ratio 3:2 so 6x4 square cells fit exactly.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-1ddca38b-343e-4a5d-995a-a1c500c1c647.png",
+      "ancho": 1536,
+      "alto": 1024,
+      "bytes": 2347597,
+      "rgba": true,
+      "sha256": "17e6c62ff6cce9fc54e3554107a1744dcca84c3def5c74cd9375e11e0efd6875"
+    },
+    {
+      "archivo": "ui/nodo.png",
+      "prompt": "Use case: stylized-concept. ONE circular UI medallion asset for CIVICA warm anime illustrated game. Isolated perfect circular node frame, orthographic front view. Elegant slim brushed copper and ivory double ring, subtle teal enamel inlay, soft dimensional realistic rim and tiny shadow; flat dark midnight ink MATTE EMPTY disk in the center for runtime IDs or avatar. No letters, no numbers, no symbols, no illustration inside, no extra decorative leaves extending beyond circle. The entire circle fills 85% of a square canvas. True transparent background outside circle. Consistent with reference illustrated panel skin but much simpler, a readable graph/ABB node at 60 pixels. High quality painted materials, restraint, symmetrical circular shape.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-9f0c9178-0bee-469c-9b6e-cc218f6e38db.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 1957473,
+      "rgba": true,
+      "sha256": "c365d4d435eb786cbe77634a7c081cd502d22f3b30a04b11e0df1b022e043254"
+    },
+    {
+      "archivo": "ui/check.png",
+      "prompt": "Use case: stylized-concept. One standalone CHECKMARK game UI icon, actual transparent background. Simple strong elegant tick mark sculpted in warm ivory with slender brushed copper rim, dark teal side bevel and tiny soft shadow. Match material quality of CIVICA warm illustrated visual novel reference. Front view, recognizable thick check silhouette, no circle, no square frame, no other objects, no letters, no words, no scene. Centered with generous margin on square canvas. Readable when reduced to20pixels. One single checkmark only.",
+      "metodo": "image_gen.imagegen (integrado)",
+      "origen": "C:\\Users\\USER\\.codex\\generated_images\\01a13c5c-0696-7171-94d9-8af7b6d4592c\\exec-53566ed0-43c0-4247-a4eb-246321505313.png",
+      "ancho": 1254,
+      "alto": 1254,
+      "bytes": 709108,
+      "rgba": true,
+      "sha256": "eaec705ec90f8293cf94aa1c73d8f172844d4f1ba7a36d9fe6c810e880fbe317"
+    }
+  ]
+}

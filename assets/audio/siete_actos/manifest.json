@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "licencia": "CC0-1.0",
+  "tipo": "montajes de fuentes locales",
+  "procedencia": "assets/audio/expansion/licencias.json",
+  "descripcion": "Grabaciones ambientales y foley; notificación electrónica indicada en la fuente. Sin voces nuevas ni victoria electoral implícita.",
+  "recursos": {
+    "estudio": {
+      "duracion_s": 30,
+      "hz": 32000,
+      "pico": 0.1869,
+      "sha256": "14e3f386edaee45e4dfbe336080d6bd837fea559b1633a51cdd7eee9df2bde1f",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\ambientes\\oficina.wav",
+          "sha256": "46bb13001f2839b6d9cd9ef59e584882b95f71ac40954a5e7b22c6c157c9a8de",
+          "ganancia": 0.4
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\teclado.wav",
+          "sha256": "cc04ad9df2aa865d7882dfec2984a4336bbdb4a63acc1f9b50610b616f66a701",
+          "ganancia": 0.19
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\clic_real.wav",
+          "sha256": "755d5203eaa05a0c7e8f24f84e9aeda92c3ad7328e25e38d291f9e437e43f3ae",
+          "ganancia": 0.14
+        }
+      ]
+    },
+    "debate": {
+      "duracion_s": 30,
+      "hz": 32000,
+      "pico": 0.1279,
+      "sha256": "9e163a51c489181a4caf035427583aec6ad6a275708ce1a2a6428fe7f132c495",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\ambientes\\cafe.wav",
+          "sha256": "917b624b3167aab382b83ee7a417bf11ad0c705023de0807b7dc834360c55714",
+          "ganancia": 0.3
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\ambientes\\oficina.wav",
+          "sha256": "46bb13001f2839b6d9cd9ef59e584882b95f71ac40954a5e7b22c6c157c9a8de",
+          "ganancia": 0.18
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\papeles.wav",
+          "sha256": "4d5d3e35fca4979809f2665d3d730d54c1c0b889c8a6156cce07d7a7b2ff4f1f",
+          "ganancia": 0.13
+        }
+      ]
+    },
+    "redaccion": {
+      "duracion_s": 30,
+      "hz": 32000,
+      "pico": 0.2064,
+      "sha256": "3fd91bf30279fffbd3c91c836b55374cbadb0a86c893386d02a7688fac9f70aa",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\ambientes\\interior_lluvia.wav",
+          "sha256": "c7f6a070fdd860207f51c1b983638379da1dccf6654165977d1a05ea64649b32",
+          "ganancia": 0.42
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\ambientes\\oficina.wav",
+          "sha256": "46bb13001f2839b6d9cd9ef59e584882b95f71ac40954a5e7b22c6c157c9a8de",
+          "ganancia": 0.24
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\teclado.wav",
+          "sha256": "cc04ad9df2aa865d7882dfec2984a4336bbdb4a63acc1f9b50610b616f66a701",
+          "ganancia": 0.22
+        }
+      ]
+    },
+    "urnas": {
+      "duracion_s": 30,
+      "hz": 32000,
+      "pico": 0.1826,
+      "sha256": "01fd887eba177dfb887831d823861124f74acfb6d7316fc3c42f0232b837101d",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\ambientes\\calle.wav",
+          "sha256": "8a518a1fe802dd33efa3de597afbe8d7c58fc3f2455faabb631b8fe762c95991",
+          "ganancia": 0.32
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\pasos_madera.wav",
+          "sha256": "199bae459dc7c390305b6c10b7796d5204c2242e7e0d6850bfedb84baccaf0a6",
+          "ganancia": 0.13
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\pagina.wav",
+          "sha256": "a2294ba372ad8d3d5c7bc63c8e811aa67df2a278119b7a0dc8ccd314c4c27435",
+          "ganancia": 0.17
+        }
+      ]
+    },
+    "directo": {
+      "duracion_s": 1.6,
+      "hz": 32000,
+      "pico": 0.1658,
+      "sha256": "e4c49f60c9c5bab67272165e313a7c69b5f9835e7ba32df6e6713de61e49740c",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\clic_real.wav",
+          "sha256": "755d5203eaa05a0c7e8f24f84e9aeda92c3ad7328e25e38d291f9e437e43f3ae",
+          "ganancia": 0.38
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\notificacion_suave.wav",
+          "sha256": "bfb376d6a75a809922849d3ba6417965cf445dc802a4efcc0f7f1fe3369e58d2",
+          "ganancia": 0.27
+        }
+      ]
+    },
+    "microfono": {
+      "duracion_s": 1.8,
+      "hz": 32000,
+      "pico": 0.2265,
+      "sha256": "37bf3b88b0eae0be143a3a891a3335fc5c71cf45f18bfc817d7ab7b38197bb28",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\papeles.wav",
+          "sha256": "4d5d3e35fca4979809f2665d3d730d54c1c0b889c8a6156cce07d7a7b2ff4f1f",
+          "ganancia": 0.25
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\clic_real.wav",
+          "sha256": "755d5203eaa05a0c7e8f24f84e9aeda92c3ad7328e25e38d291f9e437e43f3ae",
+          "ganancia": 0.32
+        }
+      ]
+    },
+    "archivo_audio": {
+      "duracion_s": 2.4,
+      "hz": 32000,
+      "pico": 0.2621,
+      "sha256": "8230acbcbb70338eaf735596daf9b921ce500937f7c682e6dbb022fb3fd96bb4",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\teclado.wav",
+          "sha256": "cc04ad9df2aa865d7882dfec2984a4336bbdb4a63acc1f9b50610b616f66a701",
+          "ganancia": 0.3
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\clic_real.wav",
+          "sha256": "755d5203eaa05a0c7e8f24f84e9aeda92c3ad7328e25e38d291f9e437e43f3ae",
+          "ganancia": 0.37
+        }
+      ]
+    },
+    "papeleta": {
+      "duracion_s": 2.4,
+      "hz": 32000,
+      "pico": 0.2124,
+      "sha256": "ab95d154a7581bb2434432b4af3b8e927e2223f4a6548b4f2686e0b68065ca01",
+      "capas": [
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\pagina.wav",
+          "sha256": "a2294ba372ad8d3d5c7bc63c8e811aa67df2a278119b7a0dc8ccd314c4c27435",
+          "ganancia": 0.3
+        },
+        {
+          "archivo": "assets\\audio\\expansion\\efectos\\papeles.wav",
+          "sha256": "4d5d3e35fca4979809f2665d3d730d54c1c0b889c8a6156cce07d7a7b2ff4f1f",
+          "ganancia": 0.25
+        }
+      ]
+    }
+  }
+}

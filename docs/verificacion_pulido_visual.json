@@ -1,0 +1,378 @@
+{
+  "verificado_utc": "2026-11-07T22:50:36.703831+00:00",
+  "resultado": "aprobado",
+  "suite": {
+    "pruebas": 452,
+    "fallas": 0,
+    "errores": 0,
+    "omitidas": 0,
+    "segundos": 225.134,
+    "limpieza_qt_entre_pruebas": true
+  },
+  "actos": 6,
+  "roles_jugables": [
+    "ciudadano",
+    "periodista"
+  ],
+  "candidatos_en_historia": [
+    "Juan Torres",
+    "Adrian Morales",
+    "Laura Rios",
+    "Camila Vega"
+  ],
+  "dialogos_adicionales_con_doblaje_original": 17,
+  "flujo": "dialogo, investigacion, decision, consecuencias, balance, ABB, grafo, siguiente acto",
+  "balance": {
+    "indicadores_y_puntos": 8,
+    "animacion_ms": 1200,
+    "avance_inmediato": true,
+    "voz_opcional": true
+  },
+  "investigacion": {
+    "pasos": [
+      "Explorar",
+      "Senalar / escuchar",
+      "Decidir"
+    ],
+    "presupuesto_por_persona_y_acto": 2,
+    "abrir_o_explorar_consume": 0,
+    "confirmar_hallazgo_consume": 1,
+    "tamanos_gui_verificados": [
+      [
+        1100,
+        700
+      ],
+      [
+        1360,
+        720
+      ]
+    ]
+  },
+  "arte": {
+    "herramienta": "ImageGen integrada",
+    "escenas_contextuales": 7,
+    "emociones_nuevas": 20,
+    "actores_con_emociones_nuevas": 5,
+    "botones": "azul marino y dorado",
+    "imagenes_verificadas": [
+      {
+        "archivo": "assets/novela/pulido/cg/audio_contexto.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "fc9407e9afc574bbf024aa14100c2d4168371b5d67699fb54e46c89f14344e08"
+      },
+      {
+        "archivo": "assets/novela/pulido/cg/aviso_cafe.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "0f0145bc5a7e36ae32a6ad6558eff9955b37cdad19fd71ea64ae1723c2232c44"
+      },
+      {
+        "archivo": "assets/novela/pulido/cg/correccion_contexto.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "1e738f31b6d12f8f1dbba949d568be679794b38e4186ddb4aed1b6d57be033c4"
+      },
+      {
+        "archivo": "assets/novela/pulido/cg/foro_cuatro.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "4b869822f6b6bc7637ba45fe6545299f27bbdf976d0f7fc396836593643bd2c6"
+      },
+      {
+        "archivo": "assets/novela/pulido/cg/parque_contexto.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "0fbd77b3c3a6f67c2d888b24e8d20e8132e88dcc9c5dee66149cbe5b0f445eaa"
+      },
+      {
+        "archivo": "assets/novela/pulido/cg/urnas_contexto.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "eb60b45627af191193cd34954b9a8901b1a3404c44852d7ba3d84736edcf52a8"
+      },
+      {
+        "archivo": "assets/novela/pulido/cg/voto_contexto.png",
+        "ancho": 1672,
+        "alto": 941,
+        "sha256": "084b23343d9253cbf05e354dd0f935da619d5bff14cd47d2c4c734577b3d0ee4"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/adrian_emociones.png",
+        "ancho": 1024,
+        "alto": 1536,
+        "sha256": "817404fade74438857bad5181992b45a8cdc89c4cf4cee58e903ae01a8ebd157"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/adrian_enojado.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "272fe67b3950fd68516a230f24de1d940ab73f0ed92c5858841b73a1a12b5986"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/adrian_pensativo.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "388da81f5ae12ed0532eb91c0d557186f2bc9d93ad99e1c202ac0ee3594e9d62"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/adrian_sorprendido.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "b3b47f4ac3dde916da16adbfb659223c03dedd97a1b2c8fe92f362cd558c00fe"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/adrian_triste.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "d7650df185c960f8dff92239117c429fed328e558c6abac13a6cf99aeb7ae1eb"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/camila_emociones.png",
+        "ancho": 1024,
+        "alto": 1536,
+        "sha256": "407de458922e19a5713f049dcadcd267c092a2eb4a111b36ef75c36f61534a6b"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/camila_enojado.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "3721dcef6dc675d871b7ae5b57fa71b3c75d0154331545128085afbcb97eb59c"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/camila_pensativo.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "716ae1a30d41a139c7a608d6a22310dcf91c54c823e0860c4823ad44ad995d26"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/camila_sorprendido.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "fe801e73e05287ba160ae4015ba44ece768dde5f687c725e09eeb41476630497"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/camila_triste.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "8819a297c2e452ce2a9ff3cb9630850309a9b5f2584acef15db449d6e8c13b02"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/influencer_emociones.png",
+        "ancho": 1024,
+        "alto": 1536,
+        "sha256": "a53d02fca30e0181f08b994ca386b2bc4a52893bdec4cd6545b91374efda639b"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/influencer_enojado.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "47dca6cd4442eabbb1c8c78becda3bcca783480621801c47e2fd20e9f0a1a65e"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/influencer_pensativo.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "3b0a556cd02544e62c9df6787095273213883f9544f207544b5fb40ffea994d9"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/influencer_sorprendido.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "5d1e0c40e6bba37ca4ca0262bda89387868b35ce6d7c6e0a2f78bca8b1e06913"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/influencer_triste.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "ec1a7c7846cd40fa1bbe3d5dbfdb9eb44931e3711a9b8a2df13c3c506420931f"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/juan_emociones.png",
+        "ancho": 1024,
+        "alto": 1536,
+        "sha256": "cea1845b20cdea1805d706d05476f19ab24fb89df9ba6feabc4f4ff860602cdc"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/juan_enojado.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "faf2227c877b1fb349f0cb98e664993e89a0915328b6b05b4c79899fd930f5c9"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/juan_pensativo.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "f045e97747c17b556fda59ad26169b543bccacf6377d9c91d1fd2a329db1aa7a"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/juan_sorprendido.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "fd7996159b869ce5c8ef877f13692c3fb854e0f1c456b8f59487530fdff6333e"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/juan_triste.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "103d59570c7160d596ce5c57366aded930d377c6b2c2dc4b556d16fb18a7fbd9"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/laura_emociones.png",
+        "ancho": 1024,
+        "alto": 1536,
+        "sha256": "401abab5f997835f4b986a8f1832ec6db2424a3cb7d6718444c8efcc724621ee"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/laura_enojado.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "e933d4926193b77663b2bfa9fc1a7f847816243e88c4a72e7cafbb12c4427cb7"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/laura_pensativo.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "95ec0b5f3b4a0a2b05e5a6d4baa8f365ecd05c94b540be3b55a8ae106679dc89"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/laura_sorprendido.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "89598d72bd8aa063934d890ba9591427d20fbf15184753a8d44f76495f8f4505"
+      },
+      {
+        "archivo": "assets/novela/pulido/expresiones/laura_triste.png",
+        "ancho": 512,
+        "alto": 768,
+        "sha256": "2db3323092915d85e946daa84cf8dfc27e3c11b6814cd087382ee9cb36fa8543"
+      },
+      {
+        "archivo": "assets/novela/pulido/ui/botones_azules_atlas.png",
+        "ancho": 1254,
+        "alto": 1254,
+        "sha256": "8b6415247f667315f15b2496d6dac74977eec4cf56c4e929a24781fca6a7fc01"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_110_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "dc11d73e35055cd93c912d4cdd33d2fb1d7e2b2a081922c4a3418386f1710b40"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_110_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "13b15b073af908bebd09db55d38f28cf799593e91eccd5f7645d3018e53afd7a"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_120_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "d1cf1fbfa0b210decdac034188d9f0951d237d5613ee613c894d91b9df7c5d90"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_120_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "224b7b3fa344c1a0a4582fa4a2fb38bac843729a60fea6968a19b98fec891f0b"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_35_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "e50bb187785b5fe64af8fd33a2acd112748436f12651322317873adf1177cba7"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_35_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "732fc4be6c5745d7c1979fa78ca7efded62b7d2a17539426853d5ea59e1b29e8"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_40_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "1d8172dae6109877d26fe79683304c2f02e8ec77fb0381dd640474b9b06d48d8"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_40_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "ee6111db48d828360f4aec0d40ea34ec30361b91427b15f05620fc87f0ada7e5"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_50_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "1bae28c80b39695b092038b90004ea087fff795f6e4e495d7357d189a6274cde"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_50_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "53b386fc014929c5169da1fd1c3877d54bc070b381010eedc53b17254f9efff0"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_90_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "32db0d8f7b4379fd88bcde9e45ae2e67330131f4a436778ff490268d12fde2c8"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/caso_90_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "2dd786baad1567f76f45117e88ff224beec0da00f931d42dc151bec14e5e3789"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/foro_inicio.png",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "041a729295fa1740623842b51161b19d5b366be1b4c3e2840850f067512153c0"
+      },
+      {
+        "archivo": "assets/novela/pulido/videos/foro_poster.jpg",
+        "ancho": 1280,
+        "alto": 720,
+        "sha256": "cf711b9a661bee6efc01baac55d490006794312a6ef94d7ba219f79687e854b1"
+      }
+    ],
+    "prompts": "assets/novela/pulido/origen_arte.json"
+  },
+  "audiovisual": {
+    "videos_nuevos": 7,
+    "duracion_s": 6,
+    "fps": 24,
+    "cuadros_por_clip": 144,
+    "resolucion": [
+      1280,
+      720
+    ],
+    "audio_en_mp4": false,
+    "sonidos_nuevos": 4,
+    "voces": "Paquete neuronal original",
+    "transicion_ms": 520,
+    "manifest": "assets/novela/pulido/videos/manifest.json"
+  },
+  "cooperativo": {
+    "clientes_gui_reales": 2,
+    "transporte": "TCP real",
+    "roles_exclusivos": true,
+    "dos_decisiones_por_acto": true,
+    "alcance": "Dos ventanas en un equipo. No se verificaron dos equipos fisicos."
+  },
+  "capturas": [
+    "docs/capturas_pulido/arbol.png",
+    "docs/capturas_pulido/balance_simultaneo.png",
+    "docs/capturas_pulido/decision_azul.png",
+    "docs/capturas_pulido/foro_inicio.png",
+    "docs/capturas_pulido/grafo.png",
+    "docs/capturas_pulido/guia_decidir.png",
+    "docs/capturas_pulido/guia_explorar.png",
+    "docs/capturas_pulido/hallazgo.png",
+    "docs/capturas_pulido/juan_en_historia.png",
+    "docs/capturas_pulido/seleccion_personajes.png"
+  ],
+  "log": "docs/verificacion_pulido_visual.txt"
+}

@@ -1,0 +1,733 @@
+{
+  "archivo": "muestra_siete_actos.mp4",
+  "duracion_segundos": 203.29166666666666,
+  "fps": 24,
+  "tamano": [
+    1280,
+    720
+  ],
+  "bytes": 21671470,
+  "sha256": "6cfdd73cd594ec82aa618ddd39d11018cc3052f770053d38f0551a2730030db6",
+  "naturaleza": "Widgets reales y compositores del juego por reloj; audio y transporte de los widgets aislados. No es grabación humana ni prueba del decodificador Qt.",
+  "sonido": "Voces neuronales locales completas, cuatro ambientes nuevos CC0, música; sin valoración auditiva humana.",
+  "audio_niveles": {
+    "metodo": "FFmpeg volumedetect",
+    "media_db": -20.1,
+    "pico_db": -1.3,
+    "senal_presente": true,
+    "pico_sin_saturacion": true
+  },
+  "decodificacion_completa": true,
+  "cortes": [
+    {
+      "tipo": "narrador",
+      "clave": "narrador_90",
+      "ambiente": "estudio",
+      "fotogramas": 240,
+      "inicio": 0.0,
+      "duracion": 10.0,
+      "voz": {
+        "clave": "7834da948474a266433e67a0",
+        "duracion": 8.088,
+        "texto": "El aro de luz enmarca el teléfono de Valeria. Fuera del encuadre, una llamada insiste por tercera vez.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "personaje",
+      "clave": "INFLUENCER",
+      "ambiente": "estudio",
+      "fotogramas": 206,
+      "inicio": 10.0,
+      "duracion": 8.583333333333334,
+      "voz": {
+        "clave": "00f511178522f50b34c836b7",
+        "duracion": 7.968,
+        "texto": "Soy Valeria. Normalmente preparo una entrada mejor, pero hoy mi entrada tiene treinta mensajes sin responder.",
+        "hablante": "INFLUENCER"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_40",
+      "ambiente": "estudio",
+      "fotogramas": 240,
+      "inicio": 18.583333333333332,
+      "duracion": 10.0,
+      "voz": {
+        "clave": "752fbe7b812ce7b6d719a03f",
+        "duracion": 8.808,
+        "texto": "Valeria apoya el teléfono junto al aro de luz. El silencio entre dos notificaciones dura menos que una respiración.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "personaje",
+      "clave": "CAMILA",
+      "ambiente": "estudio",
+      "fotogramas": 223,
+      "inicio": 28.583333333333332,
+      "duracion": 9.291666666666666,
+      "voz": {
+        "clave": "4cf3b8ac7e0623557d0e245b",
+        "duracion": 8.664,
+        "texto": "Presenté un canal para enlazar correcciones con el mensaje original. El cambio debe quedar a la vista, también cuando incomode.",
+        "hablante": "CAMILA"
+      }
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_40_convocar",
+      "ambiente": "estudio",
+      "fotogramas": 216,
+      "inicio": 37.875,
+      "duracion": 9.0,
+      "voz": {
+        "clave": "de51a8c69ae838c976e2a8ea",
+        "duracion": 7.44,
+        "texto": "Elegí convocar al barrio alrededor de esta propuesta. Podemos pedir que sus cambios y sus fuentes queden a la vista.",
+        "hablante": "CIUDADANO"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_100",
+      "ambiente": "debate",
+      "fotogramas": 240,
+      "inicio": 46.875,
+      "duracion": 10.0,
+      "voz": {
+        "clave": "478599c5527e15b6a3565716",
+        "duracion": 9.12,
+        "texto": "Los focos del foro encienden cuatro atriles. En la primera fila, el ciudadano sostiene una pregunta escrita por su hermana.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "personaje",
+      "clave": "JUAN",
+      "ambiente": "debate",
+      "fotogramas": 249,
+      "inicio": 56.875,
+      "duracion": 10.375,
+      "voz": {
+        "clave": "b940ec74e1adefa5240595ed",
+        "duracion": 9.744,
+        "texto": "Caben las dos. Propongo reparar por etapas y usar aulas alternas para mantener las clases. Aquí está el plan completo.",
+        "hablante": "JUAN"
+      }
+    },
+    {
+      "tipo": "personaje",
+      "clave": "LAURA",
+      "ambiente": "debate",
+      "fotogramas": 214,
+      "inicio": 67.25,
+      "duracion": 8.916666666666666,
+      "voz": {
+        "clave": "478a0328520481215dc92e96",
+        "duracion": 8.304,
+        "texto": "Y un acceso que pueda usar una familia con coche o una persona con bastón. Lo provisional también debe funcionar.",
+        "hablante": "LAURA"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_10",
+      "ambiente": "debate",
+      "fotogramas": 240,
+      "inicio": 76.16666666666667,
+      "duracion": 10.0,
+      "voz": {
+        "clave": "9ac770fe75caf01c74c8a3cf",
+        "duracion": 8.328,
+        "texto": "La moderación recoge el reloj de la mesa. Nadie en los cuatro atriles parece dispuesto a devolver el último minuto.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "personaje",
+      "clave": "ADRIAN",
+      "ambiente": "debate",
+      "fotogramas": 227,
+      "inicio": 86.16666666666667,
+      "duracion": 9.458333333333334,
+      "voz": {
+        "clave": "cba68bf522d834a2d62ad180",
+        "duracion": 8.856,
+        "texto": "Para mí, la cultura debe ser la primera prioridad de la próxima alcaldía. Una ciudad también necesita lugares donde imaginarse.",
+        "hablante": "ADRIAN"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_110",
+      "ambiente": "redaccion",
+      "fotogramas": 240,
+      "inicio": 95.625,
+      "duracion": 10.0,
+      "voz": {
+        "clave": "19bb39167e993ec620c42c14",
+        "duracion": 8.568,
+        "texto": "La lluvia golpea la ventana de la redacción. Un audio termina demasiado pronto y deja a todos mirando el teléfono.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "accion",
+      "clave": "accion_110_contrastar",
+      "ambiente": "redaccion",
+      "fotogramas": 226,
+      "inicio": 105.625,
+      "duracion": 9.416666666666666,
+      "voz": {
+        "clave": "8c15bc57b46862ac9b060355",
+        "duracion": 8.808,
+        "texto": "La toma completa conserva una advertencia contra un engaño. El recorte hacía parecer una promesa lo que se estaba desmintiendo.",
+        "hablante": "PERIODISTA"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_25",
+      "ambiente": "redaccion",
+      "fotogramas": 262,
+      "inicio": 115.04166666666667,
+      "duracion": 10.916666666666666,
+      "voz": {
+        "clave": "b37b3a33d40782b6b8821c30",
+        "duracion": 10.296,
+        "texto": "En la redacción queda una carpeta abierta con el nombre del colegio. La periodista deja el archivo completo junto al primer mensaje de la campaña.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_120",
+      "ambiente": "urnas",
+      "fotogramas": 240,
+      "inicio": 125.95833333333333,
+      "duracion": 10.0,
+      "voz": {
+        "clave": "6e4734f764e3ab7037ca73fe",
+        "duracion": 8.112,
+        "texto": "La mañana electoral abre la plaza. El abuelo espera junto al ciudadano mientras un mapa pasa de mano en mano.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "narrador",
+      "clave": "narrador_35",
+      "ambiente": "urnas",
+      "fotogramas": 278,
+      "inicio": 135.95833333333334,
+      "duracion": 11.583333333333334,
+      "voz": {
+        "clave": "744d4fc0c0c5076b633db250",
+        "duracion": 10.968,
+        "texto": "La plaza se llena de pasos y conversaciones. Antes del cierre electoral, un último mensaje intenta convertir los comentarios de Civitas en votos.",
+        "hablante": "NARRADOR"
+      }
+    },
+    {
+      "tipo": "epilogo",
+      "clave": "juan",
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ambiente": "noche",
+      "fotogramas": 249,
+      "inicio": 147.54166666666666,
+      "duracion": 10.375,
+      "voz": {
+        "clave": "7b858f0911fef1573061b8e0",
+        "duracion": 9.768,
+        "texto": "Recibo el encargo de gobernar. La pregunta de aquella familia sigue conmigo: el techo, las clases y la obligación de explicar cada etapa.",
+        "hablante": "JUAN"
+      }
+    },
+    {
+      "tipo": "epilogo",
+      "clave": "adrian",
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ambiente": "noche",
+      "fotogramas": 256,
+      "inicio": 157.91666666666666,
+      "duracion": 10.666666666666666,
+      "voz": {
+        "clave": "453282a9f9e811d5453863dd",
+        "duracion": 10.056,
+        "texto": "Recibo el encargo de gobernar. La biblioteca que imaginamos tendrá que sostenerse con plazos y cuentas abiertas, además de palabras que entusiasman.",
+        "hablante": "ADRIAN"
+      }
+    },
+    {
+      "tipo": "epilogo",
+      "clave": "laura",
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ambiente": "noche",
+      "fotogramas": 282,
+      "inicio": 168.58333333333334,
+      "duracion": 11.75,
+      "voz": {
+        "clave": "fc16b5d07091efa8733eeae6",
+        "duracion": 11.112,
+        "texto": "Recibo el encargo de gobernar. Quiero empezar por las puertas que alguien no pudo cruzar. Necesitaré que sigan señalándolas cuando termine el aplauso.",
+        "hablante": "LAURA"
+      }
+    },
+    {
+      "tipo": "epilogo",
+      "clave": "camila",
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "contrastar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ambiente": "noche",
+      "fotogramas": 274,
+      "inicio": 180.33333333333334,
+      "duracion": 11.416666666666666,
+      "voz": {
+        "clave": "4a77d5db406972cbebc4a9ae",
+        "duracion": 10.8,
+        "texto": "Recibo el encargo de gobernar. La participación no termina en una pantalla ni en esta elección. Debe poder pedirnos explicaciones también mañana.",
+        "hablante": "CAMILA"
+      }
+    },
+    {
+      "tipo": "epilogo",
+      "clave": "empate",
+      "ruta": [
+        {
+          "publicacion": 50,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 30,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 70,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 20,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 60,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 80,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 90,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 40,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 100,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 10,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 110,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 25,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 120,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        },
+        {
+          "publicacion": 35,
+          "accion": "reservar",
+          "jugador": "persona_0",
+          "rol": "periodista"
+        }
+      ],
+      "ambiente": "noche",
+      "fotogramas": 277,
+      "inicio": 191.75,
+      "duracion": 11.541666666666666,
+      "voz": {
+        "clave": "0c77ef095893cabbd99c5d4e",
+        "duracion": 10.92,
+        "texto": "Ninguna candidatura tiene una victoria única. Ciudad Nova espera un recuento público; no habrá una proclamación inventada para cerrar antes la historia.",
+        "hablante": "NARRADOR"
+      }
+    }
+  ]
+}

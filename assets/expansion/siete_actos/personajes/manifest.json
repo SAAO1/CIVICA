@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "sprites": [
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/juan_neutral.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "52421f1d74abe81e320e0fda073d239fce4992201960d17441556a6561e65f3b",
+      "alpha_cero": 768769,
+      "alpha_parcial": 410879,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/juan_preocupado.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "e6e1dad5867f4b10f486a21b527fb5f02e2ee0baba9ef11ad889f07f8e8e2faa",
+      "alpha_cero": 768524,
+      "alpha_parcial": 411124,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/juan_decidido.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "d2f048765d0bece48c1a7fcdcb005658bb9d1163b454f6fcc1d31880869cf7f8",
+      "alpha_cero": 768820,
+      "alpha_parcial": 410828,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/adrian_neutral.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "2f4ce766e89257516aa6c57b630e8165f759a1b9170d8099e250730e1e54099d",
+      "alpha_cero": 743235,
+      "alpha_parcial": 436413,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/adrian_preocupado.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "5934168ce3056009d5924246c6cf4d1a3b24aa405c8e783baf8d666251ed172d",
+      "alpha_cero": 741433,
+      "alpha_parcial": 438215,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/adrian_decidido.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "9e60fde84920ff8580bdbfb63ff3ece6c8e8de47b6c5261c658205b752ac0019",
+      "alpha_cero": 740714,
+      "alpha_parcial": 438934,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/laura_neutral.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "c4054ea061790599a97c58048bbdc20305ff0fea15a9391df813f8dd2b85d059",
+      "alpha_cero": 759494,
+      "alpha_parcial": 420154,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/laura_preocupado.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "f84e338a3fb230950c2f8269b60771686541aff78501a7084669e35696e1abc8",
+      "alpha_cero": 761494,
+      "alpha_parcial": 418154,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/laura_decidido.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "222b723b762dce7290dff00a50a3f8b7fbb4f422daec25ac04af89d5471ec16b",
+      "alpha_cero": 760031,
+      "alpha_parcial": 419617,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/camila_neutral.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "e68c2cdfddad624c53f04d69f58c85278267d3bbd5fcb8caa4d2bde290d5bc0e",
+      "alpha_cero": 733493,
+      "alpha_parcial": 446155,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/camila_preocupado.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "008cbb33e4129565d0fc3be4dd9ee68b568002a8df0ea46ba1cefd147ffd6a8d",
+      "alpha_cero": 729173,
+      "alpha_parcial": 450475,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/camila_decidido.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "d2bde3932b1ed621095201910e7758ab7c36e2e8d135aee063d802849c244fac",
+      "alpha_cero": 727473,
+      "alpha_parcial": 452175,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/influencer_neutral.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "ec6671170b6c73f83eb38da2e918f8229935c57cdcb4d1d876a5a602e97cf35d",
+      "alpha_cero": 713020,
+      "alpha_parcial": 466628,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/influencer_preocupado.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "4349fb4571150f4c8f852aa3672a5e215aa2d06e490d8eb62fedf0f5d766972e",
+      "alpha_cero": 712888,
+      "alpha_parcial": 466760,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    },
+    {
+      "archivo": "assets/expansion/siete_actos/personajes/influencer_decidido.png",
+      "ancho": 768,
+      "alto": 1536,
+      "sha256": "2a274eb83e6e62223234d647f3403b8284739790c88179794135ca7ae2f4c038",
+      "alpha_cero": 711887,
+      "alpha_parcial": 467761,
+      "alpha_opaco": 0,
+      "esquinas_transparentes": true
+    }
+  ]
+}

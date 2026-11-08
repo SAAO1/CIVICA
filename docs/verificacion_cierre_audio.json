@@ -1,0 +1,107 @@
+{
+  "fecha": "2026-10-24",
+  "correcto": true,
+  "prueba": "Mismos módulos tests.test_audiovisual y tests.test_balance_roles_ui; ResultadoQt instrumentado",
+  "antes": {
+    "ultima_fase": {
+      "segundos": 46.88,
+      "fase": "antes_gc",
+      "test": "tests.test_audiovisual.PruebasAudiovisuales.test_dialogo_teclado_f11_y_reduccion_movimiento",
+      "memoria_privada_mb": 748.24,
+      "memoria_residente_mb": 663.71
+    },
+    "limpieza_completada": false,
+    "hilos_nativos_en_dump": [
+      "QFFmpeg::AudioRenderer",
+      "QFFmpeg::AudioRenderer"
+    ],
+    "hilo_principal": "gc.collect en ResultadoQt.stopTest",
+    "proceso_bloqueado_detenido_por_la_revision": true
+  },
+  "cambio": "GestorAudio.detener detiene y vacía las fuentes de voz, música y ambiente antes de destruir objetos; cancelar una línea conserva su fuente",
+  "despues": {
+    "pruebas": 27,
+    "fallas": 0,
+    "errores": 0,
+    "codigo_salida": 0,
+    "segundos": 70.583,
+    "gc_del_caso_antes_bloqueado_ms": 113.0,
+    "inicio_gc": {
+      "segundos": 46.746,
+      "fase": "antes_gc",
+      "test": "tests.test_audiovisual.PruebasAudiovisuales.test_dialogo_teclado_f11_y_reduccion_movimiento",
+      "memoria_privada_mb": 670.45,
+      "memoria_residente_mb": 627.5
+    },
+    "fin_gc": {
+      "segundos": 46.859,
+      "fase": "despues_gc",
+      "test": "tests.test_audiovisual.PruebasAudiovisuales.test_dialogo_teclado_f11_y_reduccion_movimiento",
+      "memoria_privada_mb": 427.2,
+      "memoria_residente_mb": 379.67
+    },
+    "limpieza_completada": true,
+    "fases_finales": [
+      {
+        "segundos": 70.563,
+        "fase": "antes_gc",
+        "test": "tests.test_balance_roles_ui.BalanceRolesUITests.test_voz_muy_corta_no_completa_la_ultima_animacion_ni_omite_anteriores",
+        "memoria_privada_mb": 408.85,
+        "memoria_residente_mb": 372.73
+      },
+      {
+        "segundos": 70.575,
+        "fase": "despues_gc",
+        "test": "tests.test_balance_roles_ui.BalanceRolesUITests.test_voz_muy_corta_no_completa_la_ultima_animacion_ni_omite_anteriores",
+        "memoria_privada_mb": 408.85,
+        "memoria_residente_mb": 372.73
+      },
+      {
+        "segundos": 70.576,
+        "fase": "antes_deferred_delete",
+        "test": "tests.test_balance_roles_ui.BalanceRolesUITests.test_voz_muy_corta_no_completa_la_ultima_animacion_ni_omite_anteriores",
+        "memoria_privada_mb": 408.85,
+        "memoria_residente_mb": 372.73
+      },
+      {
+        "segundos": 70.583,
+        "fase": "despues_deferred_delete",
+        "test": "tests.test_balance_roles_ui.BalanceRolesUITests.test_voz_muy_corta_no_completa_la_ultima_animacion_ni_omite_anteriores",
+        "memoria_privada_mb": 397.79,
+        "memoria_residente_mb": 362.24
+      },
+      {
+        "segundos": 70.583,
+        "fase": "fin",
+        "test": "tests.test_balance_roles_ui.BalanceRolesUITests.test_voz_muy_corta_no_completa_la_ultima_animacion_ni_omite_anteriores",
+        "memoria_privada_mb": 397.79,
+        "memoria_residente_mb": 362.24
+      },
+      {
+        "segundos": 70.583,
+        "fase": "fin_proceso",
+        "test": null,
+        "memoria_privada_mb": 397.79,
+        "memoria_residente_mb": 362.25
+      }
+    ]
+  },
+  "fuentes": [
+    {
+      "archivo": ".tmp/diag_audio_balance_gc.jsonl",
+      "sha256": "c668e024d843c192af965c21f30f10269b1f897fbbbd4ebbd02a71a249f41bc6"
+    },
+    {
+      "archivo": ".tmp/diag_audio_balance_gc.txt",
+      "sha256": "08b782141235b21933945b2aa343a3cbdfebd978d4246e17759d5310a014b7b3"
+    },
+    {
+      "archivo": ".tmp/diag_audio_balance_fuentes_liberadas.jsonl",
+      "sha256": "103cad53df5fbfb50707f5237f8251de895c65e1f210e53139bc9f03514a5d4c"
+    },
+    {
+      "archivo": ".tmp/diag_audio_balance_fuentes_liberadas.txt",
+      "sha256": "179578a7594110bd018572f40d593d7773522c74256d0443f16066ad5d4ae48e"
+    }
+  ]
+}

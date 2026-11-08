@@ -1,0 +1,334 @@
+{
+  "version": 1,
+  "generado_utc": "2026-11-07T20:05:01.026336+00:00",
+  "productor": {
+    "archivo": "herramientas/producir_recursos_novela.py",
+    "sha256": "2ec225d2bb4bf0ccfd944fa9be18ae0f7a8a5882a4a321ac780b1370cd7fa8e3",
+    "bytes": 11007
+  },
+  "metodo": "Composición nativa QPainter: cámara, luz y partículas sobre CG de ImageGen. Codificación FFmpeg H.264. No es video generado por IA.",
+  "audio": "Los seis clips no contienen audio. El juego reutiliza MP3 neurales originales del catálogo, sin síntesis Windows.",
+  "origen_arte": {
+    "herramienta": "image_gen integrada",
+    "fecha": "2026-11-07",
+    "uso": "Recursos de la novela visual original",
+    "prompts": [
+      {
+        "id": "button",
+        "prompt": "Use case: stylized-concept. Production game UI sprite atlas for CIVICA, a painterly anime visual novel set in a Latin American city. Generate a single portrait transparent PNG atlas 1024x1024 with EXACTLY FOUR equally spaced horizontal button frames stacked in four equal-height rows, each button fits within its own 1024x256 cell with transparent padding. All four frames have IDENTICAL silhouette and placement: ornate but restrained dark midnight-blue leather and aged brass beveled edges with tiny botanical corner engraving, painterly texture, empty clean dark central area for text to be added by software. Row1 normal dark petrol, row2 hover luminous turquoise and warm gold rim, row3 pressed darker inset amber lower rim, row4 disabled desaturated slate silver. NO text, no symbols in center, no background beyond genuine transparency, no shadows crossing between rows. This is a usable in-game atlas, not a UI mockup. Beautiful tactile illustrated physical object, readable at small sizes, match reference button craftsmanship but more refined and slimmer.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-5309b98d-c1c3-495d-ac58-a45f962df359.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "frame",
+        "prompt": "Use case: stylized-concept. Create an illustrated game UI asset: an open detective's dossier viewed perfectly straight from above, elegant deep petrol leather outer cover with brass corner fittings and cream aged paper inner writing surface occupying central 78%, one small red wax seal and metal paperclip at the outer margins, tactile paper fibers, handwritten faint ornamental margin marks but NO legible letters, NO text anywhere. Refined anime visual novel painterly rendering, warm lamplight, light shadow beneath the object, useful blank surface for displaying dynamic text and evidence. Single isolated rectangular landscape dossier frame with generous transparent margin, no scene behind it. Design should work as a scalable 9-slice panel. Brass and ivory match ornate midnight blue choice buttons. High quality practical videogame UI art, not a mockup screen.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-7482551f-d8ae-4508-b27a-ce8cdab3f1e6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "iconos",
+        "prompt": "Use case: stylized-concept. A production sprite sheet of EIGHT illustrated inventory icons for a painterly anime investigative visual novel, laid out in exact 4 columns by 2 rows, each cell square, objects centered with equal 18% transparent padding. Transparent canvas, NO text, NO interface panels, NO mockup. Icons ordered row1: brass magnifying glass over a small folded paper; vintage audio recorder with red recording lamp; pair of interlinked glowing brass rings; open leather dossier with paper tabs. Row2: ink pen and small sealed envelope; dark teal bookmark with gold star; two elegant character silhouette cameos side by side; curved brass return arrow. Rich tactile midnight teal leather, warm antique gold metal, ivory papers, subtle painterly soft light. All objects isolated with clean alpha, visible silhouette at64px, no blur, high quality game illustration consistent with ornate brass and navy UI.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-26947a1c-4791-4541-8bc9-6e217582a802.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "archivo",
+        "prompt": "Use case: illustration-story. Production 16:9 CG background for a Latin American mystery anime visual novel, intimate close-up in municipal archive at night, warm desk lamp illuminating a weathered official folder and two different photographs of the SAME school (old yellow-walled building with blue door, one faded dated-looking photo and one current rainy photo), handwritten pencil and loupe, the young black-haired male protagonist's black hoodie cuff and hand comparing the photos at bottom left, the female journalist's cream blazer cuff and hand holding original document at bottom right. No faces needed. Rows of archive shelves out of focus behind, rain on tall window, cinematic painterly anime illustration, highly detailed tactile paper, elegant gold and petrol palette. Leave lower25% softly shadowed and uncluttered to overlay dialogue. No legible text, no logos, no buttons, no captions. Actual scene illustration, not UI, not a collage.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-f5f54208-5875-407d-b53d-5092e2aa0974.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "redaccion",
+        "prompt": "Use case: illustration-story. Cinematic 16:9 CG still for CIVICA anime visual novel, investigative newspaper office at blue hour. A young male protagonist with tousled black hair and black hoodie, and a young brown-haired female journalist in cream blazer with press lanyard, seen in side profile and three-quarter from behind, lean over the same desk listening to a tiny modern recorder. The male holds headphones slightly away from ear, the woman points at an audio waveform on a softly glowing monitor, no legible text. Their expressions focused and human. Tactile marked-up papers, coffee, small amber lamp, rainy Colombian city rooftops and clocktower outside tall window. Painted anime realism matching original visual novel, detailed expressive hands, cinematic warm amber versus midnight turquoise lighting, thoughtful atmosphere with visual tension, eye-level medium-wide camera, empty shadowed bottom20% for dialogue. No UI overlays, no buttons, no watermark.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-3e60d192-c001-4d7d-b9a3-d1ef662d6fa7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "parque",
+        "prompt": "Use case: illustration-story. A cinematic 16:9 story CG for an anime visual novel mystery in a Latin American city: view from behind a young black-haired male in black hoodie holding up a smartphone whose camera view crops out most of a public park. Foreground left his hand and glowing smartphone showing ONLY a metal maintenance barrier (no interface text); beyond, to right outside the phone framing, the park is visibly open through a side gate, two mothers walking with children, purple jacaranda trees and wet patterned paving. In middle ground the brown-haired female journalist in a beige cream blazer points toward the overlooked open entrance, her notebook held in other hand. Twilight after rain, amber streetlamps, teal sky, beautiful clocktower city backdrop, richly painted anime realism, layered composition and visual storytelling about missing context. No legible words, no overlay widgets, no buttons, no watermark. Empty shadowed lower18% for dialogue.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-01a8e14c-9a94-4356-a861-4586b3d36705.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "urnas",
+        "prompt": "Use case: illustration-story. A 16:9 cinematic scene painting for a Latin American anime mystery visual novel, schoolyard converted into voting station early morning after rain. A young brown-haired woman journalist in cream blazer and a black-haired young male citizen in black hoodie help an elderly woman with silver hair and a wooden cane find a side entrance with a wheelchair ramp. The old woman stands in foreground left looking at an open folded street map in the journalist's hands. At right the iron main gate is partly closed for maintenance, but a clearly visible welcoming side gate and ramp remains open with soft warm light and a poll-worker silhouette beyond. NO candidates, NO realworld symbols, NO readable signs. Behind is a yellow school with blue doors, tropical trees, clocktower city far away. Rich painterly anime realism, warm morning beams, hopeful human expressions, nuanced hands, beautiful detailed environments, cinematic wide shot with lower20% uncluttered for dialogue. Actual story CG, no UI, no captions, no watermark.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-75adbcc7-8e3e-4b2c-97a2-77bac8807f7c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "cinta",
+        "prompt": "Use case: stylized-concept. Single isolated illustrated UI title ribbon asset for an elegant anime visual novel, transparent background. Landscape 5:1 aspect, long dark petrol fabric and midnight blue leather strip with raised thin antique brass border, gently folded fishtail ribbon ends and small engraved laurel tips outside central text area. Central70% remains EMPTY, dark and uncluttered to overlay chapter title at runtime. Beautiful painterly material texture, warm gold glints, very restrained ornate craftsmanship, coherent with navy leather and brass detective dossier. Fully visible with transparent padding around all sides, genuinely transparent outside silhouette. No text, letters, logos, icons, no mockup screen. Production game graphic.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-b3cf2d6b-691f-4b16-8f2b-fce4d681834b.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "tarjeta",
+        "prompt": "Use case: stylized-concept. Production UI asset for an anime investigative visual novel: a single slightly weathered ivory index card on a dark navy leather backing with slim antique brass corners, viewed flat perfectly straight from above, landscape 3:2 rectangle. Cream paper blank with extremely faint thin ruled lines, small gold paperclip at top left, a discreet round red wax seal on lower right margin. Central80% blank clean writing surface for runtime text and evidence photo. Tactile detailed fibers and edges, elegant warm lamplight, painterly illustrated object matching navy and gold detective dossier. Isolated on true transparent background, no readable text, no logos, no UI screens, no mockup. Full silhouette in frame with small transparent padding.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-048d374d-773a-4a3c-8c36-47a3b42b8a14.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      }
+    ]
+  },
+  "archivo_procedencia": {
+    "archivo": "assets/novela/origen_arte.json",
+    "sha256": "d6bd22f9a52137341c88c58822331762a7afe661c645e05b112a8a1a5ded8d67",
+    "bytes": 14005
+  },
+  "cg": [
+    {
+      "archivo": "assets/novela/cg/archivo.png",
+      "sha256": "9a068b28900f517170e386e1113bddb09e8acbba01b2966e2bcc0f9970abb28e",
+      "bytes": 2453835,
+      "id": "archivo",
+      "ancho": 1672,
+      "alto": 941,
+      "original": "exec-f5f54208-5875-407d-b53d-5092e2aa0974.png",
+      "tratamiento": "Copia íntegra del PNG de ImageGen"
+    },
+    {
+      "archivo": "assets/novela/cg/redaccion.png",
+      "sha256": "fbdaed34857cc990a573d5a1f24faeba38801316992d56662d1999cc7bf2b66a",
+      "bytes": 2385005,
+      "id": "redaccion",
+      "ancho": 1672,
+      "alto": 941,
+      "original": "exec-3e60d192-c001-4d7d-b9a3-d1ef662d6fa7.png",
+      "tratamiento": "Copia íntegra del PNG de ImageGen"
+    },
+    {
+      "archivo": "assets/novela/cg/parque.png",
+      "sha256": "a910838e8bcbb239f19c80fc17c245c24bfe7911cd9dc990a059074f418d0950",
+      "bytes": 2722245,
+      "id": "parque",
+      "ancho": 1672,
+      "alto": 941,
+      "original": "exec-01a8e14c-9a94-4356-a861-4586b3d36705.png",
+      "tratamiento": "Copia íntegra del PNG de ImageGen"
+    },
+    {
+      "archivo": "assets/novela/cg/urnas.png",
+      "sha256": "ec22bdf1d44ab854877db2afe9aea89c3f6808078af97838d98b6ab17af062dc",
+      "bytes": 3268705,
+      "id": "urnas",
+      "ancho": 1672,
+      "alto": 941,
+      "original": "exec-75adbcc7-8e3e-4b2c-97a2-77bac8807f7c.png",
+      "tratamiento": "Copia íntegra del PNG de ImageGen"
+    }
+  ],
+  "videos": [
+    {
+      "archivo": "assets/novela/videos/acto_1.mp4",
+      "sha256": "1430078ec7ec9103e93a0218622ce88dde6bfb3c36c865976f124f5add7f1e45",
+      "bytes": 614318,
+      "acto": 1,
+      "caso_id": 50,
+      "cg": "archivo",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 4.0,
+      "fotogramas": 96,
+      "audio": false,
+      "decodificacion_completa": true,
+      "movimiento": {
+        "segundos": [
+          0,
+          2
+        ],
+        "rgb_sha256": [
+          "d7ec1e91224713acb77e588ca38f320e0ae378b782789c000ec366ea0d5733d9",
+          "fc7457011e790c20087119e16940eaf49073a763d79cc4e32f2f17e647a3362e"
+        ]
+      },
+      "primer_fotograma": {
+        "archivo": "assets/novela/videos/acto_1_inicio.png",
+        "sha256": "8a064cdf5705e8f6fa99ac49eaa87fb7385ad62c10c59d8c24330f6eb49177c7",
+        "bytes": 1059105
+      },
+      "preview": {
+        "archivo": "assets/novela/videos/acto_1_preview.jpg",
+        "sha256": "7cdbd8827350ad87efefa8804ad50314a4a5b566cd993996b8ef2d1bd9fc6b5c",
+        "bytes": 186915
+      }
+    },
+    {
+      "archivo": "assets/novela/videos/acto_2.mp4",
+      "sha256": "2e3fc5af6c33a49c9a07c960794776852411f49f4da2e3dbea5206bd8c948f5f",
+      "bytes": 895868,
+      "acto": 2,
+      "caso_id": 90,
+      "cg": "parque",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 4.0,
+      "fotogramas": 96,
+      "audio": false,
+      "decodificacion_completa": true,
+      "movimiento": {
+        "segundos": [
+          0,
+          2
+        ],
+        "rgb_sha256": [
+          "2b59b18e1bc038af3aedfc8d4818b76329287f3399584587f34dd89952a25e7d",
+          "87e6dc5b68009352e0381bdf723f65bed95e4a817b18b99cdadfca522875b342"
+        ]
+      },
+      "primer_fotograma": {
+        "archivo": "assets/novela/videos/acto_2_inicio.png",
+        "sha256": "597c792e332165a76ffb41e14fde1dbc8df070e99b87afb6fa4dfc562b485642",
+        "bytes": 1276318
+      },
+      "preview": {
+        "archivo": "assets/novela/videos/acto_2_preview.jpg",
+        "sha256": "345ce349145500216b698a28e3ab21d883a0bb8868c9b05969c28c11fdf0fe55",
+        "bytes": 224914
+      }
+    },
+    {
+      "archivo": "assets/novela/videos/acto_3.mp4",
+      "sha256": "730286e421b504302dfa506c2193391952236b9d12c82e9043b4da0ac60027d4",
+      "bytes": 630605,
+      "acto": 3,
+      "caso_id": 110,
+      "cg": "redaccion",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 4.0,
+      "fotogramas": 96,
+      "audio": false,
+      "decodificacion_completa": true,
+      "movimiento": {
+        "segundos": [
+          0,
+          2
+        ],
+        "rgb_sha256": [
+          "2cf037e591840c2aa58263b7d52343c5fe82d0acb7298cc1fabbaea8d246a131",
+          "031ff5b4c199c8ea0e7b78704c00c960441192ee0a53a3cbcc19d97f321e1f9d"
+        ]
+      },
+      "primer_fotograma": {
+        "archivo": "assets/novela/videos/acto_3_inicio.png",
+        "sha256": "c432be67ffa32a2273b1d3265344bb28079fcab3c7700b854b1a3bb1451701a0",
+        "bytes": 978242
+      },
+      "preview": {
+        "archivo": "assets/novela/videos/acto_3_preview.jpg",
+        "sha256": "e79864a6d5c932c5c9dff5c895d7e9ac5f170dd6b409e62e049dff7fdb07ea8a",
+        "bytes": 180702
+      }
+    },
+    {
+      "archivo": "assets/novela/videos/acto_4.mp4",
+      "sha256": "90dcee9a8aa3f73a6dfdac5cec2f2c9ffabbec0bd26e4281e8696d08493e2eb9",
+      "bytes": 626805,
+      "acto": 4,
+      "caso_id": 40,
+      "cg": "redaccion",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 4.0,
+      "fotogramas": 96,
+      "audio": false,
+      "decodificacion_completa": true,
+      "movimiento": {
+        "segundos": [
+          0,
+          2
+        ],
+        "rgb_sha256": [
+          "7251713c1d3b5bd5d129bc76c45d8b6fc2d6c39c5db427769a2ceb0cf352e158",
+          "af29d211309435dceebdb22ae99c6c2dc6cc92da768007164dd0ef9282c76735"
+        ]
+      },
+      "primer_fotograma": {
+        "archivo": "assets/novela/videos/acto_4_inicio.png",
+        "sha256": "ae8f7a65a0d2c8e754809dd2075cdd5bd43774fc695521568895be9076daa3ce",
+        "bytes": 981720
+      },
+      "preview": {
+        "archivo": "assets/novela/videos/acto_4_preview.jpg",
+        "sha256": "acb36d15cab015301b125927a4d6814d8d67b1b9297a30189b90c56b1a032fa9",
+        "bytes": 179843
+      }
+    },
+    {
+      "archivo": "assets/novela/videos/acto_5.mp4",
+      "sha256": "9ef52346178d10d638ef3b7be8889807e1ad59d6e8554bfdc3ac8e549bce42ee",
+      "bytes": 1099526,
+      "acto": 5,
+      "caso_id": 120,
+      "cg": "urnas",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 4.0,
+      "fotogramas": 96,
+      "audio": false,
+      "decodificacion_completa": true,
+      "movimiento": {
+        "segundos": [
+          0,
+          2
+        ],
+        "rgb_sha256": [
+          "7de41705721bd019ca8f27398d04dcf5b784ad3db017f95e5accfe8c272a7681",
+          "6710f139a87cf730056a310966434cea0871563f5a45c7fca307f5f50d00f667"
+        ]
+      },
+      "primer_fotograma": {
+        "archivo": "assets/novela/videos/acto_5_inicio.png",
+        "sha256": "56f3125741b77d6b85b4ddb4d01be5c408e53eda57b04c87aa2c90897db4a5b3",
+        "bytes": 1577944
+      },
+      "preview": {
+        "archivo": "assets/novela/videos/acto_5_preview.jpg",
+        "sha256": "a504de7d22fd0aef2c916bd9bc8bba9155a97a5a51e24126b60760ddf4722012",
+        "bytes": 286879
+      }
+    },
+    {
+      "archivo": "assets/novela/videos/acto_6.mp4",
+      "sha256": "2e0a4e03d672da31f3672e605053d6ec84fd849a067cb385e67c9496f85a0d12",
+      "bytes": 1105410,
+      "acto": 6,
+      "caso_id": 35,
+      "cg": "urnas",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 4.0,
+      "fotogramas": 96,
+      "audio": false,
+      "decodificacion_completa": true,
+      "movimiento": {
+        "segundos": [
+          0,
+          2
+        ],
+        "rgb_sha256": [
+          "eaae671204a517fb70105853646cd5930e9a593abd93a9cd29b7f8d63f337cc7",
+          "10de902af1741062e10a7c6698a4288e92c29b26a91447b44ccfe929df0dd4c9"
+        ]
+      },
+      "primer_fotograma": {
+        "archivo": "assets/novela/videos/acto_6_inicio.png",
+        "sha256": "3ee9bfad358d86f456de74f4275d14b8053ea58b3888f8a77790890d5779586e",
+        "bytes": 1581681
+      },
+      "preview": {
+        "archivo": "assets/novela/videos/acto_6_preview.jpg",
+        "sha256": "577d4e841ee176a5b7c1edc51ae13017aac273feddfa7e9f839a8f8ff1ad7448",
+        "bytes": 285918
+      }
+    }
+  ],
+  "portada_gif": {
+    "archivo": "assets/novela/portada_animada.gif",
+    "sha256": "46f96240d0ce4e86a6d7825eec1d2853828066e93c2baa95961def2a4ba8f7b2",
+    "bytes": 5855761,
+    "ancho": 640,
+    "alto": 360,
+    "fps": 12,
+    "fotogramas": 48,
+    "duracion": 4.0,
+    "bucle": true,
+    "decodificacion_completa": true
+  }
+}

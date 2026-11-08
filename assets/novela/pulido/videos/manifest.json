@@ -1,0 +1,459 @@
+{
+  "version": 1,
+  "generado_utc": "2026-11-07T22:06:00.426575+00:00",
+  "productor": {
+    "archivo": "herramientas/producir_pulido_visual.py",
+    "sha256": "ef5588f6fa931650890ee6eb6522259c7c47524e689c84d90ae44963a4035474",
+    "bytes": 16099
+  },
+  "metodo": "Composición nativa QPainter sobre siete CG de ImageGen: cámara, notificación, vapor, recorrido indicativo, onda, versiones y focos. H.264 por FFmpeg; no es video generativo.",
+  "audio": "Ningún clip incorpora voz ni pista sonora. El doblaje neural se reproduce por separado.",
+  "tipografia": {
+    "familia": "Atkinson Hyperlegible",
+    "archivos": [
+      {
+        "archivo": "assets/fuentes/AtkinsonHyperlegible-Regular.ttf",
+        "sha256": "7fb917c89019896d0b52ee84b7cbb3304c18cb90b19a62f5e32712bd23e97669",
+        "bytes": 54348
+      },
+      {
+        "archivo": "assets/fuentes/AtkinsonHyperlegible-Bold.ttf",
+        "sha256": "5a3b0c8cc8ca545155150b4512a1fa248298df121c50d6557e651e61fbdab92f",
+        "bytes": 55256
+      }
+    ],
+    "glifos_verificados": true
+  },
+  "origen_arte": {
+    "herramienta": "ImageGen integrada",
+    "fecha": "2026-11-07",
+    "paleta": "azul marino y dorado",
+    "prompts": [
+      {
+        "id": "botones_azul",
+        "prompt": "Use case: stylized-concept. Production sprite atlas of EXACTLY FOUR horizontal choice button frames stacked vertically in four equal-sized rows on a genuinely transparent square canvas. Each row occupies25% height, entire frame within its own row with transparent padding. Illustrated ornate leather and brass style for CIVICA anime visual novel. All four have identical thin bevel silhouette and golden botanical corner engravings. PALETTE STRICTLY royal midnight navy BLUE #101f3e with antique warm GOLD #c99b58, matching dark blue dialogue boxes. Absolutely NO turquoise, cyan, teal or green. Row1 normal navy blue matte leather; row2 hover slightly brighter sapphire BLUE center and luminous gold rim; row3 pressed deeper ink navy inset with warm amber rim; row4 disabled desaturated blue gray silver. Empty clean center for dynamic text to be added by code. No words, no letters, no UI mockup. Refined tactile hand-painted illustration, subtle texture, readable at small size, transparent outside frames.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-4d6086bc-e6d8-4315-9190-db31ab27db72.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "aviso_cafe",
+        "prompt": "Use case: illustration-story. Cinematic16:9 anime visual novel CG for CIVICA, contemporary Latin American city cafe. Close shot of a young black-haired man in black hoodie interrupted while setting down a coffee, warm morning sun on his concerned face, a smartphone standing almost FRONTALLY on the cafe table in foreground RIGHT, screen fully visible and completely blank deep navy blue (empty screen will receive readable content by game code). A young brown-haired female journalist in beige blazer with blue press lanyard looks up attentively in middle ground LEFT, notebook in hand. No extra fingers, accurate hands, no floating phones. Background golden school building through open cafe window, bougainvillea and clocktower. Painterly anime realism, beautiful coherent anatomy, warm gold and midnight blue accents. Keep lower24% quiet and uncluttered for dialogue overlay. NO writing, NO illegible text, NO logos, NO watermark. Mood: an urgent message interrupts ordinary life, human expressions and strong storytelling.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-e39cf963-149a-45a9-90ac-1e8f075e224a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "aviso_cafe_v2",
+        "prompt": "Edit target Image1. Change ONLY the female journalist in middle ground LEFT to match exact identity from reference Image2: long straight dark brown hair with bangs, brown eyes, no freckles, beige blazer, dark shirt, blue press lanyard and notebook. Her expression is attentive, mildly concerned by incoming news. Keep Image1 male citizen, smartphone blank navy screen, coffee, cafe, lighting, composition and colors unchanged. Preserve cinematic painterly anime visual novel style. No added writing, no logos. The journalist must remain the SAME woman as reference Image2 rather than a new short-haired woman.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-66bbc40d-f7f9-41b0-9ac5-89b8675324f7.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "foro_cuatro",
+        "prompt": "Use case: illustration-story. Production16:9 CG for CIVICA visual novel, an elegant public debate in a Latin American city auditorium, FOUR fictional candidates at FOUR podiums, all four equally visible and recognizably matching the four supplied identity references. Left to right: Juan, red-brown tousled hair and rectangular glasses, beige jacket over black turtleneck; Adrian, silver swept hair and black glasses, dark suit white shirt navy tie; Laura, long straight dark brown hair, navy pantsuit white shirt; Camila, wavy auburn hair, navy suit white shirt and red silk neck scarf. Keep their facial identity, age, outfits and hair from references. They exchange thoughtful serious looks during debate, natural expressive hands, distinct personalities. Foreground silhouettes of citizen black hoodie and journalist beige blazer sitting in audience, faces of four candidates fully readable. Warm gold theatre lamps, deep navy blue stage drapes, four spotlights, no party logos or flags. Painterly anime realism coherent with reference artwork, cinematic depth, detailed elegant scene. Lower20% visually quiet for dialogue overlay. No text or names, no watermark, no extra candidate or duplicate.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-64c83e32-05d8-4519-9764-90c1e6673df9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "juan_emociones",
+        "prompt": "Use case: stylized-concept. Production transparent character sprite sheet for CIVICA anime visual novel. Identity reference supplied is JUAN: adult man, tousled red brown hair, rectangular black glasses, beige blazer, black turtleneck, dark trousers, brown shoes, one hand holding cream folder. Create EXACTLY FOUR FULL BODY copies in a precise2columns by2rows grid, each copy centered within its own cell and entirely visible head to shoes with transparent padding, no overlap. All four preserve EXACT same face identity, outfit, height, lighting, body pose and silhouette as reference; ONLY facial expression changes, expressive but restrained anime acting. Top-left thoughtful with hand still in SAME position, narrowed attentive eyes; top-right genuinely surprised widened eyes and small open mouth; bottom-left frustrated angry knitted brows and firm mouth; bottom-right saddened regretful lowered eyes. FOUR complete figures, not heads. True transparent background, NO text, NO panel borders, NO props outside existing folder. Portrait2:3 canvas to fit four figures. High quality painterly anime matching original, coherent anatomy.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-197a0dc1-0e25-43a4-938e-b4129fa89f8d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "adrian_emociones",
+        "prompt": "Use case: stylized-concept. Production transparent character sprite atlas for CIVICA anime visual novel, EXACTLY FOUR full-body copies in precise 2columns by2rows layout on portrait2:3 canvas. Every figure entirely visible from head to shoes within its own equal cell with transparent padding, no overlap, no borders, no words. Reference image defines exact face identity, outfit, same height, SAME body pose and prop placement for all copies, only facial acting changes. Order top-left thoughtful attentive eyes, top-right clearly startled wide eyes and small open mouth, bottom-left angry frustrated brows and tense lips, bottom-right visibly sad regret lowered eyes. Genuine transparent alpha OUTSIDE FIGURE, NO glow, NO haze, NO gradient, NO backdrop. Rich painterly anime identical to the reference visual novel. Subject ADRIAN: mature silver-haired man with black rectangular glasses, dark navy suit white shirt navy tie, book at side. Preserve all identity and clothing from reference.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-64c851e1-b5c7-4432-b6fa-7ee8e5a46184.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "laura_emociones",
+        "prompt": "Use case: stylized-concept. Production transparent character sprite atlas for CIVICA anime visual novel, EXACTLY FOUR full-body copies in precise 2columns by2rows layout on portrait2:3 canvas. Every figure entirely visible from head to shoes within its own equal cell with transparent padding, no overlap, no borders, no words. Reference image defines exact face identity, outfit, same height, SAME body pose and prop placement for all copies, only facial acting changes. Order top-left thoughtful attentive eyes, top-right clearly startled wide eyes and small open mouth, bottom-left angry frustrated brows and tense lips, bottom-right visibly sad regret lowered eyes. Genuine transparent alpha OUTSIDE FIGURE, NO glow, NO haze, NO gradient, NO backdrop. Rich painterly anime identical to the reference visual novel. Subject LAURA: young adult woman with long straight dark brown hair, navy pantsuit and white blouse, folder held at side. Preserve identity and clothing from reference.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-57b96365-d739-4a5c-af41-004e4537b4a6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "camila_emociones",
+        "prompt": "Use case: stylized-concept. Production transparent character sprite sheet for CIVICA anime visual novel. EXACTLY FOUR full-body copies on a precise2columns by2rows grid, portrait2:3 canvas. Full figure head to shoes fits within each equal cell with generous transparent padding. Exact same character identity, height, clothing, SAME body pose and silhouette in all4; ONLY facial expression varies. Top-left thoughtful attentive, top-right surprised widened eyes small open mouth, bottom-left angry knitted brows firm lips, bottom-right sad regret lowered eyes. Keep anatomy and reference outfit coherent. TRUE transparent alpha outside each figure, no opaque background, NO gradient or glow, no frames, no text. Painterly anime identical to reference. CAMILA: adult woman with wavy auburn hair, navy pantsuit white shirt red silk neck scarf, dark shoes, smartphone at side. Preserve identity, outfit and prop from supplied reference.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-4bfe7566-fe84-454f-91f7-320295dacb8f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "influencer_emociones",
+        "prompt": "Use case: stylized-concept. Production transparent character sprite sheet for CIVICA anime visual novel. EXACTLY FOUR full-body copies on a precise2columns by2rows grid, portrait2:3 canvas. Full figure head to shoes fits within each equal cell with generous transparent padding. Exact same character identity, height, clothing, SAME body pose and silhouette in all4; ONLY facial expression varies. Top-left thoughtful attentive, top-right surprised widened eyes small open mouth, bottom-left angry knitted brows firm lips, bottom-right sad regret lowered eyes. Keep anatomy and reference outfit coherent. TRUE transparent alpha outside each figure, no opaque background, NO gradient or glow, no frames, no text. Painterly anime identical to reference. VALERIA: young adult woman with long curly brown half-up hair, burgundy jacket white tee, gray jeans white sneakers, headphones around neck and phone at side. Preserve face identity, outfit, headphones and phone from supplied reference.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-c0added0-ce7e-4880-916b-04b8ab2f39e3.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "parque_contexto",
+        "prompt": "Use case: illustration-story. New16:9 cinematic CG for CIVICA visual novel, match identity reference of Valeria. It is INSIDE her contemporary home livestream studio, not outdoors. Valeria (curly brown half-up hair, burgundy jacket, white T-shirt and headphones at neck) looks worried at a phone mounted in a glowing ring light. A second phone lying on desk is vibrating gently beside coffee and a notebook. Large monitor behind shows a very clear park photograph: a small maintenance fence in center but an OPEN side gate and people walking visible at right, demonstrating missing context. Monitor has photograph ONLY, no interface words. Foreground phone screen is clean blank navy for dynamic text. Rich midnight BLUE and warm GOLD palette, rainy city rooftop window, cinematic painterly anime matching reference, coherent anatomy and hands. Keep lower22% quiet for dialogue. NO text, NO gibberish, NO watermark. Strong emotional storytelling: viral confidence becoming doubt.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-c256f2c9-9b46-4bfa-969c-30906ce8a05a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "audio_contexto",
+        "prompt": "Use case: illustration-story. New16:9 cinematic CG for CIVICA anime visual novel. RAINY NIGHT NEWSPAPER OFFICE. Female journalist from reference, long straight dark brown hair with bangs, beige blazer dark shirt blue press lanyard, wearing headphones and looking startled at a small phone on the desk after audio stops too soon. Black-haired young citizen in black hoodie sits beside her seen three-quarter from behind, staring at phone. On desk: realistic compact recorder, empty ivory transcript sheets, pencil, a small monitor showing a clean turquoise-free GOLD audio waveform on midnight navy screen. Rain streams on window, soft amber lamp, city clocktower visible outside. Expressive human faces and hands, tactile paper, cinematic painterly anime realism, coherent with original character art. No legible text, no fake interface lettering, no watermark. Lower22% quiet to overlay dialogue. Mood: silence after a troubling fragment, searching for omitted context.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-f27d3464-fe24-4a60-8b23-bae28bb88d0d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "correccion_contexto",
+        "prompt": "Use case: illustration-story. New cinematic16:9 CG for CIVICA visual novel, contemporary livestream studio after a difficult public debate. Match identities from references: Valeria curly brown half-up hair burgundy jacket white tee headphones at neck; journalist long straight dark brown hair with bangs beige blazer dark shirt press lanyard. Valeria sets her smartphone upright beside a ring light and turns a large monitor toward journalist. Monitor has clean blank navy blue panel with two small paper-document thumbnails, no written text, to receive live labels in game. Journalist points at an original document in an open archive folder, Valeria looks regretful but determined to correct an error. A black hoodie sleeve/hand of citizen at table edge is enough, no third face. Warm gold desk light and midnight blue materials, blue evening city window. Painterly anime realism, meticulous hands/anatomy, emotionally clear storytelling about keeping a visible correction history. Lower22% quiet for dialogue overlay. No gibberish, no logos or text, no watermark.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-474fe7b1-949e-43f7-85e5-9fab2207107c.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "urnas_contexto",
+        "prompt": "Use case: illustration-story. New16:9 CG for CIVICA anime visual novel, MORNING ELECTION DAY in a Latin American city plaza outside a yellow school with blue doors. Match young citizen and journalist identities/outfits from references: black-haired young man in black hoodie, long straight dark-haired woman with bangs in beige blazer and blue press lanyard. Citizen's GRANDFATHER is an elderly MAN with silver hair, kind lined face, walking cane and brown jacket; he waits beside his grandson. Journalist holds open a large paper map between them, pointing to a clearly OPEN accessible SIDE ENTRANCE with wheelchair ramp at right. Main gate partly closed for repairs, side entrance visible and welcoming, diverse people walking calmly there. It must be an elderly MAN, not grandmother. No readable markings on map, no text or logos. Beautiful painterly anime realism, detailed coherent anatomy/hands, sunlight after rain, warm gold and navy accents, hopeful human expressions. Lower22% quiet for dialogue overlay.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-c603949a-f6c0-48f8-b215-9e1b84660f85.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      },
+      {
+        "id": "voto_contexto",
+        "prompt": "Use case: illustration-story. New16:9 CG for CIVICA anime visual novel, same Latin American plaza in LATE AFTERNOON just before election closes. Young citizen from reference, black-haired man black hoodie, holds a smartphone almost frontally in foreground LEFT with clean blank midnight navy screen (runtime text will be added). He looks doubtful at a final viral message. Beside him the journalist from reference, long straight dark brown hair with bangs, beige blazer blue press lanyard, calmly points toward the real voting entrance and sealed ballot box visible through school doorway at right. Behind them people TALK in small groups while others physically enter to vote; distinguish conversations from casting a ballot through visual staging. Warm sunset on clocktower, deep blue shadows, purple jacaranda trees, tactile scene. Coherent hands/anatomy, cinematic painterly anime realism and identities matching references. Lower22% quiet for dialogue overlay. No words, no gibberish, no logos, no watermark.",
+        "origen": "Generated images are saved to C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9 as C:\\Users\\USER\\.codex\\generated_images\\01a1b711-e6df-7491-a1c0-c5ee450b18a9\\exec-a5c5120b-2f70-45d7-b501-0ce1819b662e.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+      }
+    ]
+  },
+  "archivo_procedencia": {
+    "archivo": "assets/novela/pulido/origen_arte.json",
+    "sha256": "f10e56d69d514bdec6071bfe7c2bebc23d35df1da1b01f45eacdcc6bf21f093d",
+    "bytes": 22794
+  },
+  "orden_visual_foro": [
+    "JUAN",
+    "ADRIÁN",
+    "LAURA",
+    "CAMILA"
+  ],
+  "cg": [
+    {
+      "archivo": "assets/novela/pulido/cg/aviso_cafe.png",
+      "sha256": "0f0145bc5a7e36ae32a6ad6558eff9955b37cdad19fd71ea64ae1723c2232c44",
+      "bytes": 2248748,
+      "id": "aviso_cafe",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/pulido/cg/parque_contexto.png",
+      "sha256": "0fbd77b3c3a6f67c2d888b24e8d20e8132e88dcc9c5dee66149cbe5b0f445eaa",
+      "bytes": 2475167,
+      "id": "parque_contexto",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/pulido/cg/audio_contexto.png",
+      "sha256": "fc9407e9afc574bbf024aa14100c2d4168371b5d67699fb54e46c89f14344e08",
+      "bytes": 2300589,
+      "id": "audio_contexto",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/pulido/cg/correccion_contexto.png",
+      "sha256": "1e738f31b6d12f8f1dbba949d568be679794b38e4186ddb4aed1b6d57be033c4",
+      "bytes": 2386066,
+      "id": "correccion_contexto",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/pulido/cg/urnas_contexto.png",
+      "sha256": "eb60b45627af191193cd34954b9a8901b1a3404c44852d7ba3d84736edcf52a8",
+      "bytes": 2966374,
+      "id": "urnas_contexto",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/pulido/cg/voto_contexto.png",
+      "sha256": "084b23343d9253cbf05e354dd0f935da619d5bff14cd47d2c4c734577b3d0ee4",
+      "bytes": 2899263,
+      "id": "voto_contexto",
+      "ancho": 1672,
+      "alto": 941
+    },
+    {
+      "archivo": "assets/novela/pulido/cg/foro_cuatro.png",
+      "sha256": "4b869822f6b6bc7637ba45fe6545299f27bbdf976d0f7fc396836593643bd2c6",
+      "bytes": 2106645,
+      "id": "foro_cuatro",
+      "ancho": 1672,
+      "alto": 941
+    }
+  ],
+  "videos": [
+    {
+      "archivo": "assets/novela/pulido/videos/caso_50.mp4",
+      "sha256": "1232c69b61c7c523e2bdef3d6c53d78920a99c3154d3f6b28eda8d8d575b0eba",
+      "bytes": 1030005,
+      "clave": "caso_50",
+      "cg": "aviso_cafe",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/caso_50_inicio.png",
+        "sha256": "1bae28c80b39695b092038b90004ea087fff795f6e4e495d7357d189a6274cde",
+        "bytes": 1049755
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/caso_50_poster.jpg",
+        "sha256": "53b386fc014929c5169da1fd1c3877d54bc070b381010eedc53b17254f9efff0",
+        "bytes": 239483
+      },
+      "textos": [
+        "Una notificación interrumpe la mañana",
+        "Falta la fuente original."
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "c5dbc059a6c1f7018d6f5a477d352b733be913772c8642db07c98ab0e2752d1a",
+          "a5f3296b30920395c8e465f72f0aa82973961a024dcf19b63c17e7f1524f179a",
+          "95b9ee5a2efa7bc55ecb6a1e85c69209792389a98bbf97a3677f8b6646aa5439"
+        ]
+      }
+    },
+    {
+      "archivo": "assets/novela/pulido/videos/caso_90.mp4",
+      "sha256": "20b2ad3d28093430448ca00efe6b2b3c8125ccc7d1b60ebf326115b51cd165be",
+      "bytes": 1470222,
+      "clave": "caso_90",
+      "cg": "parque_contexto",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/caso_90_inicio.png",
+        "sha256": "32db0d8f7b4379fd88bcde9e45ae2e67330131f4a436778ff490268d12fde2c8",
+        "bytes": 1148512
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/caso_90_poster.jpg",
+        "sha256": "2dd786baad1567f76f45117e88ff224beec0da00f931d42dc151bec14e5e3789",
+        "bytes": 262329
+      },
+      "textos": [
+        "El parque fuera de cuadro",
+        "Mira qué quedó fuera del encuadre."
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "d62b71af834cc8c13850fabe0d8fee2d4f80ab69906cb330fb08cf9b1e5f7ae6",
+          "9ecc198e7fccb5d83f091d725a4fabbbf7784ead34fafcd32e3ac8a37c026c2e",
+          "c83715ee0d80050d6783f32f5b405920f7ba865297a89dfe9ac43f08f851019d"
+        ]
+      }
+    },
+    {
+      "archivo": "assets/novela/pulido/videos/caso_110.mp4",
+      "sha256": "89c28958a2074179add7ef98c099a0f3b692ee29e6ea763e6b9bc6b10ea6bc34",
+      "bytes": 1262133,
+      "clave": "caso_110",
+      "cg": "audio_contexto",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/caso_110_inicio.png",
+        "sha256": "dc11d73e35055cd93c912d4cdd33d2fb1d7e2b2a081922c4a3418386f1710b40",
+        "bytes": 891961
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/caso_110_poster.jpg",
+        "sha256": "13b15b073af908bebd09db55d38f28cf799593e91eccd5f7645d3018e53afd7a",
+        "bytes": 215974
+      },
+      "textos": [
+        "Los segundos que faltan",
+        "Escucha el comienzo y el cierre."
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "7d67cc9a9efe1a501d25e86331a2dc2f60caf3026b4c661d4fba07661c1dabc6",
+          "e716ce443b3e8fadf766cd261e4acea50583b91a8b94dcd3fd4cc8abece799f0",
+          "65679b4e6e1bd981633c6b91596c7ec6997fcc474e8766fab5c1d81a2454fa22"
+        ]
+      }
+    },
+    {
+      "archivo": "assets/novela/pulido/videos/caso_40.mp4",
+      "sha256": "7aad021331d240c3134e060b033761fdd07d30bc07878bc273d1002d9cea7f8a",
+      "bytes": 1307927,
+      "clave": "caso_40",
+      "cg": "correccion_contexto",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/caso_40_inicio.png",
+        "sha256": "1d8172dae6109877d26fe79683304c2f02e8ec77fb0381dd640474b9b06d48d8",
+        "bytes": 1091492
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/caso_40_poster.jpg",
+        "sha256": "ee6111db48d828360f4aec0d40ea34ec30361b91427b15f05620fc87f0ada7e5",
+        "bytes": 247510
+      },
+      "textos": [
+        "Un canal que recuerda",
+        "Conserva el original, las fuentes y los cambios."
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "5fac8b0d49e19ec8a2504c7cfd05eb95ebc9a6c6a3b5e3a9d63b1ee57713b934",
+          "dc22cbf3adc5731cfc23111158b4bf0450a70d6d7f3e2ad715afe8a2b614116c",
+          "1caf8fa536e59eae80d1f434bdbba52a34ab7c7ab692a3a1f73378a37f5a3067"
+        ]
+      }
+    },
+    {
+      "archivo": "assets/novela/pulido/videos/caso_120.mp4",
+      "sha256": "4d202755d7d65244ee0f603893cfc576745f5c12094a22214227e1923a0deae4",
+      "bytes": 1899672,
+      "clave": "caso_120",
+      "cg": "urnas_contexto",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/caso_120_inicio.png",
+        "sha256": "d1cf1fbfa0b210decdac034188d9f0951d237d5613ee613c894d91b9df7c5d90",
+        "bytes": 1421545
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/caso_120_poster.jpg",
+        "sha256": "224b7b3fa344c1a0a4582fa4a2fb38bac843729a60fea6968a19b98fec891f0b",
+        "bytes": 321539
+      },
+      "textos": [
+        "Una entrada para el abuelo",
+        "Sigue el recorrido hasta el acceso."
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "fe244886beea042eed44c55d30cfa4ef8eb2bd519ede8534d2baee69aefa63e1",
+          "f12b51d17aa59759f0e0c7c864b01c627da375d2df9f9f3b39ee527f3be86fda",
+          "9ea4c4777587e4753a2a09b642818573436b70cf1ac1a9de56909976b21de6da"
+        ]
+      }
+    },
+    {
+      "archivo": "assets/novela/pulido/videos/caso_35.mp4",
+      "sha256": "1386dd3fd103935e15a6f7542f3acabce8f0fe2587c7cb7f977441a27eec0fdf",
+      "bytes": 1584512,
+      "clave": "caso_35",
+      "cg": "voto_contexto",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/caso_35_inicio.png",
+        "sha256": "e50bb187785b5fe64af8fd33a2acd112748436f12651322317873adf1177cba7",
+        "bytes": 1338955
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/caso_35_poster.jpg",
+        "sha256": "732fc4be6c5745d7c1979fa78ca7efded62b7d2a17539426853d5ea59e1b29e8",
+        "bytes": 308472
+      },
+      "textos": [
+        "La palabra que borraron",
+        "Comentar no sustituye el voto."
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "f5748cc51fbb45836dd3f325cb7198a0f0f6fa0cdfeeb5c8a96d5deeecadf6ba",
+          "b6c2df5eadba14d723d355f92e3d1882b8da024fc9560a361a2b966b271c4a6e",
+          "247d75162a519586bf62af1c6ba94de1889b4f9c4ae1dede0444311ff21219e7"
+        ]
+      }
+    },
+    {
+      "archivo": "assets/novela/pulido/videos/foro.mp4",
+      "sha256": "1e3ae673bbb69d96d5b3fc30eaf1f9fb3e8f0458870bb8b8589068f5fae4a97d",
+      "bytes": 878632,
+      "clave": "foro",
+      "cg": "foro_cuatro",
+      "ancho": 1280,
+      "alto": 720,
+      "fps": 24,
+      "duracion": 6.0,
+      "fotogramas": 144,
+      "audio": false,
+      "decodificacion_completa": true,
+      "primer_fotograma": {
+        "archivo": "assets/novela/pulido/videos/foro_inicio.png",
+        "sha256": "041a729295fa1740623842b51161b19d5b366be1b4c3e2840850f067512153c0",
+        "bytes": 849067
+      },
+      "poster": {
+        "archivo": "assets/novela/pulido/videos/foro_poster.jpg",
+        "sha256": "cf711b9a661bee6efc01baac55d490006794312a6ef94d7ba219f79687e854b1",
+        "bytes": 210986
+      },
+      "textos": [
+        "Cuatro candidaturas, una ciudad",
+        "Escucha las propuestas y compara sus fuentes.",
+        "JUAN",
+        "ADRIÁN",
+        "LAURA",
+        "CAMILA"
+      ],
+      "movimiento": {
+        "segundos": [
+          0,
+          3,
+          5
+        ],
+        "rgb_sha256": [
+          "7759e3cea8ce396fc9334ec1abf98208fb16de4b3ef09b605ce90af4fb58330b",
+          "46ed27d883223e3fc50ffe6686c2bcba8246a7b1fd89e9d3e858aca9d74f5230",
+          "2572719c986a4fa78719f5193697cd9f32628b1a24b54f6bb932dcdc5a6ef8ba"
+        ]
+      }
+    }
+  ]
+}

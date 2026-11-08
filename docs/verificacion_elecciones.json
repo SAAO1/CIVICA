@@ -1,0 +1,660 @@
+{
+  "campañas": 49152,
+  "semillas": [
+    1,
+    7,
+    42
+  ],
+  "azar_en_consulta": false,
+  "guardados_revisados_por_ruta_ganadora": true,
+  "modalidades": [
+    {
+      "semilla": 1,
+      "rol": "legacy",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 1218,
+        "Camila Vega": 1144,
+        "Adrián Morales": 1118,
+        "empate": 173,
+        "Juan Torres": 443
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "verificar",
+          "compartir"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "compartir",
+          "verificar",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "empate": [
+          "compartir",
+          "verificar",
+          "verificar",
+          "verificar",
+          "compartir",
+          "compartir"
+        ],
+        "Juan Torres": [
+          "verificar",
+          "compartir",
+          "verificar",
+          "verificar",
+          "compartir",
+          "compartir"
+        ]
+      }
+    },
+    {
+      "semilla": 1,
+      "rol": "ciudadano",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 1987,
+        "Adrián Morales": 1676,
+        "empate": 186,
+        "Camila Vega": 33,
+        "Juan Torres": 214
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "convocar",
+          "compartir",
+          "compartir"
+        ],
+        "empate": [
+          "compartir",
+          "conversar",
+          "conversar",
+          "conversar",
+          "compartir",
+          "compartir"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "conversar",
+          "ignorar",
+          "ignorar",
+          "conversar",
+          "compartir"
+        ],
+        "Juan Torres": [
+          "conversar",
+          "conversar",
+          "conversar",
+          "compartir",
+          "compartir",
+          "convocar"
+        ]
+      }
+    },
+    {
+      "semilla": 1,
+      "rol": "periodista",
+      "campañas": 4096,
+      "resultados": {
+        "Camila Vega": 2160,
+        "empate": 190,
+        "Juan Torres": 764,
+        "Laura Ríos": 476,
+        "Adrián Morales": 506
+      },
+      "ejemplos": {
+        "Camila Vega": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar"
+        ],
+        "empate": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "contrastar"
+        ],
+        "Juan Torres": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "entrevistar"
+        ],
+        "Laura Ríos": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "entrevistar",
+          "contrastar"
+        ],
+        "Adrián Morales": [
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "contrastar",
+          "entrevistar",
+          "contrastar"
+        ]
+      }
+    },
+    {
+      "semilla": 1,
+      "rol": "mixto",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 2480,
+        "Adrián Morales": 1076,
+        "empate": 330,
+        "Camila Vega": 144,
+        "Juan Torres": 66
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "contrastar",
+          "compartir",
+          "contrastar",
+          "compartir",
+          "contrastar"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "contrastar",
+          "conversar",
+          "contrastar",
+          "compartir",
+          "contrastar"
+        ],
+        "empate": [
+          "compartir",
+          "entrevistar",
+          "conversar",
+          "entrevistar",
+          "conversar",
+          "contrastar"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "entrevistar",
+          "ignorar",
+          "entrevistar",
+          "conversar",
+          "contrastar"
+        ],
+        "Juan Torres": [
+          "conversar",
+          "entrevistar",
+          "ignorar",
+          "entrevistar",
+          "compartir",
+          "entrevistar"
+        ]
+      }
+    },
+    {
+      "semilla": 7,
+      "rol": "legacy",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 1218,
+        "Camila Vega": 1144,
+        "Adrián Morales": 1118,
+        "empate": 173,
+        "Juan Torres": 443
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "verificar",
+          "compartir"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "compartir",
+          "verificar",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "empate": [
+          "compartir",
+          "verificar",
+          "verificar",
+          "verificar",
+          "compartir",
+          "compartir"
+        ],
+        "Juan Torres": [
+          "verificar",
+          "compartir",
+          "verificar",
+          "verificar",
+          "compartir",
+          "compartir"
+        ]
+      }
+    },
+    {
+      "semilla": 7,
+      "rol": "ciudadano",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 1987,
+        "Adrián Morales": 1676,
+        "empate": 186,
+        "Camila Vega": 33,
+        "Juan Torres": 214
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "convocar",
+          "compartir",
+          "compartir"
+        ],
+        "empate": [
+          "compartir",
+          "conversar",
+          "conversar",
+          "conversar",
+          "compartir",
+          "compartir"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "conversar",
+          "ignorar",
+          "ignorar",
+          "conversar",
+          "compartir"
+        ],
+        "Juan Torres": [
+          "conversar",
+          "conversar",
+          "conversar",
+          "compartir",
+          "compartir",
+          "convocar"
+        ]
+      }
+    },
+    {
+      "semilla": 7,
+      "rol": "periodista",
+      "campañas": 4096,
+      "resultados": {
+        "Camila Vega": 2160,
+        "empate": 190,
+        "Juan Torres": 764,
+        "Laura Ríos": 476,
+        "Adrián Morales": 506
+      },
+      "ejemplos": {
+        "Camila Vega": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar"
+        ],
+        "empate": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "contrastar"
+        ],
+        "Juan Torres": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "entrevistar"
+        ],
+        "Laura Ríos": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "entrevistar",
+          "contrastar"
+        ],
+        "Adrián Morales": [
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "contrastar",
+          "entrevistar",
+          "contrastar"
+        ]
+      }
+    },
+    {
+      "semilla": 7,
+      "rol": "mixto",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 2480,
+        "Adrián Morales": 1076,
+        "empate": 330,
+        "Camila Vega": 144,
+        "Juan Torres": 66
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "contrastar",
+          "compartir",
+          "contrastar",
+          "compartir",
+          "contrastar"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "contrastar",
+          "conversar",
+          "contrastar",
+          "compartir",
+          "contrastar"
+        ],
+        "empate": [
+          "compartir",
+          "entrevistar",
+          "conversar",
+          "entrevistar",
+          "conversar",
+          "contrastar"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "entrevistar",
+          "ignorar",
+          "entrevistar",
+          "conversar",
+          "contrastar"
+        ],
+        "Juan Torres": [
+          "conversar",
+          "entrevistar",
+          "ignorar",
+          "entrevistar",
+          "compartir",
+          "entrevistar"
+        ]
+      }
+    },
+    {
+      "semilla": 42,
+      "rol": "legacy",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 1218,
+        "Camila Vega": 1144,
+        "Adrián Morales": 1118,
+        "empate": 173,
+        "Juan Torres": 443
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "verificar",
+          "compartir"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "compartir",
+          "verificar",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "empate": [
+          "compartir",
+          "verificar",
+          "verificar",
+          "verificar",
+          "compartir",
+          "compartir"
+        ],
+        "Juan Torres": [
+          "verificar",
+          "compartir",
+          "verificar",
+          "verificar",
+          "compartir",
+          "compartir"
+        ]
+      }
+    },
+    {
+      "semilla": 42,
+      "rol": "ciudadano",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 1987,
+        "Adrián Morales": 1676,
+        "empate": 186,
+        "Camila Vega": 33,
+        "Juan Torres": 214
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir",
+          "compartir"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "compartir",
+          "compartir",
+          "convocar",
+          "compartir",
+          "compartir"
+        ],
+        "empate": [
+          "compartir",
+          "conversar",
+          "conversar",
+          "conversar",
+          "compartir",
+          "compartir"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "conversar",
+          "ignorar",
+          "ignorar",
+          "conversar",
+          "compartir"
+        ],
+        "Juan Torres": [
+          "conversar",
+          "conversar",
+          "conversar",
+          "compartir",
+          "compartir",
+          "convocar"
+        ]
+      }
+    },
+    {
+      "semilla": 42,
+      "rol": "periodista",
+      "campañas": 4096,
+      "resultados": {
+        "Camila Vega": 2160,
+        "empate": 190,
+        "Juan Torres": 764,
+        "Laura Ríos": 476,
+        "Adrián Morales": 506
+      },
+      "ejemplos": {
+        "Camila Vega": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar"
+        ],
+        "empate": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "contrastar"
+        ],
+        "Juan Torres": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "entrevistar"
+        ],
+        "Laura Ríos": [
+          "contrastar",
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "entrevistar",
+          "contrastar"
+        ],
+        "Adrián Morales": [
+          "contrastar",
+          "contrastar",
+          "entrevistar",
+          "contrastar",
+          "entrevistar",
+          "contrastar"
+        ]
+      }
+    },
+    {
+      "semilla": 42,
+      "rol": "mixto",
+      "campañas": 4096,
+      "resultados": {
+        "Laura Ríos": 2480,
+        "Adrián Morales": 1076,
+        "empate": 330,
+        "Camila Vega": 144,
+        "Juan Torres": 66
+      },
+      "ejemplos": {
+        "Laura Ríos": [
+          "compartir",
+          "contrastar",
+          "compartir",
+          "contrastar",
+          "compartir",
+          "contrastar"
+        ],
+        "Adrián Morales": [
+          "compartir",
+          "contrastar",
+          "conversar",
+          "contrastar",
+          "compartir",
+          "contrastar"
+        ],
+        "empate": [
+          "compartir",
+          "entrevistar",
+          "conversar",
+          "entrevistar",
+          "conversar",
+          "contrastar"
+        ],
+        "Camila Vega": [
+          "compartir",
+          "entrevistar",
+          "ignorar",
+          "entrevistar",
+          "conversar",
+          "contrastar"
+        ],
+        "Juan Torres": [
+          "conversar",
+          "entrevistar",
+          "ignorar",
+          "entrevistar",
+          "compartir",
+          "entrevistar"
+        ]
+      }
+    }
+  ]
+}

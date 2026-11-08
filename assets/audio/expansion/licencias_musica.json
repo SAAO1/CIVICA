@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "proyecto": "CIVICA / Alcalde Digital",
+  "licencia_recursos": "CC0-1.0",
+  "descripcion": "Extractos instrumentales de obras publicadas por The Cynic Project / cynicmusic en OpenGameArt. Se conserva el crédito solicitado por el compositor.",
+  "fuentes": {
+    "ciudad": {
+      "titulo_original": "Calm Piano 1 (Vaporware)",
+      "autor": "The Cynic Project / cynicmusic",
+      "perfil_autor": "https://opengameart.org/users/cynicmusic",
+      "pagina_fuente": "https://opengameart.org/content/calm-piano-1-vaporware",
+      "descarga_original": "https://opengameart.org/sites/default/files/003_Vaporware_2.mp3",
+      "archivo_original": "003_Vaporware_2.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "License(s): CC0 (campo de licencia de la publicación individual)",
+      "credito_solicitado": "The Cynic Project / cynicmusic.com / pixelsphere.org",
+      "naturaleza": "composicion_instrumental_publicada_por_el_autor; no se afirma interpretación acústica en vivo",
+      "verificado_utc": "2026-10-24T15:21:42.849096+00:00",
+      "sha256_original": "1697fa1b7ed6f3fe1eca4daa4f9d1a2eb3db8fe40a0f3c283529ab47e57b5b38"
+    },
+    "investigacion": {
+      "titulo_original": "Dark Forest Theme",
+      "autor": "The Cynic Project / cynicmusic",
+      "perfil_autor": "https://opengameart.org/users/cynicmusic",
+      "pagina_fuente": "https://opengameart.org/content/dark-forest-theme",
+      "descarga_original": "https://opengameart.org/sites/default/files/GameMusic_ForestTheme_24_0.mp3",
+      "archivo_original": "GameMusic_ForestTheme_24_0.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "License(s): CC0 (campo de licencia de la publicación individual)",
+      "credito_solicitado": "The Cynic Project / cynicmusic.com / pixelsphere.org",
+      "naturaleza": "composicion_instrumental_publicada_por_el_autor; no se afirma interpretación acústica en vivo",
+      "verificado_utc": "2026-10-24T15:21:39.328158+00:00",
+      "sha256_original": "c9e83d01741e97a462c44963aff81645a9c2aa3a7a33e5849114a1399d1b0914"
+    },
+    "eleccion": {
+      "titulo_original": "Sirens in Darkness",
+      "autor": "The Cynic Project / cynicmusic",
+      "perfil_autor": "https://opengameart.org/users/cynicmusic",
+      "pagina_fuente": "https://opengameart.org/content/sirens-in-darkness",
+      "descarga_original": "https://opengameart.org/sites/default/files/012_Sirens_in_Darkness_0.mp3",
+      "archivo_original": "012_Sirens_in_Darkness_0.mp3",
+      "licencia": "CC0-1.0",
+      "licencia_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "evidencia_pagina": "License(s): CC0 (campo de licencia de la publicación individual)",
+      "credito_solicitado": "The Cynic Project / cynicmusic.com / pixelsphere.org",
+      "naturaleza": "composicion_instrumental_publicada_por_el_autor; no se afirma interpretación acústica en vivo",
+      "verificado_utc": "2026-10-24T15:21:38.809200+00:00",
+      "sha256_original": "54c1abdd5ca5d67cf43c29bdf9d8332510dd1d74e8498569e5d9a2824a77079e"
+    }
+  },
+  "recursos": [
+    {
+      "archivo": "assets/audio/expansion/musica/ciudad.wav",
+      "nombre": "ciudad",
+      "categoria": "musica",
+      "descripcion": "Piano cálido y capas ambientales.",
+      "fuentes": [
+        "ciudad"
+      ],
+      "procesos": [
+        "recorte con retorno armónico y nivel semejantes",
+        "empalme circular de 2 s",
+        "normalización RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 65.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -7.09,
+      "rms_dbfs": -23.0,
+      "bytes": 8320044,
+      "sha256": "423bfb94defddbbd455846b0c1e8add7c0e2bdd86c14befb87f8a119de5b3c2b",
+      "inicio_original_segundos": 39.0
+    },
+    {
+      "archivo": "assets/audio/expansion/musica/investigacion.wav",
+      "nombre": "investigacion",
+      "categoria": "musica",
+      "descripcion": "Guitarra acústica y cuerdas de misterio.",
+      "fuentes": [
+        "investigacion"
+      ],
+      "procesos": [
+        "recorte con retorno armónico y nivel semejantes",
+        "empalme circular de 2 s",
+        "normalización RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 65.0,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -7.08,
+      "rms_dbfs": -23.0,
+      "bytes": 8320044,
+      "sha256": "f870582ff2cba7926c2752dbef6325209cbd89fafd15b6e22e9432f178db046e",
+      "inicio_original_segundos": 20.0
+    },
+    {
+      "archivo": "assets/audio/expansion/musica/eleccion.wav",
+      "nombre": "eleccion",
+      "categoria": "musica",
+      "descripcion": "Piano y capas ambientales de reflexión nocturna.",
+      "fuentes": [
+        "eleccion"
+      ],
+      "procesos": [
+        "recorte con retorno armónico y nivel semejantes",
+        "empalme circular de 2 s",
+        "normalización RMS y pico",
+        "PCM 16 bits estéreo 32 kHz"
+      ],
+      "duracion_segundos": 56.5,
+      "hz": 32000,
+      "canales": 2,
+      "pico_dbfs": -10.73,
+      "rms_dbfs": -23.0,
+      "bytes": 7232044,
+      "sha256": "1ef02f745379d883253950b3ae734efa08c6225b1b105c858e807b73ce3d0fbb",
+      "inicio_original_segundos": 20.5
+    }
+  ],
+  "total_bytes_wav": 23872132
+}

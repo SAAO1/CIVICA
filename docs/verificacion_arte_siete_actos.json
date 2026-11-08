@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "sprites_png": 25,
+  "videos": [
+    {
+      "clave": "narrador_90",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 1546214
+    },
+    {
+      "clave": "narrador_40",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 1546640
+    },
+    {
+      "clave": "narrador_100",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 1281862
+    },
+    {
+      "clave": "narrador_10",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 1258789
+    },
+    {
+      "clave": "narrador_110",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 1787618
+    },
+    {
+      "clave": "narrador_25",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 1762356
+    },
+    {
+      "clave": "narrador_120",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 2852806
+    },
+    {
+      "clave": "narrador_35",
+      "movimiento_20_muestras": true,
+      "primer_frame_igual_rgb": true,
+      "bytes": 2833871
+    }
+  ],
+  "fotogramas_muestreados": 160,
+  "contacto": "docs/vistas/contacto_cortes_siete_actos.jpg"
+}

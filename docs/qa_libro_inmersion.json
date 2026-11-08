@@ -1,0 +1,106 @@
+{
+  "ventana": [
+    1360,
+    720
+  ],
+  "modo": "VentanaNovela real, movimiento reducido, sonido silenciado",
+  "alcance": "Respuestas, investigación, ABB y grafo por clic; se omite la lectura completa de diálogos.",
+  "capturas": [
+    {
+      "archivo": "docs/capturas_inmersion/libro_fuente_madre.png",
+      "sha256": "0c3b45eb04f9e480f476425f2df5f7749253181cad3a2c6d726efa450d780120",
+      "caso": 50,
+      "pagina": 2,
+      "hud_visible": false,
+      "controles_completos": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/libro_fuente_abuelo.png",
+      "sha256": "d3c08cf4c951310d3dcb45e3e36dba89e1619170049807e87b30b1f0299431a2",
+      "caso": 120,
+      "pagina": 2,
+      "hud_visible": false,
+      "controles_completos": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/libro_respuestas.png",
+      "sha256": "930407757ef27f2eafcf43f0765cb6e07c5e5c6f13ba73b3f89e39e34203ccd3",
+      "caso": 120,
+      "pagina": 3,
+      "hud_visible": false,
+      "controles_completos": true
+    },
+    {
+      "archivo": "docs/capturas_inmersion/confirmacion_acto_v.png",
+      "sha256": "bfa8fc2644792deeea360093e2b3270f9929c521b2cb7b80b1cb4ee2c3324493",
+      "caso": 120,
+      "pagina": 4,
+      "hud_visible": false,
+      "controles_completos": true
+    }
+  ],
+  "roles": {
+    "ciudadano": {
+      "casos": [
+        50,
+        90,
+        110,
+        40,
+        120,
+        35
+      ],
+      "decisiones": 6,
+      "fase": "final"
+    },
+    "periodista": {
+      "casos": [
+        50,
+        90,
+        110,
+        40,
+        120,
+        35
+      ],
+      "decisiones": 6,
+      "fase": "final"
+    }
+  },
+  "fallos": [],
+  "acto_v": {
+    "hallazgos_historicos": [
+      "50:documento",
+      "90:documento",
+      "110:documento",
+      "40:documento"
+    ],
+    "prueba_elegida": "120:documento",
+    "accion": "desmentir",
+    "fase_despues": "resultado",
+    "puntos": -3,
+    "explicacion": "La denuncia no tenía fundamento: una noticia cierta o una opinión legítima no puede presentarse como falsa. La publicación se conserva.",
+    "presupuesto": 0,
+    "confirmado_por_clic": true
+  },
+  "biblioteca_en_memoria": true,
+  "autoguardado_interceptado": 34,
+  "progreso_antes": {
+    ".civica\\novela_autoguardado.json": "52915a34f89c8e265dd5f21ec3e849d4514f7b6f851a769622b22cc492d72673",
+    ".civica\\biblioteca.json": "3a125f2ac6b1cfb33a4d33203b879f862210e7ca0bf30a6fc2dcd77c1380c538"
+  },
+  "progreso_despues": {
+    ".civica\\novela_autoguardado.json": "52915a34f89c8e265dd5f21ec3e849d4514f7b6f851a769622b22cc492d72673",
+    ".civica\\biblioteca.json": "3a125f2ac6b1cfb33a4d33203b879f862210e7ca0bf30a6fc2dcd77c1380c538"
+  },
+  "progreso_persistente_sin_cambio": true,
+  "revision_visual": {
+    "resolucion": [
+      1360,
+      720
+    ],
+    "madre": "Retrato femenino correspondiente a avatar:maria; texto completo visible.",
+    "abuelo": "Recorte del abuelo con baston; rostro y testimonio visibles.",
+    "respuestas": "Tres tarjetas y Continuar dentro de la ventana, sin campos editoriales.",
+    "confirmacion": "Fuente original del mapa electoral actual y boton Confirmar visibles.",
+    "clipping_detectado": false
+  }
+}
